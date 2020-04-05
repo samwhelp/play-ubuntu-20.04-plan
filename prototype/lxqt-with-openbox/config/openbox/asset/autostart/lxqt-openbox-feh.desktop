@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Categories=Utility;
+TryExec=feh
+Exec=feh --bg-scale "/usr/share/backgrounds/Frozen_sunset_on_the_lake_by_Manuel_Arslanyan.jpg"
+Icon=feh
+Keywords=x;x11;compositor;
+OnlyShowIn=LXQt;
+X-LXQt-Module=true
+
+Name=Feh(For LxqtWithOpenbox)
+GenericName=Wallpaper
+Comment=Wallpaper
