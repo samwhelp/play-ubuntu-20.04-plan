@@ -6,7 +6,7 @@
 ``` sh
 mkdir -p "$HOME/bin"
 
-wget 'https://raw.githubusercontent.com/samwhelp/play-ubuntu-20.04-plan/master/project/style-tool/xfce/style-ctrl/style-ctrl-xfce' -O "$HOME/bin/style-ctrl-xfce"
+wget 'https://raw.githubusercontent.com/samwhelp/play-ubuntu-20.04-plan/master/project/style-xfce/style-ctrl/style-ctrl-xfce' -O "$HOME/bin/style-ctrl-xfce"
 
 chmod 755 "$HOME/bin/style-ctrl-xfce"
 ```
@@ -14,13 +14,13 @@ chmod 755 "$HOME/bin/style-ctrl-xfce"
 Or Run
 
 ``` sh
-curl -fsSL 'https://raw.githubusercontent.com/samwhelp/play-ubuntu-20.04-plan/master/project/style-tool/xfce/style-ctrl/install.sh' | bash
+curl -fsSL 'https://raw.githubusercontent.com/samwhelp/play-ubuntu-20.04-plan/master/project/style-xfce/style-ctrl/install.sh' | bash
 ```
 
 Or Run
 
 ``` sh
-wget 'https://raw.githubusercontent.com/samwhelp/play-ubuntu-20.04-plan/master/project/style-tool/xfce/style-ctrl/install.sh' -q -O - | bash
+wget 'https://raw.githubusercontent.com/samwhelp/play-ubuntu-20.04-plan/master/project/style-xfce/style-ctrl/install.sh' -q -O - | bash
 ```
 
 

@@ -101,8 +101,8 @@ base_var_init () {
 
 	THE_CMD_FILE_PATH="${THE_CMD_DIR_PATH}/$THE_CMD_FILE_NAME"
 
-	## https://github.com/samwhelp/play-ubuntu-20.04-plan/blob/master/project/style-tool/xfce/style-ctrl/style-ctrl-xfce
-	THE_SELF_UPDATE_URL='https://raw.githubusercontent.com/samwhelp/play-ubuntu-20.04-plan/master/project/style-tool/xfce/style-ctrl/style-ctrl-xfce'
+	## https://github.com/samwhelp/play-ubuntu-20.04-plan/blob/master/project/style-xfce/style-ctrl/style-ctrl-xfce
+	THE_SELF_UPDATE_URL='https://raw.githubusercontent.com/samwhelp/play-ubuntu-20.04-plan/master/project/style-xfce/style-ctrl/style-ctrl-xfce'
 
 
 	THE_TMP_DIR_PATH="/tmp"

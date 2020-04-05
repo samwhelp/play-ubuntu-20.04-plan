@@ -83,8 +83,8 @@ base_var_init () {
 
 
 	## Target
-	## https://github.com/samwhelp/play-ubuntu-20.04-plan/blob/master/project/style-tool/xfce/style-switch/style-switch-xfce
-	THE_TARGET_DOWNLOAD_URL='https://raw.githubusercontent.com/samwhelp/play-ubuntu-20.04-plan/master/project/style-tool/xfce/style-switch/style-switch-xfce'
+	## https://github.com/samwhelp/play-ubuntu-20.04-plan/blob/master/project/style-xfce/style-switch/style-switch-xfce
+	THE_TARGET_DOWNLOAD_URL='https://raw.githubusercontent.com/samwhelp/play-ubuntu-20.04-plan/master/project/style-xfce/style-switch/style-switch-xfce'
 
 
 	THE_TARGET_FILE_NAME="style-switch-xfce"
