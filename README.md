@@ -15,3 +15,5 @@
 * [openbox](prototype/openbox)
 * [spectrwm](prototype/spectrwm)
 * [bspwm](prototype/bspwm)
+* [lxqt-with-openbox](prototype/lxqt-with-openbox)
+* [lxqt-with-xfwm4](prototype/lxqt-with-xfwm4)
