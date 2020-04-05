@@ -4,8 +4,8 @@
 ### Head: Url
 ##
 
-# * https://github.com/samwhelp/play-ubuntu-20.04-plan/blob/master/project/style-tool/xfce/style-switch/install.sh
-# * https://github.com/samwhelp/play-ubuntu-20.04-plan/blob/master/project/style-tool/xfce/style-switch/style-switch-xfce
+# * https://github.com/samwhelp/play-ubuntu-20.04-plan/blob/master/project/style-xfce/style-switch/install.sh
+# * https://github.com/samwhelp/play-ubuntu-20.04-plan/blob/master/project/style-xfce/style-switch/style-switch-xfce
 
 ##
 ### Tail: Url

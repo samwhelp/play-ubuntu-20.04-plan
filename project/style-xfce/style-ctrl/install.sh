@@ -4,8 +4,10 @@
 ### Head: Url
 ##
 
-# * https://github.com/samwhelp/play-ubuntu-20.04-plan/blob/master/project/style-tool/xfce/style-ctrl/install.sh
-# * https://github.com/samwhelp/play-ubuntu-20.04-plan/blob/master/project/style-tool/xfce/style-ctrl/style-ctrl-xfce
+
+# * https://github.com/samwhelp/play-ubuntu-20.04-plan/blob/master/project/style-xfce/style-ctrl/install.sh
+# * https://github.com/samwhelp/play-ubuntu-20.04-plan/blob/master/project/style-xfce/style-ctrl/style-ctrl-xfce
+
 
 ##
 ### Tail: Url
