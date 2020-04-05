@@ -13,3 +13,5 @@
 ## Prototype
 
 * [openbox](prototype/openbox)
+* [spectrwm](prototype/spectrwm)
+* [bspwm](prototype/bspwm)
