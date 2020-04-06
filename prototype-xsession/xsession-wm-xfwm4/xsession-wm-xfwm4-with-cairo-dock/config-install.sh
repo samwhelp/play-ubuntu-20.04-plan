@@ -128,6 +128,25 @@ volumeicon_config_install () {
 
 
 ################################################################################
+### Head: sxhkd
+##
+
+sxhkd_config_install () {
+
+	mkdir -p "$HOME/.config/xfwm4-session/sxhkd"
+	echo "mkdir -p $HOME/.config/xfwm4-session/sxhkd"
+
+	cp "./config/sxhkd/sxhkdrc" "$HOME/.config/xfwm4-session/sxhkd/sxhkdrc"
+	echo "cp ./config/sxhkd/sxhkdrc $HOME/.config/xfwm4-session/sxhkd/sxhkdrc"
+
+}
+
+##
+### Tail: sxhkd
+################################################################################
+
+
+################################################################################
 ### Head: lxqt-globalkeys
 ##
 lxqt_globalkeys_config_install () {
@@ -293,7 +312,9 @@ main_config_install () {
 
 	volumeicon_config_install
 
-	lxqt_globalkeys_config_install
+	sxhkd_config_install
+
+	#lxqt_globalkeys_config_install
 
 	pcmanfm_qt_config_install
 

@@ -26,14 +26,19 @@ nm-applet &
 
 
 ################################################################################
-### Head: Mixer
+### Head: Volume
 ##
 
-## sound mixer
-volumeicon &
+
+## volumeicon (Package: volumeicon-alsa)
+#volumeicon &
+
+
+## mate-volume-control-status-icon (Package: mate-media)
+mate-volume-control-status-icon &
 
 ##
-### Tail: Mixer
+### Tail: Volume
 ################################################################################
 
 
@@ -112,15 +117,21 @@ compton --config ~/.config/xfwm4-session/compton/compton.conf &
 
 
 ################################################################################
-### Head: Shortcut
+## Head: Keybind
 ##
 
 ## global key shortcut
+
+## lxqt-globalkeysd
 #lxqt-globalkeysd &
-lxqt-globalkeysd --config-file="$HOME/.config/xfwm4-session/lxqt/globalkeyshortcuts.conf" &
+#lxqt-globalkeysd --config-file="$HOME/.config/xfwm4-session/lxqt/globalkeyshortcuts.conf" &
+
+
+## sxhkd
+sxhkd -c "$HOME/.config/xfwm4-session/sxhkd/sxhkdrc" &
 
 ##
-### Tail: Shortcut
+## Tail: Keybind
 ################################################################################
 
 

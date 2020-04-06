@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
-Exec=xdotool key ctrl+alt+d
+Exec=xdotool key super+d
 TryExec=xdotool
 Icon=desktop
 Categories=System;Utility;
