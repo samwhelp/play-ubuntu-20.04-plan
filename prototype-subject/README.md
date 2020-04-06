@@ -33,7 +33,7 @@
 
 ## style-platformtheme
 
-* [qt5-style-platformtheme](style-platformtheme/qt5-style-platformtheme) 
+* [qt5-style-plugins](style-platformtheme/qt5-style-plugins)
 
 
 ## shell
