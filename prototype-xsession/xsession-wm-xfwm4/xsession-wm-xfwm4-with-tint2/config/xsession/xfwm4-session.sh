@@ -13,6 +13,23 @@
 
 
 ################################################################################
+### Head: Xresources
+##
+
+
+#test -f "$HOME/.Xresources" && xrdb -load "$HOME/.Xresources"
+#test -f "$HOME/.Xresources" && xrdb -merge "$HOME/.Xresources"
+#/usr/local/bin/xresources-load.sh
+
+xresources-load.sh
+
+
+##
+### Tail: Xresources
+################################################################################
+
+
+################################################################################
 ### Head: Network
 ##
 
@@ -57,9 +74,13 @@ mate-volume-control-status-icon &
 ## Just Wallpaper
 
 #THE_WALLPAPER_FILE_PATH="/usr/share/backgrounds/Manhattan_Sunset_by_Giacomo_Ferroni.jpg"
-THE_WALLPAPER_FILE_PATH="/usr/share/backgrounds/Spices_in_Athens_by_Makis_Chourdakis.jpg"
+#THE_WALLPAPER_FILE_PATH="/usr/share/backgrounds/Spices_in_Athens_by_Makis_Chourdakis.jpg"
+#THE_WALLPAPER_FILE_PATH="/usr/share/backgrounds/Frozen_sunset_on_the_lake_by_Manuel_Arslanyan.jpg"
+##feh --bg-scale "$THE_WALLPAPER_FILE_PATH" &
 
-feh --bg-scale "$THE_WALLPAPER_FILE_PATH" &
+## move to ~/bin/wallpaper.sh
+wallpaper.sh &
+
 
 ##
 ### Tail: Desktop
