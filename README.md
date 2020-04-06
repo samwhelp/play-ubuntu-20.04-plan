@@ -18,3 +18,9 @@
 * [xfce](prototype/xfce)
 * [lxqt-with-openbox](prototype/lxqt-with-openbox)
 * [lxqt-with-xfwm4](prototype/lxqt-with-xfwm4)
+
+
+## Prototype / Xsession
+
+* [xsession-wm-xfwm4-with-tint2](prototype-xsession/xsession-wm-xfwm4/xsession-wm-xfwm4-with-tint2)
+* [xsession-wm-xfwm4-with-cairo-dock](prototype-xsession/xsession-wm-xfwm4/xsession-wm-xfwm4-with-cairo-dock)
