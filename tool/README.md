@@ -8,6 +8,8 @@
 ## Text Editor
 
 * [mousepad](mousepad)
+* [vim](vim)
+* [nvim](nvim)
 
 
 ## Web Browser
