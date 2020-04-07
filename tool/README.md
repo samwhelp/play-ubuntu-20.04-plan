@@ -11,6 +11,7 @@
 * [qterminal](qterminal)
 * [xterm](xterm)
 * [urxvt](urxvt)
+* [gnome-terminal](gnome-terminal)
 
 
 ## File Manger
