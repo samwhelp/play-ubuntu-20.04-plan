@@ -8,6 +8,8 @@
 ## Terminal
 
 * [qterminal](qterminal)
+* [xterm](xterm)
+* [urxvt](urxvt)
 
 
 ## File Manger
