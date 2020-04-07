@@ -26,6 +26,7 @@
 
 * [google-chrome](google-chrome)
 * [chromium-browser](chromium-browser)
+* [w3m](w3m)
 
 
 ## Downloader
