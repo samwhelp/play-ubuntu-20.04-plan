@@ -30,6 +30,7 @@
 * [mousepad](mousepad)
 * [vim](vim)
 * [nvim](nvim)
+* [gedit](gedit)
 
 
 ## Web Browser
