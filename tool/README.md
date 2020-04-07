@@ -8,6 +8,7 @@
 ## Terminal
 
 * [sakura](sakura)
+* [xfce4-terminal](xfce4-terminal)
 * [qterminal](qterminal)
 * [xterm](xterm)
 * [urxvt](urxvt)
