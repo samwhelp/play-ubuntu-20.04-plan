@@ -5,6 +5,11 @@
 * [fcitx](fcitx)
 
 
+## Terminal
+
+* [qterminal](qterminal)
+
+
 ## Text Editor
 
 * [mousepad](mousepad)
