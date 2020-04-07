@@ -13,6 +13,7 @@
 ## File Manger
 
 * [fff](fff)
+* [ranger](ranger)
 
 
 ## Text Editor
