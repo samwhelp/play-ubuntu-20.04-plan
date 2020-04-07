@@ -10,6 +10,11 @@
 * [qterminal](qterminal)
 
 
+## File Manger
+
+* [fff](fff)
+
+
 ## Text Editor
 
 * [mousepad](mousepad)
