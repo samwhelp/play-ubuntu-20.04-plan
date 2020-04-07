@@ -14,7 +14,7 @@
 
 ## Link
 
-* [docs-spec-keybind](../../../docs/spec/Keybind.md)
+* [docs-spec-keybind](../../docs/spec/Keybind.md)
 * [spec-mousebind](spec-mousebind.md)
 
 
