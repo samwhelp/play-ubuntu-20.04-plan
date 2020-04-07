@@ -17,6 +17,11 @@
 * [lf](lf)
 
 
+## Fuzzy Finder
+
+* [fzf](fzf)
+
+
 ## Text Editor
 
 * [mousepad](mousepad)
