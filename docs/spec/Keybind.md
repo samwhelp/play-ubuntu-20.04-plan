@@ -15,11 +15,10 @@
 
 ## Implement
 
-* [openbox](../../prototype/de-box/play-openbox/spec-keybind.md)
-* [spectrwm](../../prototype/de-tiling/play-spectrwm/spec-keybind.md)
-* [awesomewm](../../concept/awesome-wm/demo-start/demo-config-awesome-github-master/spec-keybind.md)
-* [bspwm](../../prototype/de-tiling/play-bspwm/spec-keybind.md)
-* [xfce](../../prototype/de-basic/play-xfce/spec-keybind.md)
+* [openbox](../../prototype/openbox/spec-keybind.md)
+* [spectrwm](../../prototype/spectrwm/spec-keybind.md)
+* [bspwm](../../prototype/bspwm/spec-keybind.md)
+* [xfce](../../prototype/xfce/spec-keybind.md)
 
 ## Keys
 
@@ -35,8 +34,8 @@
 > Using 'Alt' maybe collision occurs on bash emacs mode.
 >
 > Please read:
-> * $ man [bash](http://manpages.ubuntu.com/manpages/bionic/en/man1/bash.1.html#readline) ## Search [^READLINE]
-> * $ man 3 [readline](http://manpages.ubuntu.com/manpages/bionic/en/man3/readline.3readline.html) ## Search [Emacs Mode] or [Emacs Meta bindings]
+> * $ man [bash](http://manpages.ubuntu.com/manpages/focal/en/man1/bash.1.html#readline) ## Search [^READLINE]
+> * $ man 3 [readline](http://manpages.ubuntu.com/manpages/focal/en/man3/readline.3readline.html) ## Search [Emacs Mode] or [Emacs Meta bindings]
 
 
 ### Tips
