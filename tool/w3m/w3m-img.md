@@ -4,7 +4,7 @@
 ## Install
 
 
-run to install (Package: [w3m-img](https://packages.ubuntu.com/bionic/w3m-img))
+run to install (Package: [w3m-img](https://packages.ubuntu.com/focal/w3m-img))
 
 ``` sh
 $ sudo apt-get install w3m-img
