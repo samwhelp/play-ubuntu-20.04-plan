@@ -1,6 +1,7 @@
 
 # Xephyr
 
+
 ## develop-tool
 
 * [run-awesome-on-xephyr](develop-tool/run-awesome-on-xephyr)
@@ -25,7 +26,8 @@
 
 ## x-window-manager
 
-* prototype / provides / [x-window-manager](../../prototype-subject/provides/x-window-manager) / [x-window-manager.md](../../prototype-subject/provides/x-window-manager/x-window-manager.md)
+* concept / apt / provides / [x-window-manager](../../concept/apt/provides/x-window-manager) / [x-window-manager.md](../../concept/apt/provides/x-window-manager/x-window-manager.md)
+
 
 ## Reference
 
