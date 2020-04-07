@@ -18,6 +18,8 @@
 * [run-dwm-on-xephyr](develop-tool/run-dwm-on-xephyr)
 * [run-herbstluftwm-on-xephyr](develop-tool/run-herbstluftwm-on-xephyr)
 * [run-jwm-on-xephyr](develop-tool/run-jwm-on-xephyr)
+* [run-2bwm-on-xephyr](develop-tool/run-2bwm-on-xephyr)
+* [run-subtle-on-xephyr](develop-tool/run-subtle-on-xephyr)
 
 
 
