@@ -7,6 +7,7 @@
 
 ## Terminal
 
+* [sakura](sakura)
 * [qterminal](qterminal)
 * [xterm](xterm)
 * [urxvt](urxvt)
