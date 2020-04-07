@@ -10,7 +10,7 @@ sakura_config_install () {
 
 	echo "mkdir -p $HOME/.config/sakura"
 	mkdir -p "$HOME/.config/sakura"
-	
+
 
 	echo "cp ./config/sakura/sakura.conf $HOME/.config/sakura/sakura.conf"
 	cp "./config/sakura/sakura.conf" "$HOME/.config/sakura/sakura.conf"
