@@ -12,6 +12,8 @@ numix-icon-theme
 gnome-icon-theme
 breeze-cursor-theme
 ubuntu-wallpapers
+ubuntu-wallpapers-focal
+ubuntu-wallpapers-eoan
 
 
 fcitx-chewing
