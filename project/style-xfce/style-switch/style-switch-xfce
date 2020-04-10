@@ -1050,6 +1050,51 @@ ss_pop_wm_numix () {
 
 
 ################################################################################
+### Head: Model ss_breeze_dark
+##
+
+ss_breeze_dark_config_wm_theme () {
+
+	sys_xfce_set_wm_theme 'Breeze'
+
+}
+
+ss_breeze_dark_config_ui_theme () {
+
+	sys_xfce_set_ui_theme 'Breeze-Dark'
+
+}
+
+ss_breeze_dark_config_icon_theme () {
+
+	sys_xfce_set_icon_theme 'breeze-dark'
+
+}
+
+ss_breeze_dark_config_cursor_theme () {
+
+	sys_xfce_set_cursor_theme_default_for_dark
+
+}
+
+ss_breeze_dark () {
+	#echo "ss_breeze_dark"
+	#echo "$@"
+
+
+	ss_breeze_dark_config_wm_theme
+	ss_breeze_dark_config_ui_theme
+	ss_breeze_dark_config_icon_theme
+	ss_breeze_dark_config_cursor_theme
+
+}
+
+##
+### Tail: Model ss_breeze_dark
+################################################################################
+
+
+################################################################################
 ### Head: SubCmd
 ##
 
@@ -1135,6 +1180,12 @@ sub_run_pop_wm_numix () {
 	ss_pop_wm_numix $@
 }
 
+sub_run_breeze_dark () {
+	#echo "sub_run_breeze_dark"
+	ss_breeze_dark $@
+}
+
+
 ##
 ### Tail: SubCmd
 ################################################################################
@@ -1193,6 +1244,8 @@ Example:
 
 	$ $cmd_name yaru_wm_numix
 	$ $cmd_name pop_wm_numix
+
+	$ $cmd_name breeze_dark
 
 Debug:
 	$ export DEBUG_SS_CTRL=true
