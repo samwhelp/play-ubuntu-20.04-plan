@@ -31,11 +31,13 @@ file:///home/demo/Videos mov
 
 ## File Manager
 
-* pcmanfm-qt
-* nautilus
-* thunar
-* caja
-* nemo
+
+* [pcmanfm-qt](http://manpages.ubuntu.com/manpages/focal/en/man1/pcmanfm-qt.1.html) (Package : [pcmanfm-qt](https://packages.ubuntu.com/focal/pcmanfm-qt))
+* [pcmanfm](http://manpages.ubuntu.com/manpages/focal/en/man1/pcmanfm.1.html) (Package : [pcmanfm](https://packages.ubuntu.com/focal/pcmanfm))
+* [thunar](http://manpages.ubuntu.com/manpages/focal/en/man1/thunar.1.html) (Package : [thunar](https://packages.ubuntu.com/focal/thunar))
+* [nautilus](http://manpages.ubuntu.com/manpages/focal/en/man1/nautilus.1.html) (Package : [nautilus](https://packages.ubuntu.com/focal/nautilus))
+* [caja](http://manpages.ubuntu.com/manpages/focal/en/man1/caja.1.html) (Package : [caja](https://packages.ubuntu.com/focal/caja))
+* [nemo](http://manpages.ubuntu.com/manpages/focal/en/man1/nemo.1.html) (Package : [nemo](https://packages.ubuntu.com/focal/nemo))
 
 ## Search
 
