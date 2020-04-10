@@ -10,7 +10,7 @@
 
 ## Note
 
-* note-ubuntu-20.04/[xfce](https://samwhelp.github.io/note-ubuntu-20.04/read/subject/xfce/)
+* note-ubuntu-20.04 / [xfce](https://samwhelp.github.io/note-ubuntu-20.04/read/subject/xfce/)
 
 
 ## Develop Tool
