@@ -22,18 +22,19 @@
 
 ### GUI
 
-* [xfwm4-settings](https://manpages.ubuntu.com/manpages/bionic/en/man1/xfwm4-settings.1.html)
-* [xfce4-keyboard-settings](https://manpages.ubuntu.com/manpages/bionic/en/man1/xfce4-keyboard-settings.1.html)
-* [xfce4-settings-editor](https://manpages.ubuntu.com/manpages/bionic/en/man1/xfce4-settings-editor.1.html) (channel: xfce4-keyboard-shortcuts)
+* [xfwm4-settings](https://manpages.ubuntu.com/manpages/focal/en/man1/xfwm4-settings.1.html)
+* [xfce4-keyboard-settings](https://manpages.ubuntu.com/manpages/focal/en/man1/xfce4-keyboard-settings.1.html)
+* [xfce4-settings-editor](https://manpages.ubuntu.com/manpages/focal/en/man1/xfce4-settings-editor.1.html) (channel: xfce4-keyboard-shortcuts)
 
 ### CLI
 
-* [xfconf-query](https://manpages.ubuntu.com/manpages/bionic/en/man1/xfconf-query.1.html) (channel: xfce4-keyboard-shortcuts)
+* [xfconf-query](https://manpages.ubuntu.com/manpages/focal/en/man1/xfconf-query.1.html) (channel: xfce4-keyboard-shortcuts)
 
 
 ## Config File
 
 * [xfce4-keyboard-shortcuts.xml](config/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml)
+
 
 ## Keys
 
@@ -49,8 +50,8 @@
 > Using 'Alt' maybe collision occurs on bash emacs mode.
 >
 > Please read:
-> * $ man [bash](http://manpages.ubuntu.com/manpages/bionic/en/man1/bash.1.html#readline) ## Search [^READLINE]
-> * $ man 3 [readline](http://manpages.ubuntu.com/manpages/bionic/en/man3/readline.3readline.html) ## Search [Emacs Mode] or [Emacs Meta bindings]
+> * $ man [bash](http://manpages.ubuntu.com/manpages/focal/en/man1/bash.1.html#readline) ## Search [^READLINE]
+> * $ man 3 [readline](http://manpages.ubuntu.com/manpages/focal/en/man3/readline.3readline.html) ## Search [Emacs Mode] or [Emacs Meta bindings]
 
 
 ### Tips
