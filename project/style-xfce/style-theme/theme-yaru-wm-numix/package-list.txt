@@ -1,0 +1,8 @@
+
+xfce4-settings
+
+
+yaru-theme-gtk
+yaru-theme-icon
+
+numix-gtk-theme
