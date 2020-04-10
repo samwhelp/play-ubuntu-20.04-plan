@@ -1,0 +1,9 @@
+
+xfce4-settings
+
+
+pop-gtk-theme
+pop-icon-theme
+
+numix-gtk-theme
+numix-icon-theme-circle

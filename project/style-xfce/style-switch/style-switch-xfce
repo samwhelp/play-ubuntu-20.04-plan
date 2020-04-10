@@ -1005,6 +1005,51 @@ ss_yaru_wm_numix () {
 
 
 ################################################################################
+### Head: Model ss_pop_wm_numix
+##
+
+ss_pop_wm_numix_config_wm_theme () {
+
+	sys_xfce_set_wm_theme 'Numix'
+
+}
+
+ss_pop_wm_numix_config_ui_theme () {
+
+	sys_xfce_set_ui_theme 'Pop-dark'
+
+}
+
+ss_pop_wm_numix_config_icon_theme () {
+
+	#sys_xfce_set_icon_theme 'Pop'
+	sys_xfce_set_icon_theme 'Numix-Circle'
+}
+
+ss_pop_wm_numix_config_cursor_theme () {
+
+	sys_xfce_set_cursor_theme_default_for_dark
+
+}
+
+ss_pop_wm_numix () {
+	#echo "ss_pop_wm_numix"
+	#echo "$@"
+
+
+	ss_pop_wm_numix_config_wm_theme
+	ss_pop_wm_numix_config_ui_theme
+	ss_pop_wm_numix_config_icon_theme
+	ss_pop_wm_numix_config_cursor_theme
+
+}
+
+##
+### Tail: Model ss_pop_wm_numix
+################################################################################
+
+
+################################################################################
 ### Head: SubCmd
 ##
 
@@ -1085,6 +1130,11 @@ sub_run_yaru_wm_numix () {
 	ss_yaru_wm_numix $@
 }
 
+sub_run_pop_wm_numix () {
+	#echo "sub_run_pop_wm_numix"
+	ss_pop_wm_numix $@
+}
+
 ##
 ### Tail: SubCmd
 ################################################################################
@@ -1142,7 +1192,7 @@ Example:
 	$ $cmd_name sephia_wm_honda_super_cub
 
 	$ $cmd_name yaru_wm_numix
-
+	$ $cmd_name pop_wm_numix
 
 Debug:
 	$ export DEBUG_SS_CTRL=true
