@@ -20,9 +20,9 @@
 
 ## Style Tool
 
-* [prototype/style-de/xfce](../../../prototype/style-de/xfce)
-* [project/style-tool/xfce/style-switch](../../../project/style-tool/xfce/style-switch)
-* [project/style-tool/xfce/style-ctrl](../../../project/style-tool/xfce/style-ctrl)
+* [style-theme](../../project/style-xfce/style-theme/)
+* [style-switch](../../project/style-xfce/style-switch/)
+* [style-ctrl](../../project/style-xfce/style-ctrl/)
 
 
 ## Theme Collections
