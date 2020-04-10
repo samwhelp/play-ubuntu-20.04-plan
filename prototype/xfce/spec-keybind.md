@@ -31,9 +31,44 @@
 * [xfconf-query](https://manpages.ubuntu.com/manpages/focal/en/man1/xfconf-query.1.html) (channel: xfce4-keyboard-shortcuts)
 
 
-## Config File
+#### Example
 
-* [xfce4-keyboard-shortcuts.xml](config/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml)
+``` sh
+$ xfconf-query -c xfce4-keyboard-shortcuts -l
+```
+
+``` sh
+$ xfconf-query -c xfce4-keyboard-shortcuts -l -v
+```
+
+``` sh
+$ xfconf-query -c xfce4-keyboard-shortcuts -p /commands/custom/XF86AudioMute
+```
+
+``` sh
+$ xfconf-query -c xfce4-keyboard-shortcuts -p /commands/custom/XF86AudioMute -s 'amixer -q -D pulse sset Master toggle'
+```
+
+``` sh
+$ xfconf-query -c xfce4-keyboard-shortcuts -p /commands/custom/XF86AudioMute -s 'pactl set-sink-mute @DEFAULT_SINK@ toggle'
+```
+
+``` sh
+$ xfconf-query -c xfce4-keyboard-shortcuts -p '/commands/custom/<Alt>m'
+```
+
+``` sh
+$ xfconf-query -c xfce4-keyboard-shortcuts -p '/commands/custom/<Alt>m' -s 'amixer -q -D pulse sset Master toggle'
+```
+
+``` sh
+$ xfconf-query -c xfce4-keyboard-shortcuts -p '/commands/custom/<Alt>m' -s 'pactl set-sink-mute @DEFAULT_SINK@ toggle'
+```
+
+
+## Config File Path
+
+* [~/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml](config/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml)
 
 
 ## Keys
