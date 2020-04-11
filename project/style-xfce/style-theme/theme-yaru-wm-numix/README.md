@@ -4,8 +4,8 @@
 
 ## Prepare
 
-* [prototype/de-basic/play-xfce](../../../de-basic/play-xfce)
-* [prototype/style-platformtheme/qt5-style-plugins](../../../style-platformtheme/qt5-style-plugins)
+* [prototype/xfce/](../../../../prototype/xfce/)
+* [prototype-subject/style-platformtheme/qt5-style-plugins](../../../../prototype-subject/style-platformtheme/qt5-style-plugins/)
 
 
 ## Package
