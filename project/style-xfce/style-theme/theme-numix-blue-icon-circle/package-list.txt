@@ -1,0 +1,6 @@
+
+xfce4-settings
+
+
+numix-blue-gtk-theme
+numix-icon-theme-circle
