@@ -17,13 +17,13 @@
 * [run-spectrwm-on-xephyr](../../tool/xephyr/develop-tool/run-spectrwm-on-xephyr/)
 
 
-## Config File
+## Config File Path
 
 * [~/.spectrwm.conf](config/spectrwm/spectrwm.conf)
 * [~/.config/spectrwm/spectrwm.keybind.conf](config/spectrwm/spectrwm.keybind.conf)
 
 
-## Usage
+## Howto
 
 ### install
 

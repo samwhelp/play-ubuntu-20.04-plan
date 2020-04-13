@@ -32,6 +32,13 @@
 * [Help:DefaultConfiguration](http://openbox.org/wiki/Help:DefaultConfiguration)
 
 
+## Config File Path
+
+* [~/.config/openbox/rc.xml](config/openbox/rc.xml)
+* [~/.config/openbox/menu.xml](config/openbox/menu.xml)
+* [~/.config/openbox/autostart](config/openbox/autostart)
+
+
 ## Howto
 
 

@@ -17,13 +17,13 @@
 * [run-bspwm-on-xephyr](../../tool/xephyr/develop-tool/run-bspwm-on-xephyr/)
 
 
-## Config File
+## Config File Path
 
 * [~/.config/bspwm/bspwmrc](config/bspwm/bspwmrc)
 * [~/.config/bspwm/sxhkd/sxhkdrc](config/sxhkd/sxhkdrc)
 
 
-## Usage
+## Howto
 
 ### install
 
