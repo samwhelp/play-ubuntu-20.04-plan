@@ -1,8 +1,17 @@
 
 # Prototype play-lxqt
 
+## Note
 
-## Usage
+* note-ubuntu-20.04 / [lxqt](https://samwhelp.github.io/note-ubuntu-20.04/read/subject/lxqt/)
+
+
+## Tool
+
+* [run-lxqt-on-xephyr](../../tool/xephyr/develop-tool/run-lxqt-on-xephyr/)
+
+
+## Howto
 
 
 ### install

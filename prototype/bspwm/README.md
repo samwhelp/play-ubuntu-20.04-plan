@@ -9,12 +9,12 @@
 
 ## Note
 
-* note-ubuntu-18.04/[bspwm](https://samwhelp.github.io/note-ubuntu-18.04/read/subject/bspwm/)
+* note-ubuntu-20.04 / [bspwm](https://samwhelp.github.io/note-ubuntu-20.04/read/subject/bspwm/)
 
 
 ## Tool
 
-* [run-bspwm-on-xephyr](../../../concept/xephyr/develop-tool/run-bspwm-on-xephyr/)
+* [run-bspwm-on-xephyr](../../tool/xephyr/develop-tool/run-bspwm-on-xephyr/)
 
 
 ## Config File

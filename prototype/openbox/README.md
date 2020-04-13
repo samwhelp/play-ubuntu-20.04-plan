@@ -11,7 +11,7 @@
 ## Tool
 
 * [openbox-gen-rc](config/openbox/openbox-gen-rc)
-* [run-openbox-on-xephyr](../../../concept/xephyr/develop-tool/run-openbox-on-xephyr/)
+* [run-openbox-on-xephyr](../../tool/xephyr/develop-tool/run-openbox-on-xephyr/)
 
 
 ## Note

@@ -9,12 +9,12 @@
 
 ## Note
 
-* note-ubuntu-18.04/[spectrwm](https://samwhelp.github.io/note-ubuntu-18.04/read/subject/spectrwm/)
+* note-ubuntu-20.04 / [spectrwm](https://samwhelp.github.io/note-ubuntu-20.04/read/subject/spectrwm/)
 
 
 ## Tool
 
-* [run-spectrwm-on-xephyr](../../../concept/xephyr/develop-tool/run-spectrwm-on-xephyr/)
+* [run-spectrwm-on-xephyr](../../tool/xephyr/develop-tool/run-spectrwm-on-xephyr/)
 
 
 ## Config File
