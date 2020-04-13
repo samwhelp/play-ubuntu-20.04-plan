@@ -14,10 +14,10 @@
 * [run-openbox-on-xephyr](../../../concept/xephyr/develop-tool/run-openbox-on-xephyr/)
 
 
-
 ## Note
 
-* note-ubuntu-18.04/[openbox](https://samwhelp.github.io/note-ubuntu-18.04/read/subject/openbox/)
+* note-ubuntu-20.04 / [openbox](https://samwhelp.github.io/note-ubuntu-20.04/read/subject/openbox/)
+* note-ubuntu-18.04 / [openbox](https://samwhelp.github.io/note-ubuntu-18.04/read/subject/openbox/)
 
 
 ## Manual
@@ -31,7 +31,8 @@
 * [Help:Themes](http://openbox.org/wiki/Help:Themes)
 * [Help:DefaultConfiguration](http://openbox.org/wiki/Help:DefaultConfiguration)
 
-## Usage
+
+## Howto
 
 
 ### install
