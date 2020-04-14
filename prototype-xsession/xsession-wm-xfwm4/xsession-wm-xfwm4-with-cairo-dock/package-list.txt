@@ -3,7 +3,8 @@ xfwm4
 
 cairo-dock
 
-lxqt-globalkeys
+sxhkd
+#lxqt-globalkeys
 
 rofi
 
@@ -13,7 +14,11 @@ compton
 
 xdotool
 
-volumeicon-alsa
+#volumeicon-alsa
+mate-media
+
+policykit-1-gnome
+#lxqt-policykit
 
 
 numix-gtk-theme
