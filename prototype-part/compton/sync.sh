@@ -39,6 +39,17 @@ compton_config_profile_sync () {
 	echo "cp './config/compton/compton.conf' '../../prototype-xsession/xsession-wm-xfwm4/xsession-wm-xfwm4-with-cairo-dock/config/compton/compton.conf'"
 	cp './config/compton/compton.conf' '../../prototype-xsession/xsession-wm-xfwm4/xsession-wm-xfwm4-with-cairo-dock/config/compton/compton.conf'	
 
+
+	echo "cp './config/compton/compton.conf' '../../prototype-xsession/xsession-wm-metacity/metacity/xsession-wm-metacity-with-tint2/config/compton/compton.conf'"
+	cp './config/compton/compton.conf' '../../prototype-xsession/xsession-wm-metacity/metacity/xsession-wm-metacity-with-tint2/config/compton/compton.conf'
+
+
+	echo "cp './config/compton/compton.conf' '../../prototype-xsession/xsession-wm-metacity/marco/xsession-wm-marco-with-tint2/config/compton/compton.conf'"
+	cp './config/compton/compton.conf' '../../prototype-xsession/xsession-wm-metacity/marco/xsession-wm-marco-with-tint2/config/compton/compton.conf'
+
+
+
+ 
 }
 ##
 ### Tail: config_profile_sync

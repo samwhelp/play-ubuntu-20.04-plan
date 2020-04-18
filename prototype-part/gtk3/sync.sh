@@ -39,6 +39,14 @@ gtk3_config_profile_sync () {
 	echo "cp './config/gtk3/settings.ini' '../../prototype-xsession/xsession-wm-xfwm4/xsession-wm-xfwm4-with-cairo-dock/config/gtk3/settings.ini'"
 	cp './config/gtk3/settings.ini' '../../prototype-xsession/xsession-wm-xfwm4/xsession-wm-xfwm4-with-cairo-dock/config/gtk3/settings.ini'	
 
+
+	echo "cp './config/gtk3/settings.ini' '../../prototype-xsession/xsession-wm-metacity/metacity/xsession-wm-metacity-with-tint2/config/gtk3/settings.ini'"
+	cp './config/gtk3/settings.ini' '../../prototype-xsession/xsession-wm-metacity/metacity/xsession-wm-metacity-with-tint2/config/gtk3/settings.ini'
+
+
+	echo "cp './config/gtk3/settings.ini' '../../prototype-xsession/xsession-wm-metacity/marco/xsession-wm-marco-with-tint2/config/gtk3/settings.ini'"
+	cp './config/gtk3/settings.ini' '../../prototype-xsession/xsession-wm-metacity/marco/xsession-wm-marco-with-tint2/config/gtk3/settings.ini'
+
 }
 ##
 ### Tail: config_profile_sync

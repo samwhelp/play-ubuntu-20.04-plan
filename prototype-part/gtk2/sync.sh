@@ -37,7 +37,15 @@ gtk2_config_profile_sync () {
 
 
 	echo "cp './config/gtk2/.gtkrc-2.0' '../../prototype-xsession/xsession-wm-xfwm4/xsession-wm-xfwm4-with-cairo-dock/config/gtk2/.gtkrc-2.0'"
-	cp './config/gtk2/.gtkrc-2.0' '../../prototype-xsession/xsession-wm-xfwm4/xsession-wm-xfwm4-with-cairo-dock/config/gtk2/.gtkrc-2.0'	
+	cp './config/gtk2/.gtkrc-2.0' '../../prototype-xsession/xsession-wm-xfwm4/xsession-wm-xfwm4-with-cairo-dock/config/gtk2/.gtkrc-2.0'
+
+
+	echo "cp './config/gtk2/.gtkrc-2.0' '../../prototype-xsession/xsession-wm-metacity/metacity/xsession-wm-metacity-with-tint2/config/gtk2/.gtkrc-2.0'"
+	cp './config/gtk2/.gtkrc-2.0' '../../prototype-xsession/xsession-wm-metacity/metacity/xsession-wm-metacity-with-tint2/config/gtk2/.gtkrc-2.0'
+
+
+	echo "cp './config/gtk2/.gtkrc-2.0' '../../prototype-xsession/xsession-wm-metacity/marco/xsession-wm-marco-with-tint2/config/gtk2/.gtkrc-2.0'"
+	cp './config/gtk2/.gtkrc-2.0' '../../prototype-xsession/xsession-wm-metacity/marco/xsession-wm-marco-with-tint2/config/gtk2/.gtkrc-2.0'		
 
 }
 ##
