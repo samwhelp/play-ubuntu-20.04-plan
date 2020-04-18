@@ -150,7 +150,7 @@ compton --config ~/.config/marco-session/compton/compton.conf &
 #lxqt-globalkeysd --config-file="$HOME/.config/marco-session/lxqt/globalkeyshortcuts.conf" &
 
 ## sxhkd
-sxhkd -c "$HOME/.config/xfwm4-session/sxhkd/sxhkdrc" &
+sxhkd -c "$HOME/.config/marco-session/sxhkd/sxhkdrc" &
 
 ##
 ### Tail: Keybind
