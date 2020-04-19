@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=XSession
+Exec=/usr/bin/budgie-wm-session.sh
+TryExec=/usr/bin/budgie-wm-session.sh
+Name=BudgieWm Session
+Comment=BudgieWm Xsession
+
+Name[zh_TW]=BudgieWm Session
+Comment[zh_TW]=BudgieWm Xsession

@@ -1,0 +1,15 @@
+[Desktop Entry]
+Type=Application
+Exec=killall -9 budgie-wm
+TryExec=killall
+Icon=gtk-quit
+Categories=System;Utility;
+Keywords=desktop;window;toggle;
+
+Name=BudgieWm Quit
+GenericName=BudgieWm-Quit
+Comment=BudgieWm Quit
+
+Name[zh_TW]=登出桌面
+GenericName[zh_TW]=BudgieWm-Quit
+Comment[zh_TW]=登出桌面
