@@ -38,6 +38,7 @@ metacity_config_install () {
 
 metacity_config_install_setting () {
 
+	##metacity_set_wallpaper
 
 	metacity_set_theme
 
@@ -90,6 +91,24 @@ metacity_put_quit_desktop_entry () {
 
 	cp "./config/metacity/util/metacity-quit.desktop" "$HOME/.local/share/applications/metacity-quit.desktop"
 	echo "cp ./config/metacity/util/metacity-quit.desktop $HOME/.local/share/applications/metacity-quit.desktop"
+
+}
+
+
+
+metacity_set_wallpaper () {
+
+	## $ gsettings list-recursively | grep org.gnome.desktop.background | sort
+	## $ gsettings list-recursively | grep org.gnome.desktop.screensaver | sort
+
+
+	#gsettings set org.gnome.desktop.background picture-uri 'file:///usr/share/xfce4/backdrops/xubuntu-wallpaper.png'
+	#gsettings set org.gnome.desktop.screensaver picture-uri 'file:///usr/share/images/desktop-base/desktop-lockscreen.xml'
+
+
+	## Wallpaper
+	gsettings set org.gnome.desktop.background picture-uri 'file:///usr/share/backgrounds/Frozen_sunset_on_the_lake_by_Manuel_Arslanyan.jpg'
+	#gsettings set org.gnome.desktop.screensaver picture-uri 'file:///usr/share/backgrounds/Frozen_sunset_on_the_lake_by_Manuel_Arslanyan.jpg'
 
 }
 

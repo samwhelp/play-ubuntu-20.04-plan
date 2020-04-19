@@ -66,7 +66,7 @@ mate-volume-control-status-icon &
 ## Use [pcmanfm-qt] for desktop
 ## /etc/xdg/autostart/lxqt-desktop.desktop
 ## grep '^Exec=' /etc/xdg/autostart/lxqt-desktop.desktop
-pcmanfm-qt --desktop --profile=budgie-wm-session &
+##pcmanfm-qt --desktop --profile=budgie-wm-session &
 
 ## Use [xfdesktop] for desktop
 #xfdesktop &

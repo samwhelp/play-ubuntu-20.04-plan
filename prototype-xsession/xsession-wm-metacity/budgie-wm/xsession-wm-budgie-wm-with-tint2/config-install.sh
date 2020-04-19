@@ -39,6 +39,8 @@ budgie_wm_config_install () {
 budgie_wm_config_install_setting () {
 
 
+	budgie_wm_set_wallpaper
+
 	budgie_wm_set_theme
 
 	budgie_wm_set_keybindings_show_desktop
@@ -90,6 +92,23 @@ budgie_wm_put_quit_desktop_entry () {
 
 	cp "./config/budgie-wm/util/budgie-wm-quit.desktop" "$HOME/.local/share/applications/budgie-wm-quit.desktop"
 	echo "cp ./config/budgie-wm/util/budgie-wm-quit.desktop $HOME/.local/share/applications/budgie-wm-quit.desktop"
+
+}
+
+
+budgie_wm_set_wallpaper () {
+
+	## $ gsettings list-recursively | grep org.gnome.desktop.background | sort
+	## $ gsettings list-recursively | grep org.gnome.desktop.screensaver | sort
+
+
+	#gsettings set org.gnome.desktop.background picture-uri 'file:///usr/share/xfce4/backdrops/xubuntu-wallpaper.png'
+	#gsettings set org.gnome.desktop.screensaver picture-uri 'file:///usr/share/images/desktop-base/desktop-lockscreen.xml'
+
+
+	## Wallpaper
+	gsettings set org.gnome.desktop.background picture-uri 'file:///usr/share/backgrounds/Frozen_sunset_on_the_lake_by_Manuel_Arslanyan.jpg'
+	#gsettings set org.gnome.desktop.screensaver picture-uri 'file:///usr/share/backgrounds/Frozen_sunset_on_the_lake_by_Manuel_Arslanyan.jpg'
 
 }
 
