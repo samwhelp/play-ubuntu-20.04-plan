@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=XSession
+Exec=/usr/bin/mutter-session.sh
+TryExec=/usr/bin/mutter-session.sh
+Name=Mutter Session
+Comment=Mutter Xsession
+
+Name[zh_TW]=Mutter Session
+Comment[zh_TW]=Mutter Xsession
