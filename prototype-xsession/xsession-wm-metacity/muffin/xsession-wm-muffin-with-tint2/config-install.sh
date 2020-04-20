@@ -292,9 +292,8 @@ muffin_set_keybindings_about_workspace () {
 	gsettings set org.cinnamon.desktop.keybindings.wm switch-to-workspace-up "['<Super>Page_Up', '<Control><Alt>Up', '<Alt>k']"
 	gsettings set org.cinnamon.desktop.keybindings.wm switch-to-workspace-down "['<Super>Page_Down', '<Control><Alt>Down', '<Alt>j']"
 
-	gsettings set org.cinnamon.desktop.keybindings.wm switch-to-workspace-left  "['<Control><Alt>Left', '<Alt>h']"
-	gsettings set org.cinnamon.desktop.keybindings.wm switch-to-workspace-right  "['<Control><Alt>Right', '<Alt>l']"
-
+	gsettings set org.cinnamon.desktop.keybindings.wm switch-to-workspace-left  "['<Control><Alt>Left', '<Alt>h', '<Alt>a']"
+	gsettings set org.cinnamon.desktop.keybindings.wm switch-to-workspace-right  "['<Control><Alt>Right', '<Alt>l', '<Alt>s']"
 
 
 	gsettings set org.cinnamon.desktop.keybindings.wm switch-to-workspace-1 "['<Alt>1']"
