@@ -38,6 +38,7 @@ budgie_wm_config_install () {
 
 budgie_wm_config_install_setting () {
 
+	budgie_wm_set_keybindings_overwrite
 
 	budgie_wm_set_wallpaper
 
@@ -236,8 +237,8 @@ budgie_wm_set_keybindings_about_workspace () {
 	gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-up "['<Super>Page_Up', '<Control><Alt>Up', '<Alt>k']"
 	gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-down "['<Super>Page_Down', '<Control><Alt>Down', '<Alt>j']"
 
-	gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-left  "['<Control><Alt>Left', '<Alt>h']"
-	gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-right  "['<Control><Alt>Right', '<Alt>l']"
+	gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-left  "['<Control><Alt>Left', '<Alt>h', '<Alt>a']"
+	gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-right  "['<Control><Alt>Right', '<Alt>l', '<Alt>s']"
 
 
 
@@ -296,6 +297,22 @@ budgie_wm_set_titlebar_action () {
 	gsettings set org.gnome.desktop.wm.preferences action-right-click-titlebar 'menu'
 
 }
+
+
+budgie_wm_set_keybindings_overwrite () {
+
+
+#gsettings set com.solus-project.budgie-wm clear-notifications "['<Super>C']"
+#gsettings set com.solus-project.budgie-wm toggle-notifications "['<Super>N']"
+#gsettings set com.solus-project.budgie-wm toggle-raven "['<Super>A']"
+
+
+gsettings set com.solus-project.budgie-wm clear-notifications "['<Super>F3']"
+gsettings set com.solus-project.budgie-wm toggle-notifications "['<Super>F2']"
+gsettings set com.solus-project.budgie-wm toggle-raven "['<Super>F1']"
+
+}
+
 
 ##
 ### Tail: budgie_wm

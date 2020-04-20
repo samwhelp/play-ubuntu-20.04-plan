@@ -168,7 +168,7 @@ sxhkd -c "$HOME/.config/budgie-wm-session/sxhkd/sxhkdrc" &
 ## $ grep '^Exec=' $(dpkg -L policykit-1-gnome | grep desktop) | cut -d '=' -f 2
 ## /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
 
-/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
+##/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
 
 
 ## [lxqt-policykit]
@@ -198,6 +198,19 @@ sxhkd -c "$HOME/.config/budgie-wm-session/sxhkd/sxhkdrc" &
 ### Tail: Terminal
 ################################################################################
 
+
+################################################################################
+### Head: Budgie
+##
+
+
+#budgie-panel &
+budgie-daemon &
+budgie-polkit-dialog &
+
+##
+### Tail: Budgie
+################################################################################
 
 ################################################################################
 ### Head: Window Manager
