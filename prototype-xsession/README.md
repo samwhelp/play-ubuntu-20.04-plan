@@ -4,8 +4,8 @@
 
 ## concept
 
-* [xsession-concept/demo-start](xsession-concept/demo-start)
-* [xsession-zero/zero-session](xsession-zero/zero-session)
+* [demo-start](xsession-concept/demo-start)
+* [zero-session](xsession-zero/zero-session)
 
 
 ## xsession-wm-xfwm4
