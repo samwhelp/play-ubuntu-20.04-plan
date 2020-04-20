@@ -191,17 +191,70 @@ muffin_set_keybindings_raise_or_lower () {
 
 muffin_set_keybindings_toggle_tiled () {
 
-	#gsettings set org.cinnamon.desktop.keybindings.wm push-snap-down ['<Control><Super>Down']
-	#gsettings set org.cinnamon.desktop.keybindings.wm push-snap-left ['<Control><Super>Left']
-	#gsettings set org.cinnamon.desktop.keybindings.wm push-snap-right ['<Control><Super>Right']
-	#gsettings set org.cinnamon.desktop.keybindings.wm push-snap-up ['<Control><Super>Up']
-	#gsettings set org.cinnamon.desktop.keybindings.wm push-tile-down ['<Super>Down']
-	#gsettings set org.cinnamon.desktop.keybindings.wm push-tile-left ['<Super>Left']
-	#gsettings set org.cinnamon.desktop.keybindings.wm push-tile-right ['<Super>Right']
-	#gsettings set org.cinnamon.desktop.keybindings.wm push-tile-up ['<Super>Up']
+	#gsettings set org.cinnamon.desktop.keybindings.wm push-snap-down "['<Control><Super>Down']"
+	#gsettings set org.cinnamon.desktop.keybindings.wm push-snap-left "['<Control><Super>Left']"
+	#gsettings set org.cinnamon.desktop.keybindings.wm push-snap-right "['<Control><Super>Right']"
+	#gsettings set org.cinnamon.desktop.keybindings.wm push-snap-up "['<Control><Super>Up']"
+	#gsettings set org.cinnamon.desktop.keybindings.wm push-tile-down "['<Super>Down']"
+	#gsettings set org.cinnamon.desktop.keybindings.wm push-tile-left "['<Super>Left']"
+	#gsettings set org.cinnamon.desktop.keybindings.wm push-tile-right "['<Super>Right']"
+	#gsettings set org.cinnamon.desktop.keybindings.wm push-tile-up "['<Super>Up']"
+
+	gsettings set org.cinnamon.desktop.keybindings.wm push-tile-up "['<Super>Up', '<Super><Control>k']"
+	gsettings set org.cinnamon.desktop.keybindings.wm push-tile-down "['<Super>Down', '<Super><Control>j']"
+	gsettings set org.cinnamon.desktop.keybindings.wm push-tile-left "['<Super>Left', '<Super><Control>h']"
+	gsettings set org.cinnamon.desktop.keybindings.wm push-tile-right "['<Super>Right', '<Super><Control>l']"
 
 
-	#gsettings set org.cinnamon.desktop.keybindings.wm move-to-center @as []
+
+
+	#gsettings set org.cinnamon.desktop.keybindings.wm move-to-center "[]"
+	
+	#gsettings set org.cinnamon.desktop.keybindings.wm move-to-corner-nw "['<Super><Shift>k']"
+	#gsettings set org.cinnamon.desktop.keybindings.wm move-to-corner-ne "['<Super><Shift>j']"
+	#gsettings set org.cinnamon.desktop.keybindings.wm move-to-corner-sw "['<Super><Shift>h']"
+	#gsettings set org.cinnamon.desktop.keybindings.wm move-to-corner-se "['<Super><Shift>l']"
+
+	#gsettings set org.cinnamon.desktop.keybindings.wm move-to-side-n "['<Super><Control>k']"
+	#gsettings set org.cinnamon.desktop.keybindings.wm move-to-side-s "['<Super><Control>j']"
+	#gsettings set org.cinnamon.desktop.keybindings.wm move-to-side-w "['<Super><Control>h']"
+	#gsettings set org.cinnamon.desktop.keybindings.wm move-to-side-e "['<Super><Control>l']"
+
+
+
+	gsettings set org.cinnamon.desktop.keybindings.wm move-to-center "['<Super><Control>i']"
+	
+	gsettings set org.cinnamon.desktop.keybindings.wm move-to-corner-nw "[]"
+	gsettings set org.cinnamon.desktop.keybindings.wm move-to-corner-ne "[]"
+	gsettings set org.cinnamon.desktop.keybindings.wm move-to-corner-sw "[]"
+	gsettings set org.cinnamon.desktop.keybindings.wm move-to-corner-se "[]"
+
+	gsettings set org.cinnamon.desktop.keybindings.wm move-to-side-n "[]"
+	gsettings set org.cinnamon.desktop.keybindings.wm move-to-side-s "[]"
+	gsettings set org.cinnamon.desktop.keybindings.wm move-to-side-w "[]"
+	gsettings set org.cinnamon.desktop.keybindings.wm move-to-side-e "[]"
+	
+
+
+}
+
+
+muffin_set_keybindings_toggle_tiled_old () {
+
+	#gsettings set org.cinnamon.desktop.keybindings.wm push-snap-down "['<Control><Super>Down']"
+	#gsettings set org.cinnamon.desktop.keybindings.wm push-snap-left "['<Control><Super>Left']"
+	#gsettings set org.cinnamon.desktop.keybindings.wm push-snap-right "['<Control><Super>Right']"
+	#gsettings set org.cinnamon.desktop.keybindings.wm push-snap-up "['<Control><Super>Up']"
+	#gsettings set org.cinnamon.desktop.keybindings.wm push-tile-down "['<Super>Down']"
+	#gsettings set org.cinnamon.desktop.keybindings.wm push-tile-left "['<Super>Left']"
+	#gsettings set org.cinnamon.desktop.keybindings.wm push-tile-right "['<Super>Right']"
+	#gsettings set org.cinnamon.desktop.keybindings.wm push-tile-up "['<Super>Up']"
+
+
+
+	#gsettings set org.cinnamon.desktop.keybindings.wm move-to-center "[]"
+	gsettings set org.cinnamon.desktop.keybindings.wm move-to-center "['<Super><Control>i']"
+
 	
 	gsettings set org.cinnamon.desktop.keybindings.wm move-to-corner-nw "['<Super><Shift>k']"
 	gsettings set org.cinnamon.desktop.keybindings.wm move-to-corner-ne "['<Super><Shift>j']"
@@ -212,6 +265,7 @@ muffin_set_keybindings_toggle_tiled () {
 	gsettings set org.cinnamon.desktop.keybindings.wm move-to-side-s "['<Super><Control>j']"
 	gsettings set org.cinnamon.desktop.keybindings.wm move-to-side-w "['<Super><Control>h']"
 	gsettings set org.cinnamon.desktop.keybindings.wm move-to-side-e "['<Super><Control>l']"
+
 
 }
 
