@@ -69,6 +69,8 @@ marco_config_install_setting () {
 
 	marco_set_keybindings_about_workspace
 
+	marco_set_titlebar_action
+
 }
 
 marco_put_toggledesktop_desktop_entry () {
@@ -358,6 +360,26 @@ marco_set_keybindings_about_workspace () {
 	gsettings set org.mate.Marco.window-keybindings move-to-workspace-10 "'<Super>0'"
 
 }
+
+
+marco_set_titlebar_action () {
+
+	#gsettings range org.mate.Marco.general action-double-click-titlebar
+	#gsettings range org.mate.Marco.general action-middle-click-titlebar
+	#gsettings range org.mate.Marco.general action-right-click-titlebar
+
+	#gsettings set org.mate.Marco.general action-double-click-titlebar 'toggle_maximize'
+	#gsettings set org.mate.Marco.general action-middle-click-titlebar 'lower'
+	#gsettings set org.mate.Marco.general action-right-click-titlebar 'menu'
+
+
+
+	gsettings set org.mate.Marco.general action-middle-click-titlebar 'toggle_shade'
+
+
+}
+
+
 ##
 ### Tail: marco
 ################################################################################
