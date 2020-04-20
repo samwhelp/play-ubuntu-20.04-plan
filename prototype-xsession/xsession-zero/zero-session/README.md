@@ -1,7 +1,7 @@
 
 # Prototype play-openbox
 
-## Usage
+## Howto
 
 
 ### install

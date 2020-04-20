@@ -2,8 +2,8 @@
 Type=XSession
 Exec=/usr/bin/zero-session.sh
 TryExec=/usr/bin/zero-session.sh
-Name=ZeroSession
+Name=Zero Session
 Comment=Zero Xsession
 
-Name[zh_TW]=ZeroSession
+Name[zh_TW]=Zero Session
 Comment[zh_TW]=Zero Xsession
