@@ -328,7 +328,7 @@ muffin_set_keybindings_about_workspace () {
 	# gsettings set org.cinnamon.desktop.keybindings.wm move-to-workspace-7 "['<Alt><Super>7']"
 	# gsettings set org.cinnamon.desktop.keybindings.wm move-to-workspace-8 "['<Alt><Super>8']"
 	# gsettings set org.cinnamon.desktop.keybindings.wm move-to-workspace-9 "['<Alt><Super>9']"
-	# gsettings set org.cinnamon.desktop.keybindings.wm move-to-workspace-10 "['<Alt><Super>10']"
+	# gsettings set org.cinnamon.desktop.keybindings.wm move-to-workspace-10 "['<Alt><Super>0']"
 
 
 	gsettings set org.cinnamon.desktop.keybindings.wm move-to-workspace-1 "['<Super>1']"
@@ -340,7 +340,7 @@ muffin_set_keybindings_about_workspace () {
 	gsettings set org.cinnamon.desktop.keybindings.wm move-to-workspace-7 "['<Super>7']"
 	gsettings set org.cinnamon.desktop.keybindings.wm move-to-workspace-8 "['<Super>8']"
 	gsettings set org.cinnamon.desktop.keybindings.wm move-to-workspace-9 "['<Super>9']"
-	gsettings set org.cinnamon.desktop.keybindings.wm move-to-workspace-10 "['<Super>10']"
+	gsettings set org.cinnamon.desktop.keybindings.wm move-to-workspace-10 "['<Super>0']"
 
 }
 
