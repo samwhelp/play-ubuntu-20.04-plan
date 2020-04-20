@@ -7,7 +7,7 @@ Categories=System;Utility;
 Keywords=desktop;window;toggle;
 
 Name=Mutter Toggle Show Desktop
-GenericName=Metacity-Toggle-Show-Desktop
+GenericName=Mutter-Toggle-Show-Desktop
 Comment=Mutter Toggle Show Desktop
 
 Name[zh_TW]=切換顯示桌面
