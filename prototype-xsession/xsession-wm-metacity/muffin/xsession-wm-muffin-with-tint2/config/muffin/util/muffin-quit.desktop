@@ -1,0 +1,15 @@
+[Desktop Entry]
+Type=Application
+Exec=killall -9 muffin
+TryExec=killall
+Icon=gtk-quit
+Categories=System;Utility;
+Keywords=desktop;window;toggle;
+
+Name=Muffin Quit
+GenericName=Muffin-Quit
+Comment=Muffin Quit
+
+Name[zh_TW]=登出桌面
+GenericName[zh_TW]=Muffin-Quit
+Comment[zh_TW]=登出桌面

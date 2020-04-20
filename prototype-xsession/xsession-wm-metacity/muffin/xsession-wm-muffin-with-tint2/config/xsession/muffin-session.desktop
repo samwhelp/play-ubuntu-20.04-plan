@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=XSession
+Exec=/usr/bin/muffin-session.sh
+TryExec=/usr/bin/muffin-session.sh
+Name=Muffin Session
+Comment=Muffin Xsession
+
+Name[zh_TW]=Muffin Session
+Comment[zh_TW]=Muffin Xsession
