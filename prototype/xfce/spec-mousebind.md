@@ -31,8 +31,8 @@
 
 | Button | Description | Command |
 | --- | --- | --- |
-| `[Mouse Middle Click]` | Toggle Show Workspace Menu (Window List) | xfdesktop --windowlist |
-| `[Mouse Right Click]` | Toggle Show Root Menu | xfdesktop --menu (xfce4-popup-applicationsmenu)  |
+| `[Mouse Middle Click]` | Show Workspace Menu (Window List) | xfdesktop --windowlist |
+| `[Mouse Right Click]` | Show Root Menu | xfdesktop --menu (xfce4-popup-applicationsmenu) |
 
 
 ## Go To Workspace
