@@ -31,7 +31,7 @@
 
 | Button | Description | Command |
 | --- | --- | --- |
-| `[Mouse Middle Click]` | Show Workspace Menu (Window List) | xfdesktop --windowlist |
+| `[Mouse Middle Click]` | Show Workspace Menu | xfdesktop --windowlist |
 | `[Mouse Right Click]` | Show Root Menu | xfdesktop --menu (xfce4-popup-applicationsmenu) |
 
 
