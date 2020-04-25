@@ -1,0 +1,2 @@
+#$TERM="x-terminal-emulator"
+$TERM="sakura -m"
