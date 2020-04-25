@@ -53,7 +53,7 @@ $ make config-install
 
 Please refer to
 
-* $ less ~/.pekwm/keys
+* $ less [~/.pekwm/keys](config/pekwm/keys)
 
 
 ## Link
