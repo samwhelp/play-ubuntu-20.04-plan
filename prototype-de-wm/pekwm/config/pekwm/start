@@ -57,7 +57,7 @@ xresources-load.sh
 
 ## network manager applet
 #sleep 1 &&
-#nm-applet &
+nm-applet &
 
 ## Note: use /etc/xdg/autostart/nm-applet.desktop
 
