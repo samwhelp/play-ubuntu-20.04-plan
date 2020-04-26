@@ -18,9 +18,9 @@
 * [~/.pekwm/vars](config/pekwm/vars)
 
 
-## Theme Dir Path
+## Theme
 
-* [~/.pekwm/themes/dust-fix](config/pekwm/themes/dust-fix)
+* [~/.pekwm/themes/dust-fix](config/pekwm/themes/dust-fix) / [theme](config/pekwm/themes/dust-fix/theme)
 
 
 
