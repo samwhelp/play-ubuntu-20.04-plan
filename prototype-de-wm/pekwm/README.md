@@ -20,7 +20,7 @@
 
 ## Theme
 
-* [~/.pekwm/themes/dust-fix](config/pekwm/themes/dust-fix) / [theme](config/pekwm/themes/dust-fix/theme)
+* [~/.pekwm/themes/dust-fix](config/pekwm/themes/dust-fix)/[theme](config/pekwm/themes/dust-fix/theme)
 
 
 
