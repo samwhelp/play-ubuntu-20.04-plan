@@ -7,6 +7,23 @@
 * [run-pekwm-on-xephyr](../../tool/xephyr/develop-tool/run-pekwm-on-xephyr/)
 
 
+## Config File Path
+
+* [~/.pekwm/autoproperties](config/pekwm/autoproperties)
+* [~/.pekwm/config](config/pekwm/config)
+* [~/.pekwm/keys](config/pekwm/keys)
+* [~/.pekwm/menu](config/pekwm/menu)
+* [~/.pekwm/mouse](config/pekwm/mouse)
+* [~/.pekwm/start](config/pekwm/start)
+* [~/.pekwm/vars](config/pekwm/vars)
+
+
+## Theme Dir Path
+
+* [~/.pekwm/themes/dust-fix](config/pekwm/themes/dust-fix)
+
+
+
 ## Howto
 
 
