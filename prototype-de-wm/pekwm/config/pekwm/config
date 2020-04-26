@@ -1,7 +1,7 @@
 INCLUDE = "$_PEKWM_ETC_PATH/config_system"
 
 Files {
-    Theme = "/usr/share/pekwm/themes/dust"
+    Theme = "~/.pekwm/themes/dust-fix"
 }
 
 #Screen {

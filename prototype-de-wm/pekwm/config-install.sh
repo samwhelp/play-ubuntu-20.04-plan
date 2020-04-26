@@ -11,8 +11,8 @@ pekwm_config_install () {
 	mkdir -p "$HOME/.pekwm"
 	echo "mkdir -p $HOME/.pekwm"
 	
-	mkdir -p "$HOME/.pekwm/themes"
-	echo "mkdir -p $HOME/.pekwm/themes"	
+	#mkdir -p "$HOME/.pekwm/themes"
+	#echo "mkdir -p $HOME/.pekwm/themes"
 
 	cp "./config/pekwm/autoproperties" "$HOME/.pekwm/autoproperties"
 	echo "cp ./config/pekwm/autoproperties $HOME/.pekwm/autoproperties"
@@ -34,6 +34,19 @@ pekwm_config_install () {
 
 	cp "./config/pekwm/vars" "$HOME/.pekwm/vars"
 	echo "cp ./config/pekwm/vars $HOME/.pekwm/vars"
+
+
+	pekwm_config_install_theme_dust_fix
+
+}
+
+pekwm_config_install_theme_dust_fix () {
+
+	mkdir -p "$HOME/.pekwm/themes"
+	echo "mkdir -p $HOME/.pekwm/themes"
+
+	cp -r -f "./config/pekwm/themes/dust-fix" "$HOME/.pekwm/themes/dust-fix"
+	echo "cp -r -f ./config/pekwm/themes/dust-fix $HOME/.pekwm/themes/dust-fix"
 
 }
 ##
