@@ -24,7 +24,7 @@ wget 'https://raw.githubusercontent.com/samwhelp/play-ubuntu-20.04-plan/master/p
 ```
 
 
-## Usage
+## Howto
 
 
 ### Help
@@ -37,6 +37,17 @@ or
 
 ``` sh
 $ style-ctrl-xfce help
+```
+
+### Main Usage
+
+```
+## get or set
+
+$ style-ctrl-xfce wm_theme [name]
+$ style-ctrl-xfce ui_theme [name]
+$ style-ctrl-xfce icon_theme [name]
+$ style-ctrl-xfce cursor_theme [name] [size]
 ```
 
 
