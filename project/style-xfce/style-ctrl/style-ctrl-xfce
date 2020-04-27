@@ -453,7 +453,8 @@ sys_xfce_set_all_default () {
 
 sys_xfce_get_wm_theme_default () {
 
-	echo 'Breeze'
+	echo 'NumixBlue'
+	#echo 'Breeze'
 
 }
 
