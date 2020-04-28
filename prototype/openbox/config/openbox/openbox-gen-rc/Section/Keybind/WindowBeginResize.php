@@ -124,6 +124,7 @@
 ## Help
 
 * http://openbox.org/wiki/Help:Actions#Resize
+* http://openbox.org/wiki/Help:Actions#ResizeRelative
 
 */
 ?>
