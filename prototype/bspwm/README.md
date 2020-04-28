@@ -20,7 +20,7 @@
 ## Config File Path
 
 * [~/.config/bspwm/bspwmrc](config/bspwm/bspwmrc)
-* [~/.config/bspwm/sxhkd/sxhkdrc](config/sxhkd/sxhkdrc)
+* [~/.config/bspwm/sxhkd/sxhkdrc](config/bspwm/sxhkd/sxhkdrc)
 
 
 ## Howto
