@@ -1000,7 +1000,7 @@ h l
 
 
 	<!-- Vertical tiling -->
-	<keybind key="W-C-i">
+	<keybind key="A-C-i">
 		<action name="Undecorate"/>
 		<action name="UnmaximizeFull"/>
 		<action name="MoveResizeTo">
@@ -1031,7 +1031,7 @@ h l
 
 
 	<!-- Horizontal tiling -->
-	<keybind key="W-C-u">
+	<keybind key="A-C-u">
 		<action name="Undecorate"/>
 		<action name="UnmaximizeFull"/>
 		<action name="MoveResizeTo">
@@ -1062,7 +1062,7 @@ h l
 
 
 	<!-- Restore window dimensions -->
-	<keybind key="W-C-o">
+	<keybind key="A-C-o">
 		<action name="UnmaximizeFull"/>
 		<action name="Decorate"/>
 		<action name="NextWindow">
@@ -1078,7 +1078,7 @@ h l
 
 
 	<!-- Version: [k j h l] //-->
-	<keybind key="W-C-k">
+	<keybind key="A-C-k">
 		<action name="Unmaximize" />
 		<action name="MoveResizeTo">
 			<x>0</x>
@@ -1088,7 +1088,7 @@ h l
 		</action>
 	</keybind>
 
-	<keybind key="W-C-j">
+	<keybind key="A-C-j">
 		<action name="Unmaximize" />
 		<action name="MoveResizeTo">
 			<x>0</x>
@@ -1098,7 +1098,7 @@ h l
 		</action>
 	</keybind>
 
-	<keybind key="W-C-h">
+	<keybind key="A-C-h">
 		<action name="Unmaximize" />
 		<action name="MoveResizeTo">
 			<x>0</x>
@@ -1108,7 +1108,7 @@ h l
 		</action>
 	</keybind>
 
-	<keybind key="W-C-l">
+	<keybind key="A-C-l">
 		<action name="Unmaximize" />
 		<action name="MoveResizeTo">
 			<x>-0</x>
@@ -1122,7 +1122,7 @@ h l
 
 
 	<!-- Version: [Up Down Left Right] //-->
-	<keybind key="W-C-Up">
+	<keybind key="A-C-Up">
 		<action name="Unmaximize" />
 		<action name="MoveResizeTo">
 			<x>0</x>
@@ -1132,7 +1132,7 @@ h l
 		</action>
 	</keybind>
 
-	<keybind key="W-C-Down">
+	<keybind key="A-C-Down">
 		<action name="Unmaximize" />
 		<action name="MoveResizeTo">
 			<x>0</x>
@@ -1142,7 +1142,7 @@ h l
 		</action>
 	</keybind>
 
-	<keybind key="W-C-Left">
+	<keybind key="A-C-Left">
 		<action name="Unmaximize" />
 		<action name="MoveResizeTo">
 			<x>0</x>
@@ -1152,7 +1152,7 @@ h l
 		</action>
 	</keybind>
 
-	<keybind key="W-C-Right">
+	<keybind key="A-C-Right">
 		<action name="Unmaximize" />
 		<action name="MoveResizeTo">
 			<x>-0</x>
@@ -1164,7 +1164,7 @@ h l
 
 
 	<!-- Version: [k j h l] //-->
-	<keybind key="W-S-k">
+	<keybind key="A-S-k">
 		<action name="Unmaximize" />
 		<action name="MoveResizeTo">
 			<x>0</x>
@@ -1174,7 +1174,7 @@ h l
 		</action>
 	</keybind>
 
-	<keybind key="W-S-j">
+	<keybind key="A-S-j">
 		<action name="Unmaximize" />
 		<action name="MoveResizeTo">
 			<x>-0</x>
@@ -1184,7 +1184,7 @@ h l
 		</action>
 	</keybind>
 
-	<keybind key="W-S-h">
+	<keybind key="A-S-h">
 		<action name="Unmaximize" />
 		<action name="MoveResizeTo">
 			<x>0</x>
@@ -1194,7 +1194,7 @@ h l
 		</action>
 	</keybind>
 
-	<keybind key="W-S-l">
+	<keybind key="A-S-l">
 		<action name="Unmaximize" />
 		<action name="MoveResizeTo">
 			<x>-0</x>
@@ -1207,7 +1207,7 @@ h l
 
 
 	<!-- Version: [Up Down Left Right] //-->
-	<keybind key="W-S-Up">
+	<keybind key="A-S-Up">
 		<action name="Unmaximize" />
 		<action name="MoveResizeTo">
 			<x>0</x>
@@ -1217,7 +1217,7 @@ h l
 		</action>
 	</keybind>
 
-	<keybind key="W-S-Down">
+	<keybind key="A-S-Down">
 		<action name="Unmaximize" />
 		<action name="MoveResizeTo">
 			<x>-0</x>
@@ -1227,7 +1227,7 @@ h l
 		</action>
 	</keybind>
 
-	<keybind key="W-S-Left">
+	<keybind key="A-S-Left">
 		<action name="Unmaximize" />
 		<action name="MoveResizeTo">
 			<x>0</x>
@@ -1237,7 +1237,7 @@ h l
 		</action>
 	</keybind>
 
-	<keybind key="W-S-Right">
+	<keybind key="A-S-Right">
 		<action name="Unmaximize" />
 		<action name="MoveResizeTo">
 			<x>-0</x>

@@ -1,6 +1,6 @@
 
 	<!-- Version: [k j h l] //-->
-	<keybind key="A-S-k">
+	<keybind key="W-S-k">
 		<action name="Unmaximize" />
 		<action name="MoveResizeTo">
 			<x>0</x>
@@ -10,7 +10,7 @@
 		</action>
 	</keybind>
 
-	<keybind key="A-S-j">
+	<keybind key="W-S-j">
 		<action name="Unmaximize" />
 		<action name="MoveResizeTo">
 			<x>-0</x>
@@ -20,7 +20,7 @@
 		</action>
 	</keybind>
 
-	<keybind key="A-S-h">
+	<keybind key="W-S-h">
 		<action name="Unmaximize" />
 		<action name="MoveResizeTo">
 			<x>0</x>
@@ -30,7 +30,7 @@
 		</action>
 	</keybind>
 
-	<keybind key="A-S-l">
+	<keybind key="W-S-l">
 		<action name="Unmaximize" />
 		<action name="MoveResizeTo">
 			<x>-0</x>
@@ -43,7 +43,7 @@
 
 
 	<!-- Version: [Up Down Left Right] //-->
-	<keybind key="A-S-Up">
+	<keybind key="W-S-Up">
 		<action name="Unmaximize" />
 		<action name="MoveResizeTo">
 			<x>0</x>
@@ -53,7 +53,7 @@
 		</action>
 	</keybind>
 
-	<keybind key="A-S-Down">
+	<keybind key="W-S-Down">
 		<action name="Unmaximize" />
 		<action name="MoveResizeTo">
 			<x>-0</x>
@@ -63,7 +63,7 @@
 		</action>
 	</keybind>
 
-	<keybind key="A-S-Left">
+	<keybind key="W-S-Left">
 		<action name="Unmaximize" />
 		<action name="MoveResizeTo">
 			<x>0</x>
@@ -73,7 +73,7 @@
 		</action>
 	</keybind>
 
-	<keybind key="A-S-Right">
+	<keybind key="W-S-Right">
 		<action name="Unmaximize" />
 		<action name="MoveResizeTo">
 			<x>-0</x>

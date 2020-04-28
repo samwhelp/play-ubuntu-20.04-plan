@@ -389,9 +389,9 @@
 
 | Key | Description | Doc |
 | --- | --- | --- |
-| `Win + Ctrl + u` | Tiling Window Horizontal (North-South) (Top-Bottom) | [MoveResizeTo](http://openbox.org/wiki/Help:Actions#MoveResizeTo) |
-| `Win + Ctrl + i` | Tiling Window Vertical (West-East) (Left-Right) | [MoveResizeTo](http://openbox.org/wiki/Help:Actions#MoveResizeTo) |
-| `Win + Ctrl + o` | Restore Window | [MoveResizeTo](http://openbox.org/wiki/Help:Actions#MoveResizeTo) |
+| `Alt + Ctrl + u` | Tiling Window Horizontal (North-South) (Top-Bottom) | [MoveResizeTo](http://openbox.org/wiki/Help:Actions#MoveResizeTo) |
+| `Alt + Ctrl + i` | Tiling Window Vertical (West-East) (Left-Right) | [MoveResizeTo](http://openbox.org/wiki/Help:Actions#MoveResizeTo) |
+| `Alt + Ctrl + o` | Restore Window | [MoveResizeTo](http://openbox.org/wiki/Help:Actions#MoveResizeTo) |
 
 
 ## Window Tiling Move / Side
@@ -400,17 +400,18 @@
 
 | Key | Description | Doc |
 | --- | --- | --- |
-| `Win + Ctrl + k` | Tiling Window Move To North (Top) | [MoveResizeTo](http://openbox.org/wiki/Help:Actions#MoveResizeTo) |
-| `Win + Ctrl + j` | Tiling Window Move To South (Bottom) | [MoveResizeTo](http://openbox.org/wiki/Help:Actions#MoveResizeTo) |
-| `Win + Ctrl + h` | Tiling Window Move To West (Left) | [MoveResizeTo](http://openbox.org/wiki/Help:Actions#MoveResizeTo) |
-| `Win + Ctrl + l` | Tiling Window Move To East (Right) | [MoveResizeTo](http://openbox.org/wiki/Help:Actions#MoveResizeTo) |
+| `Alt + Ctrl + k` | Tiling Window Move To North (Top) | [MoveResizeTo](http://openbox.org/wiki/Help:Actions#MoveResizeTo) |
+| `Alt + Ctrl + j` | Tiling Window Move To South (Bottom) | [MoveResizeTo](http://openbox.org/wiki/Help:Actions#MoveResizeTo) |
+| `Alt + Ctrl + h` | Tiling Window Move To West (Left) | [MoveResizeTo](http://openbox.org/wiki/Help:Actions#MoveResizeTo) |
+| `Alt + Ctrl + l` | Tiling Window Move To East (Right) | [MoveResizeTo](http://openbox.org/wiki/Help:Actions#MoveResizeTo) |
 
 | Key | Description | Doc |
 | --- | --- | --- |
-| `Win + Ctrl + Up` | Tiling Window Move To North (Top) | [MoveResizeTo](http://openbox.org/wiki/Help:Actions#MoveResizeTo) |
-| `Win + Ctrl + Down` | Tiling Window Move To South (Bottom) | [MoveResizeTo](http://openbox.org/wiki/Help:Actions#MoveResizeTo) |
-| `Win + Ctrl + Left` | Tiling Window Move To West (Left) | [MoveResizeTo](http://openbox.org/wiki/Help:Actions#MoveResizeTo) |
-| `Win + Ctrl + Right` | Tiling Window Move To East (Right) | [MoveResizeTo](http://openbox.org/wiki/Help:Actions#MoveResizeTo) |
+| `Alt + Ctrl + Up` | Tiling Window Move To North (Top) | [MoveResizeTo](http://openbox.org/wiki/Help:Actions#MoveResizeTo) |
+| `Alt + Ctrl + Down` | Tiling Window Move To South (Bottom) | [MoveResizeTo](http://openbox.org/wiki/Help:Actions#MoveResizeTo) |
+| `Alt + Ctrl + Left` | Tiling Window Move To West (Left) | [MoveResizeTo](http://openbox.org/wiki/Help:Actions#MoveResizeTo) |
+| `Alt + Ctrl + Right` | Tiling Window Move To East (Right) | [MoveResizeTo](http://openbox.org/wiki/Help:Actions#MoveResizeTo) |
+
 
 ## Window Tiling Move / Corner
 
@@ -418,18 +419,18 @@
 
 | Key | Description | Doc |
 | --- | --- | --- |
-| `Win + Shift + k` | Tiling Window Move To West-North (Left-Top) | [MoveResizeTo](http://openbox.org/wiki/Help:Actions#MoveResizeTo) |
-| `Win + Shift + j` | Tiling Window Move To East-North (Right-Top) | [MoveResizeTo](http://openbox.org/wiki/Help:Actions#MoveResizeTo) |
-| `Win + Shift + h` | Tiling Window Move To West-South (Left-Bottom) | [MoveResizeTo](http://openbox.org/wiki/Help:Actions#MoveResizeTo) |
-| `Win + Shift + l` | Tiling Window Move To East-South (Right-Bottom) | [MoveResizeTo](http://openbox.org/wiki/Help:Actions#MoveResizeTo) |
+| `Alt + Shift + k` | Tiling Window Move To West-North (Left-Top) | [MoveResizeTo](http://openbox.org/wiki/Help:Actions#MoveResizeTo) |
+| `Alt + Shift + j` | Tiling Window Move To East-North (Right-Top) | [MoveResizeTo](http://openbox.org/wiki/Help:Actions#MoveResizeTo) |
+| `Alt + Shift + h` | Tiling Window Move To West-South (Left-Bottom) | [MoveResizeTo](http://openbox.org/wiki/Help:Actions#MoveResizeTo) |
+| `Alt + Shift + l` | Tiling Window Move To East-South (Right-Bottom) | [MoveResizeTo](http://openbox.org/wiki/Help:Actions#MoveResizeTo) |
 
 
 | Key | Description | Doc |
 | --- | --- | --- |
-| `Win + Shift + Up` | Tiling Window Move To West-North (Left-Top) | [MoveResizeTo](http://openbox.org/wiki/Help:Actions#MoveResizeTo) |
-| `Win + Shift + Down` | Tiling Window Move To East-North (Right-Top) | [MoveResizeTo](http://openbox.org/wiki/Help:Actions#MoveResizeTo) |
-| `Win + Shift + Left` | Tiling Window Move To West-South (Left-Bottom) | [MoveResizeTo](http://openbox.org/wiki/Help:Actions#MoveResizeTo) |
-| `Win + Shift + Right` | Tiling Window Move To East-South (Right-Bottom) | [MoveResizeTo](http://openbox.org/wiki/Help:Actions#MoveResizeTo) |
+| `Alt + Shift + Up` | Tiling Window Move To West-North (Left-Top) | [MoveResizeTo](http://openbox.org/wiki/Help:Actions#MoveResizeTo) |
+| `Alt + Shift + Down` | Tiling Window Move To East-North (Right-Top) | [MoveResizeTo](http://openbox.org/wiki/Help:Actions#MoveResizeTo) |
+| `Alt + Shift + Left` | Tiling Window Move To West-South (Left-Bottom) | [MoveResizeTo](http://openbox.org/wiki/Help:Actions#MoveResizeTo) |
+| `Alt + Shift + Right` | Tiling Window Move To East-South (Right-Bottom) | [MoveResizeTo](http://openbox.org/wiki/Help:Actions#MoveResizeTo) |
 
 
 ## Rofi

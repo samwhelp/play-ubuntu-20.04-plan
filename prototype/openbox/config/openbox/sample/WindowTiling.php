@@ -1,7 +1,7 @@
 
 
 	<!-- Vertical tiling -->
-	<keybind key="A-C-i">
+	<keybind key="W-C-i">
 		<action name="Undecorate"/>
 		<action name="UnmaximizeFull"/>
 		<action name="MoveResizeTo">
@@ -32,7 +32,7 @@
 
 
 	<!-- Horizontal tiling -->
-	<keybind key="A-C-u">
+	<keybind key="W-C-u">
 		<action name="Undecorate"/>
 		<action name="UnmaximizeFull"/>
 		<action name="MoveResizeTo">
@@ -63,7 +63,7 @@
 
 
 	<!-- Restore window dimensions -->
-	<keybind key="A-C-o">
+	<keybind key="W-C-o">
 		<action name="UnmaximizeFull"/>
 		<action name="Decorate"/>
 		<action name="NextWindow">
