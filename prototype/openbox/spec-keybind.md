@@ -384,10 +384,10 @@
 
 | Key | Description | Doc |
 | --- | --- | --- |
-| `Win + Shift + Up` | Window Move To North (Up) | [MoveRelative](http://openbox.org/wiki/Help:Actions#MoveRelative) |
-| `Win + Shift + Down` | Window Move To South (Down) | [MoveRelative](http://openbox.org/wiki/Help:Actions#MoveRelative) |
-| `Win + Shift + Left` | Window Move To West (Left) | [MoveRelative](http://openbox.org/wiki/Help:Actions#MoveRelative) |
-| `Win + Shift + Right` | Window Move To East (Right) | [MoveRelative](http://openbox.org/wiki/Help:Actions#MoveRelative) |
+| `Win + Up` | Window Move To North (Up) | [MoveRelative](http://openbox.org/wiki/Help:Actions#MoveRelative) |
+| `Win + Down` | Window Move To South (Down) | [MoveRelative](http://openbox.org/wiki/Help:Actions#MoveRelative) |
+| `Win + Left` | Window Move To West (Left) | [MoveRelative](http://openbox.org/wiki/Help:Actions#MoveRelative) |
+| `Win + Right` | Window Move To East (Right) | [MoveRelative](http://openbox.org/wiki/Help:Actions#MoveRelative) |
 
 
 ## Window Resize
@@ -409,6 +409,14 @@
 
 | Key | Description | Doc |
 | --- | --- | --- |
+| `Win + Ctrl + i` | Move the top edge up, growing the window | [ResizeRelative](http://openbox.org/wiki/Help:Actions#ResizeRelative) |
+| `Win + Ctrl + u` | Move the top edge down, shrinking the window | [ResizeRelative](http://openbox.org/wiki/Help:Actions#ResizeRelative) |
+| `Win + Ctrl + y` | Move the left edge left, growing the window | [ResizeRelative](http://openbox.org/wiki/Help:Actions#ResizeRelative) |
+| `Win + Ctrl + o` | Move the left edge right, shrinking the window | [ResizeRelative](http://openbox.org/wiki/Help:Actions#ResizeRelative) |
+
+
+| Key | Description | Doc |
+| --- | --- | --- |
 | `Win + Ctrl + Up` | Move the bottom edge up, shrinking the window | [ResizeRelative](http://openbox.org/wiki/Help:Actions#ResizeRelative) |
 | `Win + Ctrl + Down` | Move the bottom edge down, growing the window | [ResizeRelative](http://openbox.org/wiki/Help:Actions#ResizeRelative) |
 | `Win + Ctrl + Left` | Move the right edge left, shrinking the window | [ResizeRelative](http://openbox.org/wiki/Help:Actions#ResizeRelative) |
@@ -417,10 +425,10 @@
 
 | Key | Description | Doc |
 | --- | --- | --- |
-| `Win + Ctrl + i` | Move the top edge up, growing the window | [ResizeRelative](http://openbox.org/wiki/Help:Actions#ResizeRelative) |
-| `Win + Ctrl + u` | Move the top edge down, shrinking the window | [ResizeRelative](http://openbox.org/wiki/Help:Actions#ResizeRelative) |
-| `Win + Ctrl + y` | Move the left edge left, growing the window | [ResizeRelative](http://openbox.org/wiki/Help:Actions#ResizeRelative) |
-| `Win + Ctrl + o` | Move the left edge right, shrinking the window | [ResizeRelative](http://openbox.org/wiki/Help:Actions#ResizeRelative) |
+| `Win + Shift + Up` | Move the top edge up, growing the window | [ResizeRelative](http://openbox.org/wiki/Help:Actions#ResizeRelative) |
+| `Win + Shift + Down` | Move the top edge down, shrinking the window | [ResizeRelative](http://openbox.org/wiki/Help:Actions#ResizeRelative) |
+| `Win + Shift + Left` | Move the left edge left, growing the window | [ResizeRelative](http://openbox.org/wiki/Help:Actions#ResizeRelative) |
+| `Win + Shift + Right` | Move the left edge right, shrinking the window | [ResizeRelative](http://openbox.org/wiki/Help:Actions#ResizeRelative) |
 
 
 ## Window Tiling
