@@ -150,7 +150,7 @@ On Floating
 
 
 | Key | Description |
-| --- | --- | --- |
+| --- | --- |
 | `Win + Up` | Window Move To North (Up) |
 | `Win + Down` | Window Move To South (Down) |
 | `Win + Left` | Window Move To West (Left) |
@@ -192,6 +192,7 @@ On Floating or Tiled
 | `Win + Shift + Down` | Move the top edge down, shrinking the window height |
 | `Win + Shift + Left` | Move the left edge left, growing the window width |
 | `Win + Shift + Right` | Move the left edge right, shrinking the window width |
+
 
 ## Layout
 
