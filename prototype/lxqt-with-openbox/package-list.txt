@@ -6,6 +6,14 @@ obconf
 rofi
 
 
+pulseaudio-utils
+pavucontrol
+pavucontrol-qt
+#alsa-utils
+#volumeicon-alsa
+#mate-media
+
+
 numix-gtk-theme
 numix-blue-gtk-theme
 numix-icon-theme
@@ -22,9 +30,13 @@ fcitx-chewing
 pcmanfm-qt
 
 
+
 qterminal
-tilix
 sakura
+xfce4-terminal
+#tilix
+xterm
+rxvt-unicode
 
 
 firefox
