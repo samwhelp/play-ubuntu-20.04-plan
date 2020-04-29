@@ -40,9 +40,10 @@ Global {
 ##
 
 	KeyPress = "Mod1 Return" { Actions = "Exec sakura -m" }
-	KeyPress = "Mod1 Shift a" { Actions = "Exec xterm" }
-	KeyPress = "Mod1 Shift t" { Actions = "Exec urxvt" }
-
+	KeyPress = "Mod1 Shift a" { Actions = "Exec xfce4-terminal --drop-down" }
+	KeyPress = "Mod1 Shift t" { Actions = "Exec xterm" }
+	#KeyPress = "Mod1 Ctrl t" { Actions = "Exec urxvt" }
+	#Note: "Ctrl Mod1 T" is used 
 ##
 ## Tail: Launch App / Terminal
 ################################################################################
