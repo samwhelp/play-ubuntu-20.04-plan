@@ -2,7 +2,7 @@
 Type=Application
 Exec=obsession-logout
 TryExec=obsession-logout
-Icon=system-logout
+Icon=gtk-quit
 Categories=System;Utility;
 Keywords=logout;exit;
 
