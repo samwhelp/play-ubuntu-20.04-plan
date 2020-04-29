@@ -320,17 +320,6 @@
 		</action>
 	</keybind>
 
-	<keybind key="A-C-a">
-		<action name="ShowMenu">
-			<menu>root-menu</menu>
-		</action>
-	</keybind>
-
-	<keybind key="W-C-a">
-		<action name="ShowMenu">
-			<menu>root-menu</menu>
-		</action>
-	</keybind>
 
 
 	<keybind key="W-c">
@@ -338,32 +327,19 @@
 			<menu>client-list-combined-menu</menu>
 		</action>
 	</keybind>
-
-	<keybind key="A-C-s">
+	
+	<keybind key="Alt-F3">
 		<action name="ShowMenu">
 			<menu>client-list-combined-menu</menu>
 		</action>
-	</keybind>
+	</keybind>	
 
-	<keybind key="W-C-s">
-		<action name="ShowMenu">
-			<menu>client-list-combined-menu</menu>
-		</action>
-	</keybind>
 
 
 	<keybind key="W-d">
 		<action name="ToggleShowDesktop"/>
 	</keybind>
 
-
-	<keybind key="A-C-d">
-		<action name="ToggleShowDesktop"/>
-	</keybind>
-
-	<keybind key="W-C-d">
-		<action name="ToggleShowDesktop"/>
-	</keybind>
 
 
 
@@ -911,11 +887,11 @@ h l
 		<action name="Close"/>
 	</keybind>
 
-	<keybind key="A-S-q">
+	<keybind key="A-F4">
 		<action name="Close"/>
 	</keybind>
 
-	<keybind key="A-F4">
+	<keybind key="A-S-q">
 		<action name="Close"/>
 	</keybind>
 
@@ -1482,6 +1458,17 @@ h l
 	</keybind>
 
 
+
+
+	<keybind key="Alt-F2">
+		<action name="Execute">
+			<startupnotify>
+				<enabled>true</enabled>
+				<name>RofiShowDrun</name>
+			</startupnotify>
+			<command>rofi -show drun -show-icons</command>
+		</action>
+	</keybind>
 
 
 	<keybind key="A-S-d">

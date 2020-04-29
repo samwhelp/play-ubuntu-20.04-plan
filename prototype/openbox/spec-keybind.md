@@ -88,9 +88,10 @@
 
 | Key | Description | Doc |
 | --- | --- | --- |
-| `Alt + Shift + r` | Rofi Show Run | [Execute](http://openbox.org/wiki/Help:Actions#Execute) |
+| `Alt + F2` | Rofi Show Drun | [Execute](http://openbox.org/wiki/Help:Actions#Execute) |
 | `Alt + Shift + d` | Rofi Show Drun | [Execute](http://openbox.org/wiki/Help:Actions#Execute) |
 | `Alt + Shift + w` | Rofi Show Window | [Execute](http://openbox.org/wiki/Help:Actions#Execute) |
+| `Alt + Shift + r` | Rofi Show Run | [Execute](http://openbox.org/wiki/Help:Actions#Execute) |
 
 
 ## Launch App
@@ -158,7 +159,7 @@
 
 | Key | Description | Doc |
 | --- | --- | --- |
-| `Alt + Shift + z` | Restart | [Restart](http://openbox.org/wiki/Help:Actions#Restart) |
+| `Alt + Shift + z` | obsession-logout | $ man [obsession-logout](http://manpages.ubuntu.com/manpages/focal/en/man1/obsession-logout.1.html) |
 | `Alt + Shift + x` | Logout | [Exit](http://openbox.org/wiki/Help:Actions#Exit) |
 | `Ctrl + Alt + Delete` | Logout | [Exit](http://openbox.org/wiki/Help:Actions#Exit) |
 | `Alt + Shift + c` | Reconfigure | [Reconfigure](http://openbox.org/wiki/Help:Actions#Reconfigure) |
@@ -182,8 +183,7 @@
 | --- | --- | --- |
 | `Win + Space` | Show Root Menu | [ShowMenu](http://openbox.org/wiki/Help:Actions#ShowMenu) (root-menu) |
 | `Alt + F1` | Show Root Menu | [ShowMenu](http://openbox.org/wiki/Help:Actions#ShowMenu) (root-menu) |
-| `Ctrl + Win + a` | Show Root Menu | [ShowMenu](http://openbox.org/wiki/Help:Actions#ShowMenu) (root-menu) |
-| `Ctrl + Alt + a` | Show Root Menu | [ShowMenu](http://openbox.org/wiki/Help:Actions#ShowMenu) (root-menu) |
+
 
 
 ## Show Workspace Menu
@@ -193,8 +193,7 @@
 | Key | Description | Doc |
 | --- | --- | --- |
 | `Win + c` | Show Workspace Menu | [ShowMenu](http://openbox.org/wiki/Help:Actions#ShowMenu) (client-list-combined-menu) |
-| `Ctrl + Win + s` | Show Workspace Menu | [ShowMenu](http://openbox.org/wiki/Help:Actions#ShowMenu) (client-list-combined-menu) |
-| `Ctrl + Alt + s` | Show Workspace Menu | [ShowMenu](http://openbox.org/wiki/Help:Actions#ShowMenu) (client-list-combined-menu) |
+| `Alt + F3` | Show Workspace Menu | [ShowMenu](http://openbox.org/wiki/Help:Actions#ShowMenu) (client-list-combined-menu) |
 
 
 ## Toggle Show Desktop
@@ -204,8 +203,6 @@
 | Key | Description | Doc |
 | --- | --- | --- |
 | `Win + d` | Toggle Show Desktop | [ToggleShowDesktop](http://openbox.org/wiki/Help:Actions#ToggleShowDesktop) |
-| `Ctrl + Win + d` | Toggle Show Desktop | [ToggleShowDesktop](http://openbox.org/wiki/Help:Actions#ToggleShowDesktop) |
-| `Ctrl + Alt + d` | Toggle Show Desktop | [ToggleShowDesktop](http://openbox.org/wiki/Help:Actions#ToggleShowDesktop) |
 
 
 ## Go To Workspace
