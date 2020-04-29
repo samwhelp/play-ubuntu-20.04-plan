@@ -124,8 +124,9 @@ $ xfconf-query -c xfce4-keyboard-shortcuts -p '/commands/custom/<Alt>m' -s 'pact
 | Key | Description |
 | --- | --- |
 | `Alt + Enter` | Launch Terminal (sakura -m) |
-| `Alt + Shift + a` | Launch Terminal (sakura -m) |
-| `Alt + Shift + t` | Toggle Drop Down Terminal (tilix --quake) |
+| `Alt + Shift + a` | Toggle Drop Down Terminal (xfce4-terminal --drop-down) |
+| `Alt + Shift + t` | Launch Terminal (xterm) |
+| `Alt + Ctrl + t` | Launch Terminal (urxvt) |
 
 ### Rofi
 
