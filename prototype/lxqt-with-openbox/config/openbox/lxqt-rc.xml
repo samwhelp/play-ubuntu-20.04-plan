@@ -1519,37 +1519,39 @@ h l
 		</action>
 	</keybind>
 
+
+	<!-- ## Terminal-Quake //-->
 	<keybind key="A-S-a">
 		<action name="Execute">
 			<startupnotify>
 				<enabled>true</enabled>
-				<name>Terminal</name>
+				<name>Terminal-Quake</name>
 			</startupnotify>
-			<command>sakura -m</command>
-		</action>
-	</keybind>
-
-	<keybind key="A-C-t">
-		<action name="Execute">
-			<startupnotify>
-				<enabled>true</enabled>
-				<name>Terminal</name>
-			</startupnotify>
-			<command>x-terminal-emulator</command>
+			<command>xfce4-terminal --drop-down</command>
 		</action>
 	</keybind>
 
 
-	<!-- ## Terminal - quake //-->
+	<!-- ## Terminal //-->
 	<keybind key="A-S-t">
 		<action name="Execute">
 			<startupnotify>
 				<enabled>true</enabled>
 				<name>Terminal</name>
 			</startupnotify>
-			<command>tilix --quake</command>
+			<command>xterm</command>
 		</action>
 	</keybind>
+	
+	<keybind key="A-C-t">
+		<action name="Execute">
+			<startupnotify>
+				<enabled>true</enabled>
+				<name>Terminal</name>
+			</startupnotify>
+			<command>urxvt</command>
+		</action>
+	</keybind>	
 
 
 	<!-- ## File Manager //-->
@@ -2291,11 +2293,6 @@ h l
 
 
 	<application class="Gnome-terminal" type="normal">
-		<desktop>1</desktop>
-		<focus>yes</focus>
-	</application>
-
-	<application class="Xfce4-terminal" type="normal">
 		<desktop>1</desktop>
 		<focus>yes</focus>
 	</application>

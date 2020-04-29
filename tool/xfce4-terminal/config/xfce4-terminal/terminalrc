@@ -9,4 +9,7 @@ FontName=Monospace 14
 MiscSearchDialogOpacity=90
 BackgroundDarkness=0.900000
 BackgroundMode=TERMINAL_BACKGROUND_TRANSPARENT
+DropdownKeepOpenDefault=TRUE
+DropdownAlwaysShowTabs=FALSE
+DropdownWidth=90
 
