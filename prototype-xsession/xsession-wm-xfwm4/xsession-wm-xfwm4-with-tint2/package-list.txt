@@ -39,8 +39,11 @@ pcmanfm-qt
 #xfdesktop4
 
 
-tilix
 sakura
+xfce4-terminal
+#tilix
+xterm
+rxvt-unicode
 
 
 firefox
