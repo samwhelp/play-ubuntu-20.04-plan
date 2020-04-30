@@ -91,7 +91,52 @@ h l
 	</keybind>
 
 
+	<!-- Alt+Up, Alt+Down //-->
+	<!--
+	<keybind key="A-Up">
+		<action name="PreviousWindow">
+			<finalactions>
+				<action name="Focus"/>
+				<action name="Raise"/>
+				<action name="Unshade"/>
+			</finalactions>
+		</action>
+	</keybind>
+	//-->
 
+	<keybind key="A-Down">
+		<action name="NextWindow">
+			<finalactions>
+				<action name="Focus"/>
+				<action name="Raise"/>
+				<action name="Unshade"/>
+			</finalactions>
+		</action>
+	</keybind>
+
+
+	<!-- Alt+Left, Alt+Right //-->
+	<!--
+	<keybind key="A-Left">
+		<action name="PreviousWindow">
+			<finalactions>
+				<action name="Focus"/>
+				<action name="Raise"/>
+				<action name="Unshade"/>
+			</finalactions>
+		</action>
+	</keybind>
+
+	<keybind key="A-Right">
+		<action name="NextWindow">
+			<finalactions>
+				<action name="Focus"/>
+				<action name="Raise"/>
+				<action name="Unshade"/>
+			</finalactions>
+		</action>
+	</keybind>
+	//-->
 
 
 	<!-- Default keybindings for window switching -->
