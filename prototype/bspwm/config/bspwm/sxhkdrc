@@ -158,6 +158,12 @@ super + {1-9,0}
 #	bspc node -d '^{1-9,10}'
 
 
+
+## Arrow key
+#alt + {Left,Right}
+#	bspc desktop -f {prev,next}.local
+
+
 ##
 ## Tail: Workspace
 ################################################################################
@@ -189,6 +195,12 @@ super + z
 #	bspc wm -h on
 
 
+
+## Arrow key
+alt + {Up, Down}
+	bspc node -f {prev,next}.local
+
+
 ##
 ## Tail: Window / Focus
 ################################################################################
@@ -209,6 +221,11 @@ alt + shift + p
 super + g
 	bspc query -N -n focused.automatic && bspc node -n last.!automatic || bspc node last.leaf -n focused
 
+
+
+## Arrow key
+alt + shift + {Left,Right}
+	bspc node -s {prev,next}.local
 
 ##
 ## Tail: Window / Swap
