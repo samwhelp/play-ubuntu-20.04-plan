@@ -10,6 +10,7 @@
 * [demo-wm-with-panel](xsession-concept/demo-wm-with-panel)
 * [demo-wm-with-panel-wallpaper](xsession-concept/demo-wm-with-panel-wallpaper)
 * [demo-wm-with-panel-wallpaper-other-compositor](xsession-concept/demo-wm-with-panel-wallpaper-other-compositor)
+* [demo-wm-with-panel-wallpaper-other-compositor-and-keybind](xsession-concept/demo-wm-with-panel-wallpaper-other-compositor-and-keybind)
 
 
 ## xsession-wm-xfwm4
