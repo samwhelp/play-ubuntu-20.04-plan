@@ -6,6 +6,8 @@
 
 * [demo-start](xsession-concept/demo-start)
 * [zero-session](xsession-zero/zero-session)
+* [demo-wm](xsession-concept/demo-wm)
+* [demo-wm-with-panel](xsession-concept/demo-wm-with-panel)
 
 
 ## xsession-wm-xfwm4
