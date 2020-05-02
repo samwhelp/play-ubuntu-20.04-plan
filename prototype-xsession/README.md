@@ -8,6 +8,8 @@
 * [zero-session](xsession-zero/zero-session)
 * [demo-wm](xsession-concept/demo-wm)
 * [demo-wm-with-panel](xsession-concept/demo-wm-with-panel)
+* [demo-wm-with-panel-wallpaper](xsession-concept/demo-wm-with-panel-wallpaper)
+* [demo-wm-with-panel-wallpaper-other-compositor](xsession-concept/demo-wm-with-panel-wallpaper-other-compositor)
 
 
 ## xsession-wm-xfwm4
