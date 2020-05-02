@@ -83,7 +83,7 @@
 
 	<!-- Version: [i u y o] //-->
 	<!-- Move the top edge up, growing the window //-->
-	<keybind key="W-C-i">
+	<keybind key="W-S-k">
 		<action name="UnmaximizeFull"/>
 		<action name="ResizeRelative">
 			<top>+20</top>
@@ -91,7 +91,7 @@
 	</keybind>
 
 	<!-- Move the top edge down, shrinking the window //-->
-	<keybind key="W-C-u">
+	<keybind key="W-S-j">
 		<action name="UnmaximizeFull"/>
 		<action name="ResizeRelative">
 			<top>-20</top>
@@ -99,7 +99,7 @@
 	</keybind>
 
 	<!-- Move the left edge left, growing the window //-->
-	<keybind key="W-C-y">
+	<keybind key="W-S-h">
 		<action name="UnmaximizeFull"/>
 		<action name="ResizeRelative">
 			<left>+20</left>
@@ -107,7 +107,7 @@
 	</keybind>
 
 	<!-- Move the left edge right, shrinking the window //-->
-	<keybind key="W-C-o">
+	<keybind key="W-S-l">
 		<action name="UnmaximizeFull"/>
 		<action name="ResizeRelative">
 			<left>-20</left>

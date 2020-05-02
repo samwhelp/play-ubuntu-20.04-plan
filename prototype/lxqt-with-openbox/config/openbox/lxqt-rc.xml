@@ -382,8 +382,6 @@
 h l
  j
 	//-->
-
-	<!--
 	<keybind key="A-k">
 		<action name="GoToDesktop">
 			<to>up</to>
@@ -407,7 +405,7 @@ h l
 			<to>right</to>
 		</action>
 	</keybind>
-	//-->
+
 
 	<!-- alt+[, alt+] //-->
 	<keybind key="A-bracketleft">
@@ -699,7 +697,6 @@ h l
 h l
  j
 	//-->
-<!--
 	<keybind key="W-k">
 		<action name="PreviousWindow">
 			<finalactions>
@@ -739,7 +736,7 @@ h l
 			</finalactions>
 		</action>
 	</keybind>
-//-->
+
 
 	<!-- win+[, win+] //-->
 	<keybind key="W-bracketleft">
@@ -775,16 +772,6 @@ h l
 		</action>
 	</keybind>
 	//-->
-
-	<keybind key="A-j">
-		<action name="NextWindow">
-			<finalactions>
-				<action name="Focus"/>
-				<action name="Raise"/>
-				<action name="Unshade"/>
-			</finalactions>
-		</action>
-	</keybind>
 
 	<keybind key="A-Down">
 		<action name="NextWindow">
@@ -948,7 +935,6 @@ h l
 
 
 
-
 	<keybind key="W-Escape">
 		<action name="Lower"/>
 		<action name="FocusToBottom"/>
@@ -1076,7 +1062,7 @@ h l
 
 	<!-- Version: [k j h l] //-->
 	<!-- Window Move To North (Up) //-->
-	<keybind key="W-k">
+	<keybind key="W-S-k">
 		<action name="UnmaximizeFull"/>
 		<action name="MoveRelative">
 			<x>0</x>
@@ -1085,7 +1071,7 @@ h l
 	</keybind>
 
 	<!-- Window Move To South (Down) //-->
-	<keybind key="W-j">
+	<keybind key="W-S-j">
 		<action name="UnmaximizeFull"/>
 		<action name="MoveRelative">
 			<x>0</x>
@@ -1094,7 +1080,7 @@ h l
 	</keybind>
 
 	<!-- Window Move To West (Left) //-->
-	<keybind key="W-h">
+	<keybind key="W-S-h">
 		<action name="UnmaximizeFull"/>
 		<action name="MoveRelative">
 			<x>-20</x>
@@ -1103,7 +1089,7 @@ h l
 	</keybind>
 
 	<!-- Window Move To East (Right) //-->
-	<keybind key="W-l">
+	<keybind key="W-S-l">
 		<action name="UnmaximizeFull"/>
 		<action name="MoveRelative">
 			<x>+20</x>
@@ -1234,7 +1220,7 @@ h l
 
 	<!-- Version: [i u y o] //-->
 	<!-- Move the top edge up, growing the window //-->
-	<keybind key="W-S-k">
+	<keybind key="W-C-i">
 		<action name="UnmaximizeFull"/>
 		<action name="ResizeRelative">
 			<top>+20</top>
@@ -1242,7 +1228,7 @@ h l
 	</keybind>
 
 	<!-- Move the top edge down, shrinking the window //-->
-	<keybind key="W-S-j">
+	<keybind key="W-C-u">
 		<action name="UnmaximizeFull"/>
 		<action name="ResizeRelative">
 			<top>-20</top>
@@ -1250,7 +1236,7 @@ h l
 	</keybind>
 
 	<!-- Move the left edge left, growing the window //-->
-	<keybind key="W-S-h">
+	<keybind key="W-C-y">
 		<action name="UnmaximizeFull"/>
 		<action name="ResizeRelative">
 			<left>+20</left>
@@ -1258,7 +1244,7 @@ h l
 	</keybind>
 
 	<!-- Move the left edge right, shrinking the window //-->
-	<keybind key="W-S-l">
+	<keybind key="W-C-o">
 		<action name="UnmaximizeFull"/>
 		<action name="ResizeRelative">
 			<left>-20</left>
@@ -1306,7 +1292,7 @@ h l
 
 
 	<!-- Up-Down -->
-	<keybind key="A-k">
+	<keybind key="A-C-u">
 		<action name="Undecorate"/>
 		<action name="UnmaximizeFull"/>
 		<action name="MoveResizeTo">
@@ -1337,7 +1323,7 @@ h l
 
 
 	<!-- Left-Right -->
-	<keybind key="A-h">
+	<keybind key="A-C-i">
 		<action name="Undecorate"/>
 		<action name="UnmaximizeFull"/>
 		<action name="MoveResizeTo">
@@ -1368,7 +1354,7 @@ h l
 
 
 	<!-- Restore window dimensions -->
-	<keybind key="A-l">
+	<keybind key="A-C-o">
 		<action name="UnmaximizeFull"/>
 		<action name="Decorate"/>
 		<action name="NextWindow">
@@ -2093,7 +2079,6 @@ h l
 		</mousebind>
 
 	</context>
-
 	
 
 	<context name="Client">

@@ -186,14 +186,14 @@
 
 
 
-## Show Workspace Menu
+## Show Goto Menu
 
 * Config Sample / [MenuClientList](config/openbox/openbox-gen-rc/Section/Keybind/MenuClientList.php)
 
 | Key | Description | Doc |
 | --- | --- | --- |
-| `Win + c` | Show Workspace Menu | [ShowMenu](http://openbox.org/wiki/Help:Actions#ShowMenu) (client-list-combined-menu) |
-| `Alt + F3` | Show Workspace Menu | [ShowMenu](http://openbox.org/wiki/Help:Actions#ShowMenu) (client-list-combined-menu) |
+| `Win + c` | Show Goto Menu | [ShowMenu](http://openbox.org/wiki/Help:Actions#ShowMenu) (client-list-combined-menu) |
+| `Alt + F3` | Show Goto Menu | [ShowMenu](http://openbox.org/wiki/Help:Actions#ShowMenu) (client-list-combined-menu) |
 
 
 ## Toggle Show Desktop
@@ -218,19 +218,6 @@
 | Key | Description | Doc |
 | --- | --- | --- |
 | `Alt + z` | Go To Last Workspace | [GoToDesktop](http://openbox.org/wiki/Help:Actions#GoToDesktop) |
-
-
-
-| Key | Description | Doc |
-| --- | --- | --- |
-| `Alt + k` | Go To Up Workspace | [GoToDesktop](http://openbox.org/wiki/Help:Actions#GoToDesktop) |
-| `Alt + j` | Go To Down Workspace | [GoToDesktop](http://openbox.org/wiki/Help:Actions#GoToDesktop) |
-
-
-| Key | Description | Doc |
-| --- | --- | --- |
-| `Alt + h` | Go To Left Workspace | [GoToDesktop](http://openbox.org/wiki/Help:Actions#GoToDesktop) |
-| `Alt + l` | Go To Right Workspace | [GoToDesktop](http://openbox.org/wiki/Help:Actions#GoToDesktop) |
 
 
 | Key | Description | Doc |
@@ -320,21 +307,19 @@
 
 | Key | Description | Doc |
 | --- | --- | --- |
-| `Win + k` | Previous Window | [PreviousWindow](http://openbox.org/wiki/Help:Actions#PreviousWindow) |
-| `Win + j` | Next Window | [NextWindow](http://openbox.org/wiki/Help:Actions#NextWindow) |
-
-
-| Key | Description | Doc |
-| --- | --- | --- |
-| `Win + l` | Previous Window | [PreviousWindow](http://openbox.org/wiki/Help:Actions#PreviousWindow) |
-| `Win + h` | Next Window | [NextWindow](http://openbox.org/wiki/Help:Actions#NextWindow) |
-
-
-| Key | Description | Doc |
-| --- | --- | --- |
 | `Win + [` | Previous Window | [PreviousWindow](http://openbox.org/wiki/Help:Actions#PreviousWindow) |
 | `Win + ]` | Next Window | [NextWindow](http://openbox.org/wiki/Help:Actions#NextWindow) |
 
+
+| Key | Description | Doc |
+| --- | --- | --- |
+| `Win + Tab` | Next Window | [NextWindow](http://openbox.org/wiki/Help:Actions#NextWindow) |
+| `Alt + Tab` | Next Window | [NextWindow](http://openbox.org/wiki/Help:Actions#NextWindow) |
+
+
+| Key | Description | Doc |
+| --- | --- | --- |
+| `Alt + Down` | Next Window | [NextWindow](http://openbox.org/wiki/Help:Actions#NextWindow) |
 
 ## Window Raise or Lower
 
@@ -354,8 +339,8 @@
 | Key | Description | Doc |
 | --- | --- | --- |
 | `Win + q` | Window Close | [Close](http://openbox.org/wiki/Help:Actions#Close) |
-| `Alt + Shift + q` | Window Close | [Close](http://openbox.org/wiki/Help:Actions#Close) |
 | `Alt + F4` | Window Close | [Close](http://openbox.org/wiki/Help:Actions#Close) |
+| `Alt + Shift + q` | Window Close | [Close](http://openbox.org/wiki/Help:Actions#Close) |
 
 
 ## Window Iconify
@@ -443,10 +428,10 @@
 
 | Key | Description | Doc |
 | --- | --- | --- |
-| `Win + Shift + k` | Window Move To North (Up) | [MoveRelative](http://openbox.org/wiki/Help:Actions#MoveRelative) |
-| `Win + Shift + j` | Window Move To South (Down) | [MoveRelative](http://openbox.org/wiki/Help:Actions#MoveRelative) |
-| `Win + Shift + h` | Window Move To West (Left) | [MoveRelative](http://openbox.org/wiki/Help:Actions#MoveRelative) |
-| `Win + Shift + l` | Window Move To East (Right) | [MoveRelative](http://openbox.org/wiki/Help:Actions#MoveRelative) |
+| `Win + k` | Window Move To North (Up) | [MoveRelative](http://openbox.org/wiki/Help:Actions#MoveRelative) |
+| `Win + j` | Window Move To South (Down) | [MoveRelative](http://openbox.org/wiki/Help:Actions#MoveRelative) |
+| `Win + h` | Window Move To West (Left) | [MoveRelative](http://openbox.org/wiki/Help:Actions#MoveRelative) |
+| `Win + l` | Window Move To East (Right) | [MoveRelative](http://openbox.org/wiki/Help:Actions#MoveRelative) |
 
 
 | Key | Description | Doc |
@@ -476,10 +461,10 @@
 
 | Key | Description | Doc |
 | --- | --- | --- |
-| `Win + Ctrl + i` | Move the top edge up, growing the window | [ResizeRelative](http://openbox.org/wiki/Help:Actions#ResizeRelative) |
-| `Win + Ctrl + u` | Move the top edge down, shrinking the window | [ResizeRelative](http://openbox.org/wiki/Help:Actions#ResizeRelative) |
-| `Win + Ctrl + y` | Move the left edge left, growing the window | [ResizeRelative](http://openbox.org/wiki/Help:Actions#ResizeRelative) |
-| `Win + Ctrl + o` | Move the left edge right, shrinking the window | [ResizeRelative](http://openbox.org/wiki/Help:Actions#ResizeRelative) |
+| `Win + Shift + k` | Move the top edge up, growing the window | [ResizeRelative](http://openbox.org/wiki/Help:Actions#ResizeRelative) |
+| `Win + Shift + j` | Move the top edge down, shrinking the window | [ResizeRelative](http://openbox.org/wiki/Help:Actions#ResizeRelative) |
+| `Win + Shift + h` | Move the left edge left, growing the window | [ResizeRelative](http://openbox.org/wiki/Help:Actions#ResizeRelative) |
+| `Win + Shift + l` | Move the left edge right, shrinking the window | [ResizeRelative](http://openbox.org/wiki/Help:Actions#ResizeRelative) |
 
 
 | Key | Description | Doc |
@@ -504,9 +489,16 @@
 
 | Key | Description | Doc |
 | --- | --- | --- |
-| `Alt + Ctrl + u` | Tiling Window Horizontal (North-South) (Top-Bottom) | [MoveResizeTo](http://openbox.org/wiki/Help:Actions#MoveResizeTo) |
-| `Alt + Ctrl + i` | Tiling Window Vertical (West-East) (Left-Right) | [MoveResizeTo](http://openbox.org/wiki/Help:Actions#MoveResizeTo) |
-| `Alt + Ctrl + o` | Restore Window | [MoveResizeTo](http://openbox.org/wiki/Help:Actions#MoveResizeTo) |
+| `Alt + k` | Tiling Window Horizontal (North-South) (Top-Bottom) | [MoveResizeTo](http://openbox.org/wiki/Help:Actions#MoveResizeTo) |
+| `Alt + h` | Tiling Window Vertical (West-East) (Left-Right) | [MoveResizeTo](http://openbox.org/wiki/Help:Actions#MoveResizeTo) |
+| `Alt + l` | Restore Window | [MoveResizeTo](http://openbox.org/wiki/Help:Actions#MoveResizeTo) |
+
+
+| Key | Description | Doc |
+| --- | --- | --- |
+| `Alt + Up` | Tiling Window Horizontal (North-South) (Top-Bottom) | [MoveResizeTo](http://openbox.org/wiki/Help:Actions#MoveResizeTo) |
+| `Alt + Left` | Tiling Window Vertical (West-East) (Left-Right) | [MoveResizeTo](http://openbox.org/wiki/Help:Actions#MoveResizeTo) |
+| `Alt + Right` | Restore Window | [MoveResizeTo](http://openbox.org/wiki/Help:Actions#MoveResizeTo) |
 
 
 ## Window Tiling Move / Side

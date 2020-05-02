@@ -28,6 +28,7 @@
 h l
  j
 	//-->
+<!--
 	<keybind key="W-k">
 		<action name="PreviousWindow">
 			<finalactions>
@@ -67,7 +68,7 @@ h l
 			</finalactions>
 		</action>
 	</keybind>
-
+//-->
 
 	<!-- win+[, win+] //-->
 	<keybind key="W-bracketleft">
@@ -103,6 +104,16 @@ h l
 		</action>
 	</keybind>
 	//-->
+
+	<keybind key="A-j">
+		<action name="NextWindow">
+			<finalactions>
+				<action name="Focus"/>
+				<action name="Raise"/>
+				<action name="Unshade"/>
+			</finalactions>
+		</action>
+	</keybind>
 
 	<keybind key="A-Down">
 		<action name="NextWindow">
@@ -263,6 +274,7 @@ h l
 	</keybind>
 
 	//-->
+
 
 <?php
 /*

@@ -2,6 +2,12 @@
 # openbox-gen-rc
 
 
+## Spec
+
+* [keybind](spec-keybind.md)
+* [mousebind](spec-mousebind.md)
+
+
 ## Help
 
 run

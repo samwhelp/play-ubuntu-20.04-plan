@@ -38,8 +38,6 @@
 h l
  j
 	//-->
-
-	<!--
 	<keybind key="A-k">
 		<action name="GoToDesktop">
 			<to>up</to>
@@ -63,7 +61,7 @@ h l
 			<to>right</to>
 		</action>
 	</keybind>
-	//-->
+
 
 	<!-- alt+[, alt+] //-->
 	<keybind key="A-bracketleft">

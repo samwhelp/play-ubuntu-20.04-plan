@@ -9,7 +9,7 @@
 
 	<!-- Version: [k j h l] //-->
 	<!-- Window Move To North (Up) //-->
-	<keybind key="W-S-k">
+	<keybind key="W-k">
 		<action name="UnmaximizeFull"/>
 		<action name="MoveRelative">
 			<x>0</x>
@@ -18,7 +18,7 @@
 	</keybind>
 
 	<!-- Window Move To South (Down) //-->
-	<keybind key="W-S-j">
+	<keybind key="W-j">
 		<action name="UnmaximizeFull"/>
 		<action name="MoveRelative">
 			<x>0</x>
@@ -27,7 +27,7 @@
 	</keybind>
 
 	<!-- Window Move To West (Left) //-->
-	<keybind key="W-S-h">
+	<keybind key="W-h">
 		<action name="UnmaximizeFull"/>
 		<action name="MoveRelative">
 			<x>-20</x>
@@ -36,7 +36,7 @@
 	</keybind>
 
 	<!-- Window Move To East (Right) //-->
-	<keybind key="W-S-l">
+	<keybind key="W-l">
 		<action name="UnmaximizeFull"/>
 		<action name="MoveRelative">
 			<x>+20</x>

@@ -132,3 +132,12 @@
 		</mousebind>
 
 	</context>
+
+<?php
+
+/* 
+
+* http://openbox.org/wiki/Help:Bindings#Mouse_bindings
+
+
+*/

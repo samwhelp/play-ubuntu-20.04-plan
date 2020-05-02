@@ -1,7 +1,7 @@
 
 
 	<!-- Up-Down -->
-	<keybind key="A-C-u">
+	<keybind key="A-k">
 		<action name="Undecorate"/>
 		<action name="UnmaximizeFull"/>
 		<action name="MoveResizeTo">
@@ -32,7 +32,7 @@
 
 
 	<!-- Left-Right -->
-	<keybind key="A-C-i">
+	<keybind key="A-h">
 		<action name="Undecorate"/>
 		<action name="UnmaximizeFull"/>
 		<action name="MoveResizeTo">
@@ -63,7 +63,7 @@
 
 
 	<!-- Restore window dimensions -->
-	<keybind key="A-C-o">
+	<keybind key="A-l">
 		<action name="UnmaximizeFull"/>
 		<action name="Decorate"/>
 		<action name="NextWindow">
