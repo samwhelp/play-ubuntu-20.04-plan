@@ -1,5 +1,5 @@
 
-# Prototype play-openbox
+# Prototype zero-session
 
 ## Howto
 
