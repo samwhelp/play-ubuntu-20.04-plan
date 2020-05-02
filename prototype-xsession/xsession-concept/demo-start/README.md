@@ -1,8 +1,8 @@
 
 ## Files
 
-* /usr/share/xsessions/demo-session.desktop
-* /usr/bin/demo-session.sh
+* [/usr/share/xsessions/demo-session.desktop](demo-session.desktop)
+* [/usr/bin/demo-session.sh](demo-session.sh)
 
 
 ## Install
