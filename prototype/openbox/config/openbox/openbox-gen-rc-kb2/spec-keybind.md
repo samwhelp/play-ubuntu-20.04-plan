@@ -489,15 +489,15 @@
 
 | Key | Description | Doc |
 | --- | --- | --- |
-| `Alt + k` | Tiling Window Horizontal (North-South) (Top-Bottom) | [MoveResizeTo](http://openbox.org/wiki/Help:Actions#MoveResizeTo) |
-| `Alt + h` | Tiling Window Vertical (West-East) (Left-Right) | [MoveResizeTo](http://openbox.org/wiki/Help:Actions#MoveResizeTo) |
+| `Alt + k` | Tiling Window (North-South) (Top-Bottom) | [MoveResizeTo](http://openbox.org/wiki/Help:Actions#MoveResizeTo) |
+| `Alt + h` | Tiling Window (West-East) (Left-Right) | [MoveResizeTo](http://openbox.org/wiki/Help:Actions#MoveResizeTo) |
 | `Alt + l` | Restore Window | [MoveResizeTo](http://openbox.org/wiki/Help:Actions#MoveResizeTo) |
 
 
 | Key | Description | Doc |
 | --- | --- | --- |
-| `Alt + Up` | Tiling Window Horizontal (North-South) (Top-Bottom) | [MoveResizeTo](http://openbox.org/wiki/Help:Actions#MoveResizeTo) |
-| `Alt + Left` | Tiling Window Vertical (West-East) (Left-Right) | [MoveResizeTo](http://openbox.org/wiki/Help:Actions#MoveResizeTo) |
+| `Alt + Up` | Tiling Window (North-South) (Top-Bottom) | [MoveResizeTo](http://openbox.org/wiki/Help:Actions#MoveResizeTo) |
+| `Alt + Left` | Tiling Window (West-East) (Left-Right) | [MoveResizeTo](http://openbox.org/wiki/Help:Actions#MoveResizeTo) |
 | `Alt + Right` | Restore Window | [MoveResizeTo](http://openbox.org/wiki/Help:Actions#MoveResizeTo) |
 
 

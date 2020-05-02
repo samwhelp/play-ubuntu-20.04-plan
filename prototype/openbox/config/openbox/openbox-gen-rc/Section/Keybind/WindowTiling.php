@@ -1,6 +1,6 @@
 
 
-	<!-- Up-Down -->
+	<!-- Tiling Window (North-South) (Top-Bottom) -->
 	<keybind key="A-C-u">
 		<action name="Undecorate"/>
 		<action name="UnmaximizeFull"/>
@@ -31,7 +31,7 @@
 	</keybind>
 
 
-	<!-- Left-Right -->
+	<!-- Tiling Window (West-East) (Left-Right) -->
 	<keybind key="A-C-i">
 		<action name="Undecorate"/>
 		<action name="UnmaximizeFull"/>
@@ -80,7 +80,7 @@
 
 
 	<!-- Version: Up Left Right //-->
-	<!-- Up-Down -->
+	<!-- Tiling Window (North-South) (Top-Bottom) -->
 	<keybind key="A-Up">
 		<action name="Undecorate"/>
 		<action name="UnmaximizeFull"/>
@@ -111,7 +111,7 @@
 	</keybind>
 
 
-	<!-- Left-Right -->
+	<!-- Tiling Window (West-East) (Left-Right) -->
 	<keybind key="A-Left">
 		<action name="Undecorate"/>
 		<action name="UnmaximizeFull"/>
