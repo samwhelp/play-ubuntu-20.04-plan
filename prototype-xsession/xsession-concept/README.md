@@ -10,5 +10,5 @@
 * [demo-wm-with-panel-wallpaper](demo-wm-with-panel-wallpaper)
 * [demo-wm-with-panel-wallpaper-other-compositor](demo-wm-with-panel-wallpaper-other-compositor)
 * [demo-wm-with-panel-wallpaper-other-compositor-and-keybind](demo-wm-with-panel-wallpaper-other-compositor-and-keybind)
-
+* [demo-firefox](demo-firefox)
 
