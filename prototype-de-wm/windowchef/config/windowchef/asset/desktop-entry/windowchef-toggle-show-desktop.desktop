@@ -6,10 +6,10 @@ Icon=desktop
 Categories=System;Utility;
 Keywords=desktop;window;toggle;
 
-Name=Openbox Toggle Show Desktop
-GenericName=Openbox-Toggle-Show-Desktop
-Comment=Openbox Toggle Show Desktop
+Name=WindowChef Toggle Show Desktop
+GenericName=WindowChef-Toggle-Show-Desktop
+Comment=WindowChef Toggle Show Desktop
 
 Name[zh_TW]=切換顯示桌面
-GenericName[zh_TW]=Openbox-Toggle-Show-Desktop
+GenericName[zh_TW]=WindowChef-Toggle-Show-Desktop
 Comment[zh_TW]=切換顯示桌面
