@@ -1,0 +1,15 @@
+[Desktop Entry]
+Type=Application
+Exec=killall -9 berry
+TryExec=killall
+Icon=gtk-quit
+Categories=System;Utility;
+Keywords=logout;exit;
+
+Name=Berry Exit
+GenericName=Berry-Exit
+Comment=Berry Exit
+
+Name[zh_TW]=離開 Berry
+GenericName[zh_TW]=Berry-Exit
+Comment[zh_TW]=離開 Berry
