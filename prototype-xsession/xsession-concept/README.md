@@ -17,5 +17,5 @@
 
 ## Howto
 
-* [howto-find-doc-exec](doc-exec.md)
+* [Howto find document about exec](doc-exec.md)
 
