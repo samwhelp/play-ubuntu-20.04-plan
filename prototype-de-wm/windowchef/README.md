@@ -9,12 +9,18 @@
 
 ## Note
 
-* note-ubuntu-20.04 / [bspwm](https://samwhelp.github.io/note-ubuntu-20.04/read/subject/windowchef/)
+* note-ubuntu-20.04 / [windowchef](https://samwhelp.github.io/note-ubuntu-20.04/read/subject/windowchef/)
 
 
 ## Tool
 
 * [run-bspwm-on-xephyr](../../tool/xephyr/develop-tool/run-windowchef-on-xephyr/)
+
+
+## Link
+
+* https://berrywm.org/installation.html
+* https://github.com/tudurom/windowchef
 
 
 ## Config File Path
@@ -24,6 +30,18 @@
 
 
 ## Howto
+
+### build-install
+
+``` sh
+$ ./build-install.sh
+```
+
+or
+
+``` sh
+$ make build-install
+```
 
 ### install
 
