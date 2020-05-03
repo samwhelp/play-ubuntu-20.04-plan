@@ -1,0 +1,15 @@
+[Desktop Entry]
+Type=Application
+Exec=killall -9 windowchef
+TryExec=killall
+Icon=gtk-quit
+Categories=System;Utility;
+Keywords=logout;exit;
+
+Name=WindowChef Exit
+GenericName=WindowChef-Exit
+Comment=WindowChef Exit
+
+Name[zh_TW]=離開 WindowChef
+GenericName[zh_TW]=WindowChef-Exit
+Comment[zh_TW]=離開 WindowChef
