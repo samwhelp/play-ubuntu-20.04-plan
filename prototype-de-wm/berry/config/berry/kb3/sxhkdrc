@@ -1,0 +1,147 @@
+#
+# wm independent hotkeys
+#
+
+
+~button1
+	berryc pointer_focus
+
+# terminal emulator
+alt + Return
+	sakura
+	
+super + Return
+	sakura
+	
+alt + shift + a
+	xfce4-terminal --drop-down
+
+# program launcher
+super + d
+	dmenu_run
+
+# make sxhkd reload its configuration files:
+super + Escape
+	pkill -USR1 -x sxhkd
+
+
+super + g
+	berryc quit
+
+#
+# berry hotkeys
+#
+
+
+## Workspace
+#alt + {1-9}
+#	berryc switch_workspace {0-9}
+
+#super + {1-9}
+#	berryc send_to_workspace {0-9}
+
+alt + {1-5}
+	berryc switch_workspace {0-4}
+	
+super + shift + {1-5}
+	berryc send_to_workspace {0-4};	
+
+super + 1
+	berryc send_to_workspace 0; berryc switch_workspace 0
+
+super + 2
+	berryc send_to_workspace 1; berryc switch_workspace 1
+
+super + 3
+	berryc send_to_workspace 2; berryc switch_workspace 2	
+
+super + 4
+	berryc send_to_workspace 3; berryc switch_workspace 3
+	
+super + 5
+	berryc send_to_workspace 4; berryc switch_workspace 4
+
+
+
+## For left hand
+
+super + shift + {w, s, a, d}
+	berryc window_move {0 -50, 0 50, -50 0, 50 0}
+
+super + ctrl +  {w, s, a, d}
+	berryc window_resize {0 -50, 0 50, -50 0, 50 0}
+
+super + shift +  {z, x}
+	berryc {snap_left, snap_right}
+	
+super + {z, x}
+	berryc {snap_left, snap_right}	
+
+super + c
+	berryc window_center
+
+super + f
+	berryc fullscreen
+
+super + v
+	berryc toggle_decorations
+
+super + w
+	berryc window_monocle		
+
+super + q
+	berryc window_close
+
+super + Tab
+	berryc cycle_focus
+	
+alt + Tab
+	berryc cycle_focus
+	
+super + a
+	berryc cycle_focus
+	
+super + s
+	berryc cycle_focus		
+
+super + e
+	berryc window_resize_absolute 800 600 ; berryc window_center
+
+
+## For right hand
+
+super + shift + {k, j, h, l}
+	berryc window_move {0 -50, 0 50, -50 0, 50 0}
+
+super + ctrl + {k, j, h, l}
+	berryc window_resize {0 -50, 0 50, -50 0, 50 0}
+
+super + {h, l}
+	berryc {snap_left, snap_right}
+
+super + i
+	berryc window_center
+
+super + n
+	berryc fullscreen
+
+super + b
+	berryc toggle_decorations	
+
+super + m
+	berryc window_monocle
+
+super + p
+	berryc window_close
+
+
+super + k
+	berryc cycle_focus
+	
+super + j
+	berryc cycle_focus
+	
+
+super + u
+	berryc window_resize_absolute 800 600 ; berryc window_center
+
