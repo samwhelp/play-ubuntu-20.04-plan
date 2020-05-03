@@ -1,0 +1,4 @@
+build-essential
+libx11-dev
+libxft-dev
+libxrandr-dev
