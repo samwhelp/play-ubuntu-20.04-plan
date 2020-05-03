@@ -25,8 +25,8 @@
 
 ## Config File Path
 
-* [~/.config/berry/berryrc](config/berry/default/berryrc)
-* [~/.config/berry/sxhkdrc](config/berry/default/sxhkdrc)
+* [~/.config/berry/autostart](config/berry/example-dark/autostart)
+* [~/.config/berry/sxhkdrc](config/berry/example-dark/sxhkdrc)
 
 
 ## Howto
