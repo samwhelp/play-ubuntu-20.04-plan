@@ -14,3 +14,8 @@
 * [demo-xdg-autostart](demo-xdg-autostart)
 * [demo-volume-control-status-icon](demo-volume-control-status-icon)
 
+
+## Howto
+
+* [howto-find-doc-exec](doc-exec.md)
+
