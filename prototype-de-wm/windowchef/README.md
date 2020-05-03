@@ -25,8 +25,8 @@
 
 ## Config File Path
 
-* [~/.config/windowchef/windowchefrc](config/windowchef/example/windowchefrc)
-* [~/.config/windowchef/sxhkdrc](config/windowchef/example/sxhkdrc)
+* [~/.config/windowchef/windowchefrc](config/windowchef/kb1/windowchefrc)
+* [~/.config/windowchef/sxhkdrc](config/windowchef/kb1/sxhkdrc)
 
 
 ## Howto
