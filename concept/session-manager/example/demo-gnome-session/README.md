@@ -54,7 +54,30 @@ and run
 $ xephyr-run-demo-gnome-session.sh
 ```
 
+## view log
 
+run
+
+``` sh
+$ grep 'demo-wm' /var/log/syslog
+```
+
+run
+
+``` sh
+$ grep 'demo-panel' /var/log/syslog
+```
+
+run
+
+``` sh
+$ grep 'demo-settings-daemon' /var/log/syslog
+```
+run
+
+``` sh
+$ grep 'demo-applet' /var/log/syslog
+```
 
 
 ## Usage
