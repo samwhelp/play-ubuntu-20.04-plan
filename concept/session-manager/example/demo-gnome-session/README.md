@@ -13,13 +13,13 @@
 | [/usr/share/gnome-session/sessions/demo-gnome-session.session](config/gnome-session/demo-gnome-session.session) | 
 
 
-| Desktop Entry | Exec |
+| Desktop Entry (application) | Exec |
 | --- | --- |
 | [/usr/share/applications/demo-wm.desktop](config/demo/demo-wm.desktop) | [/usr/bin/demo-wm.sh](config/demo/demo-wm.sh) |
 | [/usr/share/applications/demo-panel.desktop](config/demo/demo-panel.desktop) | [/usr/bin/demo-panel.sh](config/demo/demo-panel.sh) |
 
 
-| Desktop Entry (Autostart) | Exec |
+| Desktop Entry (autostart) | Exec |
 | --- | --- |
 | [/etc/xdg/autostart/demo-settings-daemon.desktop](config/demo/demo-settings-daemon.desktop) | [/usr/bin/demo-settings-daemon.sh](config/demo/demo-settings-daemon.sh) |
 | [/etc/xdg/autostart/demo-applet.desktop](config/demo/demo-applet.desktop) | [/usr/bin/demo-applet.sh](config/demo/demo-applet.sh) |
