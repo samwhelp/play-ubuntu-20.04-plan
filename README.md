@@ -19,9 +19,10 @@
 
 ## Prototype
 
+* [awesome](prototype/awesome)
 * [openbox](prototype/openbox)
-* [spectrwm](prototype/spectrwm)
 * [bspwm](prototype/bspwm)
+* [spectrwm](prototype/spectrwm)
 * [xfce](prototype/xfce)
 * [lxqt-with-openbox](prototype/lxqt-with-openbox)
 * [lxqt-with-xfwm4](prototype/lxqt-with-xfwm4)
