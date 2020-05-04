@@ -3,7 +3,7 @@
 ## File Path
 
 
-| Desktop Entry | Exec |
+| Desktop Entry (xsession) | Exec |
 | --- | --- |
 | [/usr/share/xsessions/demo-gnome-session.desktop](config/xsession/demo-gnome-session.desktop) | [/usr/bin/demo-gnome-session.sh](config/xsession/demo-gnome-session.sh) |
 
