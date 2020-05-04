@@ -15,8 +15,6 @@ berry_build_install () {
 	berry_build_install_clone
 	
 	berry_build_install_build
-	
-	berry_build_install_put_xsession
 
 }
 
