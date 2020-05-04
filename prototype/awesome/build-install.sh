@@ -15,6 +15,9 @@ awesome_build_install () {
 	awesome_build_install_clone
 	
 	awesome_build_install_build
+	
+	awesome_build_install_put_xsession
+	
 
 }
 
@@ -60,6 +63,16 @@ awesome_build_install_build () {
 	
 	sudo dpkg -i build/*.deb
 }
+
+awesome_build_install_put_xsession () {
+
+	echo 'sudo install -m 644 /usr/local/share/xsessions/awesome.desktop /usr/share/xsessions/awesome.desktop'
+	
+	sudo install -m 644 /usr/local/share/xsessions/awesome.desktop /usr/share/xsessions/awesome.desktop
+
+
+}
+
 
 ##
 ### Tail: awesome
