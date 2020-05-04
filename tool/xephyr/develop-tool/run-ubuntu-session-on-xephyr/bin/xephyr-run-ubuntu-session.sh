@@ -40,10 +40,11 @@ __main__ () {
 	## /usr/share/xsessions/ubuntu.desktop
 	## $ grep '^Exec=' /usr/share/xsessions/ubuntu.desktop
 	## $ grep '^Exec=' $(dpkg -L ubuntu-session | grep xsession | grep 'ubuntu.desktop')
-	## Exec=env GNOME_SHELL_SESSION_MODE=ubuntu gnome-session --session=ubuntu
+	## Exec=env GNOME_SHELL_SESSION_MODE=ubuntu /usr/bin/gnome-session --systemd --session=ubuntu
 
 	## run ubuntu-session
-	DISPLAY=:100 env GNOME_SHELL_SESSION_MODE=ubuntu gnome-session --session=ubuntu
+	##DISPLAY=:100 env GNOME_SHELL_SESSION_MODE=ubuntu gnome-session --session=ubuntu
+	DISPLAY=:100 env GNOME_SHELL_SESSION_MODE=ubuntu /usr/bin/gnome-session --systemd --session=ubuntu
 
 	## make sure kill Xephyr
 	kill ${XEPHYR_PID}
