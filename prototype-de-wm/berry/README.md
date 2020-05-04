@@ -14,7 +14,7 @@
 
 ## Tool
 
-* [run-bspwm-on-xephyr](../../tool/xephyr/develop-tool/run-berry-on-xephyr/)
+* [run-berry-on-xephyr](../../tool/xephyr/develop-tool/run-berry-on-xephyr/)
 
 
 ## Link
