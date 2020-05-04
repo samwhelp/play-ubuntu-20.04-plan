@@ -10,6 +10,7 @@
 ## Note
 
 * note-ubuntu-20.04 / [awesome](https://samwhelp.github.io/note-ubuntu-20.04/read/subject/awesome/)
+* https://github.com/samwhelp/play-ubuntu-18.04-plan/tree/master/concept/awesome-wm
 
 ## Notice
 
