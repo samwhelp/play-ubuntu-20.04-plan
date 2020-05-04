@@ -21,8 +21,8 @@
 
 | Desktop Entry (Autostart) | Exec |
 | --- | --- |
-| [/etc/xdg/autostart/demo-settings-daemon.desktop](config/demo/demo-settings-daemon.desktop) | /usr/bin/demo-settings-daemon.sh](config/demo/demo-settings-daemon.sh) |
-| [/etc/xdg/autostart/demo-applet.desktop](config/demo/demo-applet.desktop) | /usr/bin/demo-applet.sh](config/demo/demo-applet.sh) |
+| [/etc/xdg/autostart/demo-settings-daemon.desktop](config/demo/demo-settings-daemon.desktop) | [/usr/bin/demo-settings-daemon.sh](config/demo/demo-settings-daemon.sh) |
+| [/etc/xdg/autostart/demo-applet.desktop](config/demo/demo-applet.desktop) | [/usr/bin/demo-applet.sh](config/demo/demo-applet.sh) |
 
 
 | Xephyr |
