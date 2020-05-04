@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Demo Gnome Session
+Comment=This session logs you into Demo
+Exec=env THE_SESSION_NAME=demo THE_SESSION_NOTE=test /usr/bin/gnome-session --session=demo-gnome-session
+TryExec=/usr/bin/demo-wm.sh
+Type=Application
+DesktopNames=Test:Demo
+X-GDM-SessionRegisters=true
+X-Ubuntu-Gettext-Domain=gnome-session-3.0

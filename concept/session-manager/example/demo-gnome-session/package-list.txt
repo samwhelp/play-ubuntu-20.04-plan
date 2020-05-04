@@ -1,0 +1,13 @@
+
+xserver-xephyr
+
+xfwm4
+
+tint2
+
+mate-media
+
+feh
+
+ubuntu-wallpapers-eoan
+

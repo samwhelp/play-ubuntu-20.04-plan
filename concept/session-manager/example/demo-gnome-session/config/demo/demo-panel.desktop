@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=Demo Panel
+Exec=demo-panel.sh
+TryExec=demo-panel.sh
+OnlyShowIn=Demo;

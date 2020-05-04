@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Demo Applet
+Exec=demo-applet.sh
+TryExec=demo-applet.sh
+OnlyShowIn=Demo;
+

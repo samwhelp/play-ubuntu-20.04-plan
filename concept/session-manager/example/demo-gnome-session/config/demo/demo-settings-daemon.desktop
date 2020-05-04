@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Demo Settings Daemon
+Exec=/usr/bin/demo-settings-daemon.sh
+TryExec=/usr/bin/demo-settings-daemon.sh
+OnlyShowIn=Demo;
+

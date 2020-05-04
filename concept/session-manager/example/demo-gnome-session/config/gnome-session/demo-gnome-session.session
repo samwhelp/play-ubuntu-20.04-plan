@@ -1,0 +1,3 @@
+[GNOME Session]
+Name=Demo
+RequiredComponents=demo-panel;demo-settings-daemon;demo-wm;

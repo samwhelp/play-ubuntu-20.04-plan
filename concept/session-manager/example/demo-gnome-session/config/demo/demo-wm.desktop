@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Demo Window Manager
+Exec=demo-wm.sh
+TryExec=demo-wm.sh
+OnlyShowIn=Demo;
+
