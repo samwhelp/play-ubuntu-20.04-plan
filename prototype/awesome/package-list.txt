@@ -6,6 +6,8 @@ feh
 
 compton
 
+obsession
+
 
 pulseaudio-utils
 pavucontrol

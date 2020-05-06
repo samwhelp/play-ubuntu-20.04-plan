@@ -1413,8 +1413,12 @@ apps_autorun = {
 
 	-- ## screensaver
 	--'xscreensaver',
-	--/etc/xdg/autostart/xscreensaver.desktop
-	'/usr/share/xscreensaver/xscreensaver-wrapper.sh -no-splash'
+	-- ## /etc/xdg/autostart/xscreensaver.desktop
+	'/usr/share/xscreensaver/xscreensaver-wrapper.sh -no-splash',
+
+	-- ## xdg-autostart (Package: obsession)
+	'xdg-autostart'
+
 }
 
 if autorun then
