@@ -15,6 +15,7 @@
 ## Notice
 
 * [Build Notice](Notice.md)
+* [Build Step](config/config/awesome/start#prepare)
 
 ## Tool
 
