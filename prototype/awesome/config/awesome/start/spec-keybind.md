@@ -106,9 +106,10 @@
 
 | Key | Description |
 | --- | --- |
-| `Alt + Enter` | Launch Terminal (sakura) |
-| `Alt + Shift + a` | Launch Terminal (xterm) |
-| `Alt + Shift + t` | Launch Terminal (urxvt) |
+| `Alt + Enter` | Launch Terminal (sakura -m) |
+| `Alt + Shift + a` | Toggle Drop Down Terminal (xfce4-terminal --drop-down) |
+| `Alt + Shift + t` | Launch Terminal (xterm) |
+| `Alt + Ctrl + t` | Launch Terminal (urxvt) |
 
 ### Rofi
 

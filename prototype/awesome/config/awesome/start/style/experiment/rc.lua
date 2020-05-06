@@ -493,17 +493,22 @@ awful.keyboard.append_global_keybindings({
 awful.keyboard.append_global_keybindings({
 	awful.key(
 		{ key_alt }, 'Return', function () awful.spawn(terminal) end,
-		{ description = 'Terminal(sakura)', group = 'App'}
+		{ description = 'Terminal (sakura)', group = 'App'}
 	),
 
 	awful.key(
-		{ key_alt, key_shift }, 'a', function () awful.spawn('xterm') end,
-		{ description = 'Terminal(xterm)', group = 'App'}
+		{ key_alt, key_shift }, 'a', function () awful.spawn('xfce4-terminal --drop-down') end,
+		{ description = 'Terminal (quake)', group = 'App'}
 	),
 
 	awful.key(
-		{ key_alt, key_shift }, 't', function () awful.spawn('urxvt') end,
-		{ description = 'Terminal(urxvt)', group = 'App'}
+		{ key_alt, key_shift }, 't', function () awful.spawn('xterm') end,
+		{ description = 'Terminal (xterm)', group = 'App'}
+	),
+
+	awful.key(
+		{ key_alt, key_ctrl }, 't', function () awful.spawn('urxvt') end,
+		{ description = 'Terminal (urxvt)', group = 'App'}
 	),
 
 })
