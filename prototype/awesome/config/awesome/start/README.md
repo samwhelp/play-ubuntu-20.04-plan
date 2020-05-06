@@ -118,11 +118,14 @@ awesome -v
 show
 
 ```
-awesome v4.3-655-g67672bf5-dirty (Too long)
+awesome v4.3-848-g38848bff (Too long)
  • Compiled against Lua 5.3.3 (running with Lua 5.3)
+ • API level: 4
  • D-Bus support: yes
  • xcb-errors support: no
  • execinfo support: yes
  • xcb-randr version: 1.6
  • LGI version: 0.9.2
+ • Transparency enabled: yes
+ • Custom search paths: no
 ```
