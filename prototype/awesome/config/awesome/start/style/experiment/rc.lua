@@ -1394,7 +1394,8 @@ apps_autorun = {
 
 	-- ## volume-control
 	--'volumeicon',
-	'mate-volume-control-applet',
+	--'mate-volume-control-applet',
+	'mate-volume-control-status-icon',
 
 	-- ## network
 	'nm-applet',
