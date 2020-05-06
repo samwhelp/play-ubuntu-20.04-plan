@@ -28,6 +28,12 @@ to install build-dep package for compile awesome.
 sudo apt build-dep awesome
 ```
 
+to install build-dep package for compile awesome. (libxcb-xfixes0-dev not on [Source Package: [awesome](https://packages.ubuntu.com/source/focal/awesome)])
+
+``` sh
+sudo apt install libxcb-xfixes0-dev
+```
+
 to clone awesome from github
 
 ``` sh
@@ -47,7 +53,7 @@ to build package
 make package
 ```
 
-to install deb (Ubuntu 18.04)
+to install deb (Ubuntu 20.04)
 
 ``` sh
 sudo dpkg -i build/*.deb
