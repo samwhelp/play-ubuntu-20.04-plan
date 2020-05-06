@@ -43,4 +43,9 @@ show
 ```
 Build-Depends: asciidoctor, cmake, debhelper-compat (= 12), imagemagick, libcairo2-dev, libdbus-1-dev, libgdk-pixbuf2.0-dev, libglib2.0-dev, liblua5.3-dev, libpango1.0-dev, libstartup-notification0-dev, libx11-xcb-dev, libxcb-cursor-dev, libxcb-icccm4-dev, libxcb-keysyms1-dev, libxcb-randr0-dev, libxcb-shape0-dev, libxcb-util0-dev, libxcb-xinerama0-dev, libxcb-xkb-dev, libxcb-xrm-dev, libxcb-xtest0-dev, libxdg-basedir-dev, libxkbcommon-dev, libxkbcommon-x11-dev, lua-busted, lua-discount, lua-ldoc, lua-lgi (>= 0.9.2), lua5.3, x11proto-core-dev, xmlto, zsh
 ```
+
+
+## Link
+
+* https://github.com/awesomeWM/awesome/blob/master/awesomeConfig.cmake
  
