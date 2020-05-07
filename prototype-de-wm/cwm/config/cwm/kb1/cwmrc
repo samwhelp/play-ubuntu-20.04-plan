@@ -36,7 +36,8 @@ bind-key 4-space menu-cmd
 
 
 bind-key M-F3 menu-window
-bind-key M-F2 menu-group
+bind-key M-F2 menu-exec
+#bind-key M-F2 menu-group
 bind-key M-F1 menu-cmd
 
 
