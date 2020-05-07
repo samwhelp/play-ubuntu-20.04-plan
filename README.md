@@ -26,7 +26,12 @@
 * [xfce](prototype/xfce)
 * [lxqt-with-openbox](prototype/lxqt-with-openbox)
 * [lxqt-with-xfwm4](prototype/lxqt-with-xfwm4)
+
 * [pekwm](prototype-de-wm/pekwm)
+* [cwm](prototype-de-wm/cwm)
+* [berry](prototype-de-wm/berry)
+* [windowchef](prototype-de-wm/windowchef)
+
 
 
 ## Prototype / Xsession
