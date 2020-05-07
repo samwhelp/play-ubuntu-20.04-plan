@@ -14,6 +14,29 @@
 
 
 ################################################################################
+## Head: Setting / font
+##
+
+# Set default Xft(3) font
+#fontname "sans-serif:pixelsize=14:bold"
+
+
+## Noto
+# $ fc-list | grep Noto | grep TC
+#fontname "Noto Sans CJK TC:pixelsize=14:bold"
+#fontname "Noto Sans Mono CJK TC:style=Regular:pixelsize=16"
+#fontname "Noto Serif CJK TC:style=Regular:pixelsize=14"
+#fontname "Noto Sans CJK TC:style=Bold:pixelsize=14"
+
+
+fontname "Noto Sans CJK TC:style=Regular:pixelsize=16"
+
+##
+## Tail: Setting / font
+################################################################################
+
+
+################################################################################
 ## Head: Setting / gap
 ##
 
