@@ -36,7 +36,7 @@
 ## Config File Path
 
 * [~/.cwmrc](config/cwm/kb1/cwmrc)
-* [~/.config/cwm/sxhkd/sxhkdrc](config/cwm/kb1/sxhkdrc)
+* [/usr/local/bin/cwm-session.sh](config/xsession/cwm-session.sh)
 
 
 ## Howto
