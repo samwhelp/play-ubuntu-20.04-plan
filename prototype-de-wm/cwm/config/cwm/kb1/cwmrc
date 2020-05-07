@@ -52,11 +52,17 @@ command "top" "sakura -e top"
 bind-mouse M-1 window-move
 bind-mouse M-2 window-delete
 bind-mouse M-3 window-resize
+bind-mouse M-4 window-maximize
+#bind-mouse M-5 window-hide
+bind-mouse M-5 window-maximize
 
 
 bind-mouse 4-1 window-move
-bind-mouse 4-2 window-lower
+#bind-mouse 4-2 window-lower
+bind-mouse 4-2 window-hide
 bind-mouse 4-3 window-resize
+bind-mouse 4-4 window-raise
+bind-mouse 4-5 window-lower
 
 ##
 ## Tail: MouseBind
