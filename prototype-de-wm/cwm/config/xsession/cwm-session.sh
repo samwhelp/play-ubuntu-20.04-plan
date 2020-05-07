@@ -149,7 +149,7 @@ compton --config ~/.config/cwm/compton/compton.conf &
 
 
 ## sxhkd
-sxhkd -c "$HOME/.config/cwm/sxhkd/sxhkdrc" &
+##sxhkd -c "$HOME/.config/cwm/sxhkd/sxhkdrc" &
 
 ##
 ## Tail: Keybind

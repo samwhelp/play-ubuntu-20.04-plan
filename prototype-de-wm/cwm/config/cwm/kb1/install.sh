@@ -12,8 +12,8 @@ __main__ () {
 	install -m 644 "./cwmrc" "$HOME/.cwmrc"
 
 
-	echo "install -m 644 ./sxhkdrc $HOME/.config/cwm/sxhkdrc"
-	install -m 644 "./sxhkdrc" "$HOME/.config/cwm/sxhkdrc"
+	##echo "install -m 644 ./sxhkdrc $HOME/.config/cwm/sxhkdrc"
+	##install -m 644 "./sxhkdrc" "$HOME/.config/cwm/sxhkdrc"
 	
 }
 

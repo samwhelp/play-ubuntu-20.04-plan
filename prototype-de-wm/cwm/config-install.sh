@@ -340,7 +340,7 @@ main_config_install () {
 
 	cwm_config_install
 
-	sxhkd_config_install
+	##sxhkd_config_install
 
 	xresources_config_install
 
