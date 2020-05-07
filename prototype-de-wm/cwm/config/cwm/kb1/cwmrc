@@ -82,7 +82,9 @@ bind-key MS-c restart
 ##
 
 bind-key 4-c menu-window
-bind-key 4-space menu-cmd
+bind-key 4-space menu-exec
+#bind-key 4-space menu-cmd
+bind-key M-space menu-cmd
 
 
 bind-key M-F3 menu-window
@@ -471,6 +473,16 @@ bind-key MS-b "firefox"
 ################################################################################
 
 
+################################################################################
+## Head: Launch App / demnu
+##
+
+## alt + shift + i
+bind-key MS-i "dmenu_run"
+
+##
+## Tail: Launch App / demnu
+################################################################################
 
 
 ################################################################################
