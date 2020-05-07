@@ -20,6 +20,7 @@
 ## Link
 
 * https://github.com/leahneukirchen/cwm
+* [https://en.wikipedia.org/wiki/Cwm_(window_manager)](https://en.wikipedia.org/wiki/Cwm_(window_manager))
 
 
 ## Package
