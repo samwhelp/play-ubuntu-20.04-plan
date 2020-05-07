@@ -28,6 +28,24 @@ bind-key MS-c restart
 
 
 ################################################################################
+## Head: KeyBind / Menu
+##
+
+bind-key 4-c menu-window
+bind-key 4-space menu-cmd
+
+
+bind-key M-F3 menu-window
+bind-key M-F2 menu-group
+bind-key M-F1 menu-cmd
+
+
+##
+## Tail: KeyBind / Menu
+################################################################################
+
+
+################################################################################
 ## Head: Application Menu
 ##
 
@@ -36,7 +54,8 @@ command "Terminal" "sakura"
 command "Text Editor" "mousepad"
 command "Web Browser" "firefox"
 command "FileManager" "pcmanfm-qt"
-command "top" "sakura -e top"
+command "Logout" "killall -9 openbsd-cwm"
+##command "top" "sakura -e top"
 
 
 ##
@@ -138,6 +157,7 @@ bind-key M-Down window-cycle-ingroup
 ##
 
 bind-key 4-q window-delete
+bind-key M-F4 window-delete
 
 ##
 ## Tail: KeyBind / Window Delete
@@ -206,5 +226,3 @@ bind-key 4-e window-stick
 ##
 ## Tail: KeyBind / Window stick
 ################################################################################
-
-
