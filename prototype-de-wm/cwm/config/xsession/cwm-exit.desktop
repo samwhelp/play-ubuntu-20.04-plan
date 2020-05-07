@@ -1,0 +1,15 @@
+[Desktop Entry]
+Type=Application
+Exec=killall -9 openbsd-cwm
+TryExec=killall
+Icon=gtk-quit
+Categories=System;Utility;
+Keywords=desktop;window;toggle;
+
+Name=Cwm Exit
+GenericName=Cwm-Exit
+Comment=Cwm Exit
+
+Name[zh_TW]=登出桌面
+GenericName[zh_TW]=Cwm-Exit
+Comment[zh_TW]=登出桌面

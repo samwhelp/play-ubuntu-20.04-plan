@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=XSession
+Exec=cwm-session.sh
+TryExec=cwm-session.sh
+Name=Cwm Session
+Comment=Cwm Xsession
+
+Name[zh_TW]=Cwm Session
+Comment[zh_TW]=Cwm Xsession

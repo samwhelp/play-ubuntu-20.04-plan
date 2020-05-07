@@ -1,0 +1,204 @@
+
+
+################################################################################
+## Head: Manual
+##
+
+# $ man cwmrc
+# $ man openbsd-cwm
+
+
+##
+## Tail: Manual
+################################################################################
+
+
+################################################################################
+## Head: KeyBind / System
+##
+
+bind-key MS-x quit
+
+bind-key MS-c restart
+
+
+##
+## Tail: KeyBind / System
+################################################################################
+
+
+################################################################################
+## Head: Application Menu
+##
+
+# Any entry here is shown in the application menu
+command "Terminal" "sakura"
+command "Text Editor" "mousepad"
+command "Web Browser" "firefox"
+command "FileManager" "pcmanfm-qt"
+command "top" "sakura -e top"
+
+
+##
+## Tail: Application Menu
+################################################################################
+
+
+################################################################################
+## Head: MouseBind
+##
+
+## Mouse bindings
+bind-mouse M-1 window-move
+bind-mouse M-2 window-delete
+bind-mouse M-3 window-resize
+
+
+bind-mouse 4-1 window-move
+bind-mouse 4-2 window-lower
+bind-mouse 4-3 window-resize
+
+##
+## Tail: MouseBind
+################################################################################
+
+
+################################################################################
+## Head: KeyBind / Window Move
+##
+
+moveamount 5
+
+bind-key 4S-k window-move-up-big
+bind-key 4S-j window-move-down-big
+bind-key 4S-h window-move-left-big
+bind-key 4S-l window-move-right-big
+
+
+bind-key 4-Up window-move-up-big
+bind-key 4-Down window-move-down-big
+bind-key 4-Left window-move-left-big
+bind-key 4-Right window-move-right-big
+
+##
+## Tail: KeyBind / Window Move
+################################################################################
+
+
+################################################################################
+## Head: KeyBind / Window Resize
+##
+
+bind-key 4C-k window-resize-up-big
+bind-key 4C-j window-resize-down-big
+bind-key 4C-h window-resize-left-big
+bind-key 4C-l window-resize-right-big
+
+
+bind-key 4C-Up window-resize-up-big
+bind-key 4C-Down window-resize-down-big
+bind-key 4C-Left window-resize-left-big
+bind-key 4C-Right window-resize-right-big
+
+
+##
+## Tail: KeyBind / Window Resize
+################################################################################
+
+
+################################################################################
+## Head: KeyBind / Window Cycle
+##
+
+bind-key 4-a window-rcycle-ingroup
+bind-key 4-s window-cycle-ingroup
+
+bind-key 4-h window-rcycle-ingroup
+bind-key 4-l window-cycle-ingroup
+
+bind-key 4-bracketleft window-rcycle-ingroup
+bind-key 4-bracketright window-cycle-ingroup
+
+bind-key M-Up window-rcycle-ingroup
+bind-key M-Down window-cycle-ingroup
+
+##
+## Tail: KeyBind / Window Cycle
+################################################################################
+
+
+################################################################################
+## Head: KeyBind / Window Delete
+##
+
+bind-key 4-q window-delete
+
+##
+## Tail: KeyBind / Window Delete
+################################################################################
+
+
+################################################################################
+## Head: KeyBind / Window Hide
+##
+
+bind-key 4-x window-hide
+bind-key 4-n window-hide
+
+##
+## Tail: KeyBind / Window Hide
+################################################################################
+
+
+################################################################################
+## Head: KeyBind / Window Maximize
+##
+
+bind-key 4-w window-maximize
+bind-key 4-m window-maximize
+
+
+bind-key 4S-w window-vmaximize
+bind-key 4C-w window-hmaximize
+
+bind-key 4S-m window-vmaximize
+bind-key 4C-m window-hmaximize
+
+##
+## Tail: KeyBind / Window Maximize
+################################################################################
+
+
+################################################################################
+## Head: KeyBind / Window Fullscreen
+##
+
+bind-key 4-f window-fullscreen
+
+##
+## Tail: KeyBind / Window Fullscreen
+################################################################################
+
+
+################################################################################
+## Head: KeyBind / Window Freeze
+##
+
+bind-key 4-r window-freeze
+
+##
+## Tail: KeyBind / Window freeze
+################################################################################
+
+
+################################################################################
+## Head: KeyBind / Window Stick
+##
+
+bind-key 4-e window-stick
+
+##
+## Tail: KeyBind / Window stick
+################################################################################
+
+
