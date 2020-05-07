@@ -245,3 +245,41 @@ bind-key 4-e window-stick
 ##
 ## Tail: KeyBind / Window stick
 ################################################################################
+
+
+################################################################################
+## Head: KeyBind / Window Snap / Edge
+##
+
+bind-key MC-k window-snap-up
+bind-key MC-j window-snap-down
+bind-key MC-h window-snap-left
+bind-key MC-l window-snap-right
+
+bind-key MC-Up window-snap-up
+bind-key MC-Down window-snap-down
+bind-key MC-Left window-snap-left
+bind-key MC-Right window-snap-right
+
+##
+## Tail: KeyBind / Window Snap / Edge
+################################################################################
+
+
+################################################################################
+## Head: KeyBind / Window Snap / Corner
+##
+
+bind-key MS-k window-snap-up-left
+bind-key MS-j window-snap-up-right
+bind-key MS-h window-snap-down-left
+bind-key MS-l window-snap-right
+
+bind-key MS-Up window-snap-up-left
+bind-key MS-Down window-snap-up-right
+bind-key MS-Left window-snap-down-left
+bind-key MS-Right window-snap-down-right
+
+##
+## Tail: KeyBind / Window Snap / Corner
+################################################################################
