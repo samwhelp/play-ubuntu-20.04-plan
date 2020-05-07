@@ -25,8 +25,6 @@
 ## for panel (tint2)
 gap 45 5 5 5
 
-
-
 ##
 ## Tail: Setting / gap
 ################################################################################
@@ -41,6 +39,19 @@ sticky yes
 
 ##
 ## Tail: Setting / group
+################################################################################
+
+
+################################################################################
+## Head: Setting / menu
+##
+
+color font "#ffffff"
+color menubg "#353535"
+color menufg "#555555"
+
+##
+## Tail: Setting / menu
 ################################################################################
 
 
@@ -78,7 +89,6 @@ bind-key M-F3 menu-window
 bind-key M-F2 menu-exec
 #bind-key M-F2 menu-group
 bind-key M-F1 menu-cmd
-
 
 ##
 ## Tail: KeyBind / Menu
