@@ -38,8 +38,9 @@ local theme = {}
 theme.wallpaper = theme_default_dir_path .. '/background.png'
 
 -- https://awesomewm.org/doc/api/libraries/awful.hotkeys_popup.widget.html#beautiful.hotkeys_border_width
-theme.hotkeys_border_width = 1
-
+--theme.hotkeys_border_width = 1
+theme.hotkeys_border_width = dpi(2)
+theme.systray_icon_spacing = dpi(4)
 
 theme.font = 'sans 12'
 
