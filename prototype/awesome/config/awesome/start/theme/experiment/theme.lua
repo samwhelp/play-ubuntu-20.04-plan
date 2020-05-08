@@ -37,10 +37,16 @@ local theme = {}
 
 theme.wallpaper = theme_default_dir_path .. '/background.png'
 
--- https://awesomewm.org/doc/api/libraries/awful.hotkeys_popup.widget.html#beautiful.hotkeys_border_width
+
+-- https://awesomewm.org/apidoc/popups_and_bars/awful.hotkeys_popup.widget.html#beautiful.hotkeys_border_width
+--https://github.com/awesomeWM/awesome/blob/master/lib/awful/hotkeys_popup/widget.lua#L269
 --theme.hotkeys_border_width = 1
 theme.hotkeys_border_width = dpi(2)
+
+-- https://awesomewm.org/apidoc/widgets/wibox.widget.systray.html#beautiful.systray_icon_spacing
+-- https://github.com/awesomeWM/awesome/blob/master/lib/wibox/widget/systray.lua#L51
 theme.systray_icon_spacing = dpi(4)
+
 
 theme.font = 'sans 12'
 
