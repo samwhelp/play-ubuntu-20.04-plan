@@ -118,7 +118,7 @@ awesome -v
 show
 
 ```
-awesome v4.3-848-g38848bff (Too long)
+awesome v4.3-850-g9781f14b (Too long)
  • Compiled against Lua 5.3.3 (running with Lua 5.3)
  • API level: 4
  • D-Bus support: yes
