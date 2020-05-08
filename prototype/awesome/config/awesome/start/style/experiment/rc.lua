@@ -119,7 +119,8 @@ end
 print('gears.filesystem.get_themes_dir() = ' .. gears.filesystem.get_themes_dir())
 print('gears.filesystem.get_configuration_dir() = ' .. gears.filesystem.get_configuration_dir())
 
-beautiful.init(gears.filesystem.get_configuration_dir() .. 'theme/experiment/theme.lua')
+--beautiful.init(gears.filesystem.get_configuration_dir() .. 'theme/experiment/theme.lua')
+beautiful.init(gears.filesystem.get_configuration_dir() .. 'theme/experiment_icon_recolor/theme.lua')
 
 -- ## Themes define colours, icons, font and wallpapers.
 --beautiful.init(gears.filesystem.get_themes_dir() .. 'default/theme.lua')
