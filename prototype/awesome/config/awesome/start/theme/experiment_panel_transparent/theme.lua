@@ -1,20 +1,4 @@
 
-
---------------------------------------------------------------------------------
---- Head: Reference
---
-
--- * https://awesomewm.org/apidoc/documentation/06-appearance.md.html
--- * https://awesomewm.org/apidoc/documentation/07-my-first-awesome.md.html
--- * https://awesomewm.org/apidoc/theme_related_libraries/gears.color.html
--- * https://awesomewm.org/doc/api/libraries/gears.color.html#parse_color
--- * https://awesomewm.org/apidoc/
-
---
--- Tail: Reference
---------------------------------------------------------------------------------
-
-
 --------------------------------------------------------------------------------
 --- Head: Require
 --
@@ -53,7 +37,6 @@ local theme = {}
 
 theme.wallpaper = theme_default_dir_path .. '/background.png'
 
-
 -- https://awesomewm.org/apidoc/popups_and_bars/awful.hotkeys_popup.widget.html#beautiful.hotkeys_border_width
 --https://github.com/awesomeWM/awesome/blob/master/lib/awful/hotkeys_popup/widget.lua#L269
 --theme.hotkeys_border_width = 1
@@ -66,20 +49,26 @@ theme.systray_icon_spacing = dpi(4)
 
 theme.font = 'sans 12'
 
-theme.bg_normal     = "#222222"
-theme.bg_focus      = "#606060"
-theme.bg_urgent     = "#ff0000"
-theme.bg_minimize   = "#444444"
-theme.bg_systray    = theme.bg_normal
+-- https://github.com/awesomeWM/awesome/blob/master/lib/wibox/init.lua#L88
+-- https://awesomewm.org/apidoc/popups_and_bars/wibox.html#beautiful.bg_normal
+-- https://awesomewm.org/doc/api/libraries/gears.color.html#parse_color
+theme.bg_normal = "#00000075"
+--theme.bg_normal = "#22222275"
+--theme.bg_normal = "#222222"
+theme.bg_focus = "#606060"
+theme.bg_urgent = "#aaaaaa"
+theme.bg_minimize = "#444444"
+theme.bg_systray = theme.bg_normal
 
-theme.fg_normal     = "#aaaaaa"
-theme.fg_focus      = "#ffffff"
-theme.fg_urgent     = "#ffffff"
-theme.fg_minimize   = "#ffffff"
+theme.fg_normal = "#aaaaaa"
+--theme.fg_focus = "#ffffff"
+theme.fg_focus = "#aaaaaa"
+theme.fg_urgent = "#ffffff"
+theme.fg_minimize = "#ffffff"
 
 
-theme.useless_gap         = dpi(4)
-theme.border_width        = dpi(1)
+theme.useless_gap = dpi(4)
+theme.border_width = dpi(1)
 theme.border_color_normal = "#000000"
 theme.border_color_active = "#535d6c"
 theme.border_color_marked = "#91231c"
@@ -118,7 +107,7 @@ theme.taglist_squares_unsel = theme_assets.taglist_squares_unsel(
 -- menu_[border_color|border_width]
 theme.menu_submenu_icon = theme_default_dir_path .. '/submenu.png'
 theme.menu_height = dpi(25)
-theme.menu_width  = dpi(200)
+theme.menu_width = dpi(200)
 
 -- You can add as many variables as
 -- you wish and access them by using
@@ -178,6 +167,46 @@ theme.titlebar_maximized_button_focus_inactive  = theme_default_dir_path .. '/ti
 theme.titlebar_maximized_button_normal_active = theme_default_dir_path .. '/titlebar/maximized_normal_active.png'
 theme.titlebar_maximized_button_focus_active  = theme_default_dir_path .. '/titlebar/maximized_focus_active.png'
 
+
+-- ## https://github.com/awesomeWM/awesome/blob/master/themes/xresources/theme.lua#L63
+-- You can add as many variables as
+-- you wish and access them by using
+-- beautiful.variable in your rc.lua
+--theme.bg_widget = "#cc0000"
+
+-- Recolor Layout icons:
+theme = theme_assets.recolor_layout(theme, theme.fg_normal)
+
+-- Recolor titlebar icons:
+--
+local function darker(color_value, darker_n)
+	local result = "#"
+	for s in color_value:gmatch("[a-fA-F0-9][a-fA-F0-9]") do
+		local bg_numeric_value = tonumber("0x"..s) - darker_n
+		if bg_numeric_value < 0 then bg_numeric_value = 0 end
+		if bg_numeric_value > 255 then bg_numeric_value = 255 end
+		result = result .. string.format("%2.2x", bg_numeric_value)
+	end
+	return result
+end
+theme = theme_assets.recolor_titlebar(
+	theme, theme.fg_normal, "normal"
+)
+theme = theme_assets.recolor_titlebar(
+	theme, darker(theme.fg_normal, -60), "normal", "hover"
+)
+theme = theme_assets.recolor_titlebar(
+	theme, darker(theme.fg_normal, -100), "normal", "press"
+)
+theme = theme_assets.recolor_titlebar(
+	theme, theme.fg_focus, "focus"
+)
+theme = theme_assets.recolor_titlebar(
+	theme, darker(theme.fg_focus, -60), "focus", "hover"
+)
+theme = theme_assets.recolor_titlebar(
+	theme, darker(theme.fg_focus, -100), "focus", "press"
+)
 
 
 -- Generate Awesome icon:
