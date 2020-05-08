@@ -395,6 +395,8 @@ screen.connect_signal('request::desktop_decoration', function(s)
 
 	}
 
+	s.systray = wibox.widget.systray()
+
 	-- Create the Top Panel
 	s.panel_main = awful.wibar({ position = 'top', screen = s })
 
@@ -411,7 +413,7 @@ screen.connect_signal('request::desktop_decoration', function(s)
 		{ -- Right widgets
 			layout = wibox.layout.fixed.horizontal,
 			keyboardlayout_main,
-			wibox.widget.systray(),
+			s.systray,
 			textclock_main,
 			s.layoutbox_main,
 		},
@@ -1052,6 +1054,30 @@ awful.keyboard.append_global_keybindings({
 
 --
 --- Tail: Keybind / Sound
+--------------------------------------------------------------------------------
+
+
+
+--------------------------------------------------------------------------------
+--- Head: Keybind / Panel
+--
+
+
+awful.keyboard.append_global_keybindings({
+
+	-- https://pavelmakhov.com/2018/01/hide-systray-in-awesome/
+	awful.key(
+		{ key_alt }, 'equal', function ()
+			awful.screen.focused().systray.visible = not awful.screen.focused().systray.visible
+		end,
+		{description = "Toggle systray visibility", group = "Custom"}
+	),
+
+
+})
+
+--
+--- Tail: Keybind / Panel
 --------------------------------------------------------------------------------
 
 
