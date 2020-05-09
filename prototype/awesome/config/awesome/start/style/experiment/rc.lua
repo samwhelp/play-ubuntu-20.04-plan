@@ -105,10 +105,8 @@ end
 --------------------------------------------------------------------------------
 
 
-
-
 --------------------------------------------------------------------------------
--- Head: beautiful
+-- Head: Beautiful
 --
 
 -- https://awesomewm.org/apidoc/sample%20files/theme.lua.html
@@ -135,7 +133,7 @@ beautiful.init(gears.filesystem.get_configuration_dir() .. 'theme/experiment_ico
 beautiful.wallpaper = '/usr/share/backgrounds/Frozen_sunset_on_the_lake_by_Manuel_Arslanyan.jpg'
 
 --
--- Tail: beautiful
+-- Tail: Beautiful
 --------------------------------------------------------------------------------
 
 
@@ -205,7 +203,6 @@ menubar.utils.terminal = terminal -- Set the terminal for applications that requ
 -- Tail: Menu
 --------------------------------------------------------------------------------
 
-
 --------------------------------------------------------------------------------
 -- Head: Request Default Layouts
 --
@@ -253,6 +250,27 @@ end)
 
 
 --------------------------------------------------------------------------------
+-- Head: Tag Layout
+--
+
+screen.connect_signal("request::desktop_decoration", function(s)
+
+	--print('request::desktop_decoration')
+
+	-- Each screen has its own tag table.
+	-- awful.tag({ '1', '2', '3', '4', '5', '6', '7', '8', '9' }, s, awful.layout.layouts[1])
+	--awful.tag({ 'Term', 'Edit', 'Web', 'File', 'Misc', 'Free'}, s, awful.layout.layouts[1])
+	awful.tag({ 'Term', 'Edit', 'Web', 'File', 'Misc'}, s, awful.layout.layouts[1])
+
+end)
+
+
+--
+-- Tail: Tag Layout
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
 --- Head: Request Wallpaper
 --
 
@@ -288,10 +306,14 @@ textclock_main = wibox.widget.textclock()
 
 
 screen.connect_signal('request::desktop_decoration', function(s)
+
+	-- ## Notice: This Code Move to [Tag Layout]
 	-- Each screen has its own tag table.
 	-- awful.tag({ '1', '2', '3', '4', '5', '6', '7', '8', '9' }, s, awful.layout.layouts[1])
 	--awful.tag({ 'Term', 'Edit', 'Web', 'File', 'Misc', 'Free'}, s, awful.layout.layouts[1])
-	awful.tag({ 'Term', 'Edit', 'Web', 'File', 'Misc'}, s, awful.layout.layouts[1])
+	--awful.tag({ 'Term', 'Edit', 'Web', 'File', 'Misc'}, s, awful.layout.layouts[1])
+	-- ## Notice: This Code Move to [Tag Layout]
+
 
 
 	-- Create a promptbox for each screen
@@ -426,9 +448,8 @@ end)
 
 
 
-
 --------------------------------------------------------------------------------
---- Head: Mousebind
+--- Head: Mousebind / Common
 --
 
 -- https://awesomewm.org/apidoc/input_handling/mouse.html
@@ -458,10 +479,47 @@ awful.mouse.append_global_mousebindings({
 })
 
 --
---- Tail: Mousebind
+--- Tail: Mousebind / Common
 --------------------------------------------------------------------------------
 
 
+--------------------------------------------------------------------------------
+--- Head: request::default_mousebindings
+--
+
+client.connect_signal('request::default_mousebindings', function()
+
+	awful.mouse.append_client_mousebindings({
+
+		awful.button({ }, 1, function (c)
+			c:activate { context = 'mouse_click' }
+		end),
+
+
+		awful.button({ key_super }, 1, function (c)
+			c:activate { context = 'mouse_click', action = 'mouse_move'  }
+		end),
+
+		awful.button({ key_super }, 3, function (c)
+			c:activate { context = 'mouse_click', action = 'mouse_resize'}
+		end),
+
+
+		awful.button({ key_alt }, 1, function (c)
+			c:activate { context = 'mouse_click', action = 'mouse_move'  }
+		end),
+
+		awful.button({ key_alt }, 3, function (c)
+			c:activate { context = 'mouse_click', action = 'mouse_resize'}
+		end),
+
+	})
+
+end)
+
+--
+--- Tail: request::default_mousebindings
+--------------------------------------------------------------------------------
 
 
 --------------------------------------------------------------------------------
@@ -493,7 +551,7 @@ awful.keyboard.append_global_keybindings({
 
 
 --------------------------------------------------------------------------------
---- Head: Keybind / Application
+--- Head: Keybind / Launch Application / Terminal
 --
 
 awful.keyboard.append_global_keybindings({
@@ -518,6 +576,15 @@ awful.keyboard.append_global_keybindings({
 	),
 
 })
+
+--
+--- Tail: Keybind / Launch Application / Terminal
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+--- Head: Keybind / Launch Application / Misc
+--
 
 awful.keyboard.append_global_keybindings({
 
@@ -546,7 +613,67 @@ awful.keyboard.append_global_keybindings({
 })
 
 --
---- Tail: Keybind / Application
+--- Tail: Keybind / Launch Application / Misc
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+--- Head: Keybind / Volume Control
+--
+
+awful.keyboard.append_global_keybindings({
+
+
+	awful.key(
+		{ key_alt, key_shift }, 'v', function () awful.spawn('mate-volume-control') end,
+		{ description = 'Launch Volume Control', group = 'Volume'}
+	),
+
+
+	awful.key(
+		{ key_alt }, 'm', function () awful.spawn('amixer -q -D pulse sset Master toggle') end,
+		{ description = 'Volume Toggle Mute', group = 'Volume'}
+	),
+
+	awful.key(
+		{ key_alt, key_shift }, 'comma', function () awful.spawn('amixer -q -D pulse sset Master 5%- unmute') end,
+		{ description = 'Volume Decrease', group = 'Volume'}
+	),
+
+	awful.key(
+		{ key_alt, key_shift }, 'period', function () awful.spawn('amixer -q -D pulse sset Master 5%+ unmute') end,
+		{ description = 'Volume Increase', group = 'Volume'}
+	),
+
+	awful.key(
+		{ key_alt, key_ctrl }, 'comma', function () awful.spawn('amixer -q -D pulse sset Master 1%- unmute') end,
+		{ description = 'Volume Decrease Slowly', group = 'Volume'}
+	),
+
+	awful.key(
+		{ key_alt, key_ctrl }, 'period', function () awful.spawn('amixer -q -D pulse sset Master 1%+ unmute') end,
+		{ description = 'Volume Increase Slowly', group = 'Volume'}
+	),
+
+	awful.key(
+		{  }, 'XF86AudioMute', function () awful.spawn('amixer -q -D pulse sset Master toggle') end,
+		{ description = 'XF86Audio Mute', group = 'Volume'}
+	),
+
+	awful.key(
+		{  }, 'XF86AudioLowerVolume', function () awful.spawn('amixer -q -D pulse sset Master 5%- unmute') end,
+		{ description = 'XF86Audio Lower Volume', group = 'Volume'}
+	),
+
+	awful.key(
+		{  }, 'XF86AudioRaiseVolume', function () awful.spawn('amixer -q -D pulse sset Master 5%+ unmute') end,
+		{ description = 'XF86Audio Raise Volume', group = 'Volume'}
+	),
+
+})
+
+--
+--- Tail: Keybind / Volume Control
 --------------------------------------------------------------------------------
 
 
@@ -974,91 +1101,6 @@ awful.keyboard.append_global_keybindings({
 
 
 --------------------------------------------------------------------------------
---- Head: Keybind / Screen
---
-
-awful.keyboard.append_global_keybindings({
-
-	awful.key(
-		{ key_alt, key_ctrl }, 'a', function () awful.screen.focus_relative(-1) end,
-		{ description = 'Focus the previous screen', group = 'Screen'}
-	),
-
-	awful.key(
-		{ key_alt, key_ctrl }, 's', function () awful.screen.focus_relative( 1) end,
-		{ description = 'Focus the next screen', group = 'Screen'}
-	),
-
-
-})
-
---
---- Tail: Keybind / Screen
---------------------------------------------------------------------------------
-
-
---------------------------------------------------------------------------------
---- Head: Keybind / Sound
---
-
-awful.keyboard.append_global_keybindings({
-
-
-	awful.key(
-		{ key_alt, key_shift }, 'v', function () awful.spawn('mate-volume-control') end,
-		{ description = 'Launch Volume Control', group = 'Volume'}
-	),
-
-
-	awful.key(
-		{ key_alt }, 'm', function () awful.spawn('amixer -q -D pulse sset Master toggle') end,
-		{ description = 'Volume Toggle Mute', group = 'Volume'}
-	),
-
-	awful.key(
-		{ key_alt, key_shift }, 'comma', function () awful.spawn('amixer -q -D pulse sset Master 5%- unmute') end,
-		{ description = 'Volume Decrease', group = 'Volume'}
-	),
-
-	awful.key(
-		{ key_alt, key_shift }, 'period', function () awful.spawn('amixer -q -D pulse sset Master 5%+ unmute') end,
-		{ description = 'Volume Increase', group = 'Volume'}
-	),
-
-	awful.key(
-		{ key_alt, key_ctrl }, 'comma', function () awful.spawn('amixer -q -D pulse sset Master 1%- unmute') end,
-		{ description = 'Volume Decrease Slowly', group = 'Volume'}
-	),
-
-	awful.key(
-		{ key_alt, key_ctrl }, 'period', function () awful.spawn('amixer -q -D pulse sset Master 1%+ unmute') end,
-		{ description = 'Volume Increase Slowly', group = 'Volume'}
-	),
-
-	awful.key(
-		{  }, 'XF86AudioMute', function () awful.spawn('amixer -q -D pulse sset Master toggle') end,
-		{ description = 'XF86Audio Mute', group = 'Volume'}
-	),
-
-	awful.key(
-		{  }, 'XF86AudioLowerVolume', function () awful.spawn('amixer -q -D pulse sset Master 5%- unmute') end,
-		{ description = 'XF86Audio Lower Volume', group = 'Volume'}
-	),
-
-	awful.key(
-		{  }, 'XF86AudioRaiseVolume', function () awful.spawn('amixer -q -D pulse sset Master 5%+ unmute') end,
-		{ description = 'XF86Audio Raise Volume', group = 'Volume'}
-	),
-
-})
-
---
---- Tail: Keybind / Sound
---------------------------------------------------------------------------------
-
-
-
---------------------------------------------------------------------------------
 --- Head: Keybind / Panel
 --
 
@@ -1078,46 +1120,6 @@ awful.keyboard.append_global_keybindings({
 
 --
 --- Tail: Keybind / Panel
---------------------------------------------------------------------------------
-
-
-
---------------------------------------------------------------------------------
---- Head: request::default_mousebindings
---
-
-client.connect_signal('request::default_mousebindings', function()
-
-	awful.mouse.append_client_mousebindings({
-
-		awful.button({ }, 1, function (c)
-			c:activate { context = 'mouse_click' }
-		end),
-
-
-		awful.button({ key_super }, 1, function (c)
-			c:activate { context = 'mouse_click', action = 'mouse_move'  }
-		end),
-
-		awful.button({ key_super }, 3, function (c)
-			c:activate { context = 'mouse_click', action = 'mouse_resize'}
-		end),
-
-
-		awful.button({ key_alt }, 1, function (c)
-			c:activate { context = 'mouse_click', action = 'mouse_move'  }
-		end),
-
-		awful.button({ key_alt }, 3, function (c)
-			c:activate { context = 'mouse_click', action = 'mouse_resize'}
-		end),
-
-	})
-
-end)
-
---
---- Tail: Client Rules
 --------------------------------------------------------------------------------
 
 
@@ -1451,6 +1453,11 @@ apps_autorun = {
 
 }
 
+-- For Test
+--apps_autorun = {
+--	'wallpaper.sh',
+--}
+
 if autorun then
 	for app = 1, #apps_autorun do
 		awful.spawn.with_shell(apps_autorun[app])
@@ -1460,3 +1467,5 @@ end
 --
 --- Tail: Autorun
 --------------------------------------------------------------------------------
+
+
