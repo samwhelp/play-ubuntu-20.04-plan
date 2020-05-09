@@ -10,10 +10,8 @@
 <?php include_once(__DIR__ . '/Section/DesktopDecoration.php'); ?>
 
 <?php include_once(__DIR__ . '/Section/MousebindGlobal.php'); ?>
-<?php include_once(__DIR__ . '/Section/MousebindDefault.php'); ?>
 <?php include_once(__DIR__ . '/Section/KeybindGlobal.php'); ?>
-<?php include_once(__DIR__ . '/Section/KeybindDefault.php'); ?>
 
-<?php include_once(__DIR__ . '/Section/ClientRule.php'); ?>
-<?php include_once(__DIR__ . '/Section/ClientTitlebar.php'); ?>
+<?php include_once(__DIR__ . '/Section/Client.php'); ?>
+
 <?php include_once(__DIR__ . '/Section/Autostart.php'); ?>

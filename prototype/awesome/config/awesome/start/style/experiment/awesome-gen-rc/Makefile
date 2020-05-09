@@ -55,7 +55,7 @@ test: rc
 
 sync: rc
 	install -m 664 rc.lua ../rc.lua
-	##sed -i 's/<bottom>48<\/bottom>/<bottom>5<\/bottom>/g' ../rc.lua
+##	sed -i 's/<bottom>48<\/bottom>/<bottom>5<\/bottom>/g' ../rc.lua
 .PHONY: sync
 
 

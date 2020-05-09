@@ -1,7 +1,7 @@
 
 
 --------------------------------------------------------------------------------
---- Head: request::default_mousebindings
+--- Head: Mousebind / Client
 --
 
 client.connect_signal('request::default_mousebindings', function()
@@ -35,5 +35,5 @@ client.connect_signal('request::default_mousebindings', function()
 end)
 
 --
---- Tail: request::default_mousebindings
+--- Tail: Mousebind / Client
 --------------------------------------------------------------------------------

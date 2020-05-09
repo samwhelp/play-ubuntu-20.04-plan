@@ -1,7 +1,7 @@
 
 
 --------------------------------------------------------------------------------
---- Head: request::default_keybindings
+--- Head: Keybind / Client
 --
 
 client.connect_signal('request::default_keybindings', function()
@@ -115,5 +115,5 @@ client.connect_signal('request::default_keybindings', function()
 end)
 
 --
---- Tail: request::default_keybindings
+--- Tail: Keybind / Client
 --------------------------------------------------------------------------------
