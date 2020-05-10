@@ -12,7 +12,8 @@
 
 
 -- my experiment
---local rc = 'style.experiment_only_float_mode.rc'
+--local rc = 'style.experiment_onlyfloat.rc'
+--local rc = 'style.experiment_onlyfloat_notitlebar_nopanel.rc'
 --local rc = 'style.experiment_two_panel.rc'
 local rc = 'style.experiment.rc'
 
