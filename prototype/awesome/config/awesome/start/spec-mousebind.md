@@ -18,8 +18,8 @@
 
 | Key | Description |
 | --- | --- |
-| `Alt + [Mouse Left Drag]` | Window Move On Floating |
-| `Win + [Mouse Left Drag]` | Window Move On Floating |
+| `Alt + [Mouse Left Drag]` | Window Move On Floating (Window Swap On Tiled ) |
+| `Win + [Mouse Left Drag]` | Window Move On Floating (Window Swap On Tiled ) |
 
 
 ## Window Resize
