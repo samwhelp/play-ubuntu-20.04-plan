@@ -24,7 +24,12 @@
 
 -- ### dynamic
 --local rc = 'style.experiment_twopanel.rc'
-local rc = 'style.experiment.rc'
+
+local rc = 'style.experiment_onepanel.rc'
+--local rc = 'style.experiment_onepanel_notitlebar.rc'
+
+
+--local rc = 'style.experiment.rc'
 
 
 
