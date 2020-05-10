@@ -19,6 +19,7 @@
 
 -- ### onlytile
 --local rc = 'style.experiment_onlytile.rc'
+--local rc = 'style.experiment_onlytile_notitlebar.rc'
 --local rc = 'style.experiment_onlytile_notitlebar_nopanel.rc'
 
 -- ### dynamic
