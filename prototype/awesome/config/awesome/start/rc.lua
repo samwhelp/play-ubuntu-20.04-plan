@@ -23,7 +23,7 @@
 --local rc = 'style.experiment_onlytile_notitlebar_nopanel.rc'
 
 -- ### dynamic
---local rc = 'style.experiment_two_panel.rc'
+--local rc = 'style.experiment_twopanel.rc'
 local rc = 'style.experiment.rc'
 
 
