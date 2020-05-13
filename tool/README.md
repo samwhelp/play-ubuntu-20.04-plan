@@ -29,6 +29,7 @@
 
 ## Text Editor
 
+* [lite](lite)
 * [mousepad](mousepad)
 * [vim](vim)
 * [nvim](nvim)
