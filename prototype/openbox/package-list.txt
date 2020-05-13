@@ -16,6 +16,7 @@ compton
 
 tint2
 
+orage
 
 pulseaudio-utils
 pavucontrol
