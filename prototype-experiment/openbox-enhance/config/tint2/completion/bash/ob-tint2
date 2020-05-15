@@ -1,0 +1,18 @@
+
+## /etc/bash_completion.d/ob-tint2
+## $ sudo install -m 644 ./ob-tint2 /etc/bash_completion.d/ob-tint2
+
+_ob_tint2 () {
+
+	local cur prev words cword
+	_init_completion || return
+
+	if [ "$cword" = "1" ]; then
+		local action_list=$(DEBUG_SC_CTRL=false ob-tint2 self_actions)
+		COMPREPLY=( $( compgen -W "$action_list" -- "$cur" ) )
+	fi
+
+	return 0
+}
+
+complete -F _ob_tint2 ob-tint2
