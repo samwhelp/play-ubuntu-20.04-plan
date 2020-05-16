@@ -172,6 +172,14 @@ tint2_config_install_ob_tint2 () {
 
 }
 
+tint2_config_install_ob_tint2_completion_bash () {
+
+	echo "install -m 755 ./config/tint2/completion/bash/ob-tint2 /etc/bash_completion.d/ob-tint2"
+	sudo install -m 644 "./config/tint2/completion/bash/ob-tint2" "/etc/bash_completion.d/ob-tint2"
+}
+
+
+
 tint2_config_install_option_theme_file () {
 
 	mkdir -p "$HOME/.config/openbox/tint2/option"
@@ -453,6 +461,8 @@ main_config_install () {
 	gtk3_config_install
 
 	gtk2_config_install
+
+	tint2_config_install_ob_tint2_completion_bash
 
 }
 ## start
