@@ -2,4 +2,4 @@
 
 ## Explore
 
-* [Explore](Explore)
+* [Explore](Explore.md)
