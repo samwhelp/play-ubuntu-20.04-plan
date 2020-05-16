@@ -340,6 +340,14 @@ tint2_sys_session_restart () {
 	tint2_sys_session_start
 }
 
+tint2_sys_session_reconfigure () {
+	## https://gitlab.com/o9000/tint2/-/blob/master/src/tint2conf/properties.c#L192
+	killall -SIGUSR1 tint2 || pkill -SIGUSR1 -x tint2
+}
+
+
+
+
 tint2_sys_applet_start () {
 	#ob-applet &
 	:;
@@ -361,13 +369,23 @@ tint2_run_theme_help () {
 cat << EOF
 
 Usage:
-	$ $cmd_name theme [name]
+
+	## synopsis
+
+		$ $cmd_name theme [name]
 
 
 Example:
-	$ $cmd_name theme 'default'
-	$ $cmd_name theme 'two_panel'
-	$ $cmd_name theme 'two_panel_desktop_clock'
+
+	## get
+
+		$ $cmd_name theme
+
+	## set
+
+		$ $cmd_name theme 'default'
+		$ $cmd_name theme 'two_panel'
+		$ $cmd_name theme 'two_panel_desktop_clock'
 
 EOF
 
@@ -448,6 +466,12 @@ sub_run_restart () {
 	tint2_sys_session_restart
 }
 
+sub_run_reconfigure () {
+	tint2_sys_session_reconfigure
+}
+
+
+
 
 
 
@@ -492,6 +516,9 @@ main_usage () {
 
 cat << EOF
 Usage:
+
+	## synopsis
+
 		$ $cmd_name [action]
 
 	## version
@@ -504,7 +531,14 @@ Usage:
 
 	## help
 
-		$ $cmd_name theme_help
+		$ $cmd_name help
+
+	## control
+
+		$ $cmd_name start
+		$ $cmd_name stop
+		$ $cmd_name restart
+		$ $cmd_name reconfigure
 
 
 	## list
@@ -521,20 +555,22 @@ Usage:
 
 Example:
 
-	## help
 
-		$ $cmd_name
-		$ $cmd_name help
+	## theme / help
 
 		$ $cmd_name theme_help
 
+	## theme / list
 
-	## get
+		$ $cmd_name list
+		$ $cmd_name theme_list
+
+	## theme / get
 
 		$ $cmd_name theme
 
 
-	## set
+	## theme / set
 
 		$ $cmd_name theme 'default'
 		$ $cmd_name theme 'two_panel'
