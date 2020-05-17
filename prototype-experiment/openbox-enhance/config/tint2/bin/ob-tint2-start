@@ -6,10 +6,12 @@ tint2_boot_simple () {
 }
 
 tint2_boot_default () {
-	for conf in $(find "$HOME/.config/openbox/tint2/theme/default/config/on" -name *.conf); do
-		#echo $conf
-		tint2 -c "$conf"
-	done
+
+	local config_dir_path="$HOME/.config/openbox/tint2/theme/default/config/on"
+
+	tint2_boot_util_start_v1 "$config_dir_path"
+	##tint2_boot_util_start_v2 "$config_dir_path"
+
 }
 
 tint2_boot_by_option () {
@@ -137,8 +139,9 @@ tint2_sys_option_theme_file_check () {
 
 __main__ () {
 
-	#tint2_boot_simple
-	#tint2_boot_default
+	##tint2_boot_simple
+	##tint2_boot_default
+
 	tint2_boot_by_option
 
 
