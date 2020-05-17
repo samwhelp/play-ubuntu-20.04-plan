@@ -24,8 +24,8 @@ nm-applet &
 
 
 ## blueman-applet (Package: blueman)
-killall -q -9 blueman-applet
-blueman-applet &
+##killall -q -9 blueman-applet
+##blueman-applet &
 ## Note: use /etc/xdg/autostart/blueman.desktop
 
 
