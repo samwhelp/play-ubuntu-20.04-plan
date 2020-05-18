@@ -289,7 +289,77 @@ compton_config_install () {
 	cp "./config/compton/compton.conf" "$HOME/.config/openbox/compton/compton.conf"
 	echo "cp ./config/compton/compton.conf $HOME/.config/openbox/compton/compton.conf"
 
+
+	compton_config_install_ob_compton
+	compton_config_install_ob_compton_start
+
+
+	compton_config_install_option_theme_file
+
+	compton_config_install_theme_default
+	compton_config_install_theme_basic
+
 }
+
+
+compton_config_install_ob_compton_start () {
+
+	echo "install -m 755 ./config/compton/bin/ob-compton-start $HOME/bin/ob-compton-start"
+	install -m 755 "./config/compton/bin/ob-compton-start" "$HOME/bin/ob-compton-start"
+
+
+}
+
+compton_config_install_ob_compton () {
+
+	echo "install -m 755 ./config/compton/bin/ob-compton $HOME/bin/ob-compton"
+	install -m 755 "./config/compton/bin/ob-compton" "$HOME/bin/ob-compton"
+
+}
+
+compton_config_install_ob_compton_completion_bash () {
+
+	echo "install -m 755 ./config/compton/completion/bash/ob-compton /etc/bash_completion.d/ob-compton"
+	sudo install -m 644 "./config/compton/completion/bash/ob-compton" "/etc/bash_completion.d/ob-compton"
+}
+
+
+
+compton_config_install_option_theme_file () {
+
+	mkdir -p "$HOME/.config/openbox/compton/option"
+	echo "mkdir -p $HOME/.config/openbox/compton/option"
+
+
+	echo "echo 'default' > $HOME/.config/openbox/compton/option/theme"
+	echo 'default' > "$HOME/.config/openbox/compton/option/theme"
+
+}
+
+compton_config_install_theme_default () {
+
+	mkdir -p "$HOME/.config/openbox/compton/theme/default/config/on"
+	echo "mkdir -p $HOME/.config/openbox/compton/theme/default/config/on"
+
+
+	echo "install -m 664 ./config/compton/theme/default/config/on/compton.conf $HOME/.config/openbox/compton/theme/default/config/on/compton.conf"
+	install -m 664 "./config/compton/theme/default/config/on/compton.conf" "$HOME/.config/openbox/compton/theme/default/config/on/compton.conf"
+
+}
+
+
+compton_config_install_theme_basic () {
+
+	mkdir -p "$HOME/.config/openbox/compton/theme/basic/config/on"
+	echo "mkdir -p $HOME/.config/openbox/compton/theme/basic/config/on"
+
+
+	echo "install -m 664 ./config/compton/theme/basic/config/on/compton.conf $HOME/.config/openbox/compton/theme/basic/config/on/compton.conf"
+	install -m 664 "./config/compton/theme/basic/config/on/compton.conf" "$HOME/.config/openbox/compton/theme/basic/config/on/compton.conf"
+
+}
+
+
 ##
 ### Tail: compton
 ################################################################################
@@ -462,7 +532,9 @@ main_config_install () {
 
 	gtk2_config_install
 
+
 	tint2_config_install_ob_tint2_completion_bash
+	compton_config_install_ob_compton_completion_bash
 
 }
 ## start

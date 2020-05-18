@@ -87,7 +87,8 @@ ob-tint2-start &
 #compton &
 #compton --config ~/.config/compton/compton.conf &
 
-compton --config ~/.config/openbox/compton/compton.conf &
+#compton --config ~/.config/openbox/compton/compton.conf &
+ob-compton-start &
 
 
 ##
