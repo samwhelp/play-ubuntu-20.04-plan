@@ -1,0 +1,18 @@
+
+## /etc/bash_completion.d/xf-tint2
+## $ sudo install -m 644 ./xf-tint2 /etc/bash_completion.d/xf-tint2
+
+_xf_tint2 () {
+
+	local cur prev words cword
+	_init_completion || return
+
+	if [ "$cword" = "1" ]; then
+		local action_list=$(DEBUG_SC_CTRL=false xf-tint2 self_actions)
+		COMPREPLY=( $( compgen -W "$action_list" -- "$cur" ) )
+	fi
+
+	return 0
+}
+
+complete -F _xf_tint2 xf-tint2

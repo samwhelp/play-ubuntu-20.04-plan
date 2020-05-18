@@ -1,0 +1,152 @@
+#!/usr/bin/env bash
+
+
+compton_boot_simple () {
+	compton --daemon --config "$HOME/.config/xfwm4-session/compton/compton.conf" &
+}
+
+compton_boot_default () {
+
+	local config_dir_path="$HOME/.config/xfwm4-session/compton/theme/default/config/on"
+
+	compton_boot_util_start_v1 "$config_dir_path"
+	##compton_boot_util_start_v2 "$config_dir_path"
+
+}
+
+compton_boot_by_option () {
+	local config_dir_path
+
+
+	config_dir_path="$(compton_boot_theme_config_dir_path)"
+	config_dir_path_check_exist="$?"
+
+	if [ "$config_dir_path_check_exist" = "1" ]  ; then
+		## not exists
+		compton_boot_simple
+		return 0;
+	fi
+
+
+	compton_boot_util_start_v1 "$config_dir_path"
+	##compton_boot_util_start_v2 "$config_dir_path"
+
+}
+
+
+compton_boot_util_start_v1 () {
+	local config_dir_path="$1"
+	local conf
+
+	##for conf in "$config_dir_path"/*.conf ; do
+	for conf in "$config_dir_path"/compton.conf ; do
+		#echo $conf
+		compton --daemon --config "$conf" &
+	done
+
+}
+
+compton_boot_util_start_v2 () {
+	local config_dir_path="$1"
+	local conf
+
+	##for conf in $(find "$config_dir_path" -name *.conf); do
+	for conf in $(find "$config_dir_path" -name compton.conf); do
+		#echo $conf
+		compton --daemon --config "$conf" &
+	done
+
+}
+
+compton_boot_theme_config_dir_path () {
+	local theme_dir_path="$(compton_boot_theme_dir_path)"
+	local theme_config_dir_path="$theme_dir_path/config/on"
+
+	if [ -d "$theme_config_dir_path" ] ; then
+		echo "$theme_config_dir_path"
+		return 0
+	fi
+
+	echo "$theme_dir_path"
+	return 1
+
+}
+
+compton_boot_theme_dir_path () {
+	local theme_dir_path
+
+
+	theme_dir_path="$(compton_boot_theme_dir_path_find_by_option)"
+
+	if [ -d "$theme_dir_path" ] ; then
+		echo "$theme_dir_path"
+		return 0
+	fi
+
+
+	theme_dir_path="$(compton_boot_theme_dir_path_find_by_default)"
+
+	if [ -d "$theme_dir_path" ] ; then
+		echo "$theme_dir_path"
+		return 0
+	fi
+
+
+	theme_dir_path="$HOME/.config/compton"
+	echo "$theme_dir_path"
+	return 0
+
+}
+
+compton_boot_theme_dir_path_find_by_option () {
+	## ~/.config/xfwm4-session/compton/theme/some_theme
+	compton_boot_theme_dir_path_create $(compton_boot_option_theme_get)
+}
+
+compton_boot_theme_dir_path_find_by_default () {
+	## ~/.config/xfwm4-session/compton/theme/default
+	compton_boot_theme_dir_path_create $(compton_boot_option_theme_default)
+}
+
+compton_boot_theme_dir_path_create () {
+	local theme_name="$1"
+
+	## ~/.config/xfwm4-session/compton/theme/theme_name
+	echo "$HOME/.config/xfwm4-session/compton/theme/$theme_name"
+}
+
+compton_boot_option_theme_default () {
+	echo 'default'
+}
+
+compton_boot_option_theme_get () {
+
+
+	compton_sys_option_theme_file_check
+
+	## ~/.config/xfwm4-session/compton/option/theme
+	cat "$HOME/.config/xfwm4-session/compton/option/theme"
+}
+
+compton_sys_option_theme_file_check () {
+
+	if ! [ -e "$HOME/.config/xfwm4-session/compton/option/theme" ] ; then
+		mkdir -p "$HOME/.config/xfwm4-session/compton/option"
+		echo 'default' > "$HOME/.config/xfwm4-session/compton/option/theme"
+	fi
+
+}
+
+##compton_boot
+
+__main__ () {
+
+	##compton_boot_simple
+	##compton_boot_default
+
+	compton_boot_by_option
+
+
+}
+
+__main__
