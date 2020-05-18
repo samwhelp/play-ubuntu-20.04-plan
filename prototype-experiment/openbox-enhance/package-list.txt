@@ -33,6 +33,8 @@ policykit-1-gnome
 #lxqt-policykit
 
 
+xfce4-settings
+
 numix-gtk-theme
 numix-blue-gtk-theme
 numix-icon-theme
