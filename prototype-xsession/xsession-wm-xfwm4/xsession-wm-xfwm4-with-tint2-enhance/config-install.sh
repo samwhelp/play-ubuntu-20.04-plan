@@ -37,14 +37,14 @@ xfwm4_config_install () {
 	cp "./config/xfce4/xfconf/xfce-perchannel-xml/xfwm4.xml" "$HOME/.config/xfce4/xfconf/xfce-perchannel-xml/xfwm4.xml"
 	echo "cp ./config/xfce4/xfconf/xfce-perchannel-xml/xfwm4.xml $HOME/.config/xfce4/xfconf/xfce-perchannel-xml/xfwm4.xml"
 
-	xfwm4_put_xf_autostart
-	xfwm4_put_xf_applet
+	xfwm4_config_install_put_xf_autostart
+	xfwm4_config_install_put_xf_applet
 
 	xfwm4_put_toggledesktop_desktop_entry
 	xfwm4_put_quit_desktop_entry
 }
 
-xfwm4_put_xf_autostart () {
+xfwm4_config_install_put_xf_autostart () {
 
 	# echo "mkdir -p $HOME/bin"
 	# mkdir -p "$HOME/bin"
@@ -54,7 +54,7 @@ xfwm4_put_xf_autostart () {
 
 }
 
-xfwm4_put_xf_applet () {
+xfwm4_config_install_put_xf_applet () {
 
 	# echo "mkdir -p $HOME/bin"
 	# mkdir -p "$HOME/bin"

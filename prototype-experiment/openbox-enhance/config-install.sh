@@ -25,8 +25,8 @@ openbox_config_install () {
 	echo "cp ./config/openbox/menu.xml $HOME/.config/openbox/menu.xml"
 
 
-	openbox_put_ob_autostart
-	openbox_put_ob_applet
+	openbox_config_install_put_ob_autostart
+	openbox_config_install_put_ob_applet
 
 
 	openbox_put_toggledesktop_desktop_entry
@@ -37,7 +37,7 @@ openbox_config_install () {
 }
 
 
-openbox_put_ob_autostart () {
+openbox_config_install_put_ob_autostart () {
 
 	# echo "mkdir -p $HOME/bin"
 	# mkdir -p "$HOME/bin"
@@ -47,7 +47,7 @@ openbox_put_ob_autostart () {
 
 }
 
-openbox_put_ob_applet () {
+openbox_config_install_put_ob_applet () {
 
 	# echo "mkdir -p $HOME/bin"
 	# mkdir -p "$HOME/bin"
