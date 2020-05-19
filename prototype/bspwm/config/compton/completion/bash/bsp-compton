@@ -1,0 +1,18 @@
+
+## /etc/bash_completion.d/bsp-compton
+## $ sudo install -m 644 ./bsp-compton /etc/bash_completion.d/bsp-compton
+
+_bsp_compton () {
+
+	local cur prev words cword
+	_init_completion || return
+
+	if [ "$cword" = "1" ]; then
+		local action_list=$(DEBUG_SC_CTRL=false bsp-compton self_actions)
+		COMPREPLY=( $( compgen -W "$action_list" -- "$cur" ) )
+	fi
+
+	return 0
+}
+
+complete -F _bsp_compton bsp-compton
