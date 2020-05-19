@@ -6,3 +6,4 @@
 <?php include_once(__DIR__ . '/Keybind/Tag.php'); ?>
 <?php include_once(__DIR__ . '/Keybind/Panel.php'); ?>
 <?php include_once(__DIR__ . '/Keybind/Client.php'); ?>
+<?php include_once(__DIR__ . '/Keybind/Compton.php'); ?>

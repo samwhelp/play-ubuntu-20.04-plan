@@ -14,7 +14,8 @@
 * [Window](#window)
 * [Layout](#layout)
 * [Volume](#volume)
-
+* [Compton](#compton)
+* [Systray](#systray)
 
 ## Link
 
@@ -165,7 +166,7 @@
 
 ## Window
 
-## Window / Switch
+### Window / Switch
 
 | Key | Description |
 | --- | --- |
@@ -317,3 +318,17 @@
 | `XF86AudioMute` | Volume Toggle Mute |
 | `XF86AudioLowerVolume` | Volume Decrease |
 | `XF86AudioRaiseVolume` | Volume Increase |
+
+
+
+## Compton
+
+| Key | Description |
+| --- | --- |
+| `Alt + w` | Compton Toggle |
+
+## Systray
+
+| Key | Description |
+| --- | --- |
+| `Alt + =` | Systray Toggle |

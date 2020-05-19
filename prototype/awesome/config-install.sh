@@ -8,17 +8,22 @@ set -e
 ##
 awesome_config_install () {
 
+	echo "mkdir -p $HOME/bin"
+	mkdir -p "$HOME/bin"
+
 	#echo "mkdir -p $HOME/.config/awesome"
 	#mkdir -p "$HOME/.config/awesome"
 
 	echo "mkdir -p $HOME/.config/awesome-session"
 	mkdir -p "$HOME/.config/awesome-session"
 
-	
+
 
 	awesome_config_install_check_target_exists && awesome_config_install_copy_config_dir
-	
 
+
+	awesome_config_install_put_xf_autostart
+	awesome_config_install_put_xf_applet
 
 }
 
@@ -26,7 +31,7 @@ awesome_config_install_copy_config_dir() {
 
 	##echo "rm -rf $HOME/.config/awesome"
 	##rm -rf "$HOME/.config/awesome"
-	
+
 	echo "cp config/awesome/start $HOME/.config/awesome -a"
 	cp "config/awesome/start" "$HOME/.config/awesome" -a
 }
@@ -38,7 +43,7 @@ awesome_config_install_check_target_exists () {
 }
 
 awesome_config_install_check_target_exists_util () {
-	
+
 	local target_file_path="$1"
 	local target_file_name="$2"
 
@@ -71,6 +76,29 @@ awesome_config_install_check_target_exists_util () {
 
 	return 0
 }
+
+
+
+awesome_config_install_put_xf_autostart () {
+
+	# echo "mkdir -p $HOME/bin"
+	# mkdir -p "$HOME/bin"
+
+	echo "install -m 755 ./config/awesome-session/bin/aw-autostart $HOME/bin/aw-autostart"
+	install -m 755 "./config/awesome-session/bin/aw-autostart" "$HOME/bin/aw-autostart"
+
+}
+
+awesome_config_install_put_xf_applet () {
+
+	# echo "mkdir -p $HOME/bin"
+	# mkdir -p "$HOME/bin"
+
+	echo "install -m 755 ./config/awesome-session/bin/aw-applet $HOME/bin/aw-applet"
+	install -m 755 "./config/awesome-session/bin/aw-applet" "$HOME/bin/aw-applet"
+
+}
+
 
 ##
 ### Tail: awesome
@@ -133,6 +161,75 @@ compton_config_install () {
 	cp "./config/compton/compton.conf" "$HOME/.config/awesome-session/compton/compton.conf"
 	echo "cp ./config/compton/compton.conf $HOME/.config/awesome-session/compton/compton.conf"
 
+
+	compton_config_install_aw_compton
+	compton_config_install_aw_compton_start
+
+
+	compton_config_install_option_theme_file
+
+	compton_config_install_theme_default
+	compton_config_install_theme_basic
+
+
+	compton_config_install_aw_compton_completion_bash
+}
+
+
+compton_config_install_aw_compton_start () {
+
+	echo "install -m 755 ./config/compton/bin/aw-compton-start $HOME/bin/aw-compton-start"
+	install -m 755 "./config/compton/bin/aw-compton-start" "$HOME/bin/aw-compton-start"
+
+
+}
+
+compton_config_install_aw_compton () {
+
+	echo "install -m 755 ./config/compton/bin/aw-compton $HOME/bin/aw-compton"
+	install -m 755 "./config/compton/bin/aw-compton" "$HOME/bin/aw-compton"
+
+}
+
+compton_config_install_aw_compton_completion_bash () {
+
+	echo "install -m 755 ./config/compton/completion/bash/aw-compton /etc/bash_completion.d/aw-compton"
+	sudo install -m 644 "./config/compton/completion/bash/aw-compton" "/etc/bash_completion.d/aw-compton"
+}
+
+
+
+compton_config_install_option_theme_file () {
+
+	mkdir -p "$HOME/.config/awesome-session/compton/option"
+	echo "mkdir -p $HOME/.config/awesome-session/compton/option"
+
+
+	echo "echo 'default' > $HOME/.config/awesome-session/compton/option/theme"
+	echo 'default' > "$HOME/.config/awesome-session/compton/option/theme"
+
+}
+
+compton_config_install_theme_default () {
+
+	mkdir -p "$HOME/.config/awesome-session/compton/theme/default/config/on"
+	echo "mkdir -p $HOME/.config/awesome-session/compton/theme/default/config/on"
+
+
+	echo "install -m 664 ./config/compton/theme/default/config/on/compton.conf $HOME/.config/awesome-session/compton/theme/default/config/on/compton.conf"
+	install -m 664 "./config/compton/theme/default/config/on/compton.conf" "$HOME/.config/awesome-session/compton/theme/default/config/on/compton.conf"
+
+}
+
+
+compton_config_install_theme_basic () {
+
+	mkdir -p "$HOME/.config/awesome-session/compton/theme/basic/config/on"
+	echo "mkdir -p $HOME/.config/awesome-session/compton/theme/basic/config/on"
+
+
+	echo "install -m 664 ./config/compton/theme/basic/config/on/compton.conf $HOME/.config/awesome-session/compton/theme/basic/config/on/compton.conf"
+	install -m 664 "./config/compton/theme/basic/config/on/compton.conf" "$HOME/.config/awesome-session/compton/theme/basic/config/on/compton.conf"
 
 }
 ##
@@ -285,12 +382,9 @@ main_config_install () {
 
 	awesome_config_install
 
-
 	xresources_config_install
 
 	wallpaper_config_install
-
-	compton_config_install
 
 	pcmanfm_qt_config_install
 
@@ -303,6 +397,9 @@ main_config_install () {
 	gtk3_config_install
 
 	gtk2_config_install
+
+	compton_config_install
+
 }
 ## start
 main_config_install

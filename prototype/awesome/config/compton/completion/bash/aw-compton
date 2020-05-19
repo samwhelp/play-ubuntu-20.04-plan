@@ -1,0 +1,18 @@
+
+## /etc/bash_completion.d/aw-compton
+## $ sudo install -m 644 ./aw-compton /etc/bash_completion.d/aw-compton
+
+_aw_compton () {
+
+	local cur prev words cword
+	_init_completion || return
+
+	if [ "$cword" = "1" ]; then
+		local action_list=$(DEBUG_SC_CTRL=false aw-compton self_actions)
+		COMPREPLY=( $( compgen -W "$action_list" -- "$cur" ) )
+	fi
+
+	return 0
+}
+
+complete -F _aw_compton aw-compton

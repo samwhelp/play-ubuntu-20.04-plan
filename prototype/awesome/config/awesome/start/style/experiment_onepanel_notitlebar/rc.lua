@@ -1084,6 +1084,27 @@ awful.keyboard.append_global_keybindings({
 --------------------------------------------------------------------------------
 
 
+--------------------------------------------------------------------------------
+--- Head: Keybind / Compton
+--
+
+awful.keyboard.append_global_keybindings({
+
+	awful.key(
+		{ key_alt }, 'w', function ()
+			awful.spawn('aw-compton toggle')
+		end,
+		{description = "Toggle Compton", group = "Custom"}
+	),
+
+
+})
+
+--
+--- Tail: Keybind / Compton
+--------------------------------------------------------------------------------
+
+
 
 --------------------------------------------------------------------------------
 --- Head: Mousebind / Client
@@ -1404,36 +1425,8 @@ autorun = true
 -- Autorun programs
 apps_autorun = {
 
-
-	-- ## input methond
-	'fcitx',
-
-	-- ## policykit
-	-- $ apt-cache serch policykit
-	'/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1',
-	-- 'mate-polkit',
-
-	-- ## volume-control
-	--'volumeicon',
-	--'mate-volume-control-applet',
-	'mate-volume-control-status-icon',
-
-	-- ## network
-	'nm-applet',
-	--'nm-tray',
-
-	--'blueman-applet',
-
-	-- ## compton
-	'compton --config ~/.config/awesome-session/compton/compton.conf',
-
-	-- ## screensaver
-	--'xscreensaver',
-	-- ## /etc/xdg/autostart/xscreensaver.desktop
-	'/usr/share/xscreensaver/xscreensaver-wrapper.sh -no-splash',
-
-	-- ## xdg-autostart (Package: obsession)
-	'xdg-autostart'
+	-- ## autostart script
+	'aw-autostart',
 
 }
 
