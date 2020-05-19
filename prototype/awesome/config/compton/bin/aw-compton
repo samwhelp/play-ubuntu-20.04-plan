@@ -6,7 +6,7 @@
 ##
 
 # * https://github.com/samwhelp/skel-project-plan/blob/gh-pages/demo/sh/standalone/bin/demo-ctrl
-# * https://github.com/samwhelp/play-ubuntu-20.04-plan/blob/master/prototype-experiment/openbox-enhance/config/compton/bin/xf-compton
+# * https://github.com/samwhelp/play-ubuntu-20.04-plan/blob/master/prototype/awesome/config/compton/bin/aw-compton
 
 ##
 ### Tail: Link
@@ -87,13 +87,13 @@ base_var_init () {
 	THE_CMD_DIR_PATH="${THE_BASE_DIR_PATH}"
 
 	if [ "none${THE_CMD_FILE_NAME}" = 'none' ]; then
-		THE_CMD_FILE_NAME="xf-compton"
+		THE_CMD_FILE_NAME="aw-compton"
 	fi
 
 	THE_CMD_FILE_PATH="${THE_CMD_DIR_PATH}/$THE_CMD_FILE_NAME"
 
-	## https://github.com/samwhelp/play-ubuntu-20.04-plan/blob/master/prototype-experiment/openbox-enhance/config/compton/bin/xf-compton
-	THE_SELF_UPDATE_URL='https://raw.githubusercontent.com/samwhelp/play-ubuntu-20.04-plan/master/prototype-experiment/openbox-enhance/config/compton/bin/xf-compton'
+	## https://github.com/samwhelp/play-ubuntu-20.04-plan/blob/master/prototype/awesome/config/compton/bin/aw-compton
+	THE_SELF_UPDATE_URL='https://raw.githubusercontent.com/samwhelp/play-ubuntu-20.04-plan/master/prototype/awesome/config/compton/bin/aw-compton'
 
 
 	THE_TMP_DIR_PATH="/tmp"
@@ -329,7 +329,7 @@ compton_sys_session_stop () {
 }
 
 compton_sys_session_start () {
-	xf-compton-start
+	aw-compton-start
 }
 
 compton_sys_session_restart () {
