@@ -361,6 +361,12 @@ wallpaper_sys_use () {
 	feh --bg-scale "$img_file_path" &
 }
 
+wallpaper_sys_view () {
+	local img_file_path="$1"
+	feh "$img_file_path" &
+}
+
+
 ##
 ### Tail: System
 ################################################################################
@@ -620,6 +626,17 @@ wallpaper_run_backgrounds_use () {
 
 }
 
+wallpaper_run_backgrounds_view () {
+
+	wallpaper_sys_backgrounds_view $@
+
+}
+
+wallpaper_run_backgrounds_open_dir () {
+
+	wallpaper_sys_backgrounds_open_dir $@
+
+}
 
 wallpaper_sys_backgrounds_list () {
 	cd "/usr/share/backgrounds/"
@@ -627,7 +644,8 @@ wallpaper_sys_backgrounds_list () {
 	## https://stackoverflow.com/questions/48633997/grep-for-image-urls
 	## egrep -o 'src=".*(\.png|\.jpg)' index.html
 	## grep -E -o 'src=".*(\.png|\.jpg)' index.html
-	ls -1 | grep -E -o '.*(\.png|\.jpg|\.jpeg|\.svg)'
+	##ls -1 | grep -E -o '.*(\.png|\.jpg|\.jpeg|\.svg)'
+	ls -1 | grep -E -o '.*(\.png|\.jpg|\.jpeg)'
 	cd "$OLDPWD"
 }
 
@@ -640,6 +658,28 @@ wallpaper_sys_backgrounds_use () {
 	fi
 
 	wallpaper_sys_use "$img_file_path"
+}
+
+
+wallpaper_sys_backgrounds_view () {
+	local img_file_name="$@"
+	local img_file_path="/usr/share/backgrounds/${img_file_name}"
+	if ! [ -f "$img_file_path" ]; then
+		echo "File_Not_Exists: ${img_file_path}"
+		return 1
+	fi
+
+	wallpaper_sys_view "$img_file_path"
+}
+
+
+wallpaper_sys_backgrounds_open_dir () {
+
+	local target_dir_path="$HOME/Pictures/Wallpaper/"
+
+	pcmanfm-qt "$target_dir_path" &
+	#exo-open "$target_dir_path" &
+	#xdg-open "$target_dir_path" &
 }
 
 
@@ -665,13 +705,24 @@ wallpaper_run_pictures_use () {
 
 }
 
+wallpaper_run_pictures_view () {
+
+	wallpaper_sys_pictures_view $@
+
+}
+
+wallpaper_run_pictures_open_dir () {
+
+	wallpaper_sys_pictures_open_dir
+}
 
 
 wallpaper_sys_pictures_list () {
 	mkdir -p "$HOME/Pictures/Wallpaper/"
 	cd "$HOME/Pictures/Wallpaper/"
 	##ls -1 {*.jpg,*.png}
-	ls -1 | grep -E -o '.*(\.png|\.jpg|\.jpeg|\.svg)'
+	##ls -1 | grep -E -o '.*(\.png|\.jpg|\.jpeg|\.svg)'
+	ls -1 | grep -E -o '.*(\.png|\.jpg|\.jpeg)'
 	cd "$OLDPWD"
 }
 
@@ -684,6 +735,26 @@ wallpaper_sys_pictures_use () {
 	fi
 
 	wallpaper_sys_use "$img_file_path"
+}
+
+wallpaper_sys_pictures_view () {
+	local img_file_name="$@"
+	local img_file_path="$HOME/Pictures/Wallpaper/${img_file_name}"
+	if ! [ -f "$img_file_path" ]; then
+		echo "File_Not_Exists: ${img_file_path}"
+		return 1
+	fi
+
+	wallpaper_sys_view "$img_file_path"
+}
+
+wallpaper_sys_pictures_open_dir () {
+
+	local target_dir_path="$HOME/Pictures/Wallpaper/"
+
+	pcmanfm-qt "$target_dir_path" &
+	#exo-open "$target_dir_path" &
+	#xdg-open "$target_dir_path" &
 }
 
 
@@ -792,6 +863,7 @@ sub_run_use () {
 }
 
 
+
 sub_run_backgrounds_list () {
 	wallpaper_run_backgrounds_list
 }
@@ -800,6 +872,15 @@ sub_run_backgrounds_use () {
 	wallpaper_run_backgrounds_use $@
 }
 
+sub_run_backgrounds_view () {
+	wallpaper_run_backgrounds_view $@
+}
+
+sub_run_backgrounds_open_dir () {
+	wallpaper_run_backgrounds_open_dir
+}
+
+
 
 sub_run_pictures_list () {
 	wallpaper_run_pictures_list
@@ -807,6 +888,14 @@ sub_run_pictures_list () {
 
 sub_run_pictures_use () {
 	wallpaper_run_pictures_use $@
+}
+
+sub_run_pictures_view () {
+	wallpaper_run_pictures_view $@
+}
+
+sub_run_pictures_open_dir () {
+	wallpaper_run_pictures_open_dir $@
 }
 
 ##
@@ -876,11 +965,15 @@ Usage:
 
 		$ $cmd_name backgrounds_list
 		$ $cmd_name backgrounds_use {img_file_name}
+		$ $cmd_name backgrounds_view {img_file_name}
+		$ $cmd_name backgrounds_open_dir
 
 	## pictures
 
 		$ $cmd_name pictures_list
 		$ $cmd_name pictures_use {img_file_name}
+		$ $cmd_name pictures_view {img_file_name}
+		$ $cmd_name pictures_open_dir
 
 
 Example:
