@@ -638,7 +638,7 @@ wallpaper_run_theme () {
 ##
 
 
-wallpaper_run_list () {
+wallpaper_run_theme_list () {
 
 	wallpaper_sys_theme_list
 
@@ -681,7 +681,7 @@ wallpaper_sys_get_theme_name_by_theme_num () {
 ##
 
 
-wallpaper_run_next () {
+wallpaper_run_theme_next () {
 
 	local theme="$(wallpaper_sys_theme_next_select_name)"
 
@@ -744,7 +744,7 @@ wallpaper_sys_theme_next_select_name () {
 ##
 
 
-wallpaper_run_random () {
+wallpaper_run_theme_random () {
 
 
 	local theme="$(wallpaper_sys_theme_random_select_name)"
@@ -1521,31 +1521,31 @@ sub_run_theme_help () {
 
 
 sub_run_list () {
-	wallpaper_run_list
+	wallpaper_run_theme_list
 }
 
 sub_run_theme_list () {
-	wallpaper_run_list
+	wallpaper_run_theme_list
 }
 
 
 
 sub_run_next () {
-	wallpaper_run_next
+	wallpaper_run_theme_next
 }
 
 sub_run_theme_next () {
-	wallpaper_run_next
+	wallpaper_run_theme_next
 }
 
 
 
 sub_run_random () {
-	wallpaper_run_random
+	wallpaper_run_theme_random
 }
 
 sub_run_theme_random () {
-	wallpaper_run_random
+	wallpaper_run_theme_random
 }
 
 
