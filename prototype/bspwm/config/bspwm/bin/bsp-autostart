@@ -40,7 +40,7 @@ xresources-load.sh
 ##wallpaper.sh &
 
 
-bsp-wallpaper-start &
+bsp-wallpaper boot &
 
 
 ##

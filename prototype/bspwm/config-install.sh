@@ -173,7 +173,7 @@ wallpaper_config_install () {
 
 
 	wallpaper_config_install_bsp_wallpaper
-	wallpaper_config_install_bsp_wallpaper_start
+	##wallpaper_config_install_bsp_wallpaper_start
 
 
 	wallpaper_config_install_option_theme_file
