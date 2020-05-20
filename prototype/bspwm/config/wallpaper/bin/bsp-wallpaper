@@ -614,7 +614,6 @@ wallpaper_run_use () {
 ##
 
 
-
 wallpaper_run_backgrounds_list () {
 
 	wallpaper_sys_backgrounds_list
@@ -661,6 +660,8 @@ wallpaper_sys_backgrounds_use () {
 		return 1
 	fi
 
+	wallpaper_sys_backgrounds_use_name_set "$img_file_name"
+
 	wallpaper_sys_use "$img_file_path"
 }
 
@@ -687,8 +688,95 @@ wallpaper_sys_backgrounds_open_dir () {
 }
 
 
+
+
+
+wallpaper_sys_option_backgrounds_file_check () {
+
+	if ! [ -e "$HOME/.config/bspwm/wallpaper/option/dir_backgrounds/use" ] ; then
+		mkdir -p "$HOME/.config/bspwm/wallpaper/option/dir_backgrounds"
+		echo 'Frozen_sunset_on_the_lake_by_Manuel_Arslanyan.jpg' > "$HOME/.config/bspwm/wallpaper/option/dir_backgrounds/use"
+	fi
+
+}
+
+wallpaper_sys_backgrounds_use_name_get () {
+
+	wallpaper_sys_option_backgrounds_file_check
+
+	cat "$HOME/.config/bspwm/wallpaper/option/dir_backgrounds/use"
+}
+
+wallpaper_sys_backgrounds_use_name_set () {
+
+	wallpaper_sys_option_backgrounds_file_check
+
+	echo "$1" > "$HOME/.config/bspwm/wallpaper/option/dir_backgrounds/use"
+}
+
 ##
 ### Tail: Model / backgrounds
+################################################################################
+
+
+################################################################################
+### Head: Model / backgrounds / next
+##
+
+
+wallpaper_run_backgrounds_next () {
+
+	local img_file_name="$(wallpaper_sys_backgrounds_next_select_name)"
+
+	echo $img_file_name
+
+	wallpaper_sys_backgrounds_use "$img_file_name"
+
+}
+
+wallpaper_sys_backgrounds_next_select_num () {
+	local backgrounds
+	local current=$(wallpaper_sys_backgrounds_use_name_get)
+	local list
+	local list_count=$(wallpaper_sys_backgrounds_list_count)
+	local line=1
+	local next=1
+
+	list=$(wallpaper_sys_backgrounds_list)
+
+
+	for backgrounds in $list ; do
+		##echo $line
+
+		if [ "$current" == "$backgrounds" ] ; then
+			#echo $backgrounds
+			break;
+		fi
+
+		line=$(($line + 1))
+	done
+
+	next=$(($line + 1))
+
+
+	if [ $next -gt $list_count ]; then
+		next=1
+	fi
+
+	echo $next
+
+}
+
+
+wallpaper_sys_backgrounds_next_select_name () {
+	line=$(wallpaper_sys_backgrounds_next_select_num)
+	wallpaper_sys_get_backgrounds_name_by_backgrounds_num "$line"
+}
+
+
+
+##
+### Tail: Model / backgrounds / next
 ################################################################################
 
 
@@ -709,15 +797,12 @@ wallpaper_run_backgrounds_random () {
 
 }
 
-
 wallpaper_sys_backgrounds_random_select_num () {
 	local start=1
 	local end=$(wallpaper_sys_backgrounds_list_count)
 
 	util_random_range "$start" "$end"
 }
-
-## * https://stackoverflow.com/questions/1506521/select-row-and-element-in-awk
 
 wallpaper_sys_backgrounds_random_select_name () {
 	line=$(wallpaper_sys_backgrounds_random_select_num)
@@ -1005,6 +1090,10 @@ sub_run_backgrounds_open_dir () {
 	wallpaper_run_backgrounds_open_dir
 }
 
+sub_run_backgrounds_next () {
+	wallpaper_run_backgrounds_next
+}
+
 sub_run_backgrounds_random () {
 	wallpaper_run_backgrounds_random
 }
@@ -1053,7 +1142,7 @@ sub_run_test () {
 	##wallpaper_sys_backgrounds_list_count
 	##wallpaper_sys_get_backgrounds_name_by_backgrounds_num $(wallpaper_sys_backgrounds_random_select_num)
 
-	wallpaper_run_backgrounds_random
+	wallpaper_sys_backgrounds_next_select_num
 }
 
 ##
