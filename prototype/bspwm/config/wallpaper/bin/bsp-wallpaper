@@ -763,6 +763,83 @@ wallpaper_sys_pictures_open_dir () {
 ################################################################################
 
 
+################################################################################
+### Head: Model / xfce4_backdrops
+##
+
+
+wallpaper_run_xfce4_backdrops_list () {
+
+	wallpaper_sys_xfce4_backdrops_list
+}
+
+wallpaper_run_xfce4_backdrops_use () {
+
+	wallpaper_sys_xfce4_backdrops_use $@
+
+}
+
+wallpaper_run_xfce4_backdrops_view () {
+
+	wallpaper_sys_xfce4_backdrops_view $@
+
+}
+
+wallpaper_run_xfce4_backdrops_open_dir () {
+
+	wallpaper_sys_xfce4_backdrops_open_dir
+}
+
+
+wallpaper_sys_xfce4_backdrops_list () {
+	mkdir -p "/usr/share/xfce4/backdrops/"
+	cd "/usr/share/xfce4/backdrops/"
+	##ls -1 {*.jpg,*.png}
+	##ls -1 | grep -E -o '.*(\.png|\.jpg|\.jpeg|\.svg)'
+	ls -1 | grep -E -o '.*(\.png|\.jpg|\.jpeg)'
+	cd "$OLDPWD"
+}
+
+wallpaper_sys_xfce4_backdrops_use () {
+	local img_file_name="$@"
+	local img_file_path="/usr/share/xfce4/backdrops/${img_file_name}"
+	if ! [ -f "$img_file_path" ]; then
+		echo "File_Not_Exists: ${img_file_path}"
+		return 1
+	fi
+
+	wallpaper_sys_use "$img_file_path"
+}
+
+wallpaper_sys_xfce4_backdrops_view () {
+	local img_file_name="$@"
+	local img_file_path="/usr/share/xfce4/backdrops/${img_file_name}"
+	if ! [ -f "$img_file_path" ]; then
+		echo "File_Not_Exists: ${img_file_path}"
+		return 1
+	fi
+
+	wallpaper_sys_view "$img_file_path"
+}
+
+wallpaper_sys_xfce4_backdrops_open_dir () {
+
+	local target_dir_path="/usr/share/xfce4/backdrops/"
+
+	pcmanfm-qt "$target_dir_path" &
+	#exo-open "$target_dir_path" &
+	#xdg-open "$target_dir_path" &
+}
+
+
+##
+### Tail: Model / xfce4_backdrops
+################################################################################
+
+
+
+
+
 
 
 ################################################################################
@@ -896,6 +973,24 @@ sub_run_pictures_view () {
 
 sub_run_pictures_open_dir () {
 	wallpaper_run_pictures_open_dir $@
+}
+
+
+
+sub_run_xfce4_backdrops_list () {
+	wallpaper_run_xfce4_backdrops_list
+}
+
+sub_run_xfce4_backdrops_use () {
+	wallpaper_run_xfce4_backdrops_use $@
+}
+
+sub_run_xfce4_backdrops_view () {
+	wallpaper_run_xfce4_backdrops_view $@
+}
+
+sub_run_xfce4_backdrops_open_dir () {
+	wallpaper_run_xfce4_backdrops_open_dir $@
 }
 
 ##
