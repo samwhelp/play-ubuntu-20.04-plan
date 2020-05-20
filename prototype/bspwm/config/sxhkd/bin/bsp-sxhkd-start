@@ -53,7 +53,7 @@ sxhkd_boot_util_start_v2 () {
 	##for conf in $(find "$config_dir_path" -name *.conf); do
 	for conf in $(find "$config_dir_path" -name main.conf); do
 		#echo $conf
-		sxhkd --daemon --config "$conf" &
+		sxhkd -c "$conf" &
 	done
 
 }

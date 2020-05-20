@@ -164,17 +164,110 @@ xresources_config_install () {
 ##
 wallpaper_config_install () {
 
-	mkdir -p "$HOME/bin"
+
+	echo "mkdir -p $HOME/.config/bspwm/wallpaper"
+	mkdir -p "$HOME/.config/bspwm/wallpaper"
+
+	echo "cp ./config/wallpaper/wallpaper-fallback.conf $HOME/.config/bspwm/wallpaper/wallpaper-fallback.conf"
+	cp "./config/wallpaper/wallpaper-fallback.conf" "$HOME/.config/bspwm/wallpaper/wallpaper-fallback.conf"
+
+
+	wallpaper_config_install_bsp_wallpaper
+	wallpaper_config_install_bsp_wallpaper_start
+
+
+	wallpaper_config_install_option_theme_file
+
+
+	wallpaper_config_install_theme_default
+	wallpaper_config_install_theme_bionic_spices_in_athens
+	wallpaper_config_install_theme_bionic_manhattan_sunset
+
+
+	wallpaper_config_install_bsp_wallpaper_completion_bash
+}
+
+wallpaper_config_install_simple () {
+
 	echo "mkdir -p $HOME/bin/"
+	mkdir -p "$HOME/bin"
 
-	cp "./config/wallpaper/wallpaper.sh" "$HOME/bin/wallpaper.sh"
 	echo "cp ./config/wallpaper/wallpaper.sh $HOME/bin/wallpaper.sh"
+	cp "./config/wallpaper/wallpaper.sh" "$HOME/bin/wallpaper.sh"
 
+}
+
+wallpaper_config_install_bsp_wallpaper_start () {
+
+	echo "install -m 755 ./config/wallpaper/bin/bsp-wallpaper-start $HOME/bin/bsp-wallpaper-start"
+	install -m 755 "./config/wallpaper/bin/bsp-wallpaper-start" "$HOME/bin/bsp-wallpaper-start"
+
+
+}
+
+wallpaper_config_install_bsp_wallpaper () {
+
+	echo "install -m 755 ./config/wallpaper/bin/bsp-wallpaper $HOME/bin/bsp-wallpaper"
+	install -m 755 "./config/wallpaper/bin/bsp-wallpaper" "$HOME/bin/bsp-wallpaper"
+
+}
+
+wallpaper_config_install_bsp_wallpaper_completion_bash () {
+
+	echo "install -m 755 ./config/wallpaper/completion/bash/bsp-wallpaper /etc/bash_completion.d/bsp-wallpaper"
+	sudo install -m 644 "./config/wallpaper/completion/bash/bsp-wallpaper" "/etc/bash_completion.d/bsp-wallpaper"
+}
+
+
+
+wallpaper_config_install_option_theme_file () {
+
+	mkdir -p "$HOME/.config/bspwm/wallpaper/option"
+	echo "mkdir -p $HOME/.config/bspwm/wallpaper/option"
+
+
+	echo "echo 'default' > $HOME/.config/bspwm/wallpaper/option/theme"
+	echo 'default' > "$HOME/.config/bspwm/wallpaper/option/theme"
+
+}
+
+wallpaper_config_install_theme_default () {
+
+	mkdir -p "$HOME/.config/bspwm/wallpaper/theme/default/config/on"
+	echo "mkdir -p $HOME/.config/bspwm/wallpaper/theme/default/config/on"
+
+
+	echo "install -m 664 ./config/wallpaper/theme/default/config/on/main.conf $HOME/.config/bspwm/wallpaper/theme/default/config/on/main.conf"
+	install -m 664 "./config/wallpaper/theme/default/config/on/main.conf" "$HOME/.config/bspwm/wallpaper/theme/default/config/on/main.conf"
+
+}
+
+
+wallpaper_config_install_theme_bionic_spices_in_athens () {
+
+	mkdir -p "$HOME/.config/bspwm/wallpaper/theme/bionic.Spices_in_Athens/config/on"
+	echo "mkdir -p $HOME/.config/bspwm/wallpaper/theme/bionic.Spices_in_Athens/config/on"
+
+
+	echo "install -m 664 ./config/wallpaper/theme/bionic.Spices_in_Athens/config/on/main.conf $HOME/.config/bspwm/wallpaper/theme/bionic.Spices_in_Athens/config/on/main.conf"
+	install -m 664 "./config/wallpaper/theme/bionic.Spices_in_Athens/config/on/main.conf" "$HOME/.config/bspwm/wallpaper/theme/bionic.Spices_in_Athens/config/on/main.conf"
+
+}
+
+wallpaper_config_install_theme_bionic_manhattan_sunset () {
+
+	mkdir -p "$HOME/.config/bspwm/wallpaper/theme/bionic.Manhattan_Sunset/config/on"
+	echo "mkdir -p $HOME/.config/bspwm/wallpaper/theme/bionic.Manhattan_Sunset/config/on"
+
+
+	echo "install -m 664 ./config/wallpaper/theme/bionic.Manhattan_Sunset/config/on/main.conf $HOME/.config/bspwm/wallpaper/theme/bionic.Manhattan_Sunset/config/on/main.conf"
+	install -m 664 "./config/wallpaper/theme/bionic.Manhattan_Sunset/config/on/main.conf" "$HOME/.config/bspwm/wallpaper/theme/bionic.Manhattan_Sunset/config/on/main.conf"
 
 }
 ##
 ### Tail: wallpaper
 ################################################################################
+
 
 
 ################################################################################
@@ -562,7 +655,6 @@ main_config_install () {
 
 	xresources_config_install
 
-	wallpaper_config_install
 
 	volumeicon_config_install
 
@@ -587,6 +679,7 @@ main_config_install () {
 
 	tint2_config_install
 
+	wallpaper_config_install
 }
 ## start
 main_config_install

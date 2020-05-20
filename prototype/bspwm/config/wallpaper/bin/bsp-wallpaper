@@ -6,7 +6,7 @@
 ##
 
 # * https://github.com/samwhelp/skel-project-plan/blob/gh-pages/demo/sh/standalone/bin/demo-ctrl
-# * https://github.com/samwhelp/play-ubuntu-20.04-plan/blob/master/prototype/bspwm/config/sxhkd/bin/bsp-sxhkd
+# * https://github.com/samwhelp/play-ubuntu-20.04-plan/blob/master/prototype/bspwm/config/wallpaper/bin/bsp-wallpaper
 
 ##
 ### Tail: Link
@@ -87,13 +87,13 @@ base_var_init () {
 	THE_CMD_DIR_PATH="${THE_BASE_DIR_PATH}"
 
 	if [ "none${THE_CMD_FILE_NAME}" = 'none' ]; then
-		THE_CMD_FILE_NAME="bsp-sxhkd"
+		THE_CMD_FILE_NAME="bsp-wallpaper"
 	fi
 
 	THE_CMD_FILE_PATH="${THE_CMD_DIR_PATH}/$THE_CMD_FILE_NAME"
 
-	## https://github.com/samwhelp/play-ubuntu-20.04-plan/blob/master/prototype/bspwm/config/sxhkd/bin/bsp-sxhkd
-	THE_SELF_UPDATE_URL='https://raw.githubusercontent.com/samwhelp/play-ubuntu-20.04-plan/master/prototype/bspwm/config/sxhkd/bin/bsp-sxhkd'
+	## https://github.com/samwhelp/play-ubuntu-20.04-plan/blob/master/prototype/bspwm/config/wallpaper/bin/bsp-wallpaper
+	THE_SELF_UPDATE_URL='https://raw.githubusercontent.com/samwhelp/play-ubuntu-20.04-plan/master/prototype/bspwm/config/wallpaper/bin/bsp-wallpaper'
 
 
 	THE_TMP_DIR_PATH="/tmp"
@@ -301,59 +301,55 @@ util_self_actions () {
 ### Head: System
 ##
 
-sxhkd_sys_option_theme_file_check () {
+wallpaper_sys_option_theme_file_check () {
 
-	if ! [ -e "$HOME/.config/bspwm/sxhkd/option/theme" ] ; then
-		mkdir -p "$HOME/.config/bspwm/sxhkd/option"
-		echo 'default' > "$HOME/.config/bspwm/sxhkd/option/theme"
+	if ! [ -e "$HOME/.config/bspwm/wallpaper/option/theme" ] ; then
+		mkdir -p "$HOME/.config/bspwm/wallpaper/option"
+		echo 'default' > "$HOME/.config/bspwm/wallpaper/option/theme"
 	fi
 
 }
 
-sxhkd_sys_theme_name_get () {
+wallpaper_sys_theme_name_get () {
 
-	sxhkd_sys_option_theme_file_check
+	wallpaper_sys_option_theme_file_check
 
-	cat "$HOME/.config/bspwm/sxhkd/option/theme"
+	cat "$HOME/.config/bspwm/wallpaper/option/theme"
 }
 
-sxhkd_sys_theme_name_set () {
+wallpaper_sys_theme_name_set () {
 
-	sxhkd_sys_option_theme_file_check
+	wallpaper_sys_option_theme_file_check
 
-	echo "$1" > "$HOME/.config/bspwm/sxhkd/option/theme"
+	echo "$1" > "$HOME/.config/bspwm/wallpaper/option/theme"
 }
 
-sxhkd_sys_session_stop () {
-	killall -q -9 sxhkd
+wallpaper_sys_session_stop () {
+	killall -q -9 feh
 }
 
-sxhkd_sys_session_start () {
-	bsp-sxhkd-start
+wallpaper_sys_session_start () {
+	bsp-wallpaper-start
 }
 
-sxhkd_sys_session_restart () {
-	sxhkd_sys_session_stop
+wallpaper_sys_session_restart () {
+	wallpaper_sys_session_stop
 
-	sxhkd_sys_session_start
+	wallpaper_sys_session_start
 }
 
-sxhkd_sys_session_reconfigure () {
-	pkill -USR1 -x sxhkd
+wallpaper_sys_session_reconfigure () {
+	pkill -USR1 -x feh
 
 }
 
-sxhkd_sys_session_toggle () {
-	if pgrep -x 'sxhkd' > /dev/null; then
-		sxhkd_sys_session_stop
+wallpaper_sys_session_toggle () {
+	if pgrep -x 'wallpaper' > /dev/null; then
+		wallpaper_sys_session_stop
 	else
-		sxhkd_sys_session_start
+		wallpaper_sys_session_start
 	fi
-
 }
-
-
-
 
 ##
 ### Tail: System
@@ -364,7 +360,7 @@ sxhkd_sys_session_toggle () {
 ### Head: Model / theme
 ##
 
-sxhkd_run_theme_help () {
+wallpaper_run_theme_help () {
 
 	local cmd_name="$THE_CMD_FILE_NAME"
 
@@ -386,26 +382,27 @@ Example:
 	## set
 
 		$ $cmd_name theme 'default'
-		$ $cmd_name theme 'basic'
+		$ $cmd_name theme 'bionic.Spices_in_Athens'
+		$ $cmd_name theme 'bionic.Manhattan_Sunset'
 
 EOF
 
 }
 
 
-sxhkd_run_theme () {
+wallpaper_run_theme () {
 
 	local theme="$1"
 
 	if [ "none${theme}" = "none" ]; then
-		sxhkd_sys_theme_name_get
+		wallpaper_sys_theme_name_get
 		return
 	fi
 
 
-	sxhkd_sys_theme_name_set "$theme"
+	wallpaper_sys_theme_name_set "$theme"
 
-	sxhkd_sys_session_restart
+	wallpaper_sys_session_restart
 
 }
 
@@ -419,15 +416,158 @@ sxhkd_run_theme () {
 ##
 
 
-sxhkd_run_list () {
+wallpaper_run_list () {
 
-	ls -1 "$HOME/.config/bspwm/sxhkd/theme/"
+	wallpaper_sys_theme_list
+
+}
+
+wallpaper_sys_theme_list_v2 () {
+
+	cd "$HOME/.config/bspwm/wallpaper/theme/"
+	ls -1 | sort
+	cd "$OLDPWD"
 
 }
 
 
+wallpaper_sys_theme_list () {
+
+	ls -1 "$HOME/.config/bspwm/wallpaper/theme/"
+
+}
+
+wallpaper_sys_theme_list_count () {
+
+	ls -1 "$HOME/.config/bspwm/wallpaper/theme/" | wc -l
+
+}
+
+
+wallpaper_sys_get_theme_name_by_theme_num () {
+	local line="$1"
+	wallpaper_sys_theme_list | awk "FNR == $line {print}"
+}
+
 ##
 ### Tail: Model / theme / list
+################################################################################
+
+
+################################################################################
+### Head: Model / theme / next
+##
+
+
+wallpaper_run_next () {
+
+	local theme="$(wallpaper_sys_theme_next_select_name)"
+
+	echo $theme
+
+	wallpaper_sys_theme_name_set "$theme"
+
+	wallpaper_sys_session_restart
+
+}
+
+wallpaper_sys_theme_next_select_num () {
+	local theme
+	local current=$(wallpaper_sys_theme_name_get)
+	local list
+	local list_count=$(wallpaper_sys_theme_list_count)
+	local line=1
+	local next=1
+
+	list=$(wallpaper_sys_theme_list)
+
+
+	for theme in $list ; do
+		##echo $line
+
+		if [ "$current" == "$theme" ] ; then
+			#echo $theme
+			break;
+		fi
+
+		line=$(($line + 1))
+	done
+
+	next=$(($line + 1))
+
+
+	if [ $next -gt $list_count ]; then
+		next=1
+	fi
+
+	echo $next
+
+}
+
+
+wallpaper_sys_theme_next_select_name () {
+	line=$(wallpaper_sys_theme_next_select_num)
+	wallpaper_sys_get_theme_name_by_theme_num "$line"
+}
+
+
+
+##
+### Tail: Model / theme / next
+################################################################################
+
+
+################################################################################
+### Head: Model / theme / random
+##
+
+
+wallpaper_run_random () {
+
+
+	local theme="$(wallpaper_sys_theme_random_select_name)"
+
+	echo $theme
+
+	wallpaper_sys_theme_name_set "$theme"
+
+	wallpaper_sys_session_restart
+
+
+}
+
+## * https://dragonspring.pixnet.net/blog/post/32935895
+
+function util_random_range()
+{
+
+	if [ "$#" -lt "2" ]; then
+		echo "Usage: random_range <low> <high>"
+		return
+	fi
+	low=$1
+	##range=$(($2 - $1))
+	range=$(($2 - $1 + 1))
+	echo $(($low+$RANDOM % $range))
+}
+
+wallpaper_sys_theme_random_select_num () {
+	local start=1
+	local end=$(wallpaper_sys_theme_list_count)
+
+	util_random_range "$start" "$end"
+}
+
+## * https://stackoverflow.com/questions/1506521/select-row-and-element-in-awk
+
+wallpaper_sys_theme_random_select_name () {
+	line=$(wallpaper_sys_theme_random_select_num)
+	wallpaper_sys_get_theme_name_by_theme_num "$line"
+}
+
+
+##
+### Tail: Model / theme / random
 ################################################################################
 
 
@@ -456,23 +596,23 @@ sub_run_self_actions () {
 
 
 sub_run_start () {
-	sxhkd_sys_session_start
+	wallpaper_sys_session_start
 }
 
 sub_run_stop () {
-	sxhkd_sys_session_stop
+	wallpaper_sys_session_stop
 }
 
 sub_run_restart () {
-	sxhkd_sys_session_restart
+	wallpaper_sys_session_restart
 }
 
 sub_run_reconfigure () {
-	sxhkd_sys_session_reconfigure
+	wallpaper_sys_session_reconfigure
 }
 
 sub_run_toggle () {
-	sxhkd_sys_session_toggle
+	wallpaper_sys_session_toggle
 }
 
 
@@ -482,12 +622,12 @@ sub_run_toggle () {
 
 sub_run_theme () {
 	#echo "sub_run_theme"
-	sxhkd_run_theme $@
+	wallpaper_run_theme $@
 }
 
 sub_run_theme_help () {
 	#echo "sub_run_theme_help"
-	sxhkd_run_theme_help $@
+	wallpaper_run_theme_help $@
 }
 
 
@@ -495,12 +635,33 @@ sub_run_theme_help () {
 
 
 sub_run_list () {
-	sxhkd_run_list
+	wallpaper_run_list
 }
 
 sub_run_theme_list () {
-	sxhkd_run_list
+	wallpaper_run_list
 }
+
+
+
+sub_run_next () {
+	wallpaper_run_next
+}
+
+sub_run_theme_next () {
+	wallpaper_run_next
+}
+
+
+
+sub_run_random () {
+	wallpaper_run_random
+}
+
+sub_run_theme_random () {
+	wallpaper_run_random
+}
+
 
 
 
@@ -546,6 +707,16 @@ Usage:
 		$ $cmd_name toggle
 
 
+	## random
+
+		$ $cmd_name random
+		$ $cmd_name theme_random
+
+	## next
+
+		$ $cmd_name next
+		$ $cmd_name theme_next
+
 	## list
 
 		$ $cmd_name list
@@ -578,7 +749,8 @@ Example:
 	## theme / set
 
 		$ $cmd_name theme 'default'
-		$ $cmd_name theme 'basic'
+		$ $cmd_name theme 'bionic.Spices_in_Athens'
+		$ $cmd_name theme 'bionic.Manhattan_Sunset'
 
 
 Debug:
