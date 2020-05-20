@@ -858,6 +858,10 @@ wallpaper_sys_pictures_list () {
 	cd "$OLDPWD"
 }
 
+wallpaper_sys_pictures_list_count () {
+	wallpaper_sys_pictures_list | wc -l
+}
+
 wallpaper_sys_pictures_use () {
 	local img_file_name="$@"
 	local img_file_path="$HOME/Pictures/Wallpaper/${img_file_name}"
@@ -865,6 +869,8 @@ wallpaper_sys_pictures_use () {
 		echo "File_Not_Exists: ${img_file_path}"
 		return 1
 	fi
+
+	wallpaper_sys_pictures_use_name_set "$img_file_name"
 
 	wallpaper_sys_use "$img_file_path"
 }
@@ -890,9 +896,138 @@ wallpaper_sys_pictures_open_dir () {
 }
 
 
+
+
+wallpaper_sys_option_pictures_file_check () {
+
+	if ! [ -e "$HOME/.config/bspwm/wallpaper/option/dir_pictures/use" ] ; then
+		mkdir -p "$HOME/.config/bspwm/wallpaper/option/dir_pictures"
+		echo 'Frozen_sunset_on_the_lake_by_Manuel_Arslanyan.jpg' > "$HOME/.config/bspwm/wallpaper/option/dir_pictures/use"
+	fi
+
+}
+
+wallpaper_sys_pictures_use_name_get () {
+
+	wallpaper_sys_option_pictures_file_check
+
+	cat "$HOME/.config/bspwm/wallpaper/option/dir_pictures/use"
+}
+
+wallpaper_sys_pictures_use_name_set () {
+
+	wallpaper_sys_option_pictures_file_check
+
+	echo "$1" > "$HOME/.config/bspwm/wallpaper/option/dir_pictures/use"
+}
+
+
 ##
 ### Tail: Model / pictures
 ################################################################################
+
+
+################################################################################
+### Head: Model / pictures / next
+##
+
+
+wallpaper_run_pictures_next () {
+
+	local img_file_name="$(wallpaper_sys_pictures_next_select_name)"
+
+	echo $img_file_name
+
+	wallpaper_sys_pictures_use "$img_file_name"
+
+}
+
+wallpaper_sys_pictures_next_select_num () {
+	local pictures
+	local current=$(wallpaper_sys_pictures_use_name_get)
+	local list
+	local list_count=$(wallpaper_sys_pictures_list_count)
+	local line=1
+	local next=1
+
+	list=$(wallpaper_sys_pictures_list)
+
+
+	for pictures in $list ; do
+		##echo $line
+
+		if [ "$current" == "$pictures" ] ; then
+			#echo $pictures
+			break;
+		fi
+
+		line=$(($line + 1))
+	done
+
+	next=$(($line + 1))
+
+
+	if [ $next -gt $list_count ]; then
+		next=1
+	fi
+
+	echo $next
+
+}
+
+
+wallpaper_sys_pictures_next_select_name () {
+	line=$(wallpaper_sys_pictures_next_select_num)
+	wallpaper_sys_get_pictures_name_by_pictures_num "$line"
+}
+
+
+
+##
+### Tail: Model / pictures / next
+################################################################################
+
+
+################################################################################
+### Head: Model / pictures / random
+##
+
+
+wallpaper_run_pictures_random () {
+
+
+	local img_file_name="$(wallpaper_sys_pictures_random_select_name)"
+
+	echo $img_file_name
+
+	wallpaper_sys_pictures_use "$img_file_name"
+
+
+}
+
+wallpaper_sys_pictures_random_select_num () {
+	local start=1
+	local end=$(wallpaper_sys_pictures_list_count)
+
+	util_random_range "$start" "$end"
+}
+
+wallpaper_sys_pictures_random_select_name () {
+	line=$(wallpaper_sys_pictures_random_select_num)
+	wallpaper_sys_get_pictures_name_by_pictures_num "$line"
+}
+
+
+wallpaper_sys_get_pictures_name_by_pictures_num () {
+	local line="$1"
+	wallpaper_sys_pictures_list | awk "FNR == $line {print}"
+}
+
+##
+### Tail: Model / pictures / random
+################################################################################
+
+
 
 
 ################################################################################
@@ -1118,6 +1253,14 @@ sub_run_pictures_open_dir () {
 	wallpaper_run_pictures_open_dir $@
 }
 
+sub_run_pictures_next () {
+	wallpaper_run_pictures_next
+}
+
+sub_run_pictures_random () {
+	wallpaper_run_pictures_random
+}
+
 
 
 
@@ -1214,6 +1357,8 @@ Usage:
 		$ $cmd_name backgrounds_use {img_file_name}
 		$ $cmd_name backgrounds_view {img_file_name}
 		$ $cmd_name backgrounds_open_dir
+		$ $cmd_name backgrounds_next
+		$ $cmd_name backgrounds_random
 
 	## pictures
 
@@ -1221,6 +1366,8 @@ Usage:
 		$ $cmd_name pictures_use {img_file_name}
 		$ $cmd_name pictures_view {img_file_name}
 		$ $cmd_name pictures_open_dir
+		$ $cmd_name pictures_next
+		$ $cmd_name pictures_random
 
 
 Example:
