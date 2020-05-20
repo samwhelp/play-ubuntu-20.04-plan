@@ -588,7 +588,7 @@ wallpaper_sys_theme_random_select_name () {
 
 
 wallpaper_run_use () {
-	local img_file_path="$1"
+	local img_file_path="$@"
 	if ! [ -f "$img_file_path" ]; then
 		echo "File_Not_Exists: ${img_file_path}"
 		return 1
@@ -601,6 +601,91 @@ wallpaper_run_use () {
 ##
 ### Tail: Model / use
 ################################################################################
+
+
+################################################################################
+### Head: Model / backgrounds
+##
+
+
+
+wallpaper_run_backgrounds_list () {
+
+	wallpaper_sys_backgrounds_list
+}
+
+wallpaper_run_backgrounds_use () {
+
+	wallpaper_sys_backgrounds_use $@
+
+}
+
+
+wallpaper_sys_backgrounds_list () {
+	cd "/usr/share/backgrounds/"
+	ls -1 {*.jpg,*.png}
+	cd "$OLDPWD"
+}
+
+wallpaper_sys_backgrounds_use () {
+	local img_file_name="$@"
+	local img_file_path="/usr/share/backgrounds/${img_file_name}"
+	if ! [ -f "$img_file_path" ]; then
+		echo "File_Not_Exists: ${img_file_path}"
+		return 1
+	fi
+
+	wallpaper_sys_use "$img_file_path"
+}
+
+
+##
+### Tail: Model / backgrounds
+################################################################################
+
+
+
+################################################################################
+### Head: Model / pictures
+##
+
+
+wallpaper_run_pictures_list () {
+
+	wallpaper_sys_pictures_list
+}
+
+wallpaper_run_pictures_use () {
+
+	wallpaper_sys_pictures_use $@
+
+}
+
+
+
+wallpaper_sys_pictures_list () {
+	mkdir -p "$HOME/Pictures/Wallpaper/"
+	cd "$HOME/Pictures/Wallpaper/"
+	ls -1 {*.jpg,*.png}
+	cd "$OLDPWD"
+}
+
+wallpaper_sys_pictures_use () {
+	local img_file_name="$@"
+	local img_file_path="$HOME/Pictures/Wallpaper/${img_file_name}"
+	if ! [ -f "$img_file_path" ]; then
+		echo "File_Not_Exists: ${img_file_path}"
+		return 1
+	fi
+
+	wallpaper_sys_use "$img_file_path"
+}
+
+
+##
+### Tail: Model / pictures
+################################################################################
+
 
 
 
@@ -702,6 +787,22 @@ sub_run_use () {
 }
 
 
+sub_run_backgrounds_list () {
+	wallpaper_run_backgrounds_list
+}
+
+sub_run_backgrounds_use () {
+	wallpaper_run_backgrounds_use $@
+}
+
+
+sub_run_pictures_list () {
+	wallpaper_run_pictures_list
+}
+
+sub_run_pictures_use () {
+	wallpaper_run_pictures_use $@
+}
 
 ##
 ### Tail: SubCmd
@@ -766,6 +867,15 @@ Usage:
 
 		$ $cmd_name use {img_file_path}
 
+	## backgrounds
+
+		$ $cmd_name backgrounds_list
+		$ $cmd_name backgrounds_use {img_file_name}
+
+	## pictures
+
+		$ $cmd_name pictures_list
+		$ $cmd_name pictures_use {img_file_name}
 
 
 Example:
