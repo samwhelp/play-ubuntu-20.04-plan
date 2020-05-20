@@ -455,7 +455,7 @@ wallpaper_sys_theme_list () {
 
 wallpaper_sys_theme_list_count () {
 
-	ls -1 "$HOME/.config/bspwm/wallpaper/theme/" | wc -l
+	wallpaper_sys_theme_list | wc -l
 
 }
 
@@ -649,6 +649,10 @@ wallpaper_sys_backgrounds_list () {
 	cd "$OLDPWD"
 }
 
+wallpaper_sys_backgrounds_list_count () {
+	wallpaper_sys_backgrounds_list | wc -l
+}
+
 wallpaper_sys_backgrounds_use () {
 	local img_file_name="$@"
 	local img_file_path="/usr/share/backgrounds/${img_file_name}"
@@ -685,6 +689,49 @@ wallpaper_sys_backgrounds_open_dir () {
 
 ##
 ### Tail: Model / backgrounds
+################################################################################
+
+
+################################################################################
+### Head: Model / backgrounds / random
+##
+
+
+wallpaper_run_backgrounds_random () {
+
+
+	local img_file_name="$(wallpaper_sys_backgrounds_random_select_name)"
+
+	echo $img_file_name
+
+	wallpaper_sys_backgrounds_use "$img_file_name"
+
+
+}
+
+
+wallpaper_sys_backgrounds_random_select_num () {
+	local start=1
+	local end=$(wallpaper_sys_backgrounds_list_count)
+
+	util_random_range "$start" "$end"
+}
+
+## * https://stackoverflow.com/questions/1506521/select-row-and-element-in-awk
+
+wallpaper_sys_backgrounds_random_select_name () {
+	line=$(wallpaper_sys_backgrounds_random_select_num)
+	wallpaper_sys_get_backgrounds_name_by_backgrounds_num "$line"
+}
+
+
+wallpaper_sys_get_backgrounds_name_by_backgrounds_num () {
+	local line="$1"
+	wallpaper_sys_backgrounds_list | awk "FNR == $line {print}"
+}
+
+##
+### Tail: Model / backgrounds / random
 ################################################################################
 
 
@@ -941,6 +988,7 @@ sub_run_use () {
 
 
 
+
 sub_run_backgrounds_list () {
 	wallpaper_run_backgrounds_list
 }
@@ -956,6 +1004,12 @@ sub_run_backgrounds_view () {
 sub_run_backgrounds_open_dir () {
 	wallpaper_run_backgrounds_open_dir
 }
+
+sub_run_backgrounds_random () {
+	wallpaper_run_backgrounds_random
+}
+
+
 
 
 
@@ -977,6 +1031,7 @@ sub_run_pictures_open_dir () {
 
 
 
+
 sub_run_xfce4_backdrops_list () {
 	wallpaper_run_xfce4_backdrops_list
 }
@@ -991,6 +1046,14 @@ sub_run_xfce4_backdrops_view () {
 
 sub_run_xfce4_backdrops_open_dir () {
 	wallpaper_run_xfce4_backdrops_open_dir $@
+}
+
+
+sub_run_test () {
+	##wallpaper_sys_backgrounds_list_count
+	##wallpaper_sys_get_backgrounds_name_by_backgrounds_num $(wallpaper_sys_backgrounds_random_select_num)
+
+	wallpaper_run_backgrounds_random
 }
 
 ##
