@@ -51,17 +51,90 @@ bspwm_config_install_put_xf_applet () {
 ################################################################################
 ### Head: sxhkd
 ##
-
 sxhkd_config_install () {
 
-	mkdir -p "$HOME/.config/bspwm"
-	echo "mkdir -p $HOME/.config/bspwm"
+	## $ dpkg -L bspwm | grep 'examples/sxhkdrc'
+	## /usr/share/doc/bspwm/examples/sxhkdrc
+	## cp $(dpkg -L bspwm | grep 'examples/sxhkdrc') ~/.config/sxhkd/sxhkdrc
 
-	cp "./config/bspwm/sxhkdrc" "$HOME/.config/bspwm/sxhkdrc"
-	echo "cp ./config/bspwm/sxhkdrc $HOME/.config/bspwm/sxhkdrc"
+
+	echo "mkdir -p $HOME/.config/bspwm/sxhkd"
+	mkdir -p "$HOME/.config/bspwm/sxhkd"
+
+	echo "cp ./config/sxhkd/sxhkdrc $HOME/.config/bspwm/sxhkd/sxhkdrc"
+	cp "./config/sxhkd/sxhkdrc" "$HOME/.config/bspwm/sxhkd/sxhkdrc"
+
+
+	sxhkd_config_install_bsp_sxhkd
+	sxhkd_config_install_bsp_sxhkd_start
+
+
+	sxhkd_config_install_option_theme_file
+
+	sxhkd_config_install_theme_default
+	sxhkd_config_install_theme_basic
+
+
+	sxhkd_config_install_bsp_sxhkd_completion_bash
+}
+
+
+sxhkd_config_install_bsp_sxhkd_start () {
+
+	echo "install -m 755 ./config/sxhkd/bin/bsp-sxhkd-start $HOME/bin/bsp-sxhkd-start"
+	install -m 755 "./config/sxhkd/bin/bsp-sxhkd-start" "$HOME/bin/bsp-sxhkd-start"
+
 
 }
 
+sxhkd_config_install_bsp_sxhkd () {
+
+	echo "install -m 755 ./config/sxhkd/bin/bsp-sxhkd $HOME/bin/bsp-sxhkd"
+	install -m 755 "./config/sxhkd/bin/bsp-sxhkd" "$HOME/bin/bsp-sxhkd"
+
+}
+
+sxhkd_config_install_bsp_sxhkd_completion_bash () {
+
+	echo "install -m 755 ./config/sxhkd/completion/bash/bsp-sxhkd /etc/bash_completion.d/bsp-sxhkd"
+	sudo install -m 644 "./config/sxhkd/completion/bash/bsp-sxhkd" "/etc/bash_completion.d/bsp-sxhkd"
+}
+
+
+
+sxhkd_config_install_option_theme_file () {
+
+	mkdir -p "$HOME/.config/bspwm/sxhkd/option"
+	echo "mkdir -p $HOME/.config/bspwm/sxhkd/option"
+
+
+	echo "echo 'default' > $HOME/.config/bspwm/sxhkd/option/theme"
+	echo 'default' > "$HOME/.config/bspwm/sxhkd/option/theme"
+
+}
+
+sxhkd_config_install_theme_default () {
+
+	mkdir -p "$HOME/.config/bspwm/sxhkd/theme/default/config/on"
+	echo "mkdir -p $HOME/.config/bspwm/sxhkd/theme/default/config/on"
+
+
+	echo "install -m 664 ./config/sxhkd/theme/default/config/on/main.conf $HOME/.config/bspwm/sxhkd/theme/default/config/on/main.conf"
+	install -m 664 "./config/sxhkd/theme/default/config/on/main.conf" "$HOME/.config/bspwm/sxhkd/theme/default/config/on/main.conf"
+
+}
+
+
+sxhkd_config_install_theme_basic () {
+
+	mkdir -p "$HOME/.config/bspwm/sxhkd/theme/basic/config/on"
+	echo "mkdir -p $HOME/.config/bspwm/sxhkd/theme/basic/config/on"
+
+
+	echo "install -m 664 ./config/sxhkd/theme/basic/config/on/main.conf $HOME/.config/bspwm/sxhkd/theme/basic/config/on/main.conf"
+	install -m 664 "./config/sxhkd/theme/basic/config/on/main.conf" "$HOME/.config/bspwm/sxhkd/theme/basic/config/on/main.conf"
+
+}
 ##
 ### Tail: sxhkd
 ################################################################################
@@ -487,8 +560,6 @@ main_config_install () {
 
 	bspwm_config_install
 
-	sxhkd_config_install
-
 	xresources_config_install
 
 	wallpaper_config_install
@@ -510,11 +581,11 @@ main_config_install () {
 
 
 
+	sxhkd_config_install
 
 	compton_config_install
 
 	tint2_config_install
-
 
 }
 ## start

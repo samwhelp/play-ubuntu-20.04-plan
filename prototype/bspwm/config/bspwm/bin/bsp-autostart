@@ -110,7 +110,8 @@ bsp-compton-start &
 
 ## sxhkd
 ##sxhkd -c "$HOME/.config/bspwm/sxhkd/sxhkdrc" &
-sxhkd -c "$HOME/.config/bspwm/sxhkdrc" &
+bsp-sxhkd-start &
+
 ##
 ## Tail: Keybind
 ################################################################################
