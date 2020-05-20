@@ -19,12 +19,12 @@ wallpaper_boot_by_check_fehbg () {
 	local load_last="$HOME/.fehbg"
 
 	if [ -x "$HOME/.fehbg" ]; then
-		echo 1
+		##echo 1
 		$load_last
 		return 0
 	fi
 
-	echo 2
+	##echo 2
 
 	wallpaper_boot_by_option
 }
