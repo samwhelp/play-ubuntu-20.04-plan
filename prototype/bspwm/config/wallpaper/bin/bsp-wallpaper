@@ -356,6 +356,11 @@ wallpaper_sys_remove_fehbg () {
 	rm -f "$HOME/.fehbg"
 }
 
+wallpaper_sys_use () {
+	local img_file_path="$1"
+	feh --bg-scale "$img_file_path" &
+}
+
 ##
 ### Tail: System
 ################################################################################
@@ -576,6 +581,29 @@ wallpaper_sys_theme_random_select_name () {
 ################################################################################
 
 
+
+################################################################################
+### Head: Model / use
+##
+
+
+wallpaper_run_use () {
+	local img_file_path="$1"
+	if ! [ -f "$img_file_path" ]; then
+		echo "File_Not_Exists: ${img_file_path}"
+		return 1
+	fi
+
+	wallpaper_sys_use "$img_file_path"
+}
+
+
+##
+### Tail: Model / use
+################################################################################
+
+
+
 ################################################################################
 ### Head: SubCmd
 ##
@@ -669,6 +697,9 @@ sub_run_theme_random () {
 
 
 
+sub_run_use () {
+	wallpaper_run_use $@
+}
 
 
 
@@ -731,6 +762,9 @@ Usage:
 
 		$ $cmd_name theme [name]
 
+	## use
+
+		$ $cmd_name use {img_file_path}
 
 
 
@@ -756,6 +790,10 @@ Example:
 		$ $cmd_name theme 'default'
 		$ $cmd_name theme 'bionic.Spices_in_Athens'
 		$ $cmd_name theme 'bionic.Manhattan_Sunset'
+
+	## use
+
+		$ $cmd_name use '/usr/share/backgrounds/Spices_in_Athens_by_Makis_Chourdakis.jpg'
 
 
 Debug:
