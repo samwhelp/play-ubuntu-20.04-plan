@@ -183,6 +183,14 @@ wallpaper_config_install () {
 	wallpaper_config_install_theme_bionic_spices_in_athens
 	wallpaper_config_install_theme_bionic_manhattan_sunset
 	wallpaper_config_install_theme_focal_brad_huchteman_stone_mountain
+	wallpaper_config_install_theme_mate_photos_gabriele_diwald
+	wallpaper_config_install_theme_mate_photos_kristopher_roller
+	wallpaper_config_install_theme_mate_photos_nasa
+	wallpaper_config_install_theme_mate_xenial_mate_scrawl
+	wallpaper_config_install_theme_xubuntu_trusty_traslasierra
+	wallpaper_config_install_theme_xubuntu_trusty_balance
+	wallpaper_config_install_theme_xubuntu_xenial_Untitled_by_Troy_Jarrell
+
 
 
 	wallpaper_config_install_bsp_wallpaper_completion_bash
@@ -274,6 +282,84 @@ wallpaper_config_install_theme_focal_brad_huchteman_stone_mountain () {
 
 	echo "install -m 664 ./config/wallpaper/theme/focal.brad-huchteman-stone-mountain/config/on/main.conf $HOME/.config/bspwm/wallpaper/theme/focal.brad-huchteman-stone-mountain/config/on/main.conf"
 	install -m 664 "./config/wallpaper/theme/focal.brad-huchteman-stone-mountain/config/on/main.conf" "$HOME/.config/bspwm/wallpaper/theme/focal.brad-huchteman-stone-mountain/config/on/main.conf"
+
+}
+
+wallpaper_config_install_theme_mate_photos_gabriele_diwald () {
+
+	mkdir -p "$HOME/.config/bspwm/wallpaper/theme/mate-photos.gabriele-diwald/config/on"
+	echo "mkdir -p $HOME/.config/bspwm/wallpaper/theme/mate-photos.gabriele-diwald/config/on"
+
+
+	echo "install -m 664 ./config/wallpaper/theme/mate-photos.gabriele-diwald/config/on/main.conf $HOME/.config/bspwm/wallpaper/theme/mate-photos.gabriele-diwald/config/on/main.conf"
+	install -m 664 "./config/wallpaper/theme/mate-photos.gabriele-diwald/config/on/main.conf" "$HOME/.config/bspwm/wallpaper/theme/mate-photos.gabriele-diwald/config/on/main.conf"
+
+}
+
+wallpaper_config_install_theme_mate_photos_kristopher_roller () {
+
+	mkdir -p "$HOME/.config/bspwm/wallpaper/theme/mate-photos.kristopher-roller/config/on"
+	echo "mkdir -p $HOME/.config/bspwm/wallpaper/theme/mate-photos.kristopher-roller/config/on"
+
+
+	echo "install -m 664 ./config/wallpaper/theme/mate-photos.kristopher-roller/config/on/main.conf $HOME/.config/bspwm/wallpaper/theme/mate-photos.kristopher-roller/config/on/main.conf"
+	install -m 664 "./config/wallpaper/theme/mate-photos.kristopher-roller/config/on/main.conf" "$HOME/.config/bspwm/wallpaper/theme/mate-photos.kristopher-roller/config/on/main.conf"
+
+}
+
+wallpaper_config_install_theme_mate_photos_nasa () {
+
+	mkdir -p "$HOME/.config/bspwm/wallpaper/theme/mate-photos.nasa/config/on"
+	echo "mkdir -p $HOME/.config/bspwm/wallpaper/theme/mate-photos.nasa/config/on"
+
+
+	echo "install -m 664 ./config/wallpaper/theme/mate-photos.nasa/config/on/main.conf $HOME/.config/bspwm/wallpaper/theme/mate-photos.nasa/config/on/main.conf"
+	install -m 664 "./config/wallpaper/theme/mate-photos.nasa/config/on/main.conf" "$HOME/.config/bspwm/wallpaper/theme/mate-photos.nasa/config/on/main.conf"
+
+}
+
+
+wallpaper_config_install_theme_mate_xenial_mate_scrawl () {
+
+	mkdir -p "$HOME/.config/bspwm/wallpaper/theme/mate-xenial.mate-scrawl/config/on"
+	echo "mkdir -p $HOME/.config/bspwm/wallpaper/theme/mate-xenial.mate-scrawl/config/on"
+
+
+	echo "install -m 664 ./config/wallpaper/theme/mate-xenial.mate-scrawl/config/on/main.conf $HOME/.config/bspwm/wallpaper/theme/mate-xenial.mate-scrawl/config/on/main.conf"
+	install -m 664 "./config/wallpaper/theme/mate-xenial.mate-scrawl/config/on/main.conf" "$HOME/.config/bspwm/wallpaper/theme/mate-xenial.mate-scrawl/config/on/main.conf"
+
+}
+
+wallpaper_config_install_theme_xubuntu_trusty_traslasierra () {
+
+	mkdir -p "$HOME/.config/bspwm/wallpaper/theme/xubuntu-trusty.traslasierra/config/on"
+	echo "mkdir -p $HOME/.config/bspwm/wallpaper/theme/xubuntu-trusty.traslasierra/config/on"
+
+
+	echo "install -m 664 ./config/wallpaper/theme/xubuntu-trusty.traslasierra/config/on/main.conf $HOME/.config/bspwm/wallpaper/theme/xubuntu-trusty.traslasierra/config/on/main.conf"
+	install -m 664 "./config/wallpaper/theme/xubuntu-trusty.traslasierra/config/on/main.conf" "$HOME/.config/bspwm/wallpaper/theme/xubuntu-trusty.traslasierra/config/on/main.conf"
+
+}
+
+wallpaper_config_install_theme_xubuntu_trusty_balance () {
+
+	mkdir -p "$HOME/.config/bspwm/wallpaper/theme/xubuntu-trusty.balance/config/on"
+	echo "mkdir -p $HOME/.config/bspwm/wallpaper/theme/xubuntu-trusty.balance/config/on"
+
+
+	echo "install -m 664 ./config/wallpaper/theme/xubuntu-trusty.balance/config/on/main.conf $HOME/.config/bspwm/wallpaper/theme/xubuntu-trusty.balance/config/on/main.conf"
+	install -m 664 "./config/wallpaper/theme/xubuntu-trusty.balance/config/on/main.conf" "$HOME/.config/bspwm/wallpaper/theme/xubuntu-trusty.balance/config/on/main.conf"
+
+}
+
+wallpaper_config_install_theme_xubuntu_xenial_Untitled_by_Troy_Jarrell () {
+
+	mkdir -p "$HOME/.config/bspwm/wallpaper/theme/xubuntu-xenial.Untitled_by_Troy_Jarrell/config/on"
+	echo "mkdir -p $HOME/.config/bspwm/wallpaper/theme/xubuntu-xenial.Untitled_by_Troy_Jarrell/config/on"
+
+
+	echo "install -m 664 ./config/wallpaper/theme/xubuntu-xenial.Untitled_by_Troy_Jarrell/config/on/main.conf $HOME/.config/bspwm/wallpaper/theme/xubuntu-xenial.Untitled_by_Troy_Jarrell/config/on/main.conf"
+	install -m 664 "./config/wallpaper/theme/xubuntu-xenial.Untitled_by_Troy_Jarrell/config/on/main.conf" "$HOME/.config/bspwm/wallpaper/theme/xubuntu-xenial.Untitled_by_Troy_Jarrell/config/on/main.conf"
 
 }
 ##

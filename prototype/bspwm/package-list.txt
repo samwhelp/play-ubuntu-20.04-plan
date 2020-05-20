@@ -30,6 +30,9 @@ breeze-cursor-theme
 ubuntu-wallpapers-focal
 ubuntu-wallpapers-eoan
 ubuntu-wallpapers-bionic
+ubuntu-mate-wallpapers-photos
+ubuntu-mate-wallpapers-xenial
+xubuntu-community-wallpapers-trusty
 
 
 fcitx-chewing
