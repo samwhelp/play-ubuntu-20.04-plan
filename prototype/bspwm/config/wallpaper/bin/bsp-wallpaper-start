@@ -14,6 +14,21 @@ wallpaper_boot_default () {
 
 }
 
+wallpaper_boot_by_check_fehbg () {
+
+	local load_last="$HOME/.fehbg"
+
+	if [ -x "$HOME/.fehbg" ]; then
+		echo 1
+		$load_last
+		return 0
+	fi
+
+	echo 2
+
+	wallpaper_boot_by_option
+}
+
 wallpaper_boot_by_option () {
 	local config_dir_path
 
@@ -143,8 +158,9 @@ __main__ () {
 
 	##wallpaper_boot_simple
 	##wallpaper_boot_default
+	##wallpaper_boot_by_option
 
-	wallpaper_boot_by_option
+	wallpaper_boot_by_check_fehbg
 
 
 }

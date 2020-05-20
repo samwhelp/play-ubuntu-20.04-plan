@@ -329,6 +329,7 @@ wallpaper_sys_session_stop () {
 }
 
 wallpaper_sys_session_start () {
+	wallpaper_sys_remove_fehbg
 	bsp-wallpaper-start
 }
 
@@ -349,6 +350,10 @@ wallpaper_sys_session_toggle () {
 	else
 		wallpaper_sys_session_start
 	fi
+}
+
+wallpaper_sys_remove_fehbg () {
+	rm -f "$HOME/.fehbg"
 }
 
 ##
