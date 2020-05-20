@@ -902,7 +902,7 @@ wallpaper_sys_option_pictures_file_check () {
 
 	if ! [ -e "$HOME/.config/bspwm/wallpaper/option/dir_pictures/use" ] ; then
 		mkdir -p "$HOME/.config/bspwm/wallpaper/option/dir_pictures"
-		echo 'Frozen_sunset_on_the_lake_by_Manuel_Arslanyan.jpg' > "$HOME/.config/bspwm/wallpaper/option/dir_pictures/use"
+		echo 'wallpaper.jpg' > "$HOME/.config/bspwm/wallpaper/option/dir_pictures/use"
 	fi
 
 }
@@ -1067,6 +1067,10 @@ wallpaper_sys_xfce4_backdrops_list () {
 	cd "$OLDPWD"
 }
 
+wallpaper_sys_xfce4_backdrops_list_count () {
+	wallpaper_sys_xfce4_backdrops_list | wc -l
+}
+
 wallpaper_sys_xfce4_backdrops_use () {
 	local img_file_name="$@"
 	local img_file_path="/usr/share/xfce4/backdrops/${img_file_name}"
@@ -1074,6 +1078,8 @@ wallpaper_sys_xfce4_backdrops_use () {
 		echo "File_Not_Exists: ${img_file_path}"
 		return 1
 	fi
+
+	wallpaper_sys_xfce4_backdrops_use_name_set "$img_file_name"
 
 	wallpaper_sys_use "$img_file_path"
 }
@@ -1099,10 +1105,135 @@ wallpaper_sys_xfce4_backdrops_open_dir () {
 }
 
 
+
+wallpaper_sys_option_xfce4_backdrops_file_check () {
+
+	if ! [ -e "$HOME/.config/bspwm/wallpaper/option/dir_xfce4_backdrops/use" ] ; then
+		mkdir -p "$HOME/.config/bspwm/wallpaper/option/dir_xfce4_backdrops"
+		echo 'balance.jpg' > "$HOME/.config/bspwm/wallpaper/option/dir_xfce4_backdrops/use"
+	fi
+
+}
+
+wallpaper_sys_xfce4_backdrops_use_name_get () {
+
+	wallpaper_sys_option_xfce4_backdrops_file_check
+
+	cat "$HOME/.config/bspwm/wallpaper/option/dir_xfce4_backdrops/use"
+}
+
+wallpaper_sys_xfce4_backdrops_use_name_set () {
+
+	wallpaper_sys_option_xfce4_backdrops_file_check
+
+	echo "$1" > "$HOME/.config/bspwm/wallpaper/option/dir_xfce4_backdrops/use"
+}
+
+
 ##
 ### Tail: Model / xfce4_backdrops
 ################################################################################
 
+
+################################################################################
+### Head: Model / xfce4_backdrops / next
+##
+
+
+wallpaper_run_xfce4_backdrops_next () {
+
+	local img_file_name="$(wallpaper_sys_xfce4_backdrops_next_select_name)"
+
+	echo $img_file_name
+
+	wallpaper_sys_xfce4_backdrops_use "$img_file_name"
+
+}
+
+wallpaper_sys_xfce4_backdrops_next_select_num () {
+	local xfce4_backdrops
+	local current=$(wallpaper_sys_xfce4_backdrops_use_name_get)
+	local list
+	local list_count=$(wallpaper_sys_xfce4_backdrops_list_count)
+	local line=1
+	local next=1
+
+	list=$(wallpaper_sys_xfce4_backdrops_list)
+
+
+	for xfce4_backdrops in $list ; do
+		##echo $line
+
+		if [ "$current" == "$xfce4_backdrops" ] ; then
+			#echo $xfce4_backdrops
+			break;
+		fi
+
+		line=$(($line + 1))
+	done
+
+	next=$(($line + 1))
+
+
+	if [ $next -gt $list_count ]; then
+		next=1
+	fi
+
+	echo $next
+
+}
+
+
+wallpaper_sys_xfce4_backdrops_next_select_name () {
+	line=$(wallpaper_sys_xfce4_backdrops_next_select_num)
+	wallpaper_sys_get_xfce4_backdrops_name_by_xfce4_backdrops_num "$line"
+}
+
+
+
+##
+### Tail: Model / xfce4_backdrops / next
+################################################################################
+
+
+################################################################################
+### Head: Model / xfce4_backdrops / random
+##
+
+
+wallpaper_run_xfce4_backdrops_random () {
+
+
+	local img_file_name="$(wallpaper_sys_xfce4_backdrops_random_select_name)"
+
+	echo $img_file_name
+
+	wallpaper_sys_xfce4_backdrops_use "$img_file_name"
+
+
+}
+
+wallpaper_sys_xfce4_backdrops_random_select_num () {
+	local start=1
+	local end=$(wallpaper_sys_xfce4_backdrops_list_count)
+
+	util_random_range "$start" "$end"
+}
+
+wallpaper_sys_xfce4_backdrops_random_select_name () {
+	line=$(wallpaper_sys_xfce4_backdrops_random_select_num)
+	wallpaper_sys_get_xfce4_backdrops_name_by_xfce4_backdrops_num "$line"
+}
+
+
+wallpaper_sys_get_xfce4_backdrops_name_by_xfce4_backdrops_num () {
+	local line="$1"
+	wallpaper_sys_xfce4_backdrops_list | awk "FNR == $line {print}"
+}
+
+##
+### Tail: Model / xfce4_backdrops / random
+################################################################################
 
 
 
@@ -1280,12 +1411,17 @@ sub_run_xfce4_backdrops_open_dir () {
 	wallpaper_run_xfce4_backdrops_open_dir $@
 }
 
+sub_run_xfce4_backdrops_next () {
+	wallpaper_run_xfce4_backdrops_next
+}
+
+sub_run_xfce4_backdrops_random () {
+	wallpaper_run_xfce4_backdrops_random
+}
+
 
 sub_run_test () {
-	##wallpaper_sys_backgrounds_list_count
-	##wallpaper_sys_get_backgrounds_name_by_backgrounds_num $(wallpaper_sys_backgrounds_random_select_num)
-
-	wallpaper_sys_backgrounds_next_select_num
+	echo 'For Test'
 }
 
 ##
@@ -1369,6 +1505,14 @@ Usage:
 		$ $cmd_name pictures_next
 		$ $cmd_name pictures_random
 
+	## xfce4_backdrops
+
+		$ $cmd_name xfce4_backdrops_list
+		$ $cmd_name xfce4_backdrops_use {img_file_name}
+		$ $cmd_name xfce4_backdrops_view {img_file_name}
+		$ $cmd_name xfce4_backdrops_open_dir
+		$ $cmd_name xfce4_backdrops_next
+		$ $cmd_name xfce4_backdrops_random
 
 Example:
 
