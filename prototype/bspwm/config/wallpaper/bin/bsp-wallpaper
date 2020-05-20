@@ -198,6 +198,47 @@ sub_cmd_find_function_name () {
 
 
 ################################################################################
+### Head: Util_Command
+##
+
+util_check_command_exists () {
+	local function_name="$1"
+
+	##if ! command -v $function_name > /dev/null; then
+	if ! type -p $function_name > /dev/null; then
+		util_debug_echo "[Debug] Command_Not_Exist: function_name=$function_name"
+		return 1
+	fi
+
+	return 0
+}
+
+util_open_dir () {
+
+	local target_dir_path="$1"
+
+	if util_check_command_exists 'pcmanfm-qt'; then
+		echo "pcmanfm-qt $target_dir_path"
+		pcmanfm-qt "$target_dir_path"
+	elif util_check_command_exists 'exo-open'; then
+		echo "exo-open $target_dir_path"
+		exo-open "$target_dir_path"
+	elif util_check_command_exists 'xdg-open'; then
+		echo "xdg-open $target_dir_path"
+		xdg-open "$target_dir_path"
+	else
+		echo "$target_dir_path"
+		return 1
+	fi
+}
+
+
+##
+### Head: Util_Command
+################################################################################
+
+
+################################################################################
 ### Head: Util_Self_Update
 ##
 
@@ -798,7 +839,7 @@ wallpaper_run_backgrounds_view () {
 
 wallpaper_run_backgrounds_open_dir () {
 
-	wallpaper_sys_backgrounds_open_dir $@
+	wallpaper_sys_backgrounds_open_dir
 
 }
 
@@ -847,13 +888,8 @@ wallpaper_sys_backgrounds_open_dir () {
 
 	local target_dir_path="$HOME/Pictures/Wallpaper/"
 
-	pcmanfm-qt "$target_dir_path" &
-	#exo-open "$target_dir_path" &
-	#xdg-open "$target_dir_path" &
+	util_open_dir "$target_dir_path"
 }
-
-
-
 
 
 wallpaper_sys_option_backgrounds_file_check () {
@@ -1055,9 +1091,7 @@ wallpaper_sys_pictures_open_dir () {
 
 	local target_dir_path="$HOME/Pictures/Wallpaper/"
 
-	pcmanfm-qt "$target_dir_path" &
-	#exo-open "$target_dir_path" &
-	#xdg-open "$target_dir_path" &
+	util_open_dir "$target_dir_path"
 }
 
 
@@ -1264,9 +1298,7 @@ wallpaper_sys_xfce4_backdrops_open_dir () {
 
 	local target_dir_path="/usr/share/xfce4/backdrops/"
 
-	pcmanfm-qt "$target_dir_path" &
-	#exo-open "$target_dir_path" &
-	#xdg-open "$target_dir_path" &
+	util_open_dir "$target_dir_path"
 }
 
 
@@ -1607,6 +1639,8 @@ sub_run_xfce4_backdrops_random () {
 
 sub_run_test () {
 	echo 'For Test'
+
+	wallpaper_sys_backgrounds_open_dir
 }
 
 ##
@@ -1757,7 +1791,7 @@ main_run_sub_cmd () {
 	local function_name=$(sub_cmd_find_function_name "$sub_cmd")
 
 	## if ! command -v $function_name > /dev/null; then
-	if ! type -p $function_name; then
+	if ! type -p $function_name > /dev/null; then
 		util_debug_echo "[Debug] sub_cmd_function_not_exist: sub_cmd=$sub_cmd; function_name=$function_name"
 
 		echo
