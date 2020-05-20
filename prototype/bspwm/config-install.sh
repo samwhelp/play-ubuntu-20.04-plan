@@ -182,6 +182,7 @@ wallpaper_config_install () {
 	wallpaper_config_install_theme_default
 	wallpaper_config_install_theme_bionic_spices_in_athens
 	wallpaper_config_install_theme_bionic_manhattan_sunset
+	wallpaper_config_install_theme_focal_brad_huchteman_stone_mountain
 
 
 	wallpaper_config_install_bsp_wallpaper_completion_bash
@@ -262,6 +263,17 @@ wallpaper_config_install_theme_bionic_manhattan_sunset () {
 
 	echo "install -m 664 ./config/wallpaper/theme/bionic.Manhattan_Sunset/config/on/main.conf $HOME/.config/bspwm/wallpaper/theme/bionic.Manhattan_Sunset/config/on/main.conf"
 	install -m 664 "./config/wallpaper/theme/bionic.Manhattan_Sunset/config/on/main.conf" "$HOME/.config/bspwm/wallpaper/theme/bionic.Manhattan_Sunset/config/on/main.conf"
+
+}
+
+wallpaper_config_install_theme_focal_brad_huchteman_stone_mountain () {
+
+	mkdir -p "$HOME/.config/bspwm/wallpaper/theme/focal.brad-huchteman-stone-mountain/config/on"
+	echo "mkdir -p $HOME/.config/bspwm/wallpaper/theme/focal.brad-huchteman-stone-mountain/config/on"
+
+
+	echo "install -m 664 ./config/wallpaper/theme/focal.brad-huchteman-stone-mountain/config/on/main.conf $HOME/.config/bspwm/wallpaper/theme/focal.brad-huchteman-stone-mountain/config/on/main.conf"
+	install -m 664 "./config/wallpaper/theme/focal.brad-huchteman-stone-mountain/config/on/main.conf" "$HOME/.config/bspwm/wallpaper/theme/focal.brad-huchteman-stone-mountain/config/on/main.conf"
 
 }
 ##
