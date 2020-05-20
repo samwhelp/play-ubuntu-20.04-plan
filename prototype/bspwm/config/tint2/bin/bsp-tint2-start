@@ -1,0 +1,150 @@
+#!/usr/bin/env bash
+
+
+tint2_boot_simple () {
+	tint2 -c "$HOME/.config/bspwm/tint2/tint2rc" &
+}
+
+tint2_boot_default () {
+
+	local config_dir_path="$HOME/.config/bspwm/tint2/theme/default/config/on"
+
+	tint2_boot_util_start_v1 "$config_dir_path"
+	##tint2_boot_util_start_v2 "$config_dir_path"
+
+}
+
+tint2_boot_by_option () {
+	local config_dir_path
+
+
+	config_dir_path="$(tint2_boot_theme_config_dir_path)"
+	config_dir_path_check_exist="$?"
+
+	if [ "$config_dir_path_check_exist" = "1" ]  ; then
+		## not exists
+		tint2_boot_simple
+		return 0;
+	fi
+
+
+	tint2_boot_util_start_v1 "$config_dir_path"
+	##tint2_boot_util_start_v2 "$config_dir_path"
+
+}
+
+
+tint2_boot_util_start_v1 () {
+	local config_dir_path="$1"
+	local conf
+
+	for conf in "$config_dir_path"/*.conf ; do
+		#echo $conf
+		tint2 -c "$conf" &
+	done
+
+}
+
+tint2_boot_util_start_v2 () {
+	local config_dir_path="$1"
+	local conf
+
+	for conf in $(find "$config_dir_path" -name *.conf); do
+		#echo $conf
+		tint2 -c "$conf" &
+	done
+
+}
+
+tint2_boot_theme_config_dir_path () {
+	local theme_dir_path="$(tint2_boot_theme_dir_path)"
+	local theme_config_dir_path="$theme_dir_path/config/on"
+
+	if [ -d "$theme_config_dir_path" ] ; then
+		echo "$theme_config_dir_path"
+		return 0
+	fi
+
+	echo "$theme_dir_path"
+	return 1
+
+}
+
+tint2_boot_theme_dir_path () {
+	local theme_dir_path
+
+
+	theme_dir_path="$(tint2_boot_theme_dir_path_find_by_option)"
+
+	if [ -d "$theme_dir_path" ] ; then
+		echo "$theme_dir_path"
+		return 0
+	fi
+
+
+	theme_dir_path="$(tint2_boot_theme_dir_path_find_by_default)"
+
+	if [ -d "$theme_dir_path" ] ; then
+		echo "$theme_dir_path"
+		return 0
+	fi
+
+
+	theme_dir_path="$HOME/.config/tint2"
+	echo "$theme_dir_path"
+	return 0
+
+}
+
+tint2_boot_theme_dir_path_find_by_option () {
+	## ~/.config/bspwm/tint2/theme/some_theme
+	tint2_boot_theme_dir_path_create $(tint2_boot_option_theme_get)
+}
+
+tint2_boot_theme_dir_path_find_by_default () {
+	## ~/.config/bspwm/tint2/theme/default
+	tint2_boot_theme_dir_path_create $(tint2_boot_option_theme_default)
+}
+
+tint2_boot_theme_dir_path_create () {
+	local theme_name="$1"
+
+	## ~/.config/bspwm/tint2/theme/theme_name
+	echo "$HOME/.config/bspwm/tint2/theme/$theme_name"
+}
+
+tint2_boot_option_theme_default () {
+	echo 'default'
+}
+
+tint2_boot_option_theme_get () {
+
+
+	tint2_sys_option_theme_file_check
+
+	## ~/.config/bspwm/tint2/option/theme
+	cat "$HOME/.config/bspwm/tint2/option/theme"
+}
+
+tint2_sys_option_theme_file_check () {
+
+	if ! [ -e "$HOME/.config/bspwm/tint2/option/theme" ] ; then
+		mkdir -p "$HOME/.config/bspwm/tint2/option"
+		echo 'default' > "$HOME/.config/bspwm/tint2/option/theme"
+	fi
+
+}
+
+##tint2_boot
+
+__main__ () {
+
+	##tint2_boot_simple
+	##tint2_boot_default
+
+	tint2_boot_by_option
+
+
+}
+
+__main__

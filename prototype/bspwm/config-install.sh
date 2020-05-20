@@ -109,13 +109,112 @@ wallpaper_config_install () {
 ##
 tint2_config_install () {
 
-	mkdir -p "$HOME/.config/bspwm/tint2"
-	echo "mkdir -p $HOME/.config/bspwm/tint2"
+	echo "mkdir -p $HOME/bin"
+	mkdir -p "$HOME/bin"
 
-	cp "./config/tint2/tint2rc" "$HOME/.config/bspwm/tint2/tint2rc"
+	echo "mkdir -p $HOME/.config/bspwm/tint2"
+	mkdir -p "$HOME/.config/bspwm/tint2"
+
 	echo "cp ./config/tint2/tint2rc $HOME/.config/bspwm/tint2/tint2rc"
+	cp "./config/tint2/tint2rc" "$HOME/.config/bspwm/tint2/tint2rc"
+
+
+	tint2_config_install_bsp_tint2_completion_bash
+
+	tint2_config_install_bsp_tint2
+	tint2_config_install_bsp_tint2_start
+
+
+	tint2_config_install_option_theme_file
+
+	tint2_config_install_theme_default
+	tint2_config_install_theme_two_panel
+	tint2_config_install_theme_two_panel_desktop_clock
 
 }
+
+tint2_config_install_bsp_tint2_start () {
+
+	echo "install -m 755 ./config/tint2/bin/bsp-tint2-start $HOME/bin/bsp-tint2-start"
+	install -m 755 "./config/tint2/bin/bsp-tint2-start" "$HOME/bin/bsp-tint2-start"
+
+
+}
+
+tint2_config_install_bsp_tint2 () {
+
+	echo "install -m 755 ./config/tint2/bin/bsp-tint2 $HOME/bin/bsp-tint2"
+	install -m 755 "./config/tint2/bin/bsp-tint2" "$HOME/bin/bsp-tint2"
+
+}
+
+tint2_config_install_bsp_tint2_completion_bash () {
+
+	echo "install -m 755 ./config/tint2/completion/bash/bsp-tint2 /etc/bash_completion.d/bsp-tint2"
+	sudo install -m 644 "./config/tint2/completion/bash/bsp-tint2" "/etc/bash_completion.d/bsp-tint2"
+}
+
+
+
+tint2_config_install_option_theme_file () {
+
+	mkdir -p "$HOME/.config/bspwm/tint2/option"
+	echo "mkdir -p $HOME/.config/bspwm/tint2/option"
+
+
+	echo "echo 'default' > $HOME/.config/bspwm/tint2/option/theme"
+	echo 'default' > "$HOME/.config/bspwm/tint2/option/theme"
+
+}
+
+tint2_config_install_theme_default () {
+
+	mkdir -p "$HOME/.config/bspwm/tint2/theme/default/config/on"
+	echo "mkdir -p $HOME/.config/bspwm/tint2/theme/default/config/on"
+
+
+	echo "install -m 664 ./config/tint2/theme/default/config/on/main.conf $HOME/.config/bspwm/tint2/theme/default/config/on/main.conf"
+	install -m 664 "./config/tint2/theme/default/config/on/main.conf" "$HOME/.config/bspwm/tint2/theme/default/config/on/main.conf"
+
+}
+
+tint2_config_install_theme_two_panel () {
+
+	mkdir -p "$HOME/.config/bspwm/tint2/theme/two_panel/config/on"
+	echo "mkdir -p $HOME/.config/bspwm/tint2/theme/two_panel/config/on"
+
+
+	echo "install -m 664 ./config/tint2/theme/two_panel/config/on/app_panel.conf $HOME/.config/bspwm/tint2/theme/two_panel/config/on/app_panel.conf"
+	install -m 664 "./config/tint2/theme/two_panel/config/on/app_panel.conf" "$HOME/.config/bspwm/tint2/theme/two_panel/config/on/app_panel.conf"
+
+	echo "install -m 664 ./config/tint2/theme/two_panel/config/on/task_panel.conf $HOME/.config/bspwm/tint2/theme/two_panel/config/on/task_panel.conf"
+	install -m 664 "./config/tint2/theme/two_panel/config/on/task_panel.conf" "$HOME/.config/bspwm/tint2/theme/two_panel/config/on/task_panel.conf"
+
+}
+
+tint2_config_install_theme_two_panel_desktop_clock () {
+
+	mkdir -p "$HOME/.config/bspwm/tint2/theme/two_panel_desktop_clock/config/on"
+	echo "mkdir -p $HOME/.config/bspwm/tint2/theme/two_panel_desktop_clock/config/on"
+
+	mkdir -p "$HOME/.config/bspwm/tint2/theme/two_panel_desktop_clock/config/off"
+	echo "mkdir -p $HOME/.config/bspwm/tint2/theme/two_panel_desktop_clock/config/off"
+
+	echo "install -m 664 ./config/tint2/theme/two_panel_desktop_clock/config/on/app_panel.conf $HOME/.config/bspwm/tint2/theme/two_panel_desktop_clock/config/on/app_panel.conf"
+	install -m 664 "./config/tint2/theme/two_panel_desktop_clock/config/on/app_panel.conf" "$HOME/.config/bspwm/tint2/theme/two_panel_desktop_clock/config/on/app_panel.conf"
+
+	echo "install -m 664 ./config/tint2/theme/two_panel_desktop_clock/config/on/task_panel.conf $HOME/.config/bspwm/tint2/theme/two_panel_desktop_clock/config/on/task_panel.conf"
+	install -m 664 "./config/tint2/theme/two_panel_desktop_clock/config/on/task_panel.conf" "$HOME/.config/bspwm/tint2/theme/two_panel_desktop_clock/config/on/task_panel.conf"
+
+	echo "install -m 664 ./config/tint2/theme/two_panel_desktop_clock/config/on/time_panel.conf $HOME/.config/bspwm/tint2/theme/two_panel_desktop_clock/config/on/time_panel.conf"
+	install -m 664 "./config/tint2/theme/two_panel_desktop_clock/config/on/time_panel.conf" "$HOME/.config/bspwm/tint2/theme/two_panel_desktop_clock/config/on/time_panel.conf"
+
+
+	echo "install -m 664 ./config/tint2/theme/two_panel_desktop_clock/config/off/clock_panel.conf $HOME/.config/bspwm/tint2/theme/two_panel_desktop_clock/config/off/clock_panel.conf"
+	install -m 664 "./config/tint2/theme/two_panel_desktop_clock/config/off/clock_panel.conf" "$HOME/.config/bspwm/tint2/theme/two_panel_desktop_clock/config/off/clock_panel.conf"
+
+}
+
 
 tint2_config_install_default () {
 
@@ -394,8 +493,6 @@ main_config_install () {
 
 	wallpaper_config_install
 
-	tint2_config_install
-
 	volumeicon_config_install
 
 	pcmanfm_qt_config_install
@@ -410,7 +507,15 @@ main_config_install () {
 
 	gtk2_config_install
 
+
+
+
+
 	compton_config_install
+
+	tint2_config_install
+
+
 }
 ## start
 main_config_install

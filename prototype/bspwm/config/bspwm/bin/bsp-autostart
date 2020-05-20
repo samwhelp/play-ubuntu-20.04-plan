@@ -57,8 +57,8 @@ wallpaper.sh &
 ## tint2
 #tint2 &
 #tint2 -c "$HOME/.config/tint2/tint2rc" &
-tint2 -c "$HOME/.config/bspwm/tint2/tint2rc" &
-#bsp-tint2-start &
+#tint2 -c "$HOME/.config/bspwm/tint2/tint2rc" &
+bsp-tint2-start &
 
 ## xfce4-panel
 #xfce4-panel &
