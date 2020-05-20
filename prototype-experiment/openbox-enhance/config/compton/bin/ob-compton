@@ -340,7 +340,7 @@ compton_sys_session_restart () {
 
 compton_sys_session_toggle () {
 	if pgrep -x 'compton' > /dev/null; then
-		killall -9 compton
+		compton_sys_session_stop
 	else
 		compton_sys_session_start
 	fi
