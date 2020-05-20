@@ -623,7 +623,11 @@ wallpaper_run_backgrounds_use () {
 
 wallpaper_sys_backgrounds_list () {
 	cd "/usr/share/backgrounds/"
-	ls -1 {*.jpg,*.png}
+	##ls -1 {*.jpg,*.png}
+	## https://stackoverflow.com/questions/48633997/grep-for-image-urls
+	## egrep -o 'src=".*(\.png|\.jpg)' index.html
+	## grep -E -o 'src=".*(\.png|\.jpg)' index.html
+	ls -1 | grep -E -o '.*(\.png|\.jpg|\.jpeg|\.svg)'
 	cd "$OLDPWD"
 }
 
@@ -666,7 +670,8 @@ wallpaper_run_pictures_use () {
 wallpaper_sys_pictures_list () {
 	mkdir -p "$HOME/Pictures/Wallpaper/"
 	cd "$HOME/Pictures/Wallpaper/"
-	ls -1 {*.jpg,*.png}
+	##ls -1 {*.jpg,*.png}
+	ls -1 | grep -E -o '.*(\.png|\.jpg|\.jpeg|\.svg)'
 	cd "$OLDPWD"
 }
 
