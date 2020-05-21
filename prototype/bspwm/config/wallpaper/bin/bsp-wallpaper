@@ -886,7 +886,7 @@ wallpaper_run_list_type () {
 
 
 ################################################################################
-### Head: List / Model / Subject / List
+### Head: List / Model / Subject / List / Sub
 ##
 
 wallpaper_run_list_sub_default () {
@@ -920,12 +920,12 @@ wallpaper_run_list_sub_target_dir () {
 }
 
 ##
-### Tail: List / Model / Subject / List
+### Tail: List / Model / Subject / List / Sub
 ################################################################################
 
 
 ################################################################################
-### Head: List / Model / Subject / Next
+### Head: List / Model / Subject / Next / Sub
 ##
 
 wallpaper_run_next_sub_default () {
@@ -959,12 +959,12 @@ wallpaper_run_next_sub_target_dir () {
 }
 
 ##
-### Tail: List / Model / Subject / Next
+### Tail: List / Model / Subject / Next / Sub
 ################################################################################
 
 
 ################################################################################
-### Head: List / Model / Subject / Next
+### Head: List / Model / Subject / Next / Sub
 ##
 
 wallpaper_run_random_sub_default () {
@@ -998,7 +998,7 @@ wallpaper_run_random_sub_target_dir () {
 }
 
 ##
-### Tail: List / Model / Subject / Next
+### Tail: List / Model / Subject / Next / Sub
 ################################################################################
 
 

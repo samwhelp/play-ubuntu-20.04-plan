@@ -1,6 +1,6 @@
 
 ################################################################################
-### Head: List / Model / Subject / List
+### Head: List / Model / Subject / List / Sub
 ##
 
 wallpaper_run_list_sub_default () {
@@ -34,7 +34,7 @@ wallpaper_run_list_sub_target_dir () {
 }
 
 ##
-### Tail: List / Model / Subject / List
+### Tail: List / Model / Subject / List / Sub
 ################################################################################
 
 <?php
