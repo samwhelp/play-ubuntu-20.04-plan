@@ -6,9 +6,9 @@
 wallpaper_run_boot () {
 	local args="$@"
 
-	local boot_type=$(wallpaper_sys_boot_type_name_get_valid)
+	local boot_type="$(wallpaper_sys_boot_type_name_get_valid)"
 
-	local function_name=$(wallpaper_sys_run_boot_find_function_name "$boot_type")
+	local function_name="$(wallpaper_sys_run_boot_find_function_name $boot_type)"
 
 	##echo $function_name
 	# if ! command -v $function_name > /dev/null; then
