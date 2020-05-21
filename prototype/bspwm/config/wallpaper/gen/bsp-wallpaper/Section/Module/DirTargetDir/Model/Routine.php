@@ -144,6 +144,8 @@ wallpaper_sys_target_dir_path_name_set_valid () {
 	target_dir_path="$(wallpaper_sys_target_dir_path_valid $target_dir_path)"
 
 	wallpaper_sys_target_dir_path_name_set "$target_dir_path"
+
+	echo "$target_dir_path"
 }
 
 
