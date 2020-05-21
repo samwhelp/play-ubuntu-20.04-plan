@@ -627,7 +627,7 @@ wallpaper_boot_by_option () {
 
 
 wallpaper_sys_list_type_enum_valid () {
-	local list_type_enum=$(wallpaper_sys_list_type_enum)
+	local list_type_enum="$(wallpaper_sys_list_type_enum)"
 	local list_type_to_set="$1"
 	local list_type
 	local list_type_valid
@@ -665,7 +665,7 @@ wallpaper_sys_option_list_type_file_check () {
 
 	if ! [ -e "$HOME/.config/bspwm/wallpaper/option/list_type" ] ; then
 		mkdir -p "$HOME/.config/bspwm/wallpaper/option"
-		echo 'theme' > "$HOME/.config/bspwm/wallpaper/option/list_type"
+		echo 'backgrounds' > "$HOME/.config/bspwm/wallpaper/option/list_type"
 	fi
 
 }
@@ -684,6 +684,15 @@ wallpaper_sys_list_type_name_set () {
 	echo "$1" > "$HOME/.config/bspwm/wallpaper/option/list_type"
 }
 
+
+##
+### Tail: List / Model / Routine
+################################################################################
+
+
+################################################################################
+### Head: List / Model / Routine
+##
 
 wallpaper_sys_run_list_find_function_name () {
 	echo "wallpaper_run_list_sub_$1"
@@ -1442,9 +1451,17 @@ wallpaper_sys_pictures_list_count () {
 }
 
 wallpaper_sys_pictures_use () {
-	local target_dir_path="$(wallpaper_sys_pictures_path_name_get_valid)"
+
 	local img_file_name="$@"
+
+	if [ "none${img_file_name}" = "none" ]; then
+		echo 'Need {img_file_name}'
+		return
+	fi
+
+	local target_dir_path="$(wallpaper_sys_pictures_path_name_get_valid)"
 	local img_file_path="${target_dir_path}/${img_file_name}"
+
 	if ! [ -f "$img_file_path" ]; then
 		echo "File_Not_Exists: ${img_file_path}"
 		return 1
@@ -1456,9 +1473,17 @@ wallpaper_sys_pictures_use () {
 }
 
 wallpaper_sys_pictures_view () {
-	local target_dir_path="$(wallpaper_sys_pictures_path_name_get_valid)"
+
 	local img_file_name="$@"
+
+	if [ "none${img_file_name}" = "none" ]; then
+		echo 'Need {img_file_name}'
+		return
+	fi
+
+	local target_dir_path="$(wallpaper_sys_pictures_path_name_get_valid)"
 	local img_file_path="${target_dir_path}/${img_file_name}"
+
 	if ! [ -f "$img_file_path" ]; then
 		echo "File_Not_Exists: ${img_file_path}"
 		return 1
@@ -1693,8 +1718,9 @@ wallpaper_run_pictures_random () {
 
 
 wallpaper_sys_xfce4_backdrops_list () {
-	mkdir -p "/usr/share/xfce4/backdrops/"
-	cd "/usr/share/xfce4/backdrops/"
+	local target_dir_path="$(wallpaper_sys_xfce4_backdrops_path_name_get_valid)"
+	mkdir -p "$target_dir_path"
+	cd "$target_dir_path"
 	##ls -1 {*.jpg,*.png}
 	##ls -1 | grep -E -o '.*(\.png|\.jpg|\.jpeg|\.svg)'
 	ls -1 | grep -E -o '.*(\.png|\.jpg|\.jpeg)'
@@ -1706,8 +1732,17 @@ wallpaper_sys_xfce4_backdrops_list_count () {
 }
 
 wallpaper_sys_xfce4_backdrops_use () {
+
 	local img_file_name="$@"
-	local img_file_path="/usr/share/xfce4/backdrops/${img_file_name}"
+
+	if [ "none${img_file_name}" = "none" ]; then
+		echo 'Need {img_file_name}'
+		return
+	fi
+
+	local target_dir_path="$(wallpaper_sys_xfce4_backdrops_path_name_get_valid)"
+	local img_file_path="${target_dir_path}/${img_file_name}"
+
 	if ! [ -f "$img_file_path" ]; then
 		echo "File_Not_Exists: ${img_file_path}"
 		return 1
@@ -1719,8 +1754,17 @@ wallpaper_sys_xfce4_backdrops_use () {
 }
 
 wallpaper_sys_xfce4_backdrops_view () {
+
 	local img_file_name="$@"
-	local img_file_path="/usr/share/xfce4/backdrops/${img_file_name}"
+
+	if [ "none${img_file_name}" = "none" ]; then
+		echo 'Need {img_file_name}'
+		return
+	fi
+
+	local target_dir_path="$(wallpaper_sys_xfce4_backdrops_path_name_get_valid)"
+	local img_file_path="${target_dir_path}/${img_file_name}"
+
 	if ! [ -f "$img_file_path" ]; then
 		echo "File_Not_Exists: ${img_file_path}"
 		return 1
@@ -1731,7 +1775,7 @@ wallpaper_sys_xfce4_backdrops_view () {
 
 wallpaper_sys_xfce4_backdrops_open_dir () {
 
-	local target_dir_path="/usr/share/xfce4/backdrops/"
+	local target_dir_path="$(wallpaper_sys_xfce4_backdrops_path_name_get_valid)"
 
 	util_open_dir "$target_dir_path"
 }
@@ -1765,6 +1809,50 @@ wallpaper_sys_xfce4_backdrops_use_name_set () {
 
 ##
 ### Tail: DirXfce4Backdrops / Model / Routine
+################################################################################
+
+
+################################################################################
+### Head: DirBackgrounds / Model / Routine / Path
+##
+
+wallpaper_sys_xfce4_backdrops_path_valid () {
+
+	local target_dir_path_to_set="$1"
+	local target_dir_path_valid
+
+	if [ -d "$target_dir_path_to_set" ] ; then
+		target_dir_path_valid="$target_dir_path_to_set"
+	else
+		target_dir_path_valid="/usr/share/backgrounds"
+	fi
+
+
+	if [ "none${target_dir_path_valid}" = "none" ]; then
+		target_dir_path_valid="/usr/share/backgrounds"
+	fi
+
+	echo "$target_dir_path_valid"
+
+}
+
+wallpaper_sys_xfce4_backdrops_path_name_get () {
+	echo '/usr/share/xfce4/backdrops'
+}
+
+wallpaper_sys_xfce4_backdrops_path_name_get_valid () {
+
+	local target_dir_path="$(wallpaper_sys_xfce4_backdrops_path_name_get)"
+
+	target_dir_path="$(wallpaper_sys_target_dir_path_valid $target_dir_path)"
+
+	echo "$target_dir_path"
+}
+
+
+
+##
+### Tail: DirBackgrounds / Model / Routine / Path
 ################################################################################
 
 
@@ -1846,6 +1934,12 @@ wallpaper_sys_get_xfce4_backdrops_name_by_xfce4_backdrops_num () {
 ################################################################################
 ### Head: DirXfce4Backdrops / Model / Subject
 ##
+
+wallpaper_run_xfce4_backdrops_path () {
+
+	wallpaper_sys_xfce4_backdrops_path_name_get_valid
+
+}
 
 wallpaper_run_xfce4_backdrops_list () {
 
@@ -2453,6 +2547,10 @@ sub_run_pictures_random () {
 ################################################################################
 ### Head: DirXfce4Backdrops / Action
 ##
+
+sub_run_xfce4_backdrops_path () {
+	wallpaper_run_xfce4_backdrops_path $@
+}
 
 sub_run_xfce4_backdrops_list () {
 	wallpaper_run_xfce4_backdrops_list
