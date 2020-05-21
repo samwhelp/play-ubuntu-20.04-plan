@@ -1919,6 +1919,15 @@ wallpaper_sys_target_dir_use_name_set () {
 
 
 
+##
+### Tail: DirTargetDir / Model / Routine
+################################################################################
+
+
+################################################################################
+### Head: DirTargetDir / Model / Routine / Path
+##
+
 
 wallpaper_sys_target_dir_path_valid () {
 
@@ -1990,9 +1999,8 @@ wallpaper_sys_target_dir_path_name_set_valid () {
 }
 
 
-
 ##
-### Tail: DirTargetDir / Model / Routine
+### Tail: DirTargetDir / Model / Routine / Path
 ################################################################################
 
 
