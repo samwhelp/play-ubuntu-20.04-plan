@@ -1805,6 +1805,11 @@ wallpaper_run_list_sub_xfce4_backdrops () {
 	wallpaper_run_xfce4_backdrops_list
 }
 
+wallpaper_run_list_sub_target_dir () {
+	##util_debug_echo 'wallpaper_run_list_sub_target_dir'
+	wallpaper_run_target_dir_list
+}
+
 
 
 
@@ -1852,6 +1857,12 @@ wallpaper_run_next_sub_xfce4_backdrops () {
 	##util_debug_echo 'wallpaper_run_next_sub_xfce4_backdrops'
 	wallpaper_run_xfce4_backdrops_next
 }
+
+wallpaper_run_next_sub_target_dir () {
+	##util_debug_echo 'wallpaper_run_next_sub_target_dir'
+	wallpaper_run_target_dir_next
+}
+
 
 
 
@@ -1901,6 +1912,11 @@ wallpaper_run_random_sub_xfce4_backdrops () {
 	wallpaper_run_xfce4_backdrops_random
 }
 
+wallpaper_run_random_sub_target_dir () {
+	##util_debug_echo 'wallpaper_run_random_sub_target_dir'
+	wallpaper_run_target_dir_random
+}
+
 
 
 
@@ -1937,6 +1953,7 @@ theme
 backgrounds
 pictures
 xfce4_backdrops
+target_dir
 EOF
 
 }
