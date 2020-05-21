@@ -33,29 +33,24 @@ Usage:
 		$ $cmd_name restart
 		$ $cmd_name toggle
 
-
-	## random
-
-		$ $cmd_name random
-		$ $cmd_name theme_random
-
-	## next
-
-		$ $cmd_name next
-		$ $cmd_name theme_next
-
-	## list
-
-		$ $cmd_name list
-		$ $cmd_name theme_list
-
-	## get or set
-
-		$ $cmd_name theme [name]
-
 	## use
 
 		$ $cmd_name use {img_file_path}
+
+	## list
+
+		$ $cmd_name list_type_enum
+		$ $cmd_name list_type {list_type}
+		$ $cmd_name list
+		$ $cmd_name random
+		$ $cmd_name next
+
+	## theme
+
+		$ $cmd_name theme [name]
+		$ $cmd_name theme_list
+		$ $cmd_name theme_next
+		$ $cmd_name theme_random
 
 	## backgrounds
 
@@ -84,6 +79,16 @@ Usage:
 		$ $cmd_name xfce4_backdrops_next
 		$ $cmd_name xfce4_backdrops_random
 
+	## target_dir
+
+		$ $cmd_name target_dir_path
+		$ $cmd_name target_dir_list
+		$ $cmd_name target_dir_use {img_file_name}
+		$ $cmd_name target_dir_view {img_file_name}
+		$ $cmd_name target_dir_open_dir
+		$ $cmd_name target_dir_next
+		$ $cmd_name target_dir_random
+
 Example:
 
 
@@ -93,13 +98,11 @@ Example:
 
 	## theme / list
 
-		$ $cmd_name list
 		$ $cmd_name theme_list
 
 	## theme / get
 
 		$ $cmd_name theme
-
 
 	## theme / set
 
