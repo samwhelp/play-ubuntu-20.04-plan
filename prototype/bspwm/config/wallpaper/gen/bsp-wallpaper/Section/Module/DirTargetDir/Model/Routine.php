@@ -23,7 +23,7 @@ wallpaper_sys_target_dir_use () {
 	local img_file_name="$@"
 
 	if [ "none${img_file_name}" = "none" ]; then
-		echo 'Need img_file_name!'
+		echo 'Need {img_file_name}'
 		return
 	fi
 
@@ -45,7 +45,7 @@ wallpaper_sys_target_dir_view () {
 	local img_file_name="$@"
 
 	if [ "none${img_file_name}" = "none" ]; then
-		echo 'Need img_file_name!'
+		echo 'Need {img_file_name}'
 		return
 	fi
 

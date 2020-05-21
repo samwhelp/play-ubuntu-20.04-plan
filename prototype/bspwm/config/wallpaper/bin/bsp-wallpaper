@@ -1150,7 +1150,8 @@ wallpaper_run_theme_random () {
 ##
 
 wallpaper_sys_backgrounds_list () {
-	cd "/usr/share/backgrounds/"
+	local target_dir_path=$(wallpaper_sys_backgrounds_path_name_get_valid)
+	cd "$target_dir_path"
 	##ls -1 {*.jpg,*.png}
 	## https://stackoverflow.com/questions/48633997/grep-for-image-urls
 	## egrep -o 'src=".*(\.png|\.jpg)' index.html
@@ -1165,8 +1166,17 @@ wallpaper_sys_backgrounds_list_count () {
 }
 
 wallpaper_sys_backgrounds_use () {
+
 	local img_file_name="$@"
-	local img_file_path="/usr/share/backgrounds/${img_file_name}"
+
+	if [ "none${img_file_name}" = "none" ]; then
+		echo 'Need {img_file_name}'
+		return
+	fi
+
+	local target_dir_path=$(wallpaper_sys_backgrounds_path_name_get_valid)
+	local img_file_path="${target_dir_path}/${img_file_name}"
+
 	if ! [ -f "$img_file_path" ]; then
 		echo "File_Not_Exists: ${img_file_path}"
 		return 1
@@ -1179,8 +1189,17 @@ wallpaper_sys_backgrounds_use () {
 
 
 wallpaper_sys_backgrounds_view () {
+
 	local img_file_name="$@"
-	local img_file_path="/usr/share/backgrounds/${img_file_name}"
+
+	if [ "none${img_file_name}" = "none" ]; then
+		echo 'Need {img_file_name}'
+		return
+	fi
+
+	local target_dir_path=$(wallpaper_sys_backgrounds_path_name_get_valid)
+	local img_file_path="${target_dir_path}/${img_file_name}"
+
 	if ! [ -f "$img_file_path" ]; then
 		echo "File_Not_Exists: ${img_file_path}"
 		return 1
@@ -1192,7 +1211,7 @@ wallpaper_sys_backgrounds_view () {
 
 wallpaper_sys_backgrounds_open_dir () {
 
-	local target_dir_path="$HOME/Pictures/Wallpaper/"
+	local target_dir_path=$(wallpaper_sys_backgrounds_path_name_get_valid)
 
 	util_open_dir "$target_dir_path"
 }
@@ -1848,7 +1867,7 @@ wallpaper_sys_target_dir_use () {
 	local img_file_name="$@"
 
 	if [ "none${img_file_name}" = "none" ]; then
-		echo 'Need img_file_name!'
+		echo 'Need {img_file_name}'
 		return
 	fi
 
@@ -1870,7 +1889,7 @@ wallpaper_sys_target_dir_view () {
 	local img_file_name="$@"
 
 	if [ "none${img_file_name}" = "none" ]; then
-		echo 'Need img_file_name!'
+		echo 'Need {img_file_name}'
 		return
 	fi
 
