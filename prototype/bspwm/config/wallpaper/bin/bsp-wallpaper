@@ -644,7 +644,9 @@ wallpaper_boot_option_theme_get () {
 ### Head: Boot / Model / Routine
 ##
 
-
+wallpaper_sys_run_boot_find_function_name () {
+	echo "wallpaper_run_boot_sub_$1"
+}
 
 
 ##
@@ -682,12 +684,70 @@ wallpaper_run_boot_type () {
 
 
 ################################################################################
+### Head: List / Model / Subject / Next / Sub
+##
+
+wallpaper_run_boot_sub_default () {
+	##util_debug_echo 'wallpaper_run_boot_sub_default'
+	##wallpaper_run_backgrounds_boot
+
+	wallpaper_boot_by_check_fehbg
+}
+
+# wallpaper_run_boot_sub_theme () {
+# 	##util_debug_echo 'wallpaper_run_boot_sub_theme'
+# 	wallpaper_run_theme_boot
+# }
+#
+# wallpaper_run_boot_sub_backgrounds () {
+# 	##util_debug_echo 'wallpaper_run_boot_sub_backgrounds'
+# 	wallpaper_run_backgrounds_boot
+# }
+#
+# wallpaper_run_boot_sub_pictures () {
+# 	##util_debug_echo 'wallpaper_run_boot_sub_pictures'
+# 	wallpaper_run_pictures_boot
+# }
+#
+# wallpaper_run_boot_sub_xfce4_backdrops () {
+# 	##util_debug_echo 'wallpaper_run_boot_sub_xfce4_backdrops'
+# 	wallpaper_run_xfce4_backdrops_boot
+# }
+#
+# wallpaper_run_boot_sub_target_dir () {
+# 	##util_debug_echo 'wallpaper_run_boot_sub_target_dir'
+# 	wallpaper_run_target_dir_boot
+# }
+
+##
+### Tail: List / Model / Subject / Next / Sub
+################################################################################
+
+
+################################################################################
 ### Head: Boot / Model / Subject
 ##
 
 wallpaper_run_boot () {
-	wallpaper_boot_by_check_fehbg
+	local args="$@"
+
+	local boot_type=$(wallpaper_sys_boot_type_name_get_valid)
+
+	local function_name=$(wallpaper_sys_run_boot_find_function_name "$boot_type")
+
+	##echo $function_name
+	# if ! command -v $function_name > /dev/null; then
+	if ! type -p $function_name > /dev/null; then
+		##util_debug_echo "[Debug] wallpaper_run_boot_sub_not_exist: boot_type=$boot_type; function_name=$function_name"
+
+		wallpaper_run_boot_sub_default "$args"
+		return 0
+	fi
+
+	"$function_name" "$args" ## run sub function
+
 }
+
 
 
 wallpaper_boot_simple () {

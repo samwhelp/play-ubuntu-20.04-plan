@@ -4,8 +4,25 @@
 ##
 
 wallpaper_run_boot () {
-	wallpaper_boot_by_check_fehbg
+	local args="$@"
+
+	local boot_type=$(wallpaper_sys_boot_type_name_get_valid)
+
+	local function_name=$(wallpaper_sys_run_boot_find_function_name "$boot_type")
+
+	##echo $function_name
+	# if ! command -v $function_name > /dev/null; then
+	if ! type -p $function_name > /dev/null; then
+		##util_debug_echo "[Debug] wallpaper_run_boot_sub_not_exist: boot_type=$boot_type; function_name=$function_name"
+
+		wallpaper_run_boot_sub_default "$args"
+		return 0
+	fi
+
+	"$function_name" "$args" ## run sub function
+
 }
+
 
 
 wallpaper_boot_simple () {
