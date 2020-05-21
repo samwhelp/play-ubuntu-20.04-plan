@@ -3,6 +3,10 @@
 ### Head: DirPictures / Action
 ##
 
+sub_run_pictures_path () {
+	wallpaper_run_pictures_path $@
+}
+
 sub_run_pictures_list () {
 	wallpaper_run_pictures_list
 }

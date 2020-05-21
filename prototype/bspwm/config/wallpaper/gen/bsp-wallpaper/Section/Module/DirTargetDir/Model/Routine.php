@@ -5,7 +5,7 @@
 
 
 wallpaper_sys_target_dir_list () {
-	local target_dir_path=$(wallpaper_sys_target_dir_path_name_get_valid)
+	local target_dir_path="$(wallpaper_sys_target_dir_path_name_get_valid)"
 	mkdir -p "$target_dir_path"
 	cd "$target_dir_path"
 	##ls -1 {*.jpg,*.png}
@@ -27,7 +27,7 @@ wallpaper_sys_target_dir_use () {
 		return
 	fi
 
-	local target_dir_path=$(wallpaper_sys_target_dir_path_name_get_valid)
+	local target_dir_path="$(wallpaper_sys_target_dir_path_name_get_valid)"
 	local img_file_path="$target_dir_path/${img_file_name}"
 
 	if ! [ -f "$img_file_path" ]; then
@@ -49,7 +49,7 @@ wallpaper_sys_target_dir_view () {
 		return
 	fi
 
-	local target_dir_path=$(wallpaper_sys_target_dir_path_name_get_valid)
+	local target_dir_path="$(wallpaper_sys_target_dir_path_name_get_valid)"
 
 	local img_file_path="$target_dir_path/${img_file_name}"
 	if ! [ -f "$img_file_path" ]; then
@@ -61,7 +61,7 @@ wallpaper_sys_target_dir_view () {
 }
 
 wallpaper_sys_target_dir_open_dir () {
-	local target_dir_path=$(wallpaper_sys_target_dir_path_name_get_valid)
+	local target_dir_path="$(wallpaper_sys_target_dir_path_name_get_valid)"
 
 	util_open_dir "$target_dir_path"
 }

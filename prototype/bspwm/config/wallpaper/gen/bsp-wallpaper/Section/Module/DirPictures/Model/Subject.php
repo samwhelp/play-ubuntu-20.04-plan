@@ -3,6 +3,12 @@
 ### Head: DirPictures / Model / Subject
 ##
 
+wallpaper_run_pictures_path () {
+
+	wallpaper_sys_pictures_path_name_get_valid
+
+}
+
 wallpaper_run_pictures_list () {
 
 	wallpaper_sys_pictures_list

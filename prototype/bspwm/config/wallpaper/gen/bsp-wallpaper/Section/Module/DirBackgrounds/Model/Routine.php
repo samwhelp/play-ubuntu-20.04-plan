@@ -4,7 +4,7 @@
 ##
 
 wallpaper_sys_backgrounds_list () {
-	local target_dir_path=$(wallpaper_sys_backgrounds_path_name_get_valid)
+	local target_dir_path="$(wallpaper_sys_backgrounds_path_name_get_valid)"
 	cd "$target_dir_path"
 	##ls -1 {*.jpg,*.png}
 	## https://stackoverflow.com/questions/48633997/grep-for-image-urls
@@ -28,7 +28,7 @@ wallpaper_sys_backgrounds_use () {
 		return
 	fi
 
-	local target_dir_path=$(wallpaper_sys_backgrounds_path_name_get_valid)
+	local target_dir_path="$(wallpaper_sys_backgrounds_path_name_get_valid)"
 	local img_file_path="${target_dir_path}/${img_file_name}"
 
 	if ! [ -f "$img_file_path" ]; then
@@ -51,7 +51,7 @@ wallpaper_sys_backgrounds_view () {
 		return
 	fi
 
-	local target_dir_path=$(wallpaper_sys_backgrounds_path_name_get_valid)
+	local target_dir_path="$(wallpaper_sys_backgrounds_path_name_get_valid)"
 	local img_file_path="${target_dir_path}/${img_file_name}"
 
 	if ! [ -f "$img_file_path" ]; then
@@ -65,7 +65,7 @@ wallpaper_sys_backgrounds_view () {
 
 wallpaper_sys_backgrounds_open_dir () {
 
-	local target_dir_path=$(wallpaper_sys_backgrounds_path_name_get_valid)
+	local target_dir_path="$(wallpaper_sys_backgrounds_path_name_get_valid)"
 
 	util_open_dir "$target_dir_path"
 }
