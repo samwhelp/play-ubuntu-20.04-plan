@@ -3,6 +3,12 @@
 ### Head: DirXfce4Backdrops / Model / Subject
 ##
 
+wallpaper_run_xfce4_backdrops_path () {
+
+	wallpaper_sys_xfce4_backdrops_path_name_get_valid
+
+}
+
 wallpaper_run_xfce4_backdrops_list () {
 
 	wallpaper_sys_xfce4_backdrops_list

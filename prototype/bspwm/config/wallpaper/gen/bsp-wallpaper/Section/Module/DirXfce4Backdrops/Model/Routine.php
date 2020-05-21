@@ -5,8 +5,9 @@
 
 
 wallpaper_sys_xfce4_backdrops_list () {
-	mkdir -p "/usr/share/xfce4/backdrops/"
-	cd "/usr/share/xfce4/backdrops/"
+	local target_dir_path="$(wallpaper_sys_xfce4_backdrops_path_name_get_valid)"
+	mkdir -p "$target_dir_path"
+	cd "$target_dir_path"
 	##ls -1 {*.jpg,*.png}
 	##ls -1 | grep -E -o '.*(\.png|\.jpg|\.jpeg|\.svg)'
 	ls -1 | grep -E -o '.*(\.png|\.jpg|\.jpeg)'
@@ -18,8 +19,17 @@ wallpaper_sys_xfce4_backdrops_list_count () {
 }
 
 wallpaper_sys_xfce4_backdrops_use () {
+
 	local img_file_name="$@"
-	local img_file_path="/usr/share/xfce4/backdrops/${img_file_name}"
+
+	if [ "none${img_file_name}" = "none" ]; then
+		echo 'Need {img_file_name}'
+		return
+	fi
+
+	local target_dir_path="$(wallpaper_sys_xfce4_backdrops_path_name_get_valid)"
+	local img_file_path="${target_dir_path}/${img_file_name}"
+
 	if ! [ -f "$img_file_path" ]; then
 		echo "File_Not_Exists: ${img_file_path}"
 		return 1
@@ -31,8 +41,17 @@ wallpaper_sys_xfce4_backdrops_use () {
 }
 
 wallpaper_sys_xfce4_backdrops_view () {
+
 	local img_file_name="$@"
-	local img_file_path="/usr/share/xfce4/backdrops/${img_file_name}"
+
+	if [ "none${img_file_name}" = "none" ]; then
+		echo 'Need {img_file_name}'
+		return
+	fi
+
+	local target_dir_path="$(wallpaper_sys_xfce4_backdrops_path_name_get_valid)"
+	local img_file_path="${target_dir_path}/${img_file_name}"
+
 	if ! [ -f "$img_file_path" ]; then
 		echo "File_Not_Exists: ${img_file_path}"
 		return 1
@@ -43,7 +62,7 @@ wallpaper_sys_xfce4_backdrops_view () {
 
 wallpaper_sys_xfce4_backdrops_open_dir () {
 
-	local target_dir_path="/usr/share/xfce4/backdrops/"
+	local target_dir_path="$(wallpaper_sys_xfce4_backdrops_path_name_get_valid)"
 
 	util_open_dir "$target_dir_path"
 }

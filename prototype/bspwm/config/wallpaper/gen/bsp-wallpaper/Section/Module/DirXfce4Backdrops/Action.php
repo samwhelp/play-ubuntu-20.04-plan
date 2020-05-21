@@ -3,6 +3,10 @@
 ### Head: DirXfce4Backdrops / Action
 ##
 
+sub_run_xfce4_backdrops_path () {
+	wallpaper_run_xfce4_backdrops_path $@
+}
+
 sub_run_xfce4_backdrops_list () {
 	wallpaper_run_xfce4_backdrops_list
 }
