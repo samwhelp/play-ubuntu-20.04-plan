@@ -1232,21 +1232,21 @@ wallpaper_sys_backgrounds_use_name_set () {
 
 wallpaper_sys_backgrounds_path_valid () {
 
-	local backgrounds_path_to_set="$1"
-	local backgrounds_path_valid
+	local target_dir_path_to_set="$1"
+	local target_dir_path_valid
 
-	if [ -d "$backgrounds_path_to_set" ] ; then
-		backgrounds_path_valid="$backgrounds_path_to_set"
+	if [ -d "$target_dir_path_to_set" ] ; then
+		target_dir_path_valid="$target_dir_path_to_set"
 	else
-		backgrounds_path_valid="$HOME/Pictures"
+		target_dir_path_valid="$HOME/Pictures"
 	fi
 
 
-	if [ "none${backgrounds_path_valid}" = "none" ]; then
-		backgrounds_path_valid="$HOME/Pictures"
+	if [ "none${target_dir_path_valid}" = "none" ]; then
+		target_dir_path_valid="$HOME/Pictures"
 	fi
 
-	echo "$backgrounds_path_valid"
+	echo "$target_dir_path_valid"
 
 }
 
@@ -1256,11 +1256,11 @@ wallpaper_sys_backgrounds_path_name_get () {
 
 wallpaper_sys_backgrounds_path_name_get_valid () {
 
-	local backgrounds_path="$(wallpaper_sys_backgrounds_path_name_get)"
+	local target_dir_path="$(wallpaper_sys_target_dir_path_name_get)"
 
-	backgrounds_path="$(wallpaper_sys_backgrounds_path_valid $backgrounds_path)"
+	target_dir_path="$(wallpaper_sys_target_dir_path_valid $target_dir_path)"
 
-	echo "$backgrounds_path"
+	echo "$target_dir_path"
 }
 
 
