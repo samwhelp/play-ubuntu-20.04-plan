@@ -3,6 +3,12 @@
 ### Head: DirBackgrounds / Model / Subject
 ##
 
+wallpaper_run_backgrounds_path () {
+
+	wallpaper_sys_backgrounds_path_name_get_valid
+
+}
+
 wallpaper_run_backgrounds_list () {
 
 	wallpaper_sys_backgrounds_list

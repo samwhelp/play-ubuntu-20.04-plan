@@ -3,6 +3,10 @@
 ### Head: DirBackgrounds / Action
 ##
 
+sub_run_backgrounds_path () {
+	wallpaper_run_backgrounds_path $@
+}
+
 sub_run_backgrounds_list () {
 	wallpaper_run_backgrounds_list
 }
