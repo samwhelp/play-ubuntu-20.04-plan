@@ -15,13 +15,11 @@ wallpaper_run_list_type () {
 	local list_type="$1"
 
 	if [ "none${list_type}" = "none" ]; then
-		wallpaper_sys_list_type_name_get
+		wallpaper_sys_list_type_name_get_valid
 		return
 	fi
 
-	list_type=$(wallpaper_sys_list_type_enum_valid $list_type)
-
-	wallpaper_sys_list_type_name_set "$list_type"
+	wallpaper_sys_list_type_name_set_valid "$list_type"
 
 }
 
