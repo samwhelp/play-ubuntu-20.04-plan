@@ -446,14 +446,94 @@ wallpaper_sys_session_toggle () {
 
 
 ################################################################################
-### Head: Boot / Model / Routine
+### Head: List / Model / Routine / BootType
 ##
 
 
+wallpaper_sys_boot_type_valid () {
+	local boot_type_enum="$(wallpaper_sys_boot_type_enum)"
+	local boot_type_to_set="$1"
+	local boot_type
+	local boot_type_valid
 
+	for boot_type in $boot_type_enum ; do
+
+		if [ "$boot_type_to_set" == "$boot_type" ] ; then
+			boot_type_valid="$boot_type_to_set"
+			break;
+		fi
+
+	done
+
+	if [ "none${boot_type_valid}" = "none" ]; then
+		boot_type_valid='backgrounds'
+	fi
+
+	echo "$boot_type_valid"
+
+}
+
+wallpaper_sys_boot_type_enum () {
+
+cat << EOF
+theme
+backgrounds
+pictures
+xfce4_backdrops
+target_dir
+EOF
+
+}
+
+wallpaper_sys_option_boot_type_file_check () {
+
+	if ! [ -e "$HOME/.config/bspwm/wallpaper/option/boot_type" ] ; then
+		mkdir -p "$HOME/.config/bspwm/wallpaper/option"
+		echo 'backgrounds' > "$HOME/.config/bspwm/wallpaper/option/boot_type"
+	fi
+
+}
+
+wallpaper_sys_boot_type_name_get () {
+
+	wallpaper_sys_option_boot_type_file_check
+
+	cat "$HOME/.config/bspwm/wallpaper/option/boot_type"
+}
+
+wallpaper_sys_boot_type_name_set () {
+
+	wallpaper_sys_option_boot_type_file_check
+
+	echo "$1" > "$HOME/.config/bspwm/wallpaper/option/boot_type"
+}
+
+
+wallpaper_sys_boot_type_name_get_valid () {
+	##echo wallpaper_sys_boot_type_name_get_valid
+
+	local boot_type="$(wallpaper_sys_boot_type_name_get)"
+
+	boot_type="$(wallpaper_sys_boot_type_valid $boot_type)"
+
+
+	echo "$boot_type"
+}
+
+wallpaper_sys_boot_type_name_set_valid () {
+	##echo wallpaper_sys_boot_type_name_set_valid
+
+	local boot_type="$1"
+
+	boot_type="$(wallpaper_sys_boot_type_valid $boot_type)"
+
+	wallpaper_sys_boot_type_name_set "$boot_type"
+
+	echo "$boot_type"
+}
 
 ##
-### Tail: Boot / Model / Routine
+### Tail: List / Model / Routine / BootType
 ################################################################################
 
 
@@ -561,6 +641,47 @@ wallpaper_boot_option_theme_get () {
 
 
 ################################################################################
+### Head: Boot / Model / Routine
+##
+
+
+
+
+##
+### Tail: Boot / Model / Routine
+################################################################################
+
+
+################################################################################
+### Head: Boot / Model / Subject / BootType
+##
+
+wallpaper_run_boot_type_enum () {
+
+	wallpaper_sys_boot_type_enum
+
+}
+
+
+wallpaper_run_boot_type () {
+
+	local boot_type="$1"
+
+	if [ "none${boot_type}" = "none" ]; then
+		wallpaper_sys_boot_type_name_get_valid
+		return
+	fi
+
+	wallpaper_sys_boot_type_name_set_valid "$boot_type"
+
+}
+
+##
+### Tail: Boot / Model / Subject / BootType
+################################################################################
+
+
+################################################################################
 ### Head: Boot / Model / Subject
 ##
 
@@ -622,11 +743,11 @@ wallpaper_boot_by_option () {
 
 
 ################################################################################
-### Head: List / Model / Routine
+### Head: List / Model / Routine / ListType
 ##
 
 
-wallpaper_sys_list_type_enum_valid () {
+wallpaper_sys_list_type_valid () {
 	local list_type_enum="$(wallpaper_sys_list_type_enum)"
 	local list_type_to_set="$1"
 	local list_type
@@ -642,7 +763,7 @@ wallpaper_sys_list_type_enum_valid () {
 	done
 
 	if [ "none${list_type_valid}" = "none" ]; then
-		list_type_valid='theme'
+		list_type_valid='backgrounds'
 	fi
 
 	echo "$list_type_valid"
@@ -685,8 +806,31 @@ wallpaper_sys_list_type_name_set () {
 }
 
 
+wallpaper_sys_list_type_name_get_valid () {
+	##echo wallpaper_sys_list_type_name_get_valid
+
+	local list_type="$(wallpaper_sys_list_type_name_get)"
+
+	list_type="$(wallpaper_sys_list_type_valid $list_type)"
+
+
+	echo "$list_type"
+}
+
+wallpaper_sys_list_type_name_set_valid () {
+	##echo wallpaper_sys_list_type_name_set_valid
+
+	local list_type="$1"
+
+	list_type="$(wallpaper_sys_list_type_valid $list_type)"
+
+	wallpaper_sys_list_type_name_set "$list_type"
+
+	echo "$list_type"
+}
+
 ##
-### Tail: List / Model / Routine
+### Tail: List / Model / Routine / ListType
 ################################################################################
 
 
@@ -708,6 +852,36 @@ wallpaper_sys_run_random_find_function_name () {
 
 ##
 ### Tail: List / Model / Routine
+################################################################################
+
+
+################################################################################
+### Head: List / Model / Subject / ListType
+##
+
+wallpaper_run_list_type_enum () {
+
+	wallpaper_sys_list_type_enum
+
+}
+
+
+wallpaper_run_list_type () {
+
+	local list_type="$1"
+
+	if [ "none${list_type}" = "none" ]; then
+		wallpaper_sys_list_type_name_get_valid
+		return
+	fi
+
+	wallpaper_sys_list_type_name_set_valid "$list_type"
+
+}
+
+
+##
+### Tail: List / Model / Subject / ListType
 ################################################################################
 
 
@@ -831,28 +1005,6 @@ wallpaper_run_random_sub_target_dir () {
 ################################################################################
 ### Head: List / Model / Subject
 ##
-
-wallpaper_run_list_type_enum () {
-
-	wallpaper_sys_list_type_enum
-
-}
-
-
-wallpaper_run_list_type () {
-
-	local list_type="$1"
-
-	if [ "none${list_type}" = "none" ]; then
-		wallpaper_sys_list_type_name_get
-		return
-	fi
-
-	list_type=$(wallpaper_sys_list_type_enum_valid $list_type)
-
-	wallpaper_sys_list_type_name_set "$list_type"
-
-}
 
 
 wallpaper_run_list () {
@@ -2383,6 +2535,14 @@ sub_run_toggle () {
 ################################################################################
 ### Head: Boot / Action
 ##
+
+sub_run_boot_type_enum () {
+	wallpaper_run_boot_type_enum
+}
+
+sub_run_boot_type () {
+	wallpaper_run_boot_type $@
+}
 
 sub_run_boot () {
 	wallpaper_run_boot

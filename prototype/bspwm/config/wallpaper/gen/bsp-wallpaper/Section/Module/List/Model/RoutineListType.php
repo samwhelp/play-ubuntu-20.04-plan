@@ -1,6 +1,6 @@
 
 ################################################################################
-### Head: List / Model / Routine
+### Head: List / Model / Routine / ListType
 ##
 
 
@@ -87,7 +87,7 @@ wallpaper_sys_list_type_name_set_valid () {
 }
 
 ##
-### Tail: List / Model / Routine
+### Tail: List / Model / Routine / ListType
 ################################################################################
 
 <?php

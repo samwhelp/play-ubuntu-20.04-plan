@@ -3,6 +3,14 @@
 ### Head: Boot / Action
 ##
 
+sub_run_boot_type_enum () {
+	wallpaper_run_boot_type_enum
+}
+
+sub_run_boot_type () {
+	wallpaper_run_boot_type $@
+}
+
 sub_run_boot () {
 	wallpaper_run_boot
 }
