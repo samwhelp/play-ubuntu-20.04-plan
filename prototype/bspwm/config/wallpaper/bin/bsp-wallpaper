@@ -973,16 +973,16 @@ wallpaper_sys_get_backgrounds_name_by_backgrounds_num () {
 
 
 ################################################################################
-### Head: DirPictures / Model / Routine / Fixed
+### Head: DirBackgrounds / Model / Routine / Fixed
 ##
 
-wallpaper_sys_pictures_fixed_select_name () {
-	current="$(wallpaper_sys_pictures_use_name_get)"
+wallpaper_sys_backgrounds_fixed_select_name () {
+	current="$(wallpaper_sys_backgrounds_use_name_get)"
 	echo "$current"
 }
 
 ##
-### Tail: DirPictures / Model / Routine / Fixed
+### Tail: DirBackgrounds / Model / Routine / Fixed
 ################################################################################
 
 
@@ -1291,16 +1291,16 @@ wallpaper_sys_get_pictures_name_by_pictures_num () {
 
 
 ################################################################################
-### Head: DirBackgrounds / Model / Routine / Fixed
+### Head: DirPictures / Model / Routine / Fixed
 ##
 
-wallpaper_sys_backgrounds_fixed_select_name () {
-	current="$(wallpaper_sys_backgrounds_use_name_get)"
+wallpaper_sys_pictures_fixed_select_name () {
+	current="$(wallpaper_sys_pictures_use_name_get)"
 	echo "$current"
 }
 
 ##
-### Tail: DirBackgrounds / Model / Routine / Fixed
+### Tail: DirPictures / Model / Routine / Fixed
 ################################################################################
 
 
@@ -1536,7 +1536,7 @@ wallpaper_sys_xfce4_backdrops_path_name_get_valid () {
 
 wallpaper_sys_xfce4_backdrops_next_select_num () {
 	local xfce4_backdrops
-	local current=$(wallpaper_sys_xfce4_backdrops_use_name_get)
+	local current="$(wallpaper_sys_xfce4_backdrops_use_name_get)"
 	local list
 	local list_count=$(wallpaper_sys_xfce4_backdrops_list_count)
 	local line=1
@@ -1606,6 +1606,20 @@ wallpaper_sys_get_xfce4_backdrops_name_by_xfce4_backdrops_num () {
 
 
 ################################################################################
+### Head: DirXfce4Backdrops / Model / Routine / Fixed
+##
+
+wallpaper_sys_xfce4_backdrops_fixed_select_name () {
+	current="$(wallpaper_sys_xfce4_backdrops_use_name_get)"
+	echo "$current"
+}
+
+##
+### Tail: DirXfce4Backdrops / Model / Routine / Fixed
+################################################################################
+
+
+################################################################################
 ### Head: DirXfce4Backdrops / Model / Subject
 ##
 
@@ -1655,6 +1669,29 @@ wallpaper_run_xfce4_backdrops_random () {
 	echo $img_file_name
 
 	wallpaper_sys_xfce4_backdrops_use "$img_file_name"
+
+
+}
+
+wallpaper_run_xfce4_backdrops_fixed () {
+
+
+	local img_file_name="$(wallpaper_sys_xfce4_backdrops_fixed_select_name)"
+
+	echo $img_file_name
+
+	wallpaper_sys_xfce4_backdrops_use "$img_file_name"
+
+
+}
+
+wallpaper_run_xfce4_backdrops_recent () {
+
+	##wallpaper_sys_run_check_fehbg_first && wallpaper_run_xfce4_backdrops_fixed
+
+	wallpaper_sys_run_check_fehbg
+
+	wallpaper_run_xfce4_backdrops_fixed
 
 
 }
@@ -1850,7 +1887,7 @@ wallpaper_sys_target_dir_path_name_set_valid () {
 
 wallpaper_sys_target_dir_next_select_num () {
 	local target_dir
-	local current=$(wallpaper_sys_target_dir_use_name_get)
+	local current="$(wallpaper_sys_target_dir_use_name_get)"
 	local list
 	local list_count=$(wallpaper_sys_target_dir_list_count)
 	local line=1
@@ -1920,6 +1957,20 @@ wallpaper_sys_get_target_dir_name_by_target_dir_num () {
 
 
 ################################################################################
+### Head: DirTargetDir / Model / Routine / Fixed
+##
+
+wallpaper_sys_target_dir_fixed_select_name () {
+	current="$(wallpaper_sys_target_dir_use_name_get)"
+	echo "$current"
+}
+
+##
+### Tail: DirTargetDir / Model / Routine / Fixed
+################################################################################
+
+
+################################################################################
 ### Head: DirTargetDir / Model / Subject
 ##
 
@@ -1981,6 +2032,28 @@ wallpaper_run_target_dir_random () {
 
 }
 
+wallpaper_run_target_dir_fixed () {
+
+
+	local img_file_name="$(wallpaper_sys_target_dir_fixed_select_name)"
+
+	echo $img_file_name
+
+	wallpaper_sys_target_dir_use "$img_file_name"
+
+
+}
+
+wallpaper_run_target_dir_recent () {
+
+	##wallpaper_sys_run_check_fehbg_first && wallpaper_run_target_dir_fixed
+
+	wallpaper_sys_run_check_fehbg
+
+	wallpaper_run_target_dir_fixed
+
+
+}
 
 ##
 ### Tail: DirTargetDir / Model / Subject
