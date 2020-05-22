@@ -53,6 +53,29 @@ wallpaper_run_xfce4_backdrops_random () {
 
 }
 
+wallpaper_run_xfce4_backdrops_fixed () {
+
+
+	local img_file_name="$(wallpaper_sys_xfce4_backdrops_fixed_select_name)"
+
+	echo $img_file_name
+
+	wallpaper_sys_xfce4_backdrops_use "$img_file_name"
+
+
+}
+
+wallpaper_run_xfce4_backdrops_recent () {
+
+	##wallpaper_sys_run_check_fehbg_first && wallpaper_run_xfce4_backdrops_fixed
+
+	wallpaper_sys_run_check_fehbg
+
+	wallpaper_run_xfce4_backdrops_fixed
+
+
+}
+
 ##
 ### Tail: DirXfce4Backdrops / Model / Subject
 ################################################################################

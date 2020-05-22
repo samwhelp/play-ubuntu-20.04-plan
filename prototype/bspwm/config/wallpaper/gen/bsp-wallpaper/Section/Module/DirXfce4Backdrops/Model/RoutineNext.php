@@ -5,7 +5,7 @@
 
 wallpaper_sys_xfce4_backdrops_next_select_num () {
 	local xfce4_backdrops
-	local current=$(wallpaper_sys_xfce4_backdrops_use_name_get)
+	local current="$(wallpaper_sys_xfce4_backdrops_use_name_get)"
 	local list
 	local list_count=$(wallpaper_sys_xfce4_backdrops_list_count)
 	local line=1
