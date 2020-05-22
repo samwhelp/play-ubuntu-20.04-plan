@@ -1191,19 +1191,19 @@ ss_breeze_dark () {
 ##
 
 sub_run_help () {
-	main_usage $@
+	main_usage "$@"
 }
 
 sub_run_version () {
-	main_version $@
+	main_version "$@"
 }
 
 sub_run_self_update () {
-	util_self_update $@
+	util_self_update "$@"
 }
 
 sub_run_self_actions () {
-	util_self_actions $@
+	util_self_actions "$@"
 }
 
 sub_run_default () {
@@ -1214,77 +1214,77 @@ sub_run_default () {
 
 sub_run_numix () {
 	#echo "sub_run_numix"
-	ss_numix $@
+	ss_numix "$@"
 }
 
 sub_run_numix_blue () {
 	#echo "sub_run_numix_blue"
-	ss_numix_blue $@
+	ss_numix_blue "$@"
 }
 
 sub_run_numix_blue_wm_breeze () {
 	#echo "sub_run_numix_blue_wm_breeze"
-	ss_numix_blue_wm_breeze $@
+	ss_numix_blue_wm_breeze "$@"
 }
 
 sub_run_numix_icon_circle () {
 	#echo "sub_run_numix_icon_circle"
-	ss_numix_icon_circle $@
+	ss_numix_icon_circle "$@"
 }
 
 sub_run_numix_blue_icon_circle () {
 	#echo "sub_run_numix_blue_icon_circle"
-	ss_numix_blue_icon_circle $@
+	ss_numix_blue_icon_circle "$@"
 }
 
 sub_run_obsidian_2_gray () {
 	#echo "sub_run_obsidian_2_gray"
-	ss_obsidian_2_gray $@
+	ss_obsidian_2_gray "$@"
 }
 
 sub_run_shades_of_gray () {
 	#echo "sub_run_shades_of_gray"
-	ss_shades_of_gray $@
+	ss_shades_of_gray "$@"
 }
 
 sub_run_fantome_wm_2bxfwm_lucy () {
 	#echo "sub_run_fantome_wm_2bxfwm_lucy"
-	ss_fantome_wm_2bxfwm_lucy $@
+	ss_fantome_wm_2bxfwm_lucy "$@"
 }
 
 sub_run_honda_super_cub_wm_chandelier () {
 	#echo "sub_run_honda_super_cub_wm_chandelier"
-	ss_honda_super_cub_wm_chandelier $@
+	ss_honda_super_cub_wm_chandelier "$@"
 }
 
 sub_run_honda_super_cub_wm_rgapsline () {
 	#echo "sub_run_honda_super_cub_wm_rgapsline"
-	ss_honda_super_cub_wm_rgapsline $@
+	ss_honda_super_cub_wm_rgapsline "$@"
 }
 
 sub_run_honda_super_cub_wm_pastel_dark () {
 	#echo "sub_run_honda_super_cub_wm_pastel_dark"
-	ss_honda_super_cub_wm_pastel_dark $@
+	ss_honda_super_cub_wm_pastel_dark "$@"
 }
 
 sub_run_sephia_wm_honda_super_cub () {
 	#echo "sub_run_sephia_wm_honda_super_cub"
-	ss_sephia_wm_honda_super_cub $@
+	ss_sephia_wm_honda_super_cub "$@"
 }
 
 sub_run_yaru_wm_numix () {
 	#echo "sub_run_yaru_wm_numix"
-	ss_yaru_wm_numix $@
+	ss_yaru_wm_numix "$@"
 }
 
 sub_run_pop_wm_numix () {
 	#echo "sub_run_pop_wm_numix"
-	ss_pop_wm_numix $@
+	ss_pop_wm_numix "$@"
 }
 
 sub_run_breeze_dark () {
 	#echo "sub_run_breeze_dark"
-	ss_breeze_dark $@
+	ss_breeze_dark "$@"
 }
 
 
@@ -1376,20 +1376,18 @@ main_run_sub_cmd () {
 
 	shift
 
-	local args="$@"
-
 	local function_name=$(sub_cmd_find_function_name "$sub_cmd")
 
 	## if ! command -v $function_name > /dev/null; then
-	if ! type -p $function_name; then
+	if ! type -p $function_name > /dev/null; then
 		util_debug_echo "[Debug] sub_cmd_function_not_exist: sub_cmd=$sub_cmd; function_name=$function_name"
 
 		echo
-		main_run_default_sub_cmd "$args"
+		main_run_default_sub_cmd "$@"
 		return 1
 	fi
 
-	"$function_name" "$args" ## run sub cmd function
+	"$function_name" "$@" ## run sub cmd function
 
 
 }
