@@ -34,6 +34,17 @@
 
 
 ################################################################################
+## Head: Keybind
+##
+
+sxhkd -c "$HOME/.config/bspwm/sxhkdrc" &
+
+##
+## Tail: Keybind
+################################################################################
+
+
+################################################################################
 ## Head: Set Cursor
 ##
 
@@ -41,6 +52,23 @@ xsetroot -cursor_name left_ptr
 
 ##
 ## Tail: Set Cursor
+################################################################################
+
+
+################################################################################
+### Head: Xresources
+##
+
+
+#test -f "$HOME/.Xresources" && xrdb -load "$HOME/.Xresources"
+#test -f "$HOME/.Xresources" && xrdb -merge "$HOME/.Xresources"
+#/usr/local/bin/xresources-load.sh
+
+xresources-load.sh
+
+
+##
+### Tail: Xresources
 ################################################################################
 
 
@@ -82,6 +110,158 @@ bspc monitor -d Term Edit Web File Misc
 
 
 ################################################################################
+## Head: Wallpaper
+##
+
+#feh --bg-scale "/usr/share/backgrounds/Spices_in_Athens_by_Makis_Chourdakis.jpg" &
+
+## move to ~/bin/wallpaper.sh
+wallpaper.sh &
+
+##
+## Tail: Wallpaper
+################################################################################
+
+
+################################################################################
+## Head: Compton
+##
+
+## compton
+#compton &
+#compton --config ~/.config/compton/compton.conf &
+compton --config "$HOME/.config/bspwm/compton/compton.conf" &
+
+##
+## Tail: Compton
+################################################################################
+
+
+################################################################################
+### Head: Network
+##
+
+## network manager applet
+#sleep 1 &&
+nm-applet &
+## Note: refer /etc/xdg/autostart/nm-applet.desktop
+
+
+## blueman-applet (Package: blueman)
+#blueman-applet
+## Note: refer /etc/xdg/autostart/blueman.desktop
+
+
+##
+### Tail: Network
+################################################################################
+
+
+################################################################################
+### Head: Volume
+##
+
+
+## volumeicon (Package: volumeicon-alsa)
+#volumeicon &
+
+
+## mate-volume-control-status-icon (Package: mate-media)
+mate-volume-control-status-icon &
+
+##
+### Tail: Volume
+################################################################################
+
+
+################################################################################
+### Head: Panel
+##
+
+## stalonetray
+#stalonetray &
+
+## Panel
+
+## tint2
+#tint2 &
+#tint2 -c "$HOME/.config/tint2/tint2rc" &
+tint2 -c "$HOME/.config/bspwm/tint2/tint2rc" &
+
+## xfce4-panel
+#xfce4-panel &
+
+## fbpanel
+#fbpanel &
+
+## lxpanel
+#lxpanel &
+
+## lxqt-panel
+#lxqt-panel &
+
+## cairo-dock
+#cairo-dock &
+
+##
+### Tail: Panel
+################################################################################
+
+
+################################################################################
+### Head: Policykit Agent
+##
+
+## [policykit-1-gnome]
+## $ dpkg -L policykit-1-gnome | grep desktop
+## /etc/xdg/autostart/polkit-gnome-authentication-agent-1.desktop
+## $ grep '^Exec=' $(dpkg -L policykit-1-gnome | grep desktop)
+## Exec=/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
+## $ grep '^Exec=' $(dpkg -L policykit-1-gnome | grep desktop) | cut -d '=' -f 2
+## /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
+
+/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
+
+
+## [lxqt-policykit]
+## $ dpkg -L lxqt-policykit | grep desktop
+## /etc/xdg/autostart/lxqt-policykit-agent.desktop
+## $ grep '^Exec=' $(dpkg -L lxqt-policykit | grep desktop)
+## Exec=lxqt-policykit-agent
+## $ grep '^Exec=' $(dpkg -L lxqt-policykit | grep desktop) | cut -d '=' -f 2
+## lxqt-policykit-agent
+
+#lxqt-policykit-agent &
+
+
+## How to test:
+## Way 1:
+## Use [galternatives](https://manpages.ubuntu.com/manpages/bionic/en/man1/galternatives.1.html).
+## Package: [galternatives](https://packages.ubuntu.com/bionic/galternatives)
+## Way 2:
+## $ pkexec ls
+
+##
+### Tail: Policykit Agent
+################################################################################
+
+
+################################################################################
+### Head: Screen Saver
+##
+
+
+## xscreensaver
+## /etc/xdg/autostart/xscreensaver.desktop
+/usr/share/xscreensaver/xscreensaver-wrapper.sh -no-splash &
+
+
+##
+### Tail: Screen Saver
+################################################################################
+
+
+################################################################################
 ### Head: Rule
 ##
 
@@ -114,17 +294,8 @@ bspc rule -a mpv desktop='^5' follow=on
 bspc rule -a vlc desktop='^5' follow=on
 bspc rule -a smplayer desktop='^5' follow=on
 
+
+
 ##
 ### Tail: Rule
-################################################################################
-
-
-################################################################################
-## Head: Start
-##
-
-bsp-autostart
-
-##
-## Tail: Start
 ################################################################################

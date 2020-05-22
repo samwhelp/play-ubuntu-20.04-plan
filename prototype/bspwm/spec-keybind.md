@@ -10,8 +10,7 @@
 * [Window](#window)
 * [Layout](#layout)
 * [Volume](#volume)
-* [Compton](#compton)
-* [Wallpaper](#wallpaper)
+
 
 ## Link
 
@@ -197,10 +196,6 @@ On Floating or Tiled
 
 ## Layout
 
-| Key | Description |
-| --- | --- |
-| `Win + w` | Alternate between the tiled and monocle layout |
-
 
 | Key | Description |
 | --- | --- |
@@ -245,18 +240,3 @@ On Floating or Tiled
 | `XF86AudioMute` | Volume Toggle Mute |
 | `XF86AudioLowerVolume` | Volume Decrease |
 | `XF86AudioRaiseVolume` | Volume Increase |
-
-
-## Compton
-
-| Key | Description |
-| --- | --- |
-| `Alt + w` | Compton Toggle |
-
-
-## Wallpaper
-
-| Key | Description |
-| --- | --- |
-| `Alt + e` | Next Wallpaper |
-| `Alt + r` | Random Wallpaper |
