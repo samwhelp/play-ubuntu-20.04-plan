@@ -1,0 +1,3135 @@
+#!/usr/bin/env bash
+
+
+################################################################################
+### Head: Link
+##
+
+# * https://github.com/samwhelp/skel-project-plan/blob/gh-pages/demo/sh/standalone/bin/demo-ctrl
+# * https://github.com/samwhelp/play-ubuntu-20.04-plan/blob/master/prototype/bspwm/config/wallpaper/bin/bsp-wallpaper
+
+##
+### Tail: Link
+################################################################################
+
+
+################################################################################
+### Head: Note
+##
+
+##
+
+##
+### Tail: Note
+################################################################################
+
+
+################################################################################
+### Head: Init
+##
+##set -e ## for Exit immediately if a command exits with a non-zero status.
+THE_BASE_DIR_PATH=$(cd -P -- "$(dirname -- "$0")" && pwd -P)
+THE_CMD_FILE_NAME=$(basename $0)
+##
+### Tail: Init
+################################################################################
+
+
+################################################################################
+### Head: Util / Debug
+##
+
+util_debug_echo () {
+	if is_debug; then
+		echo "$@" 1>&2;
+	fi
+}
+
+##
+### Head: Util / Debug
+################################################################################
+
+
+################################################################################
+### Head: Base
+##
+find_dir_path () {
+	if [ ! -d $(dirname -- "$1") ]; then
+		dirname -- "$1"
+		return 1
+	fi
+	echo $(cd -P -- "$(dirname -- "$1")" && pwd -P)
+}
+
+##THIS_BASE_DIR_PATH=$(find_dir_path $0)
+
+## $ export DEBUG_COMPTON_CTRL=true
+is_debug () {
+	if [ "$DEBUG_COMPTON_CTRL" = "true" ]; then
+		return 0
+	fi
+
+	return 1
+}
+
+is_not_debug () {
+	! is_debug
+}
+
+base_var_init () {
+
+	#THE_PLAN_DIR_PATH=$(find_dir_path "$THE_BASE_DIR_PATH/../.")
+	THE_PLAN_DIR_PATH=$(find_dir_path "$THE_BASE_DIR_PATH/.")
+
+
+	THE_CMD_VERSION='0.1'
+
+	THE_CMD_DIR_PATH="${THE_BASE_DIR_PATH}"
+
+	if [ "none${THE_CMD_FILE_NAME}" = 'none' ]; then
+		THE_CMD_FILE_NAME="bsp-wallpaper"
+	fi
+
+	THE_CMD_FILE_PATH="${THE_CMD_DIR_PATH}/$THE_CMD_FILE_NAME"
+
+	## https://github.com/samwhelp/play-ubuntu-20.04-plan/blob/master/prototype/bspwm/config/wallpaper/bin/bsp-wallpaper
+	THE_SELF_UPDATE_URL='https://raw.githubusercontent.com/samwhelp/play-ubuntu-20.04-plan/master/prototype/bspwm/config/wallpaper/bin/bsp-wallpaper'
+
+
+	THE_TMP_DIR_PATH="/tmp"
+
+
+	THE_ASSET_DIR_NAME="asset"
+	THE_ASSET_DIR_PATH="$THE_PLAN_DIR_PATH/$THE_ASSET_DIR_NAME"
+
+	THE_VAR_DIR_NAME="var"
+	THE_VAR_DIR_PATH="$THE_PLAN_DIR_PATH/$THE_VAR_DIR_NAME"
+
+
+	THE_PROFILE_DIR_NAME=".${THE_CMD_FILE_NAME}-profile"
+	THE_PROFILE_DIR_PATH="$HOME/$THE_PROFILE_DIR_NAME"
+
+	THE_PROJECT_DIR_NAME="$THE_CMD_FILE_NAME"
+	THE_PROJECT_DIR_PATH="$HOME/.local/share/$THE_PROJECT_DIR_NAME"
+
+	THE_CONFIG_DIR_NAME="$THE_CMD_FILE_NAME"
+	THE_CONFIG_DIR_PATH="$HOME/.config/$THE_CONFIG_DIR_NAME"
+
+	THE_CACHE_DIR_NAME="$THE_CMD_FILE_NAME"
+	THE_CACHE_DIR_PATH="$HOME/.cache/$THE_CACHE_DIR_NAME"
+
+
+}
+
+base_var_dump () {
+
+	is_not_debug && return 0
+
+	util_debug_echo
+	util_debug_echo "################################################################################"
+	util_debug_echo "### Head: var_dump"
+	util_debug_echo "##"
+	util_debug_echo "#"
+
+
+	util_debug_echo "THE_PLAN_DIR_PATH=$THE_PLAN_DIR_PATH"
+
+	util_debug_echo "THE_CMD_FILE_NAME=$THE_CMD_FILE_NAME"
+	util_debug_echo "THE_CMD_FILE_PATH=$THE_CMD_FILE_PATH"
+	util_debug_echo "THE_CMD_DIR_PATH=$THE_CMD_DIR_PATH"
+
+	util_debug_echo "THE_SELF_UPDATE_URL=$THE_SELF_UPDATE_URL"
+
+
+	util_debug_echo "THE_TMP_DIR_PATH=$THE_TMP_DIR_PATH"
+
+
+	util_debug_echo "THE_ASSET_DIR_NAME=$THE_ASSET_DIR_NAME"
+	util_debug_echo "THE_ASSET_DIR_PATH=$THE_ASSET_DIR_PATH"
+
+	util_debug_echo "THE_VAR_DIR_NAME=$THE_VAR_DIR_NAME"
+	util_debug_echo "THE_VAR_DIR_PATH=$THE_VAR_DIR_PATH"
+
+
+
+
+	util_debug_echo "THE_PROFILE_DIR_NAME=$THE_PROFILE_DIR_NAME"
+	util_debug_echo "THE_PROFILE_DIR_PATH=$THE_PROFILE_DIR_PATH"
+
+	util_debug_echo "THE_PROJECT_DIR_NAME=$THE_PROJECT_DIR_NAME"
+	util_debug_echo "THE_PROJECT_DIR_PATH=$THE_PROJECT_DIR_PATH"
+
+	util_debug_echo "THE_CONFIG_DIR_NAME=$THE_CONFIG_DIR_NAME"
+	util_debug_echo "THE_CONFIG_DIR_PATH=$THE_CONFIG_DIR_PATH"
+
+	util_debug_echo "THE_CACHE_DIR_NAME=$THE_CACHE_DIR_NAME"
+	util_debug_echo "THE_CACHE_DIR_PATH=$THE_CACHE_DIR_PATH"
+
+
+
+	util_debug_echo "#"
+	util_debug_echo "##"
+	util_debug_echo "### Tail: var_dump"
+	util_debug_echo "################################################################################"
+	util_debug_echo
+}
+
+
+base_var_init
+
+base_var_dump
+
+##
+### Tail: Base
+################################################################################
+
+
+################################################################################
+### Head: Util / SubCmd
+##
+
+sub_cmd_find_function_name () {
+	echo "sub_run_$1"
+}
+
+##
+### Tail: Util / SubCmd
+################################################################################
+
+
+################################################################################
+### Head: Util / Command
+##
+
+util_check_command_exists () {
+	local function_name="$1"
+
+	##if ! command -v $function_name > /dev/null; then
+	if ! type -p $function_name > /dev/null; then
+		util_debug_echo "[Debug] Command_Not_Exist: function_name=$function_name"
+		return 1
+	fi
+
+	return 0
+}
+
+util_open_dir () {
+
+	local target_dir_path="$1"
+
+	if util_check_command_exists 'pcmanfm-qt'; then
+		echo "pcmanfm-qt $target_dir_path"
+		pcmanfm-qt "$target_dir_path"
+	elif util_check_command_exists 'exo-open'; then
+		echo "exo-open $target_dir_path"
+		exo-open "$target_dir_path"
+	elif util_check_command_exists 'xdg-open'; then
+		echo "xdg-open $target_dir_path"
+		xdg-open "$target_dir_path"
+	else
+		echo "$target_dir_path"
+		return 1
+	fi
+}
+
+
+##
+### Head: Util / Command
+################################################################################
+
+
+################################################################################
+### Head: App / Util / Self_Update
+##
+
+util_make_bin_dir () {
+	mkdir -p "$HOME/bin"
+}
+
+util_make_tmp_dir () {
+	THE_TMP_DIR_PATH="/tmp/tmp.$$.$RANDOM"
+	mkdir "$THE_TMP_DIR_PATH"
+}
+
+util_self_update_download_to_tmp_dir () {
+
+	local tmp_file_path="${THE_TMP_DIR_PATH}/${THE_CMD_FILE_NAME}"
+
+	wget -c "$THE_SELF_UPDATE_URL" -O "$tmp_file_path"
+
+}
+
+util_self_update_install_from_tmp_dir () {
+
+	local tmp_file_path="${THE_TMP_DIR_PATH}/${THE_CMD_FILE_NAME}"
+
+	echo "install -m 755 $tmp_file_path $THE_CMD_FILE_PATH"
+	install -m 755 "$tmp_file_path" "$THE_CMD_FILE_PATH"
+
+}
+
+util_self_update_check_cmd_exists () {
+
+	if ! [ -f "$THE_CMD_FILE_PATH" ]; then ## file not exists
+		return 0
+	fi
+
+
+	echo "File is exists:" "$THE_CMD_FILE_PATH"
+	echo
+
+	echo "Try to backup:"
+	echo
+
+	local now=$(date +%Y%m%d_%s)
+	local bak_dir_path="${THE_CMD_FILE_PATH}.bak"
+	local bak_file_path="${bak_dir_path}/${THE_CMD_FILE_NAME}.bak.$now"
+
+	mkdir -p $bak_dir_path
+
+	mv -v "$THE_CMD_FILE_PATH" "${bak_file_path}"
+
+	if [ "$?" != "0" ]; then
+		echo
+		echo 'Backup Failure!'
+		exit 1
+	fi
+
+	echo
+
+	return 0
+}
+
+util_self_update_print_version () {
+	echo
+	echo "Current Version:"
+
+	"$THE_CMD_FILE_PATH" version
+}
+
+util_self_update () {
+
+	util_make_bin_dir
+
+	util_make_tmp_dir
+
+	util_self_update_download_to_tmp_dir
+
+	util_self_update_check_cmd_exists && util_self_update_install_from_tmp_dir
+
+
+	util_self_update_print_version
+
+}
+
+
+main_version () {
+	echo $THE_CMD_VERSION
+}
+
+util_self_actions () {
+	grep '^sub_run' "${THE_CMD_FILE_PATH}" | cut -d ' ' -f 1 | awk -F 'sub_run_' '{print $2}' | sort -u
+}
+
+##
+### Tail: App / Util / Self_Update
+################################################################################
+
+
+################################################################################
+### Head: Core / Util
+##
+
+## * https://dragonspring.pixnet.net/blog/post/32935895
+
+function util_random_range()
+{
+
+	if [ "$#" -lt "2" ]; then
+		echo "Usage: random_range <low> <high>"
+		return
+	fi
+	low=$1
+	##range=$(($2 - $1))
+	range=$(($2 - $1 + 1))
+	## Todo: range=0
+	echo $(($low+$RANDOM % $range))
+}
+
+##
+### Tail: Core / Util
+################################################################################
+
+
+################################################################################
+### Head: Core / Model / Routine / Feh
+##
+
+wallpaper_sys_remove_fehbg () {
+	rm -f "$HOME/.fehbg"
+}
+
+wallpaper_sys_use () {
+	local img_file_path="$1"
+	feh --bg-scale "$img_file_path" &
+}
+
+wallpaper_sys_view () {
+	local img_file_path="$1"
+	feh "$img_file_path" &
+}
+
+##
+### Tail: Core / Model / Routine / Feh
+################################################################################
+
+
+################################################################################
+### Head: Core / Model / Routine / Fehbg
+##
+
+wallpaper_sys_run_check_fehbg () {
+
+	local load_last="$HOME/.fehbg"
+
+	if [ -x "$HOME/.fehbg" ]; then
+		##echo 1
+		$load_last
+		exit 0
+	fi
+
+	##echo 2
+
+}
+
+wallpaper_sys_run_check_fehbg_first () {
+
+	local load_last="$HOME/.fehbg"
+
+	if [ -x "$HOME/.fehbg" ]; then
+		##echo 1
+		$load_last
+		return 1
+	fi
+
+	##echo 2
+
+	return 0
+}
+
+
+wallpaper_sys_use_check_fehbg () {
+	wallpaper_sys_run_check_fehbg
+
+	local img_file_path="$1"
+	wallpaper_sys_use "$img_file_path"
+}
+
+
+wallpaper_sys_use_check_fehbg_first () {
+
+	local img_file_path="$1"
+
+	wallpaper_sys_run_check_fehbg_first && wallpaper_sys_use "$img_file_path"
+
+}
+
+wallpaper_sys_use_check_fehbg_first_v2 () {
+
+	local img_file_path="$1"
+
+	if wallpaper_sys_run_check_fehbg_first; then
+		wallpaper_sys_use "$img_file_path"
+	fi
+}
+
+wallpaper_sys_use_check_fehbg_first_v3 () {
+
+	local img_file_path="$1"
+
+	if ! wallpaper_sys_run_check_fehbg_first; then
+		return 1
+	fi
+
+	wallpaper_sys_use "$img_file_path"
+}
+
+
+
+##
+### Tail: Core / Model / Routine / Fehbg
+################################################################################
+
+
+################################################################################
+### Head: Core / Model / Subject
+##
+
+wallpaper_run_use () {
+	local img_file_path="$@"
+	if ! [ -f "$img_file_path" ]; then
+		echo "File_Not_Exists: ${img_file_path}"
+		return 1
+	fi
+
+	wallpaper_sys_use "$img_file_path"
+}
+
+##
+### Tail: Core / Model / Subject
+################################################################################
+
+
+################################################################################
+### Head: Session / Model / Routine / Feh
+##
+
+wallpaper_sys_session_stop () {
+	killall -q -9 feh
+}
+
+wallpaper_sys_session_start () {
+
+	wallpaper_sys_remove_fehbg
+
+	##bsp-wallpaper-start
+	wallpaper_run_boot
+}
+
+wallpaper_sys_session_restart () {
+
+	wallpaper_sys_session_stop
+
+	wallpaper_sys_session_start
+
+}
+
+wallpaper_sys_session_reconfigure () {
+	pkill -USR1 -x feh
+
+}
+
+wallpaper_sys_session_toggle () {
+	if pgrep -x 'wallpaper' > /dev/null; then
+		wallpaper_sys_session_stop
+	else
+		wallpaper_sys_session_start
+	fi
+}
+
+##
+### Tail: Session / Model / Routine / Feh
+################################################################################
+
+
+################################################################################
+### Head: DirBackgrounds / Model / Routine
+##
+
+wallpaper_sys_backgrounds_list () {
+	local target_dir_path="$(wallpaper_sys_backgrounds_path_name_get_valid)"
+	cd "$target_dir_path"
+	##ls -1 {*.jpg,*.png}
+	## https://stackoverflow.com/questions/48633997/grep-for-image-urls
+	## egrep -o 'src=".*(\.png|\.jpg)' index.html
+	## grep -E -o 'src=".*(\.png|\.jpg)' index.html
+	##ls -1 | grep -E -o '.*(\.png|\.jpg|\.jpeg|\.svg)'
+	ls -1 | grep -E -o '.*(\.png|\.jpg|\.jpeg)'
+	cd "$OLDPWD"
+}
+
+wallpaper_sys_backgrounds_list_count () {
+	wallpaper_sys_backgrounds_list | wc -l
+}
+
+wallpaper_sys_backgrounds_use () {
+
+	local img_file_name="$@"
+
+	if [ "none${img_file_name}" = "none" ]; then
+		echo 'Need {img_file_name}'
+		return
+	fi
+
+	local target_dir_path="$(wallpaper_sys_backgrounds_path_name_get_valid)"
+	local img_file_path="${target_dir_path}/${img_file_name}"
+
+	if ! [ -f "$img_file_path" ]; then
+		echo "File_Not_Exists: ${img_file_path}"
+		return 1
+	fi
+
+	wallpaper_sys_backgrounds_use_name_set "$img_file_name"
+
+	wallpaper_sys_use "$img_file_path"
+}
+
+
+wallpaper_sys_backgrounds_view () {
+
+	local img_file_name="$@"
+
+	if [ "none${img_file_name}" = "none" ]; then
+		echo 'Need {img_file_name}'
+		return
+	fi
+
+	local target_dir_path="$(wallpaper_sys_backgrounds_path_name_get_valid)"
+	local img_file_path="${target_dir_path}/${img_file_name}"
+
+	if ! [ -f "$img_file_path" ]; then
+		echo "File_Not_Exists: ${img_file_path}"
+		return 1
+	fi
+
+	wallpaper_sys_view "$img_file_path"
+}
+
+
+wallpaper_sys_backgrounds_open_dir () {
+
+	local target_dir_path="$(wallpaper_sys_backgrounds_path_name_get_valid)"
+
+	util_open_dir "$target_dir_path"
+}
+
+
+wallpaper_sys_option_backgrounds_file_check () {
+
+	if ! [ -e "$HOME/.config/bspwm/wallpaper/option/dir_backgrounds/use" ] ; then
+		mkdir -p "$HOME/.config/bspwm/wallpaper/option/dir_backgrounds"
+		echo 'Frozen_sunset_on_the_lake_by_Manuel_Arslanyan.jpg' > "$HOME/.config/bspwm/wallpaper/option/dir_backgrounds/use"
+	fi
+
+}
+
+wallpaper_sys_backgrounds_use_name_get () {
+
+	wallpaper_sys_option_backgrounds_file_check
+
+	cat "$HOME/.config/bspwm/wallpaper/option/dir_backgrounds/use"
+}
+
+wallpaper_sys_backgrounds_use_name_set () {
+
+	wallpaper_sys_option_backgrounds_file_check
+
+	echo "$1" > "$HOME/.config/bspwm/wallpaper/option/dir_backgrounds/use"
+}
+
+##
+### Tail: DirBackgrounds / Model / Routine
+################################################################################
+
+
+################################################################################
+### Head: DirBackgrounds / Model / Routine / Path
+##
+
+wallpaper_sys_backgrounds_path_valid () {
+
+	local target_dir_path_to_set="$1"
+	local target_dir_path_valid
+
+	if [ -d "$target_dir_path_to_set" ] ; then
+		target_dir_path_valid="$target_dir_path_to_set"
+	else
+		target_dir_path_valid="$HOME/Pictures"
+	fi
+
+
+	if [ "none${target_dir_path_valid}" = "none" ]; then
+		target_dir_path_valid="$HOME/Pictures"
+	fi
+
+	echo "$target_dir_path_valid"
+
+}
+
+wallpaper_sys_backgrounds_path_name_get () {
+	echo '/usr/share/backgrounds'
+}
+
+wallpaper_sys_backgrounds_path_name_get_valid () {
+
+	local target_dir_path="$(wallpaper_sys_backgrounds_path_name_get)"
+
+	target_dir_path="$(wallpaper_sys_target_dir_path_valid $target_dir_path)"
+
+	echo "$target_dir_path"
+}
+
+
+
+##
+### Tail: DirBackgrounds / Model / Routine / Path
+################################################################################
+
+
+################################################################################
+### Head: DirBackgrounds / Model / Routine / Next
+##
+
+wallpaper_sys_backgrounds_next_select_num () {
+	local backgrounds
+	local current="$(wallpaper_sys_backgrounds_use_name_get)"
+	local list
+	local list_count=$(wallpaper_sys_backgrounds_list_count)
+	local line=1
+	local next=1
+
+	list=$(wallpaper_sys_backgrounds_list)
+
+
+	for backgrounds in $list ; do
+		##echo $line
+
+		if [ "$current" == "$backgrounds" ] ; then
+			#echo $backgrounds
+			break;
+		fi
+
+		line=$(($line + 1))
+	done
+
+	next=$(($line + 1))
+
+
+	if [ $next -gt $list_count ]; then
+		next=1
+	fi
+
+	echo $next
+
+}
+
+
+wallpaper_sys_backgrounds_next_select_name () {
+	line=$(wallpaper_sys_backgrounds_next_select_num)
+	wallpaper_sys_get_backgrounds_name_by_backgrounds_num "$line"
+}
+
+##
+### Tail: DirBackgrounds / Model / Routine / Next
+################################################################################
+
+
+################################################################################
+### Head: DirBackgrounds / Model / Routine / Random
+##
+
+wallpaper_sys_backgrounds_random_select_num () {
+	local start=1
+	local end=$(wallpaper_sys_backgrounds_list_count)
+
+	util_random_range "$start" "$end"
+}
+
+wallpaper_sys_backgrounds_random_select_name () {
+	line=$(wallpaper_sys_backgrounds_random_select_num)
+	wallpaper_sys_get_backgrounds_name_by_backgrounds_num "$line"
+}
+
+wallpaper_sys_get_backgrounds_name_by_backgrounds_num () {
+	local line="$1"
+	wallpaper_sys_backgrounds_list | awk "FNR == $line {print}"
+}
+
+##
+### Tail: DirBackgrounds / Model / Routine / Random
+################################################################################
+
+
+################################################################################
+### Head: DirBackgrounds / Model / Routine / Fixed
+##
+
+wallpaper_sys_backgrounds_fixed_select_name () {
+	current="$(wallpaper_sys_backgrounds_use_name_get)"
+	echo "$current"
+}
+
+##
+### Tail: DirBackgrounds / Model / Routine / Fixed
+################################################################################
+
+
+################################################################################
+### Head: DirBackgrounds / Model / Subject
+##
+
+wallpaper_run_backgrounds_path () {
+
+	wallpaper_sys_backgrounds_path_name_get_valid
+
+}
+
+wallpaper_run_backgrounds_list () {
+
+	wallpaper_sys_backgrounds_list
+}
+
+wallpaper_run_backgrounds_use () {
+
+	wallpaper_sys_backgrounds_use $@
+
+}
+
+wallpaper_run_backgrounds_view () {
+
+	wallpaper_sys_backgrounds_view $@
+
+}
+
+wallpaper_run_backgrounds_open_dir () {
+
+	wallpaper_sys_backgrounds_open_dir
+
+}
+
+wallpaper_run_backgrounds_next () {
+
+	local img_file_name="$(wallpaper_sys_backgrounds_next_select_name)"
+
+	echo $img_file_name
+
+	wallpaper_sys_backgrounds_use "$img_file_name"
+
+}
+
+wallpaper_run_backgrounds_random () {
+
+
+	local img_file_name="$(wallpaper_sys_backgrounds_random_select_name)"
+
+	echo $img_file_name
+
+	wallpaper_sys_backgrounds_use "$img_file_name"
+
+
+}
+
+wallpaper_run_backgrounds_fixed () {
+
+
+	local img_file_name="$(wallpaper_sys_backgrounds_fixed_select_name)"
+
+	echo $img_file_name
+
+	wallpaper_sys_backgrounds_use "$img_file_name"
+
+
+}
+
+wallpaper_run_backgrounds_recent () {
+
+	##wallpaper_sys_run_check_fehbg_first && wallpaper_run_backgrounds_fixed
+
+	wallpaper_sys_run_check_fehbg
+
+	wallpaper_run_backgrounds_fixed
+
+
+}
+
+##
+### Tail: DirBackgrounds / Model / Subject
+################################################################################
+
+
+################################################################################
+### Head: DirPictures / Model / Routine
+##
+
+wallpaper_sys_pictures_list () {
+	local target_dir_path="$(wallpaper_sys_pictures_path_name_get_valid)"
+	mkdir -p "$target_dir_path"
+	cd "$target_dir_path"
+	##ls -1 {*.jpg,*.png}
+	##ls -1 | grep -E -o '.*(\.png|\.jpg|\.jpeg|\.svg)'
+	ls -1 | grep -E -o '.*(\.png|\.jpg|\.jpeg)'
+	cd "$OLDPWD"
+}
+
+wallpaper_sys_pictures_list_count () {
+	wallpaper_sys_pictures_list | wc -l
+}
+
+wallpaper_sys_pictures_use () {
+
+	local img_file_name="$@"
+
+	if [ "none${img_file_name}" = "none" ]; then
+		echo 'Need {img_file_name}'
+		return
+	fi
+
+	local target_dir_path="$(wallpaper_sys_pictures_path_name_get_valid)"
+	local img_file_path="${target_dir_path}/${img_file_name}"
+
+	if ! [ -f "$img_file_path" ]; then
+		echo "File_Not_Exists: ${img_file_path}"
+		return 1
+	fi
+
+	wallpaper_sys_pictures_use_name_set "$img_file_name"
+
+	wallpaper_sys_use "$img_file_path"
+}
+
+wallpaper_sys_pictures_view () {
+
+	local img_file_name="$@"
+
+	if [ "none${img_file_name}" = "none" ]; then
+		echo 'Need {img_file_name}'
+		return
+	fi
+
+	local target_dir_path="$(wallpaper_sys_pictures_path_name_get_valid)"
+	local img_file_path="${target_dir_path}/${img_file_name}"
+
+	if ! [ -f "$img_file_path" ]; then
+		echo "File_Not_Exists: ${img_file_path}"
+		return 1
+	fi
+
+	wallpaper_sys_view "$img_file_path"
+}
+
+wallpaper_sys_pictures_open_dir () {
+
+	local target_dir_path="$(wallpaper_sys_pictures_path_name_get_valid)"
+
+	util_open_dir "$target_dir_path"
+}
+
+
+
+
+wallpaper_sys_option_pictures_file_check () {
+
+	if ! [ -e "$HOME/.config/bspwm/wallpaper/option/dir_pictures/use" ] ; then
+		mkdir -p "$HOME/.config/bspwm/wallpaper/option/dir_pictures"
+		echo 'wallpaper.jpg' > "$HOME/.config/bspwm/wallpaper/option/dir_pictures/use"
+	fi
+
+}
+
+wallpaper_sys_pictures_use_name_get () {
+
+	wallpaper_sys_option_pictures_file_check
+
+	cat "$HOME/.config/bspwm/wallpaper/option/dir_pictures/use"
+}
+
+wallpaper_sys_pictures_use_name_set () {
+
+	wallpaper_sys_option_pictures_file_check
+
+	echo "$1" > "$HOME/.config/bspwm/wallpaper/option/dir_pictures/use"
+}
+
+
+
+
+##
+### Tail: DirPictures / Model / Routine
+################################################################################
+
+
+################################################################################
+### Head: DirPictures / Model / Routine / Path
+##
+
+wallpaper_sys_pictures_path_valid () {
+
+	local target_dir_path_to_set="$1"
+	local target_dir_path_valid
+
+	if [ -d "$target_dir_path_to_set" ] ; then
+		target_dir_path_valid="$target_dir_path_to_set"
+	else
+		target_dir_path_valid="/usr/share/backgrounds"
+	fi
+
+
+	if [ "none${target_dir_path_valid}" = "none" ]; then
+		target_dir_path_valid="/usr/share/backgrounds"
+	fi
+
+	echo "$target_dir_path_valid"
+
+}
+
+wallpaper_sys_pictures_path_name_get () {
+	echo "$HOME/Pictures/Wallpaper"
+}
+
+wallpaper_sys_pictures_path_name_get_valid () {
+
+	local target_dir_path="$(wallpaper_sys_pictures_path_name_get)"
+
+	target_dir_path="$(wallpaper_sys_target_dir_path_valid $target_dir_path)"
+
+	echo "$target_dir_path"
+}
+
+
+
+##
+### Tail: DirPictures / Model / Routine / Path
+################################################################################
+
+
+################################################################################
+### Head: DirPictures / Model / Routine / Next
+##
+
+wallpaper_sys_pictures_next_select_num () {
+	local pictures
+	local current="$(wallpaper_sys_pictures_use_name_get)"
+	local list
+	local list_count=$(wallpaper_sys_pictures_list_count)
+	local line=1
+	local next=1
+
+	list=$(wallpaper_sys_pictures_list)
+
+
+	for pictures in $list ; do
+		##echo $line
+
+		if [ "$current" == "$pictures" ] ; then
+			#echo $pictures
+			break;
+		fi
+
+		line=$(($line + 1))
+	done
+
+	next=$(($line + 1))
+
+
+	if [ $next -gt $list_count ]; then
+		next=1
+	fi
+
+	echo $next
+
+}
+
+
+wallpaper_sys_pictures_next_select_name () {
+	line=$(wallpaper_sys_pictures_next_select_num)
+	wallpaper_sys_get_pictures_name_by_pictures_num "$line"
+}
+
+
+##
+### Tail: DirPictures / Model / Routine / Next
+################################################################################
+
+
+################################################################################
+### Head: DirPictures / Model / Routine / Random
+##
+
+wallpaper_sys_pictures_random_select_num () {
+	local start=1
+	local end=$(wallpaper_sys_pictures_list_count)
+
+	util_random_range "$start" "$end"
+}
+
+wallpaper_sys_pictures_random_select_name () {
+	line=$(wallpaper_sys_pictures_random_select_num)
+	wallpaper_sys_get_pictures_name_by_pictures_num "$line"
+}
+
+
+wallpaper_sys_get_pictures_name_by_pictures_num () {
+	local line="$1"
+	wallpaper_sys_pictures_list | awk "FNR == $line {print}"
+}
+
+##
+### Tail: DirPictures / Model / Routine / Random
+################################################################################
+
+
+################################################################################
+### Head: DirPictures / Model / Routine / Fixed
+##
+
+wallpaper_sys_pictures_fixed_select_name () {
+	current="$(wallpaper_sys_pictures_use_name_get)"
+	echo "$current"
+}
+
+##
+### Tail: DirPictures / Model / Routine / Fixed
+################################################################################
+
+
+################################################################################
+### Head: DirPictures / Model / Subject
+##
+
+wallpaper_run_pictures_path () {
+
+	wallpaper_sys_pictures_path_name_get_valid
+
+}
+
+wallpaper_run_pictures_list () {
+
+	wallpaper_sys_pictures_list
+}
+
+wallpaper_run_pictures_use () {
+
+	wallpaper_sys_pictures_use $@
+
+}
+
+wallpaper_run_pictures_view () {
+
+	wallpaper_sys_pictures_view $@
+
+}
+
+wallpaper_run_pictures_open_dir () {
+
+	wallpaper_sys_pictures_open_dir
+}
+
+wallpaper_run_pictures_next () {
+
+	local img_file_name="$(wallpaper_sys_pictures_next_select_name)"
+
+	echo $img_file_name
+
+	wallpaper_sys_pictures_use "$img_file_name"
+
+}
+
+wallpaper_run_pictures_random () {
+
+
+	local img_file_name="$(wallpaper_sys_pictures_random_select_name)"
+
+	echo $img_file_name
+
+	wallpaper_sys_pictures_use "$img_file_name"
+
+
+}
+
+wallpaper_run_pictures_fixed () {
+
+
+	local img_file_name="$(wallpaper_sys_pictures_fixed_select_name)"
+
+	echo $img_file_name
+
+	wallpaper_sys_pictures_use "$img_file_name"
+
+
+}
+
+wallpaper_run_pictures_recent () {
+
+	##wallpaper_sys_run_check_fehbg_first && wallpaper_run_pictures_fixed
+
+	wallpaper_sys_run_check_fehbg
+
+	wallpaper_run_pictures_fixed
+
+
+}
+
+##
+### Tail: DirPictures / Model / Subject
+################################################################################
+
+
+################################################################################
+### Head: DirXfce4Backdrops / Model / Routine
+##
+
+
+wallpaper_sys_xfce4_backdrops_list () {
+	local target_dir_path="$(wallpaper_sys_xfce4_backdrops_path_name_get_valid)"
+	mkdir -p "$target_dir_path"
+	cd "$target_dir_path"
+	##ls -1 {*.jpg,*.png}
+	##ls -1 | grep -E -o '.*(\.png|\.jpg|\.jpeg|\.svg)'
+	ls -1 | grep -E -o '.*(\.png|\.jpg|\.jpeg)'
+	cd "$OLDPWD"
+}
+
+wallpaper_sys_xfce4_backdrops_list_count () {
+	wallpaper_sys_xfce4_backdrops_list | wc -l
+}
+
+wallpaper_sys_xfce4_backdrops_use () {
+
+	local img_file_name="$@"
+
+	if [ "none${img_file_name}" = "none" ]; then
+		echo 'Need {img_file_name}'
+		return
+	fi
+
+	local target_dir_path="$(wallpaper_sys_xfce4_backdrops_path_name_get_valid)"
+	local img_file_path="${target_dir_path}/${img_file_name}"
+
+	if ! [ -f "$img_file_path" ]; then
+		echo "File_Not_Exists: ${img_file_path}"
+		return 1
+	fi
+
+	wallpaper_sys_xfce4_backdrops_use_name_set "$img_file_name"
+
+	wallpaper_sys_use "$img_file_path"
+}
+
+wallpaper_sys_xfce4_backdrops_view () {
+
+	local img_file_name="$@"
+
+	if [ "none${img_file_name}" = "none" ]; then
+		echo 'Need {img_file_name}'
+		return
+	fi
+
+	local target_dir_path="$(wallpaper_sys_xfce4_backdrops_path_name_get_valid)"
+	local img_file_path="${target_dir_path}/${img_file_name}"
+
+	if ! [ -f "$img_file_path" ]; then
+		echo "File_Not_Exists: ${img_file_path}"
+		return 1
+	fi
+
+	wallpaper_sys_view "$img_file_path"
+}
+
+wallpaper_sys_xfce4_backdrops_open_dir () {
+
+	local target_dir_path="$(wallpaper_sys_xfce4_backdrops_path_name_get_valid)"
+
+	util_open_dir "$target_dir_path"
+}
+
+
+
+wallpaper_sys_option_xfce4_backdrops_file_check () {
+
+	if ! [ -e "$HOME/.config/bspwm/wallpaper/option/dir_xfce4_backdrops/use" ] ; then
+		mkdir -p "$HOME/.config/bspwm/wallpaper/option/dir_xfce4_backdrops"
+		echo 'balance.jpg' > "$HOME/.config/bspwm/wallpaper/option/dir_xfce4_backdrops/use"
+	fi
+
+}
+
+wallpaper_sys_xfce4_backdrops_use_name_get () {
+
+	wallpaper_sys_option_xfce4_backdrops_file_check
+
+	cat "$HOME/.config/bspwm/wallpaper/option/dir_xfce4_backdrops/use"
+}
+
+wallpaper_sys_xfce4_backdrops_use_name_set () {
+
+	wallpaper_sys_option_xfce4_backdrops_file_check
+
+	echo "$1" > "$HOME/.config/bspwm/wallpaper/option/dir_xfce4_backdrops/use"
+}
+
+
+
+##
+### Tail: DirXfce4Backdrops / Model / Routine
+################################################################################
+
+
+################################################################################
+### Head: DirBackgrounds / Model / Routine / Path
+##
+
+wallpaper_sys_xfce4_backdrops_path_valid () {
+
+	local target_dir_path_to_set="$1"
+	local target_dir_path_valid
+
+	if [ -d "$target_dir_path_to_set" ] ; then
+		target_dir_path_valid="$target_dir_path_to_set"
+	else
+		target_dir_path_valid="/usr/share/backgrounds"
+	fi
+
+
+	if [ "none${target_dir_path_valid}" = "none" ]; then
+		target_dir_path_valid="/usr/share/backgrounds"
+	fi
+
+	echo "$target_dir_path_valid"
+
+}
+
+wallpaper_sys_xfce4_backdrops_path_name_get () {
+	echo '/usr/share/xfce4/backdrops'
+}
+
+wallpaper_sys_xfce4_backdrops_path_name_get_valid () {
+
+	local target_dir_path="$(wallpaper_sys_xfce4_backdrops_path_name_get)"
+
+	target_dir_path="$(wallpaper_sys_target_dir_path_valid $target_dir_path)"
+
+	echo "$target_dir_path"
+}
+
+
+
+##
+### Tail: DirBackgrounds / Model / Routine / Path
+################################################################################
+
+
+################################################################################
+### Head: DirXfce4Backdrops / Model / Routine / Next
+##
+
+wallpaper_sys_xfce4_backdrops_next_select_num () {
+	local xfce4_backdrops
+	local current="$(wallpaper_sys_xfce4_backdrops_use_name_get)"
+	local list
+	local list_count=$(wallpaper_sys_xfce4_backdrops_list_count)
+	local line=1
+	local next=1
+
+	list=$(wallpaper_sys_xfce4_backdrops_list)
+
+
+	for xfce4_backdrops in $list ; do
+		##echo $line
+
+		if [ "$current" == "$xfce4_backdrops" ] ; then
+			#echo $xfce4_backdrops
+			break;
+		fi
+
+		line=$(($line + 1))
+	done
+
+	next=$(($line + 1))
+
+
+	if [ $next -gt $list_count ]; then
+		next=1
+	fi
+
+	echo $next
+
+}
+
+wallpaper_sys_xfce4_backdrops_next_select_name () {
+	line=$(wallpaper_sys_xfce4_backdrops_next_select_num)
+	wallpaper_sys_get_xfce4_backdrops_name_by_xfce4_backdrops_num "$line"
+}
+
+##
+### Tail: DirXfce4Backdrops / Model / Routine / Next
+################################################################################
+
+
+################################################################################
+### Head: DirXfce4Backdrops / Model / Routine / Random
+##
+
+wallpaper_sys_xfce4_backdrops_random_select_num () {
+	local start=1
+	local end=$(wallpaper_sys_xfce4_backdrops_list_count)
+
+	util_random_range "$start" "$end"
+}
+
+wallpaper_sys_xfce4_backdrops_random_select_name () {
+	line=$(wallpaper_sys_xfce4_backdrops_random_select_num)
+	wallpaper_sys_get_xfce4_backdrops_name_by_xfce4_backdrops_num "$line"
+}
+
+
+wallpaper_sys_get_xfce4_backdrops_name_by_xfce4_backdrops_num () {
+	local line="$1"
+	wallpaper_sys_xfce4_backdrops_list | awk "FNR == $line {print}"
+}
+
+
+##
+### Tail: DirXfce4Backdrops / Model / Routine / Random
+################################################################################
+
+
+################################################################################
+### Head: DirXfce4Backdrops / Model / Routine / Fixed
+##
+
+wallpaper_sys_xfce4_backdrops_fixed_select_name () {
+	current="$(wallpaper_sys_xfce4_backdrops_use_name_get)"
+	echo "$current"
+}
+
+##
+### Tail: DirXfce4Backdrops / Model / Routine / Fixed
+################################################################################
+
+
+################################################################################
+### Head: DirXfce4Backdrops / Model / Subject
+##
+
+wallpaper_run_xfce4_backdrops_path () {
+
+	wallpaper_sys_xfce4_backdrops_path_name_get_valid
+
+}
+
+wallpaper_run_xfce4_backdrops_list () {
+
+	wallpaper_sys_xfce4_backdrops_list
+}
+
+wallpaper_run_xfce4_backdrops_use () {
+
+	wallpaper_sys_xfce4_backdrops_use $@
+
+}
+
+wallpaper_run_xfce4_backdrops_view () {
+
+	wallpaper_sys_xfce4_backdrops_view $@
+
+}
+
+wallpaper_run_xfce4_backdrops_open_dir () {
+
+	wallpaper_sys_xfce4_backdrops_open_dir
+}
+
+wallpaper_run_xfce4_backdrops_next () {
+
+	local img_file_name="$(wallpaper_sys_xfce4_backdrops_next_select_name)"
+
+	echo $img_file_name
+
+	wallpaper_sys_xfce4_backdrops_use "$img_file_name"
+
+}
+
+wallpaper_run_xfce4_backdrops_random () {
+
+
+	local img_file_name="$(wallpaper_sys_xfce4_backdrops_random_select_name)"
+
+	echo $img_file_name
+
+	wallpaper_sys_xfce4_backdrops_use "$img_file_name"
+
+
+}
+
+wallpaper_run_xfce4_backdrops_fixed () {
+
+
+	local img_file_name="$(wallpaper_sys_xfce4_backdrops_fixed_select_name)"
+
+	echo $img_file_name
+
+	wallpaper_sys_xfce4_backdrops_use "$img_file_name"
+
+
+}
+
+wallpaper_run_xfce4_backdrops_recent () {
+
+	##wallpaper_sys_run_check_fehbg_first && wallpaper_run_xfce4_backdrops_fixed
+
+	wallpaper_sys_run_check_fehbg
+
+	wallpaper_run_xfce4_backdrops_fixed
+
+
+}
+
+##
+### Tail: DirXfce4Backdrops / Model / Subject
+################################################################################
+
+
+################################################################################
+### Head: DirTargetDir / Model / Routine
+##
+
+
+wallpaper_sys_target_dir_list () {
+	local target_dir_path="$(wallpaper_sys_target_dir_path_name_get_valid)"
+	mkdir -p "$target_dir_path"
+	cd "$target_dir_path"
+	##ls -1 {*.jpg,*.png}
+	##ls -1 | grep -E -o '.*(\.png|\.jpg|\.jpeg|\.svg)'
+	ls -1 | grep -E -o '.*(\.png|\.jpg|\.jpeg)'
+	cd "$OLDPWD"
+}
+
+wallpaper_sys_target_dir_list_count () {
+	wallpaper_sys_target_dir_list | wc -l
+}
+
+wallpaper_sys_target_dir_use () {
+
+	local img_file_name="$@"
+
+	if [ "none${img_file_name}" = "none" ]; then
+		echo 'Need {img_file_name}'
+		return
+	fi
+
+	local target_dir_path="$(wallpaper_sys_target_dir_path_name_get_valid)"
+	local img_file_path="$target_dir_path/${img_file_name}"
+
+	if ! [ -f "$img_file_path" ]; then
+		echo "File_Not_Exists: ${img_file_path}"
+		return 1
+	fi
+
+	wallpaper_sys_target_dir_use_name_set "$img_file_name"
+
+	wallpaper_sys_use "$img_file_path"
+}
+
+wallpaper_sys_target_dir_view () {
+
+	local img_file_name="$@"
+
+	if [ "none${img_file_name}" = "none" ]; then
+		echo 'Need {img_file_name}'
+		return
+	fi
+
+	local target_dir_path="$(wallpaper_sys_target_dir_path_name_get_valid)"
+
+	local img_file_path="$target_dir_path/${img_file_name}"
+	if ! [ -f "$img_file_path" ]; then
+		echo "File_Not_Exists: ${img_file_path}"
+		return 1
+	fi
+
+	wallpaper_sys_view "$img_file_path"
+}
+
+wallpaper_sys_target_dir_open_dir () {
+	local target_dir_path="$(wallpaper_sys_target_dir_path_name_get_valid)"
+
+	util_open_dir "$target_dir_path"
+}
+
+
+
+
+wallpaper_sys_option_target_dir_file_check () {
+
+	if ! [ -e "$HOME/.config/bspwm/wallpaper/option/dir_target_dir/use" ] ; then
+		mkdir -p "$HOME/.config/bspwm/wallpaper/option/dir_target_dir"
+		echo 'wallpaper.jpg' > "$HOME/.config/bspwm/wallpaper/option/dir_target_dir/use"
+	fi
+
+}
+
+wallpaper_sys_target_dir_use_name_get () {
+
+	wallpaper_sys_option_target_dir_file_check
+
+	cat "$HOME/.config/bspwm/wallpaper/option/dir_target_dir/use"
+}
+
+wallpaper_sys_target_dir_use_name_set () {
+
+	wallpaper_sys_option_target_dir_file_check
+
+	echo "$1" > "$HOME/.config/bspwm/wallpaper/option/dir_target_dir/use"
+}
+
+
+
+##
+### Tail: DirTargetDir / Model / Routine
+################################################################################
+
+
+################################################################################
+### Head: DirTargetDir / Model / Routine / Path
+##
+
+
+wallpaper_sys_target_dir_path_valid () {
+
+	local target_dir_path_to_set="$1"
+	local target_dir_path_valid
+
+	if [ -d "$target_dir_path_to_set" ] ; then
+		target_dir_path_valid="$target_dir_path_to_set"
+	else
+		target_dir_path_valid='/usr/share/backgrounds'
+	fi
+
+
+	if [ "none${target_dir_path_valid}" = "none" ]; then
+		target_dir_path_valid='/usr/share/backgrounds'
+	fi
+
+	echo "$target_dir_path_valid"
+
+}
+
+
+
+wallpaper_sys_option_target_dir_path_file_check () {
+
+	if ! [ -e "$HOME/.config/bspwm/wallpaper/option/target_dir_path" ] ; then
+		mkdir -p "$HOME/.config/bspwm/wallpaper/option"
+		echo '/usr/share/backgrounds' > "$HOME/.config/bspwm/wallpaper/option/target_dir_path"
+	fi
+
+}
+
+wallpaper_sys_target_dir_path_name_get () {
+
+	wallpaper_sys_option_target_dir_path_file_check
+
+	cat "$HOME/.config/bspwm/wallpaper/option/target_dir_path"
+}
+
+wallpaper_sys_target_dir_path_name_set () {
+
+	wallpaper_sys_option_target_dir_path_file_check
+
+	echo "$1" > "$HOME/.config/bspwm/wallpaper/option/target_dir_path"
+}
+
+
+wallpaper_sys_target_dir_path_name_get_valid () {
+	##echo wallpaper_sys_target_dir_path_name_get_valid
+
+	local target_dir_path="$(wallpaper_sys_target_dir_path_name_get)"
+
+	target_dir_path="$(wallpaper_sys_target_dir_path_valid $target_dir_path)"
+
+
+	echo "$target_dir_path"
+}
+
+wallpaper_sys_target_dir_path_name_set_valid () {
+	##echo wallpaper_sys_target_dir_path_name_set_valid
+
+	local target_dir_path="$1"
+
+	target_dir_path="$(wallpaper_sys_target_dir_path_valid $target_dir_path)"
+
+	wallpaper_sys_target_dir_path_name_set "$target_dir_path"
+
+	echo "$target_dir_path"
+}
+
+
+##
+### Tail: DirTargetDir / Model / Routine / Path
+################################################################################
+
+
+################################################################################
+### Head: DirTargetDir / Model / Routine / Next
+##
+
+wallpaper_sys_target_dir_next_select_num () {
+	local target_dir
+	local current="$(wallpaper_sys_target_dir_use_name_get)"
+	local list
+	local list_count=$(wallpaper_sys_target_dir_list_count)
+	local line=1
+	local next=1
+
+	list=$(wallpaper_sys_target_dir_list)
+
+
+	for target_dir in $list ; do
+		##echo $line
+
+		if [ "$current" == "$target_dir" ] ; then
+			#echo $target_dir
+			break;
+		fi
+
+		line=$(($line + 1))
+	done
+
+	next=$(($line + 1))
+
+
+	if [ $next -gt $list_count ]; then
+		next=1
+	fi
+
+	echo $next
+
+}
+
+
+wallpaper_sys_target_dir_next_select_name () {
+	line=$(wallpaper_sys_target_dir_next_select_num)
+	wallpaper_sys_get_target_dir_name_by_target_dir_num "$line"
+}
+
+
+##
+### Tail: DirTargetDir / Model / Routine / Next
+################################################################################
+
+
+################################################################################
+### Head: DirTargetDir / Model / Routine / Random
+##
+
+wallpaper_sys_target_dir_random_select_num () {
+	local start=1
+	local end=$(wallpaper_sys_target_dir_list_count)
+
+	util_random_range "$start" "$end"
+}
+
+wallpaper_sys_target_dir_random_select_name () {
+	line=$(wallpaper_sys_target_dir_random_select_num)
+	wallpaper_sys_get_target_dir_name_by_target_dir_num "$line"
+}
+
+wallpaper_sys_get_target_dir_name_by_target_dir_num () {
+	local line="$1"
+	wallpaper_sys_target_dir_list | awk "FNR == $line {print}"
+}
+
+##
+### Tail: DirTargetDir / Model / Routine / Random
+################################################################################
+
+
+################################################################################
+### Head: DirTargetDir / Model / Routine / Fixed
+##
+
+wallpaper_sys_target_dir_fixed_select_name () {
+	current="$(wallpaper_sys_target_dir_use_name_get)"
+	echo "$current"
+}
+
+##
+### Tail: DirTargetDir / Model / Routine / Fixed
+################################################################################
+
+
+################################################################################
+### Head: DirTargetDir / Model / Subject
+##
+
+wallpaper_run_target_dir_path () {
+
+	local target_dir_path="$1"
+
+	if [ "none${target_dir_path}" = "none" ]; then
+		wallpaper_sys_target_dir_path_name_get_valid
+		return
+	fi
+
+	wallpaper_sys_target_dir_path_name_set_valid "$target_dir_path"
+
+}
+
+
+wallpaper_run_target_dir_list () {
+
+	wallpaper_sys_target_dir_list
+}
+
+wallpaper_run_target_dir_use () {
+
+	wallpaper_sys_target_dir_use $@
+
+}
+
+wallpaper_run_target_dir_view () {
+
+	wallpaper_sys_target_dir_view $@
+
+}
+
+wallpaper_run_target_dir_open_dir () {
+
+	wallpaper_sys_target_dir_open_dir
+}
+
+wallpaper_run_target_dir_next () {
+
+	local img_file_name="$(wallpaper_sys_target_dir_next_select_name)"
+
+	echo $img_file_name
+
+	wallpaper_sys_target_dir_use "$img_file_name"
+
+}
+
+wallpaper_run_target_dir_random () {
+
+
+	local img_file_name="$(wallpaper_sys_target_dir_random_select_name)"
+
+	echo $img_file_name
+
+	wallpaper_sys_target_dir_use "$img_file_name"
+
+
+}
+
+wallpaper_run_target_dir_fixed () {
+
+
+	local img_file_name="$(wallpaper_sys_target_dir_fixed_select_name)"
+
+	echo $img_file_name
+
+	wallpaper_sys_target_dir_use "$img_file_name"
+
+
+}
+
+wallpaper_run_target_dir_recent () {
+
+	##wallpaper_sys_run_check_fehbg_first && wallpaper_run_target_dir_fixed
+
+	wallpaper_sys_run_check_fehbg
+
+	wallpaper_run_target_dir_fixed
+
+
+}
+
+##
+### Tail: DirTargetDir / Model / Subject
+################################################################################
+
+
+################################################################################
+### Head: List / Model / Routine / ListType
+##
+
+
+wallpaper_sys_list_type_valid () {
+	local list_type_enum="$(wallpaper_sys_list_type_enum)"
+	local list_type_to_set="$1"
+	local list_type
+	local list_type_valid
+
+	for list_type in $list_type_enum ; do
+
+		if [ "$list_type_to_set" == "$list_type" ] ; then
+			list_type_valid="$list_type_to_set"
+			break;
+		fi
+
+	done
+
+	if [ "none${list_type_valid}" = "none" ]; then
+		list_type_valid='backgrounds'
+	fi
+
+	echo "$list_type_valid"
+
+}
+
+wallpaper_sys_list_type_enum () {
+
+cat << EOF
+theme
+backgrounds
+pictures
+xfce4_backdrops
+target_dir
+EOF
+
+}
+
+wallpaper_sys_option_list_type_file_check () {
+
+	if ! [ -e "$HOME/.config/bspwm/wallpaper/option/list_type" ] ; then
+		mkdir -p "$HOME/.config/bspwm/wallpaper/option"
+		echo 'backgrounds' > "$HOME/.config/bspwm/wallpaper/option/list_type"
+	fi
+
+}
+
+wallpaper_sys_list_type_name_get () {
+
+	wallpaper_sys_option_list_type_file_check
+
+	cat "$HOME/.config/bspwm/wallpaper/option/list_type"
+}
+
+wallpaper_sys_list_type_name_set () {
+
+	wallpaper_sys_option_list_type_file_check
+
+	echo "$1" > "$HOME/.config/bspwm/wallpaper/option/list_type"
+}
+
+
+wallpaper_sys_list_type_name_get_valid () {
+	##echo wallpaper_sys_list_type_name_get_valid
+
+	local list_type="$(wallpaper_sys_list_type_name_get)"
+
+	list_type="$(wallpaper_sys_list_type_valid $list_type)"
+
+
+	echo "$list_type"
+}
+
+wallpaper_sys_list_type_name_set_valid () {
+	##echo wallpaper_sys_list_type_name_set_valid
+
+	local list_type="$1"
+
+	list_type="$(wallpaper_sys_list_type_valid $list_type)"
+
+	wallpaper_sys_list_type_name_set "$list_type"
+
+	echo "$list_type"
+}
+
+##
+### Tail: List / Model / Routine / ListType
+################################################################################
+
+
+################################################################################
+### Head: List / Model / Routine
+##
+
+wallpaper_sys_run_list_find_function_name () {
+	echo "wallpaper_run_list_sub_$1"
+}
+
+wallpaper_sys_run_next_find_function_name () {
+	echo "wallpaper_run_next_sub_$1"
+}
+
+wallpaper_sys_run_random_find_function_name () {
+	echo "wallpaper_run_random_sub_$1"
+}
+
+wallpaper_sys_run_fixed_find_function_name () {
+	echo "wallpaper_run_fixed_sub_$1"
+}
+
+wallpaper_sys_run_recent_find_function_name () {
+	echo "wallpaper_run_recent_sub_$1"
+}
+
+##
+### Tail: List / Model / Routine
+################################################################################
+
+
+################################################################################
+### Head: List / Model / Subject / ListType
+##
+
+wallpaper_run_list_type_enum () {
+
+	wallpaper_sys_list_type_enum
+
+}
+
+
+wallpaper_run_list_type () {
+
+	local list_type="$1"
+
+	if [ "none${list_type}" = "none" ]; then
+		wallpaper_sys_list_type_name_get_valid
+		return
+	fi
+
+	wallpaper_sys_list_type_name_set_valid "$list_type"
+
+}
+
+
+##
+### Tail: List / Model / Subject / ListType
+################################################################################
+
+
+################################################################################
+### Head: List / Model / Subject / List / Sub
+##
+
+wallpaper_run_list_sub_default () {
+	##util_debug_echo 'wallpaper_run_list_sub_default'
+	wallpaper_run_backgrounds_list
+}
+
+wallpaper_run_list_sub_theme () {
+	##util_debug_echo 'wallpaper_run_list_sub_theme'
+	wallpaper_run_theme_list
+}
+
+wallpaper_run_list_sub_backgrounds () {
+	##util_debug_echo 'wallpaper_run_list_sub_backgrounds'
+	wallpaper_run_backgrounds_list
+}
+
+wallpaper_run_list_sub_pictures () {
+	##util_debug_echo 'wallpaper_run_list_sub_pictures'
+	wallpaper_run_pictures_list
+}
+
+wallpaper_run_list_sub_xfce4_backdrops () {
+	##util_debug_echo 'wallpaper_run_list_sub_xfce4_backdrops'
+	wallpaper_run_xfce4_backdrops_list
+}
+
+wallpaper_run_list_sub_target_dir () {
+	##util_debug_echo 'wallpaper_run_list_sub_target_dir'
+	wallpaper_run_target_dir_list
+}
+
+##
+### Tail: List / Model / Subject / List / Sub
+################################################################################
+
+
+################################################################################
+### Head: List / Model / Subject / Next / Sub
+##
+
+wallpaper_run_next_sub_default () {
+	##util_debug_echo 'wallpaper_run_next_sub_default'
+	wallpaper_run_backgrounds_next
+}
+
+wallpaper_run_next_sub_theme () {
+	##util_debug_echo 'wallpaper_run_next_sub_theme'
+	wallpaper_run_theme_next
+}
+
+wallpaper_run_next_sub_backgrounds () {
+	##util_debug_echo 'wallpaper_run_next_sub_backgrounds'
+	wallpaper_run_backgrounds_next
+}
+
+wallpaper_run_next_sub_pictures () {
+	##util_debug_echo 'wallpaper_run_next_sub_pictures'
+	wallpaper_run_pictures_next
+}
+
+wallpaper_run_next_sub_xfce4_backdrops () {
+	##util_debug_echo 'wallpaper_run_next_sub_xfce4_backdrops'
+	wallpaper_run_xfce4_backdrops_next
+}
+
+wallpaper_run_next_sub_target_dir () {
+	##util_debug_echo 'wallpaper_run_next_sub_target_dir'
+	wallpaper_run_target_dir_next
+}
+
+##
+### Tail: List / Model / Subject / Next / Sub
+################################################################################
+
+
+################################################################################
+### Head: List / Model / Subject / Random / Sub
+##
+
+wallpaper_run_random_sub_default () {
+	##util_debug_echo 'wallpaper_run_random_sub_default'
+	wallpaper_run_backgrounds_random
+}
+
+wallpaper_run_random_sub_theme () {
+	##util_debug_echo 'wallpaper_run_random_sub_theme'
+	wallpaper_run_theme_random
+}
+
+wallpaper_run_random_sub_backgrounds () {
+	##util_debug_echo 'wallpaper_run_random_sub_backgrounds'
+	wallpaper_run_backgrounds_random
+}
+
+wallpaper_run_random_sub_pictures () {
+	##util_debug_echo 'wallpaper_run_random_sub_pictures'
+	wallpaper_run_pictures_random
+}
+
+wallpaper_run_random_sub_xfce4_backdrops () {
+	##util_debug_echo 'wallpaper_run_random_sub_xfce4_backdrops'
+	wallpaper_run_xfce4_backdrops_random
+}
+
+wallpaper_run_random_sub_target_dir () {
+	##util_debug_echo 'wallpaper_run_random_sub_target_dir'
+	wallpaper_run_target_dir_random
+}
+
+##
+### Tail: List / Model / Subject / Random / Sub
+################################################################################
+
+
+################################################################################
+### Head: List / Model / Subject / Fixed / Sub
+##
+
+wallpaper_run_fixed_sub_default () {
+	##util_debug_echo 'wallpaper_run_fixed_sub_default'
+	wallpaper_run_backgrounds_fixed
+}
+
+wallpaper_run_fixed_sub_theme () {
+	##util_debug_echo 'wallpaper_run_fixed_sub_theme'
+	wallpaper_run_theme_fixed
+}
+
+wallpaper_run_fixed_sub_backgrounds () {
+	##util_debug_echo 'wallpaper_run_fixed_sub_backgrounds'
+	wallpaper_run_backgrounds_fixed
+}
+
+wallpaper_run_fixed_sub_pictures () {
+	##util_debug_echo 'wallpaper_run_fixed_sub_pictures'
+	wallpaper_run_pictures_fixed
+}
+
+wallpaper_run_fixed_sub_xfce4_backdrops () {
+	##util_debug_echo 'wallpaper_run_fixed_sub_xfce4_backdrops'
+	wallpaper_run_xfce4_backdrops_fixed
+}
+
+wallpaper_run_fixed_sub_target_dir () {
+	##util_debug_echo 'wallpaper_run_fixed_sub_target_dir'
+	wallpaper_run_target_dir_fixed
+}
+
+##
+### Tail: List / Model / Subject / Fixed / Sub
+################################################################################
+
+
+################################################################################
+### Head: List / Model / Subject / Recent / Sub
+##
+
+wallpaper_run_recent_sub_default () {
+	##util_debug_echo 'wallpaper_run_recent_sub_default'
+	wallpaper_run_backgrounds_recent
+}
+
+wallpaper_run_recent_sub_theme () {
+	##util_debug_echo 'wallpaper_run_recent_sub_theme'
+	wallpaper_run_theme_recent
+}
+
+wallpaper_run_recent_sub_backgrounds () {
+	##util_debug_echo 'wallpaper_run_recent_sub_backgrounds'
+	wallpaper_run_backgrounds_recent
+}
+
+wallpaper_run_recent_sub_pictures () {
+	##util_debug_echo 'wallpaper_run_recent_sub_pictures'
+	wallpaper_run_pictures_recent
+}
+
+wallpaper_run_recent_sub_xfce4_backdrops () {
+	##util_debug_echo 'wallpaper_run_recent_sub_xfce4_backdrops'
+	wallpaper_run_xfce4_backdrops_recent
+}
+
+wallpaper_run_recent_sub_target_dir () {
+	##util_debug_echo 'wallpaper_run_recent_sub_target_dir'
+	wallpaper_run_target_dir_recent
+}
+
+##
+### Tail: List / Model / Subject / Recent / Sub
+################################################################################
+
+
+################################################################################
+### Head: List / Model / Subject
+##
+
+
+wallpaper_run_list () {
+
+	local args="$@"
+
+	local list_type="$(wallpaper_sys_list_type_name_get_valid)"
+
+	local function_name="$(wallpaper_sys_run_list_find_function_name $list_type)"
+
+	##echo $function_name
+	# if ! command -v $function_name > /dev/null; then
+	if ! type -p $function_name > /dev/null; then
+		##util_debug_echo "[Debug] wallpaper_run_list_sub_not_exist: list_type=$list_type; function_name=$function_name"
+
+		wallpaper_run_list_sub_default "$args"
+		return 0
+	fi
+
+	"$function_name" "$args" ## run sub function
+
+
+}
+
+wallpaper_run_next () {
+	local args="$@"
+
+	local list_type="$(wallpaper_sys_list_type_name_get_valid)"
+
+	local function_name="$(wallpaper_sys_run_next_find_function_name $list_type)"
+
+	##echo $function_name
+	# if ! command -v $function_name > /dev/null; then
+	if ! type -p $function_name > /dev/null; then
+		##util_debug_echo "[Debug] wallpaper_run_list_sub_not_exist: list_type=$list_type; function_name=$function_name"
+
+		wallpaper_run_next_sub_default "$args"
+		return 0
+	fi
+
+	"$function_name" "$args" ## run sub function
+
+}
+
+wallpaper_run_random () {
+	local args="$@"
+
+	local list_type="$(wallpaper_sys_list_type_name_get_valid)"
+
+	local function_name="$(wallpaper_sys_run_random_find_function_name $list_type)"
+
+	##echo $function_name
+	# if ! command -v $function_name > /dev/null; then
+	if ! type -p $function_name > /dev/null; then
+		##util_debug_echo "[Debug] wallpaper_run_list_sub_not_exist: list_type=$list_type; function_name=$function_name"
+
+		wallpaper_run_random_sub_default "$args"
+		return 0
+	fi
+
+	"$function_name" "$args" ## run sub function
+
+}
+
+
+wallpaper_run_fixed () {
+	local args="$@"
+
+	local list_type="$(wallpaper_sys_list_type_name_get_valid)"
+
+	local function_name="$(wallpaper_sys_run_fixed_find_function_name $list_type)"
+
+	##echo $function_name
+	# if ! command -v $function_name > /dev/null; then
+	if ! type -p $function_name > /dev/null; then
+		##util_debug_echo "[Debug] wallpaper_run_list_sub_not_exist: list_type=$list_type; function_name=$function_name"
+
+		wallpaper_run_fixed_sub_default "$args"
+		return 0
+	fi
+
+	"$function_name" "$args" ## run sub function
+
+}
+
+
+wallpaper_run_recent () {
+	local args="$@"
+
+	local list_type="$(wallpaper_sys_list_type_name_get_valid)"
+
+	local function_name="$(wallpaper_sys_run_recent_find_function_name $list_type)"
+
+	##echo $function_name
+	# if ! command -v $function_name > /dev/null; then
+	if ! type -p $function_name > /dev/null; then
+		##util_debug_echo "[Debug] wallpaper_run_list_sub_not_exist: list_type=$list_type; function_name=$function_name"
+
+		wallpaper_run_recent_sub_default "$args"
+		return 0
+	fi
+
+	"$function_name" "$args" ## run sub function
+
+}
+
+
+##
+### Tail: List / Model / Subject
+################################################################################
+
+
+################################################################################
+### Head: List / Model / Routine / BootType
+##
+
+
+wallpaper_sys_boot_type_valid () {
+	local boot_type_enum="$(wallpaper_sys_boot_type_enum)"
+	local boot_type_to_set="$1"
+	local boot_type
+	local boot_type_valid
+
+	for boot_type in $boot_type_enum ; do
+
+		if [ "$boot_type_to_set" == "$boot_type" ] ; then
+			boot_type_valid="$boot_type_to_set"
+			break;
+		fi
+
+	done
+
+	if [ "none${boot_type_valid}" = "none" ]; then
+		boot_type_valid='recent'
+	fi
+
+	echo "$boot_type_valid"
+
+}
+
+wallpaper_sys_boot_type_enum () {
+
+cat << EOF
+off
+recent
+fixed
+next
+random
+EOF
+
+}
+
+wallpaper_sys_option_boot_type_file_check () {
+
+	if ! [ -e "$HOME/.config/bspwm/wallpaper/option/boot_type" ] ; then
+		mkdir -p "$HOME/.config/bspwm/wallpaper/option"
+		echo 'recent' > "$HOME/.config/bspwm/wallpaper/option/boot_type"
+	fi
+
+}
+
+wallpaper_sys_boot_type_name_get () {
+
+	wallpaper_sys_option_boot_type_file_check
+
+	cat "$HOME/.config/bspwm/wallpaper/option/boot_type"
+}
+
+wallpaper_sys_boot_type_name_set () {
+
+	wallpaper_sys_option_boot_type_file_check
+
+	echo "$1" > "$HOME/.config/bspwm/wallpaper/option/boot_type"
+}
+
+
+wallpaper_sys_boot_type_name_get_valid () {
+	##echo wallpaper_sys_boot_type_name_get_valid
+
+	local boot_type="$(wallpaper_sys_boot_type_name_get)"
+
+	boot_type="$(wallpaper_sys_boot_type_valid $boot_type)"
+
+
+	echo "$boot_type"
+}
+
+wallpaper_sys_boot_type_name_set_valid () {
+	##echo wallpaper_sys_boot_type_name_set_valid
+
+	local boot_type="$1"
+
+	boot_type="$(wallpaper_sys_boot_type_valid $boot_type)"
+
+	wallpaper_sys_boot_type_name_set "$boot_type"
+
+	echo "$boot_type"
+}
+
+##
+### Tail: List / Model / Routine / BootType
+################################################################################
+
+
+################################################################################
+### Head: Boot / Model / Routine / Theme
+##
+
+wallpaper_boot_util_start_v1 () {
+	local config_dir_path="$1"
+	local conf
+
+	##for conf in "$config_dir_path"/*.conf ; do
+	for conf in "$config_dir_path"/main.conf ; do
+		#echo $conf
+		feh --bg-scale $(cat "$conf") &
+	done
+
+}
+
+wallpaper_boot_util_start_v2 () {
+	local config_dir_path="$1"
+	local conf
+
+	##for conf in $(find "$config_dir_path" -name *.conf); do
+	for conf in $(find "$config_dir_path" -name main.conf); do
+		#echo $conf
+		feh --bg-scale $(cat "$conf") &
+	done
+
+}
+
+wallpaper_boot_theme_config_dir_path () {
+	local theme_dir_path="$(wallpaper_boot_theme_dir_path)"
+	local theme_config_dir_path="$theme_dir_path/config/on"
+
+	if [ -d "$theme_config_dir_path" ] ; then
+		echo "$theme_config_dir_path"
+		return 0
+	fi
+
+	echo "$theme_dir_path"
+	return 1
+
+}
+
+wallpaper_boot_theme_dir_path () {
+	local theme_dir_path
+
+
+	theme_dir_path="$(wallpaper_boot_theme_dir_path_find_by_option)"
+
+	if [ -d "$theme_dir_path" ] ; then
+		echo "$theme_dir_path"
+		return 0
+	fi
+
+
+	theme_dir_path="$(wallpaper_boot_theme_dir_path_find_by_default)"
+
+	if [ -d "$theme_dir_path" ] ; then
+		echo "$theme_dir_path"
+		return 0
+	fi
+
+
+	theme_dir_path="$HOME/.config/wallpaper"
+	echo "$theme_dir_path"
+	return 0
+
+}
+
+wallpaper_boot_theme_dir_path_find_by_option () {
+	## ~/.config/bspwm/wallpaper/theme/some_theme
+	wallpaper_boot_theme_dir_path_create $(wallpaper_boot_option_theme_get)
+}
+
+wallpaper_boot_theme_dir_path_find_by_default () {
+	## ~/.config/bspwm/wallpaper/theme/default
+	wallpaper_boot_theme_dir_path_create $(wallpaper_boot_option_theme_default)
+}
+
+wallpaper_boot_theme_dir_path_create () {
+	local theme_name="$1"
+
+	## ~/.config/bspwm/wallpaper/theme/theme_name
+	echo "$HOME/.config/bspwm/wallpaper/theme/$theme_name"
+}
+
+wallpaper_boot_option_theme_default () {
+	echo 'default'
+}
+
+wallpaper_boot_option_theme_get () {
+
+
+	wallpaper_sys_option_theme_file_check
+
+	## ~/.config/bspwm/wallpaper/option/theme
+	cat "$HOME/.config/bspwm/wallpaper/option/theme"
+}
+
+##
+### Tail: Boot / Model / Routine / Theme
+################################################################################
+
+
+################################################################################
+### Head: Boot / Model / Routine
+##
+
+wallpaper_sys_run_boot_find_function_name () {
+	echo "wallpaper_run_boot_sub_$1"
+}
+
+
+##
+### Tail: Boot / Model / Routine
+################################################################################
+
+
+################################################################################
+### Head: Boot / Model / Subject / BootType
+##
+
+wallpaper_run_boot_type_enum () {
+
+	wallpaper_sys_boot_type_enum
+
+}
+
+
+wallpaper_run_boot_type () {
+
+	local boot_type="$1"
+
+	if [ "none${boot_type}" = "none" ]; then
+		wallpaper_sys_boot_type_name_get_valid
+		return
+	fi
+
+	wallpaper_sys_boot_type_name_set_valid "$boot_type"
+
+}
+
+##
+### Tail: Boot / Model / Subject / BootType
+################################################################################
+
+
+################################################################################
+### Head: List / Model / Subject / Next / Sub
+##
+
+wallpaper_run_boot_sub_default () {
+	##util_debug_echo 'wallpaper_run_boot_sub_default'
+	##wallpaper_run_backgrounds_boot
+
+	wallpaper_boot_by_check_fehbg
+}
+
+wallpaper_run_boot_sub_off () {
+	util_debug_echo 'wallpaper_run_boot_sub_off'
+	echo 'off'
+	exit 0;
+}
+
+wallpaper_run_boot_sub_recent () {
+	util_debug_echo 'wallpaper_run_boot_sub_recent'
+	wallpaper_run_recent
+}
+
+wallpaper_run_boot_sub_fixed () {
+	util_debug_echo 'wallpaper_run_boot_sub_fixed'
+	wallpaper_run_fixed
+}
+
+wallpaper_run_boot_sub_next () {
+	util_debug_echo 'wallpaper_run_boot_sub_next'
+	wallpaper_run_next
+}
+
+wallpaper_run_boot_sub_random () {
+	util_debug_echo 'wallpaper_run_boot_sub_random'
+	wallpaper_run_random
+}
+
+
+
+##
+### Tail: List / Model / Subject / Next / Sub
+################################################################################
+
+
+################################################################################
+### Head: Boot / Model / Subject
+##
+
+wallpaper_run_boot () {
+	local args="$@"
+
+	local boot_type="$(wallpaper_sys_boot_type_name_get_valid)"
+
+	local function_name="$(wallpaper_sys_run_boot_find_function_name $boot_type)"
+
+	##echo $function_name
+	# if ! command -v $function_name > /dev/null; then
+	if ! type -p $function_name > /dev/null; then
+		##util_debug_echo "[Debug] wallpaper_run_boot_sub_not_exist: boot_type=$boot_type; function_name=$function_name"
+
+		wallpaper_run_boot_sub_default "$args"
+		return 0
+	fi
+
+	"$function_name" "$args" ## run sub function
+
+}
+
+
+
+wallpaper_boot_simple () {
+	feh --bg-scale $(cat "$HOME/.config/bspwm/wallpaper/wallpaper-fallback.conf") &
+}
+
+wallpaper_boot_theme_default () {
+
+	local config_dir_path="$HOME/.config/bspwm/wallpaper/theme/default/config/on"
+
+	wallpaper_boot_util_start_v1 "$config_dir_path"
+	##wallpaper_boot_util_start_v2 "$config_dir_path"
+
+}
+
+wallpaper_boot_by_check_fehbg () {
+
+	local load_last="$HOME/.fehbg"
+
+	if [ -x "$HOME/.fehbg" ]; then
+		##echo 1
+		$load_last
+		return 0
+	fi
+
+	##echo 2
+
+	wallpaper_boot_by_option
+}
+
+wallpaper_boot_by_option () {
+	local config_dir_path
+
+
+	config_dir_path="$(wallpaper_boot_theme_config_dir_path)"
+	config_dir_path_check_exist="$?"
+
+	if [ "$config_dir_path_check_exist" = "1" ]  ; then
+		## not exists
+		wallpaper_boot_simple
+		return 0;
+	fi
+
+
+	wallpaper_boot_util_start_v1 "$config_dir_path"
+	##wallpaper_boot_util_start_v2 "$config_dir_path"
+
+}
+
+##
+### Tail: Boot / Model / Subject
+################################################################################
+
+
+################################################################################
+### Head: App / Action
+##
+
+sub_run_help () {
+	main_usage
+}
+
+sub_run_version () {
+	main_version
+}
+
+sub_run_self_update () {
+	util_self_update
+}
+
+sub_run_self_actions () {
+	util_self_actions
+}
+
+##
+### Tail: App / Action
+################################################################################
+
+
+################################################################################
+### Head: Core / Action
+##
+
+sub_run_use () {
+	wallpaper_run_use $@
+}
+
+##
+### Tail: Core / Action
+################################################################################
+
+
+################################################################################
+### Head: Session / Action
+##
+
+sub_run_start () {
+	wallpaper_sys_session_start
+}
+
+sub_run_stop () {
+	wallpaper_sys_session_stop
+}
+
+sub_run_restart () {
+	wallpaper_sys_session_restart
+}
+
+sub_run_reconfigure () {
+	wallpaper_sys_session_reconfigure
+}
+
+sub_run_toggle () {
+	wallpaper_sys_session_toggle
+}
+
+##
+### Tail: Session / Action
+################################################################################
+
+
+################################################################################
+### Head: DirBackgrounds / Action
+##
+
+sub_run_backgrounds_path () {
+	wallpaper_run_backgrounds_path $@
+}
+
+sub_run_backgrounds_list () {
+	wallpaper_run_backgrounds_list
+}
+
+sub_run_backgrounds_use () {
+	wallpaper_run_backgrounds_use $@
+}
+
+sub_run_backgrounds_view () {
+	wallpaper_run_backgrounds_view $@
+}
+
+sub_run_backgrounds_open_dir () {
+	wallpaper_run_backgrounds_open_dir
+}
+
+sub_run_backgrounds_next () {
+	wallpaper_run_backgrounds_next
+}
+
+sub_run_backgrounds_random () {
+	wallpaper_run_backgrounds_random
+}
+
+##
+### Tail: DirBackgrounds / Action
+################################################################################
+
+
+################################################################################
+### Head: DirPictures / Action
+##
+
+sub_run_pictures_path () {
+	wallpaper_run_pictures_path $@
+}
+
+sub_run_pictures_list () {
+	wallpaper_run_pictures_list
+}
+
+sub_run_pictures_use () {
+	wallpaper_run_pictures_use $@
+}
+
+sub_run_pictures_view () {
+	wallpaper_run_pictures_view $@
+}
+
+sub_run_pictures_open_dir () {
+	wallpaper_run_pictures_open_dir $@
+}
+
+sub_run_pictures_next () {
+	wallpaper_run_pictures_next
+}
+
+sub_run_pictures_random () {
+	wallpaper_run_pictures_random
+}
+
+##
+### Tail: DirPictures / Action
+################################################################################
+
+
+################################################################################
+### Head: DirXfce4Backdrops / Action
+##
+
+sub_run_xfce4_backdrops_path () {
+	wallpaper_run_xfce4_backdrops_path $@
+}
+
+sub_run_xfce4_backdrops_list () {
+	wallpaper_run_xfce4_backdrops_list
+}
+
+sub_run_xfce4_backdrops_use () {
+	wallpaper_run_xfce4_backdrops_use $@
+}
+
+sub_run_xfce4_backdrops_view () {
+	wallpaper_run_xfce4_backdrops_view $@
+}
+
+sub_run_xfce4_backdrops_open_dir () {
+	wallpaper_run_xfce4_backdrops_open_dir $@
+}
+
+sub_run_xfce4_backdrops_next () {
+	wallpaper_run_xfce4_backdrops_next
+}
+
+sub_run_xfce4_backdrops_random () {
+	wallpaper_run_xfce4_backdrops_random
+}
+
+##
+### Tail: DirXfce4Backdrops / Action
+################################################################################
+
+
+################################################################################
+### Head: DirTargetDir / Action
+##
+
+sub_run_target_dir_path () {
+	wallpaper_run_target_dir_path $@
+}
+
+sub_run_target_dir_list () {
+	wallpaper_run_target_dir_list
+}
+
+sub_run_target_dir_use () {
+	wallpaper_run_target_dir_use $@
+}
+
+sub_run_target_dir_view () {
+	wallpaper_run_target_dir_view $@
+}
+
+sub_run_target_dir_open_dir () {
+	wallpaper_run_target_dir_open_dir $@
+}
+
+sub_run_target_dir_next () {
+	wallpaper_run_target_dir_next
+}
+
+sub_run_target_dir_random () {
+	wallpaper_run_target_dir_random
+}
+
+##
+### Tail: DirTargetDir / Action
+################################################################################
+
+
+################################################################################
+### Head: List / Action
+##
+
+sub_run_list_type_enum () {
+	wallpaper_run_list_type_enum
+}
+
+
+sub_run_list_type () {
+	wallpaper_run_list_type $@
+}
+
+sub_run_list () {
+	wallpaper_run_list
+}
+
+sub_run_next () {
+	wallpaper_run_next
+}
+
+sub_run_random () {
+	wallpaper_run_random
+}
+
+sub_run_fixed () {
+	wallpaper_run_fixed
+}
+
+sub_run_recent () {
+	wallpaper_run_recent
+}
+
+
+##
+### Tail: List / Action
+################################################################################
+
+
+################################################################################
+### Head: Boot / Action
+##
+
+sub_run_boot_type_enum () {
+	wallpaper_run_boot_type_enum
+}
+
+sub_run_boot_type () {
+	wallpaper_run_boot_type $@
+}
+
+sub_run_boot () {
+	wallpaper_run_boot
+}
+
+sub_run_boot_simple () {
+	wallpaper_boot_simple
+}
+
+sub_run_boot_theme_default () {
+	wallpaper_boot_theme_default
+}
+
+sub_run_boot_by_option () {
+	wallpaper_boot_by_option
+}
+
+sub_run_boot_by_check_fehbg () {
+	wallpaper_boot_by_check_fehbg
+}
+
+##
+### Tail: Boot / Action
+################################################################################
+
+
+################################################################################
+### Head: Test / Action
+##
+
+sub_run_test () {
+	echo 'Toto: Sub'
+	echo
+	echo 'For Test'
+
+	##wallpaper_sys_use_check_fehbg '/usr/share/backgrounds/Frozen_sunset_on_the_lake_by_Manuel_Arslanyan.jpg'
+
+	##wallpaper_sys_use_check_fehbg_first '/usr/share/backgrounds/Frozen_sunset_on_the_lake_by_Manuel_Arslanyan.jpg'
+
+	##wallpaper_sys_use_check_fehbg_first_v2  '/usr/share/backgrounds/Frozen_sunset_on_the_lake_by_Manuel_Arslanyan.jpg'
+
+	##wallpaper_sys_use_check_fehbg_first_v3  '/usr/share/backgrounds/Frozen_sunset_on_the_lake_by_Manuel_Arslanyan.jpg'
+
+
+}
+
+##
+### Tail: Test / Action
+################################################################################
+
+
+################################################################################
+### Head: Main
+##
+
+main_usage () {
+	##local cmd_name="$0"
+	local cmd_name="$THE_CMD_FILE_NAME"
+
+cat << EOF
+Usage:
+
+	## synopsis
+
+		$ $cmd_name [action]
+
+	## version
+
+		$ $cmd_name version
+
+	## self_update
+
+		$ $cmd_name self_update
+
+	## help
+
+		$ $cmd_name help
+
+	## control
+
+		$ $cmd_name start
+		$ $cmd_name stop
+		$ $cmd_name restart
+		$ $cmd_name toggle
+
+	## use
+
+		$ $cmd_name use {img_file_path}
+
+	## list
+
+		$ $cmd_name list_type_enum
+		$ $cmd_name list_type {list_type}
+		$ $cmd_name list
+		$ $cmd_name random
+		$ $cmd_name next
+
+	## theme
+
+		$ $cmd_name theme [name]
+		$ $cmd_name theme_list
+		$ $cmd_name theme_next
+		$ $cmd_name theme_random
+
+	## backgrounds
+
+		$ $cmd_name backgrounds_list
+		$ $cmd_name backgrounds_use {img_file_name}
+		$ $cmd_name backgrounds_view {img_file_name}
+		$ $cmd_name backgrounds_open_dir
+		$ $cmd_name backgrounds_next
+		$ $cmd_name backgrounds_random
+
+	## pictures
+
+		$ $cmd_name pictures_list
+		$ $cmd_name pictures_use {img_file_name}
+		$ $cmd_name pictures_view {img_file_name}
+		$ $cmd_name pictures_open_dir
+		$ $cmd_name pictures_next
+		$ $cmd_name pictures_random
+
+	## xfce4_backdrops
+
+		$ $cmd_name xfce4_backdrops_list
+		$ $cmd_name xfce4_backdrops_use {img_file_name}
+		$ $cmd_name xfce4_backdrops_view {img_file_name}
+		$ $cmd_name xfce4_backdrops_open_dir
+		$ $cmd_name xfce4_backdrops_next
+		$ $cmd_name xfce4_backdrops_random
+
+	## target_dir
+
+		$ $cmd_name target_dir_path
+		$ $cmd_name target_dir_list
+		$ $cmd_name target_dir_use {img_file_name}
+		$ $cmd_name target_dir_view {img_file_name}
+		$ $cmd_name target_dir_open_dir
+		$ $cmd_name target_dir_next
+		$ $cmd_name target_dir_random
+
+Example:
+
+
+	## theme / help
+
+		$ $cmd_name theme_help
+
+	## theme / list
+
+		$ $cmd_name theme_list
+
+	## theme / get
+
+		$ $cmd_name theme
+
+	## theme / set
+
+		$ $cmd_name theme 'default'
+		$ $cmd_name theme 'bionic.Spices_in_Athens'
+		$ $cmd_name theme 'bionic.Manhattan_Sunset'
+
+	## use
+
+		$ $cmd_name use '/usr/share/backgrounds/Spices_in_Athens_by_Makis_Chourdakis.jpg'
+
+
+Debug:
+	$ export DEBUG_COMPTON_CTRL=true
+
+EOF
+
+}
+
+main_check_args_size () {
+	if [ $1 -le 0 ]; then
+		shift
+		main_run_default_sub_cmd "$@"
+		exit 1
+	fi
+}
+
+main_run_default_sub_cmd () {
+	main_usage "$@"
+}
+
+main_run_sub_cmd () {
+
+	local sub_cmd="$1"
+
+	shift
+
+	local args="$@"
+
+	local function_name=$(sub_cmd_find_function_name "$sub_cmd")
+
+	## if ! command -v $function_name > /dev/null; then
+	if ! type -p $function_name > /dev/null; then
+		util_debug_echo "[Debug] sub_cmd_function_not_exist: sub_cmd=$sub_cmd; function_name=$function_name"
+
+		echo
+		main_run_default_sub_cmd "$args"
+		return 1
+	fi
+
+	"$function_name" "$args" ## run sub cmd function
+
+
+}
+
+## Start
+main_check_args_size $# "$@"
+
+main_run_sub_cmd "$@"
+
+##
+### Tail: Main
+################################################################################
+

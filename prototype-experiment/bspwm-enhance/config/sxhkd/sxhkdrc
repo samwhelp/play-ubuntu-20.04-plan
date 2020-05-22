@@ -1,0 +1,458 @@
+
+
+################################################################################
+## Head: Manual
+##
+
+# $ man bspc
+# $ man bspwm
+# http://manpages.ubuntu.com/manpages/bionic/en/man1/bspwm.1.html
+
+##
+## Tail: Manual
+################################################################################
+
+
+################################################################################
+## Head: Examples
+##
+
+# $ dpkg -L bspwm | grep sxhkdrc
+# /usr/share/doc/bspwm/examples/loop/sxhkdrc
+# /usr/share/doc/bspwm/examples/panel/sxhkdrc
+# /usr/share/doc/bspwm/examples/sxhkdrc
+
+# $ less /usr/share/doc/bspwm/examples/sxhkdrc
+
+##
+## Tail: Examples
+################################################################################
+
+
+################################################################################
+## Head: System
+##
+
+## Shutdown
+alt + shift + z
+	shutdown now
+
+## Logout
+# quit bspwm normally
+alt + shift + x
+	bspc quit
+
+## Reconfigure
+# make sxhkd reload its configuration files:
+alt + shift + c
+	pkill -USR1 -x sxhkd
+
+##
+## Tail: System
+################################################################################
+
+
+################################################################################
+## Head: Launch App / Terminal
+##
+
+alt + Return
+	sakura
+
+alt + shift + a
+	xterm
+
+alt + shift + t
+	urxvt
+
+##
+## Tail: Launch App / Terminal
+################################################################################
+
+
+################################################################################
+## Head: Launch App / Rofi
+##
+
+alt + shift + d
+	rofi -show drun -show-icons
+
+alt + shift + w
+	rofi -show window -show-icons
+
+alt + shift + r
+	rofi -show run
+
+##
+## Tail: Launch App / Rofi
+################################################################################
+
+
+################################################################################
+## Head: Launch App / Misc
+##
+
+alt + shift + f
+	pcmanfm-qt
+
+alt + shift + g
+	nautilus
+
+alt + shift + e
+	gedit
+
+alt + shift + b
+	firefox
+
+##
+## Tail: Launch App / Misc
+################################################################################
+
+
+################################################################################
+## Head: Launch App / demnu
+##
+
+alt + shift + i
+	dmenu_run
+
+##
+## Tail: Launch App / demnu
+################################################################################
+
+
+
+
+################################################################################
+## Head: Workspace
+##
+
+# focus the next/previous desktop in the current monitor
+alt + {a,s}
+	bspc desktop -f {prev,next}.local
+
+alt + {h,l}
+	bspc desktop -f {prev,next}.local
+
+alt + bracket{left,right}
+	bspc desktop -f {prev,next}.local
+
+# focus the last desktop
+alt + z
+	bspc desktop -f last
+
+# to desktop
+alt + {1-9,0}
+	bspc desktop -f '^{1-9,10}'
+
+# send node to desktop
+super + {1-9,0}
+	bspc node -d '^{1-9,10}'
+
+# send node to desktop
+#alt + super + {1-9,0}
+#	bspc node -d '^{1-9,10}'
+
+# send node to desktop
+#alt + shift + {1-9,0}
+#	bspc node -d '^{1-9,10}'
+
+
+
+## Arrow key
+#alt + {Left,Right}
+#	bspc desktop -f {prev,next}.local
+
+
+##
+## Tail: Workspace
+################################################################################
+
+
+################################################################################
+## Head: Window / Focus
+##
+
+# focus the next/previous node in the current desktop
+super + {a, s}
+	bspc node -f {prev,next}.local
+
+super + {h, l}
+	bspc node -f {prev,next}.local
+
+super + bracket{left,right}
+	bspc node -f {prev,next}.local
+
+# focus the last node
+super + z
+	bspc node -f last
+
+
+# focus the older or newer node in the focus history
+#super + bracket{left,right}
+#	bspc wm -h off; \
+#	bspc node {older,newer} -f; \
+#	bspc wm -h on
+
+
+
+## Arrow key
+alt + {Up, Down}
+	bspc node -f {prev,next}.local
+
+
+##
+## Tail: Window / Focus
+################################################################################
+
+
+################################################################################
+## Head: Window / Swap
+##
+
+alt + shift + {h, l}
+	bspc node -s {prev,next}.local
+
+# swap the current node and the biggest node
+alt + shift + p
+	bspc node -s biggest
+
+# if the current node is automatic, send it to the last manual, otherwise pull the last leaf
+super + g
+	bspc query -N -n focused.automatic && bspc node -n last.!automatic || bspc node last.leaf -n focused
+
+
+
+## Arrow key
+alt + shift + {Left,Right}
+	bspc node -s {prev,next}.local
+
+##
+## Tail: Window / Swap
+################################################################################
+
+
+################################################################################
+## Head: Window
+##
+
+
+#
+# state/flags
+#
+
+# set the window state
+super + {t,b,v,f}
+	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+
+# set the node flags
+super + ctrl + {a,s,z}
+	bspc node -g {locked,sticky,private}
+
+##
+## Tail: Window
+################################################################################
+
+
+################################################################################
+## Head: Window / Close
+##
+
+# close and kill
+super + q
+	bspc node -c
+
+alt + shift + q
+	bspc node -c
+
+alt + F4
+	bspc node -c
+
+##
+## Tail: Window / Close
+################################################################################
+
+
+################################################################################
+## Head: Window / Resize
+##
+
+## [k,j,h,l]
+# control bottom(k,j) and right(h,l)
+super + ctrl + {k,j,h,l}
+	bspc node -z {bottom 0 -20,bottom 0 20,right -20 0,right 20 0}
+
+# control top(k,j) and left(h,l)
+super + ctrl + {i,u,y,o}
+	bspc node -z {top 0 -20,top 0 20,left -20 0,left 20 0}
+
+
+## [Up,Down,Left,Right]
+# control bottom(Up,Down) and right(Left,Right)
+super + ctrl + {Up,Down,Left,Right}
+	bspc node -z {bottom 0 -20,bottom 0 20,right -20 0,right 20 0}
+
+# control top(Up,Down) and left(Left,Right)
+super + shift + {Up,Down,Left,Right}
+	bspc node -z {top 0 -20,top 0 20,left -20 0,left 20 0}
+
+
+##
+## Tail: Window / Resize
+################################################################################
+
+
+################################################################################
+## Head: Window / Move
+##
+
+## [k,j,h,l]
+# move a floating window
+super + shift + {h,j,k,l}
+	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+## [Up,Down,Left,Right]
+# move a floating window
+super + {Left,Down,Up,Right}
+	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+##
+## Tail: Window / Move
+################################################################################
+
+
+
+
+################################################################################
+## Head: Layout
+##
+
+# alternate between the tiled and monocle layout
+
+## not use [alt + c] for fzf
+#alt + c
+#	bspc desktop -l next
+
+
+## alt + `
+alt + grave
+	bspc desktop -l prev
+
+alt + Tab
+	bspc desktop -l next
+
+
+## alt + ;
+alt + semicolon
+	bspc desktop -l prev
+
+## alt + '
+alt + apostrophe
+	bspc desktop -l next
+
+
+alt + k
+	bspc desktop -l prev
+
+alt + j
+	bspc desktop -l next
+
+##
+## Tail: Layout
+################################################################################
+
+
+
+################################################################################
+### Head: System / Sound
+##
+
+## https://wiki.archlinux.org/index.php/Xbindkeys
+## https://wiki.archlinux.org/index.php/Advanced_Linux_Sound_Architecture#Keyboard_volume_control
+## https://wiki.archlinux.org/index.php/PulseAudio#Keyboard_volume_control
+## https://zh.wikipedia.org/zh-tw/ALSA
+## https://en.wikipedia.org/wiki/Advanced_Linux_Sound_Architecture
+## https://zh.wikipedia.org/zh-tw/PulseAudio
+## https://en.wikipedia.org/wiki/PulseAudio
+
+## alsamixer (Package: alsa-utils)
+## amixer (Package: alsa-utils)
+## pactl (Package: pulseaudio-utils)
+## pavucontrol (Package: pavucontrol)
+## pavucontrol-qt (Package: pavucontrol-qt)
+## mate-volume-control (Package: mate-media)
+
+
+## VolumeControl
+alt + shift + v
+	mate-volume-control
+	#pavucontrol
+	#pavucontrol-qt
+
+
+# https://askubuntu.com/questions/65764/how-do-i-toggle-sound-with-amixer
+# https://wiki.archlinux.org/index.php/PulseAudio#volume_control
+# amixer set Master toggle
+# amixer -D pulse set Master 1+ toggle
+# https://askubuntu.com/questions/872014/mute-button-doesnt-unmute
+
+## VolumeToggleMute
+alt + m
+	amixer -q -D pulse sset Master toggle
+
+## VolumeDecrease
+alt + shift + comma
+	amixer -q -D pulse sset Master 5%- unmute
+
+## VolumeIncrease
+alt + shift + period
+	amixer -q -D pulse sset Master 5%+ unmute
+
+## VolumeDecreaseSlowly
+alt + ctrl + comma
+	amixer -q -D pulse sset Master 1%- unmute
+
+## VolumeIncreaseSlowly
+alt + ctrl + period
+	amixer -q -D pulse sset Master 1%+ unmute
+
+
+## XF86Audio Key ##
+
+## VolumeToggleMute
+XF86AudioMute
+	amixer -q -D pulse sset Master toggle
+
+## VolumeDecrease
+XF86AudioLowerVolume
+	amixer -q -D pulse sset Master 5%- unmute
+
+## VolumeIncrease
+XF86AudioRaiseVolume
+	amixer -q -D pulse sset Master 5%+ unmute
+
+
+##
+## collision occurs on bash emacs mode
+## * `Alt + ,`
+## * `Alt + .`
+## * http://manpages.ubuntu.com/manpages/bionic/en/man3/readline.3readline.html#default%20key%20bindings
+## * http://manpages.ubuntu.com/manpages/bionic/en/man1/bash.1.html#readline
+##
+
+
+##
+### Tail: System / Sound
+################################################################################
+
+
+################################################################################
+## Head: Compton
+##
+
+alt + w
+	bsp-compton toggle
+
+##
+## Tail: Compton
+################################################################################
