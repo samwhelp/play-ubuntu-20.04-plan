@@ -38,12 +38,12 @@ wallpaper_run_theme () {
 	local theme="$1"
 
 	if [ "none${theme}" = "none" ]; then
-		wallpaper_sys_theme_name_get
+		wallpaper_sys_theme_use_name_get
 		return
 	fi
 
 
-	wallpaper_sys_theme_name_set "$theme"
+	wallpaper_sys_theme_use_name_set "$theme"
 
 	wallpaper_sys_session_restart
 

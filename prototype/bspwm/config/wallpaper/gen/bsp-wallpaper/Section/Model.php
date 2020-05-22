@@ -1,7 +1,7 @@
 <?php //include_once(__DIR__ . '/Module/App/Model.php'); ?>
 <?php include_once(__DIR__ . '/Module/Core/Model.php'); ?>
 <?php include_once(__DIR__ . '/Module/Session/Model.php'); ?>
-<?php include_once(__DIR__ . '/Module/Theme/Model.php'); ?>
+<?php //include_once(__DIR__ . '/Module/Theme/Model.php'); ?>
 <?php include_once(__DIR__ . '/Module/DirBackgrounds/Model.php'); ?>
 <?php include_once(__DIR__ . '/Module/DirPictures/Model.php'); ?>
 <?php include_once(__DIR__ . '/Module/DirXfce4Backdrops/Model.php'); ?>

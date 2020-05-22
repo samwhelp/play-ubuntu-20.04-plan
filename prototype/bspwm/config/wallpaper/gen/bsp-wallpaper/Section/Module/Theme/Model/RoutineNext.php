@@ -5,7 +5,7 @@
 
 wallpaper_sys_theme_next_select_num () {
 	local theme
-	local current=$(wallpaper_sys_theme_name_get)
+	local current="$(wallpaper_sys_theme_use_name_get)"
 	local list
 	local list_count=$(wallpaper_sys_theme_list_count)
 	local line=1

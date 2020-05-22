@@ -26,6 +26,50 @@ wallpaper_sys_theme_list_count () {
 }
 
 
+wallpaper_sys_theme_use () {
+
+	local img_file_name="$@"
+
+	if [ "none${img_file_name}" = "none" ]; then
+		echo 'Need {img_file_name}'
+		return
+	fi
+
+	local target_dir_path="$(wallpaper_sys_theme_path_name_get_valid)"
+	local img_file_path="${target_dir_path}/${img_file_name}"
+
+	if ! [ -f "$img_file_path" ]; then
+		echo "File_Not_Exists: ${img_file_path}"
+		return 1
+	fi
+
+	wallpaper_sys_theme_use_name_set "$img_file_name"
+
+	wallpaper_sys_use "$img_file_path"
+}
+
+wallpaper_sys_theme_view () {
+
+	local img_file_name="$@"
+
+	if [ "none${img_file_name}" = "none" ]; then
+		echo 'Need {img_file_name}'
+		return
+	fi
+
+	local target_dir_path="$(wallpaper_sys_theme_path_name_get_valid)"
+	local img_file_path="${target_dir_path}/${img_file_name}"
+
+	if ! [ -f "$img_file_path" ]; then
+		echo "File_Not_Exists: ${img_file_path}"
+		return 1
+	fi
+
+	wallpaper_sys_view "$img_file_path"
+}
+
+
+
 wallpaper_sys_get_theme_name_by_theme_num () {
 	## * https://stackoverflow.com/questions/1506521/select-row-and-element-in-awk
 
@@ -43,14 +87,14 @@ wallpaper_sys_option_theme_file_check () {
 
 }
 
-wallpaper_sys_theme_name_get () {
+wallpaper_sys_theme_use_name_get () {
 
 	wallpaper_sys_option_theme_file_check
 
 	cat "$HOME/.config/bspwm/wallpaper/option/theme"
 }
 
-wallpaper_sys_theme_name_set () {
+wallpaper_sys_theme_use_name_set () {
 
 	wallpaper_sys_option_theme_file_check
 
