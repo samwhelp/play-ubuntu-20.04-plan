@@ -357,6 +357,13 @@ alt + k
 alt + j
 	bspc desktop -l next
 
+
+
+super + w
+	bspc desktop -l next
+
+
+
 ##
 ## Tail: Layout
 ################################################################################

@@ -196,6 +196,10 @@ On Floating or Tiled
 
 ## Layout
 
+| Key | Description |
+| --- | --- |
+| `Win + w` | Alternate between the tiled and monocle layout |
+
 
 | Key | Description |
 | --- | --- |
