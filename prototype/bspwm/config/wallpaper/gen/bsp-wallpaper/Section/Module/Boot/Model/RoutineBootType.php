@@ -20,7 +20,7 @@ wallpaper_sys_boot_type_valid () {
 	done
 
 	if [ "none${boot_type_valid}" = "none" ]; then
-		boot_type_valid='backgrounds'
+		boot_type_valid='recent'
 	fi
 
 	echo "$boot_type_valid"
@@ -30,11 +30,11 @@ wallpaper_sys_boot_type_valid () {
 wallpaper_sys_boot_type_enum () {
 
 cat << EOF
-theme
-backgrounds
-pictures
-xfce4_backdrops
-target_dir
+off
+recent
+fixed
+next
+random
 EOF
 
 }
@@ -43,7 +43,7 @@ wallpaper_sys_option_boot_type_file_check () {
 
 	if ! [ -e "$HOME/.config/bspwm/wallpaper/option/boot_type" ] ; then
 		mkdir -p "$HOME/.config/bspwm/wallpaper/option"
-		echo 'backgrounds' > "$HOME/.config/bspwm/wallpaper/option/boot_type"
+		echo 'recent' > "$HOME/.config/bspwm/wallpaper/option/boot_type"
 	fi
 
 }

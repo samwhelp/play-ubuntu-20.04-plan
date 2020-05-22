@@ -5,7 +5,7 @@
 
 wallpaper_sys_pictures_next_select_num () {
 	local pictures
-	local current=$(wallpaper_sys_pictures_use_name_get)
+	local current="$(wallpaper_sys_pictures_use_name_get)"
 	local list
 	local list_count=$(wallpaper_sys_pictures_list_count)
 	local line=1

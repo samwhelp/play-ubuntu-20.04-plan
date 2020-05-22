@@ -54,6 +54,29 @@ wallpaper_run_backgrounds_random () {
 
 }
 
+wallpaper_run_backgrounds_fixed () {
+
+
+	local img_file_name="$(wallpaper_sys_backgrounds_fixed_select_name)"
+
+	echo $img_file_name
+
+	wallpaper_sys_backgrounds_use "$img_file_name"
+
+
+}
+
+wallpaper_run_backgrounds_recent () {
+
+	##wallpaper_sys_run_check_fehbg_first && wallpaper_run_backgrounds_fixed
+
+	wallpaper_sys_run_check_fehbg
+
+	wallpaper_run_backgrounds_fixed
+
+
+}
+
 ##
 ### Tail: DirBackgrounds / Model / Subject
 ################################################################################

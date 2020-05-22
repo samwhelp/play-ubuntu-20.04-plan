@@ -10,30 +10,33 @@ wallpaper_run_boot_sub_default () {
 	wallpaper_boot_by_check_fehbg
 }
 
-# wallpaper_run_boot_sub_theme () {
-# 	##util_debug_echo 'wallpaper_run_boot_sub_theme'
-# 	wallpaper_run_theme_boot
-# }
-#
-# wallpaper_run_boot_sub_backgrounds () {
-# 	##util_debug_echo 'wallpaper_run_boot_sub_backgrounds'
-# 	wallpaper_run_backgrounds_boot
-# }
-#
-# wallpaper_run_boot_sub_pictures () {
-# 	##util_debug_echo 'wallpaper_run_boot_sub_pictures'
-# 	wallpaper_run_pictures_boot
-# }
-#
-# wallpaper_run_boot_sub_xfce4_backdrops () {
-# 	##util_debug_echo 'wallpaper_run_boot_sub_xfce4_backdrops'
-# 	wallpaper_run_xfce4_backdrops_boot
-# }
-#
-# wallpaper_run_boot_sub_target_dir () {
-# 	##util_debug_echo 'wallpaper_run_boot_sub_target_dir'
-# 	wallpaper_run_target_dir_boot
-# }
+wallpaper_run_boot_sub_off () {
+	util_debug_echo 'wallpaper_run_boot_sub_off'
+	echo 'off'
+	exit 0;
+}
+
+wallpaper_run_boot_sub_recent () {
+	util_debug_echo 'wallpaper_run_boot_sub_recent'
+	wallpaper_run_recent
+}
+
+wallpaper_run_boot_sub_fixed () {
+	util_debug_echo 'wallpaper_run_boot_sub_fixed'
+	wallpaper_run_fixed
+}
+
+wallpaper_run_boot_sub_next () {
+	util_debug_echo 'wallpaper_run_boot_sub_next'
+	wallpaper_run_next
+}
+
+wallpaper_run_boot_sub_random () {
+	util_debug_echo 'wallpaper_run_boot_sub_random'
+	wallpaper_run_random
+}
+
+
 
 ##
 ### Tail: List / Model / Subject / Next / Sub

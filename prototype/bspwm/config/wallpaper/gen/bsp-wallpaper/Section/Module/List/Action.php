@@ -24,6 +24,15 @@ sub_run_random () {
 	wallpaper_run_random
 }
 
+sub_run_fixed () {
+	wallpaper_run_fixed
+}
+
+sub_run_recent () {
+	wallpaper_run_recent
+}
+
+
 ##
 ### Tail: List / Action
 ################################################################################
