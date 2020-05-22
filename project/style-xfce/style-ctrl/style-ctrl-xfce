@@ -745,104 +745,104 @@ sc_cursor_theme () {
 
 
 sub_run_help () {
-	main_usage $@
+	main_usage "$@"
 }
 
 sub_run_version () {
-	main_version $@
+	main_version "$@"
 }
 
 sub_run_self_update () {
-	util_self_update $@
+	util_self_update "$@"
 }
 
 
 sub_run_self_actions () {
-	util_self_actions $@
+	util_self_actions "$@"
 }
 
 
 sub_run_wm_theme () {
 	#echo "sub_run_wm_theme"
-	sc_wm_theme $@
+	sc_wm_theme "$@"
 }
 
 sub_run_wm_theme_help () {
 	#echo "sub_run_wm_theme_help"
-	sc_wm_theme_usage $@
+	sc_wm_theme_usage "$@"
 }
 
 sub_run_ui_theme () {
 	#echo "sub_run_ui_theme"
-	sc_ui_theme $@
+	sc_ui_theme "$@"
 }
 
 sub_run_ui_theme_help () {
 	#echo "sub_run_ui_theme_help"
-	sc_ui_theme_usage $@
+	sc_ui_theme_usage "$@"
 }
 
 sub_run_icon_theme () {
 	#echo "sub_run_icon_theme"
-	sc_icon_theme $@
+	sc_icon_theme "$@"
 }
 
 sub_run_icon_theme_help () {
 	#echo "sub_run_icon_theme_help"
-	sc_icon_theme_usage $@
+	sc_icon_theme_usage "$@"
 }
 
 sub_run_cursor_theme () {
 	#echo "sub_run_cursor_theme"
-	sc_cursor_theme $@
+	sc_cursor_theme "$@"
 }
 
 sub_run_cursor_theme_help () {
 	#echo "sub_run_cursor_theme_help"
-	sc_cursor_theme_usage $@
+	sc_cursor_theme_usage "$@"
 }
 
 
 
 sub_run_all () {
 	#echo "sub_run_all"
-	#sc_all $@
+	#sc_all "$@"
 	sys_xfce_get_all
 }
 
 sub_run_all_get_default () {
 	#echo "sub_run_all_get_default"
-	#sc_get_all_default $@
+	#sc_get_all_default "$@"
 	sys_xfce_get_all_default
 }
 
 sub_run_all_set_default () {
 	#echo "sub_run_all_set_default"
-	#sc_all_set_default $@
+	#sc_all_set_default "$@"
 	sys_xfce_set_all_default
 }
 
 sub_run_wm_theme_default () {
 	#echo "sub_run_wm_theme_default"
-	#sc_wm_theme_default $@
+	#sc_wm_theme_default "$@"
 	sys_xfce_set_wm_theme_default
 }
 
 sub_run_ui_theme_default () {
 	#echo "sub_run_ui_theme_default"
-	#sc_ui_theme_default $@
+	#sc_ui_theme_default "$@"
 	sys_xfce_set_ui_theme_default
 }
 
 sub_run_icon_theme_default () {
 	#echo "sub_run_icon_theme"
-	#sc_icon_theme_default $@
+	#sc_icon_theme_default "$@"
 	sys_xfce_set_icon_theme_default
 }
 
 sub_run_cursor_theme_default () {
 	#echo "sub_run_cursor_theme_default"
-	#sc_cursor_theme_default $@
+	#sc_cursor_theme_default "$@"
 	sys_xfce_set_cursor_theme_default
 }
 
@@ -957,20 +957,18 @@ main_run_sub_cmd () {
 
 	shift
 
-	local args="$@"
-
 	local function_name=$(sub_cmd_find_function_name "$sub_cmd")
 
 	## if ! command -v $function_name > /dev/null; then
-	if ! type -p $function_name; then
+	if ! type -p $function_name > /dev/null; then
 		util_debug_echo "[Debug] sub_cmd_function_not_exist: sub_cmd=$sub_cmd; function_name=$function_name"
 
 		echo
-		main_run_default_sub_cmd "$args"
+		main_run_default_sub_cmd "$@"
 		return 1
 	fi
 
-	"$function_name" "$args" ## run sub cmd function
+	"$function_name" "$@" ## run sub cmd function
 
 
 }
