@@ -60,6 +60,9 @@ alt + Return
 	sakura -m
 
 alt + shift + a
+	sakura -m
+
+alt + ctrl + a
 	xfce4-terminal --drop-down
 
 alt + shift + t
