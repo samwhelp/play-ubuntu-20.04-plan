@@ -104,6 +104,9 @@
 		</item>
 	</menu>
 	<menu id="openbox-menu" label="Openbox" icon="/usr/share/icons/Numix/24/categories/applications-system.svg">
+		<item label="Appearance" icon="/usr/share/icons/Numix/24/categories/preferences-system.svg">
+			<action name="Execute"><execute>xfce4-appearance-settings</execute></action>
+		</item>
 		<item label="ObConf" icon="/usr/share/icons/Numix/24/categories/preferences-system.svg">
 			<action name="Execute"><execute>obconf</execute></action>
 		</item>
@@ -137,7 +140,7 @@
 
 	<item label="Exit" icon="/usr/share/icons/Numix/24/actions/system-shutdown.svg" >
 		<action name="Execute"><execute>obsession-logout</execute></action>
-	</item>	
+	</item>
 </menu>
 
 </openbox_menu>

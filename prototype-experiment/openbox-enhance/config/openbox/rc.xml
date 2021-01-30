@@ -268,7 +268,7 @@
 			</startupnotify>
 			<command>obsession-logout</command>
 		</action>
-	</keybind>	
+	</keybind>
 
 
 
@@ -296,6 +296,18 @@
 				<name>Openbox Configuration Manager</name>
 			</startupnotify>
 			<command>obconf</command>
+		</action>
+	</keybind>
+
+
+	<!-- ## Launch xfce4-appearance-settings //-->
+	<keybind key="A-C-s">
+		<action name="Execute">
+			<startupnotify>
+				<enabled>true</enabled>
+				<name>Appearance</name>
+			</startupnotify>
+			<command>xfce4-appearance-settings</command>
 		</action>
 	</keybind>
 
@@ -1291,7 +1303,7 @@ h l
 
 
 
-	<!-- Up-Down -->
+	<!-- Tiling Window (North-South) (Top-Bottom) -->
 	<keybind key="A-C-u">
 		<action name="Undecorate"/>
 		<action name="UnmaximizeFull"/>
@@ -1322,7 +1334,7 @@ h l
 	</keybind>
 
 
-	<!-- Left-Right -->
+	<!-- Tiling Window (West-East) (Left-Right) -->
 	<keybind key="A-C-i">
 		<action name="Undecorate"/>
 		<action name="UnmaximizeFull"/>
@@ -1371,7 +1383,7 @@ h l
 
 
 	<!-- Version: Up Left Right //-->
-	<!-- Up-Down -->
+	<!-- Tiling Window (North-South) (Top-Bottom) -->
 	<keybind key="A-Up">
 		<action name="Undecorate"/>
 		<action name="UnmaximizeFull"/>
@@ -1402,7 +1414,7 @@ h l
 	</keybind>
 
 
-	<!-- Left-Right -->
+	<!-- Tiling Window (West-East) (Left-Right) -->
 	<keybind key="A-Left">
 		<action name="Undecorate"/>
 		<action name="UnmaximizeFull"/>

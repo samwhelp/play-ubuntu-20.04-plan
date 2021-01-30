@@ -164,7 +164,7 @@
 | `Ctrl + Alt + Delete` | Logout | [Exit](http://openbox.org/wiki/Help:Actions#Exit) |
 | `Alt + Shift + c` | Reconfigure | [Reconfigure](http://openbox.org/wiki/Help:Actions#Reconfigure) |
 | `Alt + Shift + s` | Launch obconf | [Execute](http://openbox.org/wiki/Help:Actions#Execute) |
-
+| `Ctrl + Shift + s` | Launch xfce4-appearance-settings | [Execute](http://openbox.org/wiki/Help:Actions#Execute) |
 
 ## Show Client Menu
 
