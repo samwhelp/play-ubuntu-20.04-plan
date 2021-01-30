@@ -39,16 +39,19 @@ alt + shift + z
 ##
 
 alt + Return
-	sakura
+	sakura -m
 
 alt + shift + a
+	sakura -m
+
+alt + ctrl + a
 	xfce4-terminal --drop-down
 
 alt + shift + t
 	xterm
-	
+
 alt + ctrl + t
-	urxvt	
+	urxvt
 
 ##
 ## Tail: Launch App / Terminal
@@ -189,10 +192,3 @@ XF86AudioRaiseVolume
 ##
 ### Tail: System / Sound
 ################################################################################
-
-
-
-
-
-
-

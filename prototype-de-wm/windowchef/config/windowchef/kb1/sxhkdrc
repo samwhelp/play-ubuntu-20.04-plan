@@ -40,16 +40,19 @@ alt + shift + c
 ##
 
 alt + Return
-	sakura
+	sakura -m
 
 alt + shift + a
+	sakura -m
+
+alt + ctrl + a
 	xfce4-terminal --drop-down
 
 alt + shift + t
 	xterm
-	
+
 alt + ctrl + t
-	urxvt	
+	urxvt
 
 ##
 ## Tail: Launch App / Terminal
@@ -214,7 +217,7 @@ super + bracket{left,right}
 ## Tab key
 super + Tab
 	waitron window_cycle
-	
+
 alt + Tab
 	waitron window_cycle
 
@@ -240,9 +243,9 @@ super + q
 
 alt + F4
 	waitron window_close
-	
+
 alt + shift + q
-	waitron window_close	
+	waitron window_close
 
 ##
 ## Tail: Window / Close
@@ -292,9 +295,9 @@ super + ctrl + {Up,Down,Left,Right}
 
 #super + {Insert,Prior,Delete,Next,End}
 #	waitron window_snap {topleft,topright,bottomleft,bottomright,middle}
-	
+
 alt + shift + {Up,Down,Left,Right,End}
-	waitron window_snap {topleft,topright,bottomleft,bottomright,middle}	
+	waitron window_snap {topleft,topright,bottomleft,bottomright,middle}
 
 ##
 ## Tail: Window / Snap
@@ -359,16 +362,10 @@ super + {1-9}
 
 alt + ctrl + r
 	waitron group_remove_window
-	
+
 alt + shift + {1-4}
-	waitron group_remove_all_windows {1-4}	
+	waitron group_remove_all_windows {1-4}
 
 ##
 ## Tail: group
 ################################################################################
-
-
-
-
-
-

@@ -441,10 +441,13 @@ bind-key 	4M-v	window-vtile
 ##
 
 ## alt + enter
-bind-key M-Return "sakura"
+bind-key M-Return "sakura -m"
 
 ## alt + shift + a
-bind-key MS-a "xfce4-terminal --drop-down"
+bind-key MS-a "sakura -m"
+
+## alt + ctrl + a
+bind-key MC-a "xfce4-terminal --drop-down"
 
 ## alt + shift + t
 bind-key MS-t "xterm"
