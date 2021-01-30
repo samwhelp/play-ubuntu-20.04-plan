@@ -77,7 +77,8 @@
 | Key | Description |
 | --- | --- |
 | `Alt + Enter` | Launch Terminal (sakura -m) |
-| `Alt + Shift + a` | Toggle Drop Down Terminal (xfce4-terminal --drop-down) or (tilix --quake) |
+| `Alt + Shift + a` | Launch Terminal (sakura -m) |
+| `Alt + Ctrl + a` | Toggle Drop Down Terminal (xfce4-terminal --drop-down) or (tilix --quake) |
 | `Alt + Shift + t` | Launch Terminal (xterm) |
 | `Alt + Ctrl + t` | Launch Terminal (urxvt) |
 
