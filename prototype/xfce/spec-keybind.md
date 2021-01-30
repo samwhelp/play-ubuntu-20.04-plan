@@ -124,7 +124,8 @@ $ xfconf-query -c xfce4-keyboard-shortcuts -p '/commands/custom/<Alt>m' -s 'pact
 | Key | Description |
 | --- | --- |
 | `Alt + Enter` | Launch Terminal (sakura -m) |
-| `Alt + Shift + a` | Toggle Drop Down Terminal (xfce4-terminal --drop-down) |
+| `Alt + Shift + a` | Launch Terminal (sakura -m) |
+| `Alt + Ctrl + a` | Toggle Drop Down Terminal (xfce4-terminal --drop-down) |
 | `Alt + Shift + t` | Launch Terminal (xterm) |
 | `Alt + Ctrl + t` | Launch Terminal (urxvt) |
 
@@ -144,6 +145,14 @@ $ xfconf-query -c xfce4-keyboard-shortcuts -p '/commands/custom/<Alt>m' -s 'pact
 | `Alt + Shift + g` | Launch File Manager (nautilus) |
 | `Alt + Shift + b` | Launch Web Browser (firefox) |
 | `Alt + Shift + e` | Launch Text Editor (gedit) |
+
+
+### Settings
+
+| Key | Description |
+| --- | --- |
+| `Alt + Shift + s` | Launch xfwm4-settings |
+| `Alt + Ctrl + s` | Launch xfce4-appearance-settings |
 
 
 ## Workspace
