@@ -60,9 +60,15 @@ alt + Return
 	sakura
 
 alt + shift + a
-	xterm
+	sakura
+
+alt + ctrl + a
+	xfce4-terminal
 
 alt + shift + t
+	xterm
+
+alt + ctrl + t
 	urxvt
 
 ##
