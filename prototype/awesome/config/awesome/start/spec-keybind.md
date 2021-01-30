@@ -107,8 +107,9 @@
 
 | Key | Description |
 | --- | --- |
-| `Alt + Enter` | Launch Terminal (sakura -m) |
-| `Alt + Shift + a` | Toggle Drop Down Terminal (xfce4-terminal --drop-down) |
+| `Alt + Enter` | Launch Terminal (sakura) |
+| `Alt + Shift + a` | Toggle Drop Down Terminal (sakura) |
+| `Alt + Ctrl + a` | Toggle Drop Down Terminal (xfce4-terminal --drop-down) |
 | `Alt + Shift + t` | Launch Terminal (xterm) |
 | `Alt + Ctrl + t` | Launch Terminal (urxvt) |
 

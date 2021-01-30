@@ -390,7 +390,12 @@ awful.keyboard.append_global_keybindings({
 	),
 
 	awful.key(
-		{ key_alt, key_shift }, 'a', function () awful.spawn('xfce4-terminal --drop-down') end,
+		{ key_alt, key_shift }, 'a', function () awful.spawn(terminal) end,
+		{ description = 'Terminal (sakura)', group = 'App'}
+	),
+
+	awful.key(
+		{ key_alt, key_ctrl }, 'a', function () awful.spawn('xfce4-terminal --drop-down') end,
 		{ description = 'Terminal (quake)', group = 'App'}
 	),
 
