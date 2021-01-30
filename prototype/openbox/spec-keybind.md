@@ -103,7 +103,8 @@
 | Key | Description | Doc |
 | --- | --- | --- |
 | `Alt + Enter` | Launch Terminal (sakura -m) | [Execute](http://openbox.org/wiki/Help:Actions#Execute) |
-| `Alt + Shift + a` | Launch Quake Terminal (xfce4-terminal --drop-down) | [Execute](http://openbox.org/wiki/Help:Actions#Execute) |
+| `Alt + Shift + a` | Launch Terminal (sakura -m) | [Execute](http://openbox.org/wiki/Help:Actions#Execute) |
+| `Alt + Ctrl + a` | Launch Quake Terminal (xfce4-terminal --drop-down) | [Execute](http://openbox.org/wiki/Help:Actions#Execute) |
 | `Alt + Shift + t` | Launch Terminal (xterm) | [Execute](http://openbox.org/wiki/Help:Actions#Execute) |
 | `Alt + Ctrl + t` | Launch Terminal (urxvt) | [Execute](http://openbox.org/wiki/Help:Actions#Execute) |
 

@@ -10,6 +10,15 @@
 			<command>sakura -m</command>
 		</action>
 	</keybind>
+	<keybind key="A-S-a">
+		<action name="Execute">
+			<startupnotify>
+				<enabled>true</enabled>
+				<name>Terminal</name>
+			</startupnotify>
+			<command>sakura -m</command>
+		</action>
+	</keybind>
 <?php
 /*
 	<keybind key="A-Return">
@@ -26,7 +35,7 @@
 
 
 	<!-- ## Terminal-Quake //-->
-	<keybind key="A-S-a">
+	<keybind key="A-C-a">
 		<action name="Execute">
 			<startupnotify>
 				<enabled>true</enabled>
@@ -37,7 +46,7 @@
 	</keybind>
 <?php
 /*
-	<keybind key="A-S-a">
+	<keybind key="A-C-a">
 		<action name="Execute">
 			<startupnotify>
 				<enabled>true</enabled>
@@ -60,7 +69,7 @@
 			<command>xterm</command>
 		</action>
 	</keybind>
-	
+
 	<keybind key="A-C-t">
 		<action name="Execute">
 			<startupnotify>
@@ -69,7 +78,7 @@
 			</startupnotify>
 			<command>urxvt</command>
 		</action>
-	</keybind>	
+	</keybind>
 
 
 	<!-- ## File Manager //-->
