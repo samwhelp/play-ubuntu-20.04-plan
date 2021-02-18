@@ -4,7 +4,7 @@
 
 > a modern and intuitive terminal-based text editor
 
-* [micro-editor](https://micro-editor.github.io/) )([Github](https://github.com/zyedidia/micro))
+* [micro-editor](https://micro-editor.github.io/) ([Github](https://github.com/zyedidia/micro))
 
 ## Link
 
