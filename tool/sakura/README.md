@@ -61,3 +61,13 @@ or
 ``` sh
 $ make config-install
 ```
+
+
+## Link
+
+* https://www.pleyades.net/david/projects/sakura
+* https://launchpad.net/sakura
+
+``` sh
+$ git clone https://git.launchpad.net/sakura
+```
